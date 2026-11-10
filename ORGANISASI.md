@@ -5,7 +5,7 @@
 | Fitransyah | Owner | — | Ngasih arah, ngambil keputusan, nge-approve yang mau keluar |
 | Sari | Manajer divisi Sosmed | `peran/PERAN-sari.md` | Ide konten, naskah, desain carousel, jadwal posting |
 | Bima | Manajer divisi Jualan & CS | NONAKTIF sementara (`peran/nonaktif/PERAN-bima.md`) | Rekap pesanan, draf balesan calon pembeli, usulan promo |
-| Dimas | Manajer divisi Web & aplikasi | NONAKTIF sementara (`peran/nonaktif/PERAN-dimas.md`) | Landing page & website bisnis, tayang di alamat sendiri tanpa bayar hosting |
+| Dimas | Manajer divisi Web & aplikasi | Aktif lagi 2026-11-10 (`peran/PERAN-dimas.md`), dipanggil manual `jadi dimas`, belum ada detak | Landing page & website bisnis, tayang di alamat sendiri tanpa bayar hosting |
 | Raka | Manajer divisi Marketing iklan | NONAKTIF sementara (`peran/nonaktif/PERAN-raka.md`) | Laporan & usulan iklan dari data ekspor |
 | Laras | Manajer divisi Keuangan (Accounting) | `peran/PERAN-laras.md` | Biaya API & layanan, buku kas, rekap biaya bulanan |
 | builder | Pengurus kantor | `peran/PERAN-builder.md` | Divisi baru, detak, dashboard, skill, update kit |

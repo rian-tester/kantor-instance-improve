@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://web.fitra-office.timku.ai.id/sitemap.xml

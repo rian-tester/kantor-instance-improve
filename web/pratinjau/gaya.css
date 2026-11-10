@@ -1,0 +1,111 @@
+:root{
+  --gelap:#11131A; --node:#1A1D27; --garis:#3A4054; --krem:#F5F2EA;
+  --pink:#FF3B5C; --kuning:#FFC93C; --redup:#B9B6AD; --merah-teks:#C41835;
+  --judul:'Archivo','Liberation Sans',Arial,sans-serif;
+  --mono:'JetBrains Mono','DejaVu Sans Mono',monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--gelap); color:var(--krem);
+  font:400 17px/1.6 var(--judul); font-weight:700;
+  background-image:radial-gradient(#2a2f3f 1px,transparent 1.2px);
+  background-size:36px 36px;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--kuning); outline-offset:3px}
+.mono{font-family:var(--mono);font-weight:400}
+.lompat{position:absolute;left:-999px;top:8px;background:var(--kuning);color:var(--gelap);padding:10px 14px;z-index:10}
+.lompat:focus{left:8px}
+
+/* header */
+.atas{max-width:960px;margin:0 auto;padding:20px 16px 8px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.logo{height:44px;width:auto}
+.atas nav{display:flex;gap:4px;flex-wrap:wrap}
+.atas nav a{font:400 14px/1 var(--mono);text-decoration:none;color:var(--redup);padding:14px 10px;min-height:44px;display:inline-flex;align-items:center;border-radius:4px}
+.atas nav a:hover{color:var(--kuning)}
+
+/* graf: kabel vertikal + node */
+.graf{max-width:960px;margin:0 auto;padding:16px 16px 56px 32px;position:relative}
+.graf::before{content:"";position:absolute;left:19px;top:40px;bottom:64px;width:2px;background:var(--garis)}
+.node{position:relative;margin:0 0 56px;background:var(--node);border:1px solid var(--garis);border-radius:6px}
+.tab{border-radius:5px 5px 0 0}
+.node::before{content:"";position:absolute;left:-17px;top:16px;width:12px;height:12px;background:var(--kuning);border:2px solid var(--gelap);outline:0}
+.tab{display:flex;align-items:center;gap:10px;padding:10px 16px;font:400 14px/1.2 var(--mono);color:var(--gelap)}
+.tab.pink{background:var(--pink)}
+.tab.kuning{background:var(--kuning)}
+.tab.gelap{background:var(--gelap);color:var(--krem)}
+.pin{width:10px;height:10px;border-radius:50%;border:2px solid var(--gelap);background:var(--krem);flex:none}
+.tab.gelap .pin{border-color:var(--krem);background:var(--kuning)}
+.badan{padding:28px 20px 32px}
+
+h1,h2{margin:0;font-weight:800;line-height:1.05;text-wrap:balance}
+h1{font-size:clamp(44px,9.5vw,92px);letter-spacing:-.02em}
+h1 em{font-style:normal;color:var(--kuning)}
+h2{font-size:clamp(30px,5.5vw,48px);letter-spacing:-.01em;margin-bottom:20px}
+.lead{max-width:56ch;margin:24px 0 0;font-size:19px;line-height:1.55;color:var(--krem);font-weight:700;text-wrap:pretty}
+.kecil{color:var(--redup);font-size:16px;margin:-8px 0 24px;max-width:60ch}
+
+.aksi{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.tombol{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 22px;font:700 16px/1 var(--judul);text-decoration:none;color:var(--krem);border:2px solid var(--garis);border-radius:4px;transition:border-color .15s,background .15s,color .15s}
+.tombol:hover{border-color:var(--krem)}
+.tombol.utama{background:var(--kuning);border-color:var(--kuning);color:var(--gelap)}
+.tombol.utama:hover{background:var(--krem);border-color:var(--krem)}
+
+/* topik */
+.topik{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.topik li{display:grid;gap:2px;padding:16px 0;border-top:1px solid var(--garis)}
+.topik li:first-child{border-top:0;padding-top:0}
+.topik b{font-size:22px;font-weight:800}
+.topik span{color:var(--redup);font-weight:400;font-size:16px}
+
+/* contoh slide */
+.slide-baris{display:grid;gap:16px;grid-template-columns:1fr}
+.slide{margin:0;aspect-ratio:4/5;background:var(--gelap);border:1px solid var(--garis);padding:14px;display:flex;flex-direction:column;gap:10px;overflow:hidden;background-image:radial-gradient(#2a2f3f 1px,transparent 1.2px);background-size:14px 14px}
+.s-atas{display:flex;align-items:center;gap:6px;font:400 10px/1 var(--mono);color:var(--redup)}
+.s-atas i{width:7px;height:7px;background:var(--kuning)}
+.s-atas b{margin-left:auto;font-weight:400}
+.s-judul{font-size:clamp(22px,5vw,26px);line-height:1.08;font-weight:800;text-wrap:balance}
+.s-judul em{font-style:normal;color:var(--kuning)}
+.slide svg{width:100%;height:auto;margin-top:auto}
+.slide p{margin:0;font-size:12.5px;line-height:1.45;color:var(--redup);font-weight:400}
+.slide.kuning-bg{background:var(--kuning);border-color:var(--kuning)}
+.slide.kuning-bg .s-atas,.slide.kuning-bg p{color:var(--gelap)}
+.slide.kuning-bg .s-atas i{background:var(--gelap)}
+.slide.kuning-bg{background-image:none}
+
+/* ikuti */
+.ikuti{display:grid;gap:16px;grid-template-columns:1fr}
+.kartu-link{display:grid;gap:6px;padding:20px;border:1px solid var(--garis);background:var(--gelap);text-decoration:none;border-radius:4px;transition:border-color .15s}
+.kartu-link:hover{border-color:var(--kuning)}
+.kartu-link b{font-size:26px;font-weight:800}
+.kartu-link .mono{color:var(--kuning);font-size:15px}
+.kartu-link small{font-size:15px;color:var(--redup);font-weight:400}
+
+/* hubungi (bidang krem) */
+.node.terang{background:var(--krem);color:var(--gelap);border-color:var(--krem)}
+.node.terang::before{background:var(--kuning)}
+.node.terang p{max-width:52ch;margin:0;font-size:18px;font-weight:700}
+.tombol.gelap{background:var(--gelap);border-color:var(--gelap);color:var(--krem)}
+.tombol.gelap:hover{background:var(--merah-teks);border-color:var(--merah-teks)}
+.tombol.garis{border-color:var(--gelap);color:var(--gelap);font:400 15px/1 var(--mono)}
+.tombol.garis:hover{background:var(--gelap);color:var(--krem)}
+.node.terang .aksi{margin-top:24px}
+.node.terang p.dummy{margin-top:20px;font-size:14px;font-weight:400;color:var(--gelap);display:flex;gap:10px;align-items:baseline}
+.dummy b{background:var(--merah-teks);color:#fff;padding:3px 8px;font:700 12px/1 var(--mono);flex:none}
+
+.kaki{max-width:960px;margin:0 auto;padding:24px 16px 48px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--redup);font-size:14px;font-weight:400}
+.kaki .mono{color:var(--kuning)}
+
+@media (min-width:720px){
+  .graf{padding-left:48px}
+  .graf::before{left:30px}
+  .node::before{left:-24px}
+  .badan{padding:40px 40px 44px}
+  .slide-baris{grid-template-columns:repeat(3,1fr)}
+  .ikuti{grid-template-columns:1fr 1fr}
+  .topik li{grid-template-columns:minmax(260px,1fr) 1.2fr;align-items:baseline;gap:24px}
+  .hero .badan{padding-top:56px;padding-bottom:56px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
