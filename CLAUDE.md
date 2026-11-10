@@ -28,6 +28,7 @@ Manajer: Sari (sosmed), Bima (jualan & cs), Dimas (web & aplikasi), Raka (market
 
 ## Kerjaan & hasil
 - Tiap kerjaan = 1 task di folder `task/`. Kerjaan tanpa task jangan dimulai.
+- **Kerjaan berulang/terjadwal = 1 task baru per eksekusi.** Contoh benar: riset tgl 10 → `T-XX-riset-late30-20261110.md`, riset tgl 12 → `T-YY-riset-late30-20261112.md`. Jangan buat satu task umbrella untuk semua sesi (mis. "riset selang-seling"). Tiap task harus bisa `beres` di hari yang sama.
 - **Semua hasil kerja disimpen jadi file** di `hasil/`. Jangan cuma ditulis di chat, besok ilang.
 - Abis kerja, tulis 1–3 baris di `catatan/<nama-lu>.md`: ngapain, hasilnya di mana, apa yang belum. Ini ingatan kamu
   antar sesi.
