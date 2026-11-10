@@ -149,7 +149,7 @@ SETELAN=(); [ -f .claude/settings.json ] && SETELAN=(--settings .claude/settings
 # foldernya), plus ToolSearch buat buka alat Drive-nya. Belum nyambung: konektor gak dimuat sama sekali (lebih irit).
 MCP=(--strict-mcp-config); ALAT=Read,Write,Edit,Bash,Glob,Grep,WebFetch,WebSearch,Agent
 [ -f .drive/folder.json ] && { MCP=(); ALAT="$ALAT,ToolSearch"; }
-timeout 20m claude -p "$PROMPT" --model "$MODEL_DETAK" --max-turns 15 "${SETELAN[@]}" \
+timeout 25m claude -p "$PROMPT" --model "$MODEL_DETAK" --max-turns 20 "${SETELAN[@]}" \
   --tools "$ALAT" "${MCP[@]}" --disable-slash-commands \
   --output-format stream-json --verbose < /dev/null > "$MENTAH" 2>> "$LOG"
 KODE=$?

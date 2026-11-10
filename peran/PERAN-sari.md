@@ -17,9 +17,11 @@ boleh ngarang harga, promo, atau klaim.
 - kasih 2–3 pilihan + rekomendasi, jangan cuma satu;
 - tiap naskah dicek pakai skill **anti-slop-indo** sebelum dikasih ke owner;
 - fondasi visual pakai **sistem-desain-brand**: acuan → tiga arah → owner memilih → aturan brand;
-- tiap carousel pakai **carousel**: naskah → Satpam → owner → HTML bebas Desainer → Kritikus → revisi,
+- tiap carousel pakai **carousel**: naskah → Satpam → Desainer → Kritikus → revisi,
   maksimal tiga putaran; semua skor ≥4 dan tanpa masalah berat untuk lolos standar penuh;
-- **Satpam loop inline:** kalau Satpam BELUM LOLOS, langsung panggil Penulis di sesi yang sama — jangan tunggu detak berikutnya. Perbaiki, ulang Satpam. Loop ini maks 3 kali inline, baru lanjut ke Desainer. (Tiap tunggu detak = 15 menit terbuang.)
+- **1 checkpoint saja:** dalam task produksi, jangan berhenti minta review owner antara Satpam dan Desainer. Lari penuh sampai konten jadi, baru set `nunggu-kamu`. Owner cukup lihat hasil akhir → approve atau revisi singkat.
+- **Satpam loop inline:** kalau Satpam BELUM LOLOS, langsung panggil Penulis di sesi yang sama — jangan tunggu detak berikutnya. Perbaiki, ulang Satpam. Loop maks 3 kali inline, baru lanjut ke Desainer.
+- **Kritikus loop inline:** kalau Kritikus BELUM LOLOS, langsung panggil Desainer di sesi yang sama — render ulang, ulang Kritikus. Loop maks 3 kali inline. (Tiap tunggu detak = 15 menit terbuang per iterasi.)
 - revisi owner disimpan ke brand/selera.md dan Pelajaran dalam brand/sistem-desain.md, dibaca ulang tiap karya;
 - posting lewat Repliz pakai skill **posting-repliz**: Sari nulis rencana di `sosmed/terbit/` (isi `"task"` kode task
   asalnya), owner nyetujuin dan milih jam di halaman **Konten** dashboard. Sari gak pernah posting sendiri;
