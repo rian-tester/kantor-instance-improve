@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="id"><meta charset="utf-8"><title>late30_studio T-08 v2: Cincin suara Mark of the Ninja (Graph)</title>
+<link rel="stylesheet" href="../../dasar.css">
+<!--
+KONSEP VISUAL v2 (sistem Graph, brand/sistem-desain-late30.md): layar editor node. Dunia brand = alur node yang disambung.
+Ide pemersatu: "cincin suara" digambar sebagai denah dari atas, lalu cincin yang awalnya gak cocok
+dengan suaranya dibetulkan jadi cocok. Semua ilustrasi SVG buatan sendiri, tanpa tangkapan layar game, tanpa ikon pustaka.
+Teks persis hasil/naskah-T-08-20261111-final-v2.json. Cincin digambar kuning (palet brand); tidak ada teks yang menyebut warna.
+
+Peran per slide (tipe | jangkar | motif):
+1 cover   | judul "Game ninja ini menggambar suaramu, tapi awalnya salah" 96 px | adegan besar ninja + penjaga + cincin kuning, lockup kecil di dalam adegan (node)
+2 poin    | judul "Cincin melebar tiap ada suara" 96 px                        | cincin suara (denah dari atas), bingkai besar
+3 poin+visual | judul "Idenya muncul dari pemain yang bingung" 96 px           | layar adegan, tanda tanya di atas ninja (pemain)
+4 banding | judul "Cincinnya sama terus, lalu dibetulkan" + chip kuning "Akhirnya" sebagai jawaban + kabel panah | node+kabel, cincin
+5 fakta/definisi | judul "Yang dikejar tim: kejelasan" 96 px, bidang kuning penuh | garis putus-putus jadi garis tegas
+6 penutup | judul "Cincin baru berguna setelah jujur" + ajakan 40 px; adegan ninja bergerak lewat penjaga (jalur putus-putus), lockup terang di bidang krem | lockup, bidang krem
+Hitungan motif: cincin 1,2,4 (inti cerita, tiga slide; dilaporkan); node+kabel 1(bingkai),4; lockup 1,6; garis putus 5,6.
+Enam tipe dari enam dipakai. Font: Liberation Sans + DejaVu Sans Mono lokal lewat local(). Tingkat ukuran: 96 / 40 / 32 / 28. Gerak: tidak ada (statis).
+-->
+<style>
+@font-face{font-family:'Liberation Sans';font-weight:400;src:local('Liberation Sans'),local('LiberationSans')}
+@font-face{font-family:'Liberation Sans';font-weight:700;src:local('Liberation Sans Bold'),local('LiberationSans-Bold')}
+@font-face{font-family:'DejaVu Sans Mono';font-weight:400;src:local('DejaVu Sans Mono'),local('DejaVuSansMono')}
+@font-face{font-family:'DejaVu Sans Mono';font-weight:700;src:local('DejaVu Sans Mono Bold'),local('DejaVuSansMono-Bold')}
+:root{--g:#11131A;--k:#F5F2EA;--p:#FF3B5C;--y:#FFC93C;--n:#1A1D27;--l:#3A4054;--t:#B9B6AD}
+.slide{background-color:var(--g);color:var(--k);font-family:'Liberation Sans',sans-serif;font-weight:700}
+.dots{position:absolute;left:0;top:0;width:1080px;height:1350px;background-image:radial-gradient(circle,#2B2F3D 2.5px,transparent 3px);background-size:54px 54px;background-position:27px 27px}
+.abs{position:absolute}
+.wm{position:absolute;left:72px;top:68px;margin:0;font:700 28px/36px 'DejaVu Sans Mono',monospace;display:flex;align-items:center;gap:14px}
+.wm i{width:18px;height:18px;background:var(--y);display:block}
+.no{position:absolute;right:72px;top:68px;margin:0;font:400 28px/36px 'DejaVu Sans Mono',monospace;color:var(--t)}
+.src{position:absolute;left:72px;bottom:72px;margin:0;font:400 28px/36px 'DejaVu Sans Mono',monospace;color:var(--t);white-space:nowrap}
+h1,h2{margin:0;font-weight:700;letter-spacing:-.5px}
+.j{font-size:96px;line-height:104px;text-wrap:balance}
+.ns{margin:0;font:700 40px/48px 'Liberation Sans',sans-serif}
+.sub{margin:0;font:400 40px/52px 'Liberation Sans',sans-serif;text-wrap:pretty}
+.kc{margin:0;font:400 32px/46px 'Liberation Sans',sans-serif;text-wrap:pretty}
+.ib{margin:0;font:400 32px/48px 'Liberation Sans',sans-serif;text-wrap:pretty}
+.y{color:var(--y)}
+.node{position:absolute;background:var(--n);border:3px solid var(--l);border-radius:22px;overflow:hidden}
+.kop{height:46px;background:var(--p);display:flex;align-items:center;padding:0 18px}
+.kop.y{background:var(--y)}
+.pn{width:24px;height:24px;display:block}
+.wire{position:absolute;left:0;top:0;width:1080px;height:1350px}
+.chip{display:inline-block;background:var(--y);color:var(--g);padding:0 18px;border-radius:10px}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="pin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="#FFC93C" stroke="#11131A" stroke-width="4"/></symbol>
+<g id="kubus"><polygon fill="#FF3B5C" points="-43.3,-25 0,0 0,50 -43.3,25"/><polygon fill="#FF3B5C" points="43.3,-25 43.3,25 0,50 0,0"/><path stroke="#11131A" stroke-width="2.4" fill="none" d="M-43.3 -25L0 0L43.3 -25M0 0V50"/><polygon points="0,-46 34.64,-26 0,-6 -34.64,-26" fill="none" stroke="#11131A" stroke-width="10.5" stroke-linejoin="bevel"/><polygon points="0,-46 34.64,-26 0,-6 -34.64,-26" fill="none" stroke="#FFC93C" stroke-width="6" stroke-linejoin="bevel"/><rect x="-5" y="-51" width="10" height="10" fill="#FFC93C" stroke="#11131A" stroke-width="2"/><rect x="29.64" y="-31" width="10" height="10" fill="#FFC93C" stroke="#11131A" stroke-width="2"/><rect x="-5" y="-11" width="10" height="10" fill="#FFC93C" stroke="#11131A" stroke-width="2"/><rect x="-39.64" y="-31" width="10" height="10" fill="#FFC93C" stroke="#11131A" stroke-width="2"/></g>
+<g id="lockup"><use href="#kubus" transform="translate(75 78) scale(1.2)"/><g transform="translate(168 25)"><g fill="none" stroke-width="18" stroke-linejoin="miter" stroke-linecap="butt"><path stroke="#F5F2EA" transform="translate(0 0)" d="M9 0V100"/><path stroke="#F5F2EA" transform="translate(32 0)" d="M9 39H45V91H9V65H45"/><path stroke="#F5F2EA" transform="translate(106 0)" d="M21 0V91H50M0 39H44"/><path stroke="#F5F2EA" transform="translate(170 0)" d="M9 65H51V39H9V91H51"/><path stroke="#FFC93C" transform="translate(250 0)" d="M6.00 9.00L33.00 9.00L45.00 21.00L45.00 38.00L33.00 50.00L45.00 62.00L45.00 79.00L33.00 91.00L6.00 91.00M20.00 50.00L33.00 50.00"/><path stroke="#FFC93C" transform="translate(318 0)" d="M21.00 9.00L33.00 9.00L45.00 21.00L45.00 79.00L33.00 91.00L21.00 91.00L9.00 79.00L9.00 21.00Z"/></g></g></g>
+<g id="lockupT"><g transform="translate(75 78) scale(1.2)"><polygon fill="#E0203F" points="-43.3,-25 0,0 0,50 -43.3,25"/><polygon fill="#E0203F" points="43.3,-25 43.3,25 0,50 0,0"/><path stroke="#F5F2EA" stroke-width="2.4" fill="none" d="M-43.3 -25L0 0L43.3 -25M0 0V50"/><polygon points="0,-46 34.64,-26 0,-6 -34.64,-26" fill="none" stroke="#11131A" stroke-width="10.5" stroke-linejoin="bevel"/><polygon points="0,-46 34.64,-26 0,-6 -34.64,-26" fill="none" stroke="#FFC93C" stroke-width="6" stroke-linejoin="bevel"/><rect x="-5" y="-51" width="10" height="10" fill="#FFC93C" stroke="#11131A" stroke-width="2"/><rect x="29.64" y="-31" width="10" height="10" fill="#FFC93C" stroke="#11131A" stroke-width="2"/><rect x="-5" y="-11" width="10" height="10" fill="#FFC93C" stroke="#11131A" stroke-width="2"/><rect x="-39.64" y="-31" width="10" height="10" fill="#FFC93C" stroke="#11131A" stroke-width="2"/></g><g transform="translate(168 25)"><g fill="none" stroke-width="18" stroke-linejoin="miter" stroke-linecap="butt"><path stroke="#11131A" transform="translate(0 0)" d="M9 0V100"/><path stroke="#11131A" transform="translate(32 0)" d="M9 39H45V91H9V65H45"/><path stroke="#11131A" transform="translate(106 0)" d="M21 0V91H50M0 39H44"/><path stroke="#11131A" transform="translate(170 0)" d="M9 65H51V39H9V91H51"/><path stroke="#E0203F" transform="translate(250 0)" d="M6.00 9.00L33.00 9.00L45.00 21.00L45.00 38.00L33.00 50.00L45.00 62.00L45.00 79.00L33.00 91.00L6.00 91.00M20.00 50.00L33.00 50.00"/><path stroke="#E0203F" transform="translate(318 0)" d="M21.00 9.00L33.00 9.00L45.00 21.00L45.00 79.00L33.00 91.00L21.00 91.00L9.00 79.00L9.00 21.00Z"/></g></g></g>
+<pattern id="kisiP" width="38.75" height="38.75" patternUnits="userSpaceOnUse"><path d="M38.75 0H0V38.75" fill="none" stroke="#2B2F3D" stroke-width="2"/></pattern>
+<g id="nin">
+ <path fill="#F5F2EA" d="M-20 -100L-24 0H-6L-2 -58H4L8 0H26L22 -100Z"/>
+ <polygon fill="#F5F2EA" points="-30,-100 -34,-176 34,-176 30,-100"/>
+ <polygon fill="#F5F2EA" points="30,-168 68,-140 60,-126 26,-148"/>
+ <rect x="-32" y="-128" width="64" height="10" fill="#FF3B5C"/>
+ <circle cx="0" cy="-206" r="28" fill="#F5F2EA"/>
+ <rect x="-4" y="-214" width="34" height="12" fill="#11131A"/>
+ <rect x="-28" y="-226" width="56" height="10" fill="#FF3B5C"/>
+ <path fill="#FF3B5C" d="M-28 -224L-72 -210L-62 -196L-28 -212Z"/>
+</g>
+<g id="grd">
+ <path fill="#FF3B5C" d="M-22 -96L-26 0H-6L-2 -56H4L8 0H28L24 -96Z"/>
+ <polygon fill="#FF3B5C" points="-32,-96 -36,-170 36,-170 32,-96"/>
+ <rect x="-34" y="-126" width="68" height="10" fill="#11131A"/>
+ <circle cx="0" cy="-198" r="27" fill="#FF3B5C"/>
+ <rect x="-3" y="-204" width="32" height="10" fill="#11131A"/>
+ <path fill="#FFC93C" d="M-30 -208A30 30 0 0 1 30 -208Z"/>
+ <rect x="52" y="-230" width="8" height="232" fill="#F5F2EA"/>
+ <polygon points="56,-258 66,-230 46,-230" fill="#F5F2EA"/>
+</g>
+</defs></svg>
+
+<!-- ============ SLIDE 1: COVER ============ -->
+<section class="slide" id="s1">
+ <div class="dots"></div>
+ <p class="wm"><i></i>late30_studio</p>
+ <h1 class="j abs" style="left:72px;top:140px;width:936px">Game ninja ini menggambar <span class="y">suaramu,</span> tapi awalnya salah</h1>
+ <p class="sub abs" style="left:72px;top:574px;width:880px">Geser: kenapa cincinnya baru berguna setelah diperbaiki.</p>
+ <div class="node" data-ilustrasi="adegan" style="left:72px;top:722px;width:936px;height:556px"><div class="kop y"><svg class="pn"><use href="#pin"/></svg></div>
+  <svg viewBox="0 0 930 504" style="position:absolute;left:0;top:46px;width:930px;height:504px" aria-hidden="true">
+   <rect width="930" height="504" fill="url(#kisiP)"/>
+   <line x1="0" y1="476" x2="930" y2="476" stroke="#3A4054" stroke-width="4"/>
+   <circle cx="200" cy="300" r="120" fill="#FFC93C" fill-opacity=".08"/>
+   <g fill="none" stroke="#FFC93C" stroke-width="8">
+    <circle cx="200" cy="300" r="120"/>
+    <circle cx="200" cy="300" r="250" stroke-opacity=".6"/>
+    <circle cx="200" cy="300" r="380" stroke-opacity=".3"/>
+   </g>
+   <rect x="400" y="262" width="64" height="214" fill="#11131A" stroke="#3A4054" stroke-width="3"/>
+   <g transform="translate(200 476) scale(1.8)"><use href="#nin"/></g>
+   <g transform="translate(760 476) scale(-1.75 1.75)"><use href="#grd"/></g>
+   <rect x="316" y="16" width="298" height="92" rx="14" fill="#1A1D27"/>
+   <svg x="330" y="26" width="270" height="72" viewBox="0 0 560 150" role="img" aria-label="late30 studio"><use href="#lockup"/></svg>
+  </svg></div>
+ <p class="no" data-kecil>1/6</p>
+</section>
+
+<!-- ============ SLIDE 2: POIN (cincin suara) ============ -->
+<section class="slide" id="s2">
+ <div class="dots"></div>
+ <p class="wm"><i></i>late30_studio</p>
+ <h1 class="j abs" style="left:72px;top:150px;width:936px">Cincin <span class="y">melebar</span> tiap ada suara</h1>
+ <p class="ib abs" style="left:72px;top:380px;width:860px">Cincin itu menunjukkan persis seberapa jauh suara tadi terdengar di Mark of the Ninja.</p>
+ <p class="src" data-sumber data-kecil>Game Developer, 2 Agu 2012</p>
+ <p class="no" data-kecil>2/6</p>
+ <div class="node" data-ilustrasi="cincin" style="left:72px;top:520px;width:936px;height:670px">
+  <svg viewBox="0 0 930 664" width="930" height="664" style="display:block" aria-hidden="true">
+   <rect width="930" height="664" fill="url(#kisiP)"/>
+   <rect x="640" y="0" width="28" height="270" fill="#11131A" stroke="#3A4054" stroke-width="3"/>
+   <rect x="640" y="400" width="28" height="264" fill="#11131A" stroke="#3A4054" stroke-width="3"/>
+   <circle cx="250" cy="335" r="300" fill="#FFC93C" fill-opacity=".07"/>
+   <g fill="none" stroke="#FFC93C" stroke-width="8">
+    <circle cx="250" cy="335" r="58"/>
+    <circle cx="250" cy="335" r="130" stroke-opacity=".75"/>
+    <circle cx="250" cy="335" r="210" stroke-opacity=".5"/>
+    <circle cx="250" cy="335" r="300" stroke-opacity=".3"/>
+   </g>
+   <circle cx="250" cy="335" r="28" fill="#F5F2EA"/>
+   <path d="M222 328A28 28 0 0 1 278 328Z" fill="#FF3B5C"/>
+   <circle cx="456" cy="205" r="32" fill="#FF3B5C"/><circle cx="445" cy="214" r="8" fill="#F5F2EA"/>
+   <circle cx="800" cy="345" r="32" fill="none" stroke="#FF3B5C" stroke-width="8"/><circle cx="789" cy="354" r="8" fill="#FF3B5C"/>
+  </svg></div>
+</section>
+
+<!-- ============ SLIDE 3: POIN DENGAN VISUAL (layar adegan) ============ -->
+<section class="slide" id="s3">
+ <div class="dots"></div>
+ <p class="wm"><i></i>late30_studio</p>
+ <div class="abs" data-ilustrasi="layar" style="left:72px;top:160px;width:936px;height:470px;background:var(--n);border:3px solid var(--l);border-radius:22px;overflow:hidden">
+  <svg viewBox="0 0 930 464" width="930" height="464" style="display:block" aria-hidden="true">
+   <rect width="930" height="464" fill="url(#kisiP)"/>
+   <rect x="0" y="424" width="930" height="40" fill="#11131A"/>
+   <line x1="0" y1="424" x2="930" y2="424" stroke="#3A4054" stroke-width="4"/>
+   <g transform="translate(220 424) scale(1.1)"><use href="#nin"/></g>
+   <g transform="translate(730 424) scale(-1.25 1.25)"><use href="#grd"/></g>
+   <g fill="none" stroke="#FFC93C" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"><path d="M192 66A36 36 0 1 1 230 100Q226 112 226 122"/></g>
+   <circle cx="226" cy="146" r="12" fill="#FFC93C"/>
+  </svg></div>
+ <h1 class="j abs" style="left:72px;top:680px;width:936px">Idenya muncul dari pemain yang <span class="y">bingung</span></h1>
+ <p class="ib abs" style="left:72px;top:1010px;width:900px">Nels Anderson, lead designer-nya, bilang cincin ini lahir dari pemain yang gak bisa memahami game-nya.</p>
+ <p class="src" data-sumber data-kecil>Game Informer, 15 Okt 2012</p>
+ <p class="no" data-kecil>3/6</p>
+</section>
+
+<!-- ============ SLIDE 4: BANDING (node + kabel + cincin) ============ -->
+<section class="slide" id="s4">
+ <div class="dots"></div>
+ <p class="wm"><i></i>late30_studio</p>
+ <h1 class="j abs" style="left:72px;top:150px;width:936px">Cincinnya sama terus, lalu <span class="y">dibetulkan</span></h1>
+ <div class="node" style="left:72px;top:520px;width:438px;height:610px"><div class="kop"><svg class="pn"><use href="#pin"/></svg></div>
+  <svg viewBox="0 0 432 300" width="432" height="300" style="display:block" aria-hidden="true">
+   <rect width="432" height="300" fill="url(#kisiP)"/>
+   <circle cx="104" cy="150" r="30" fill="none" stroke="#B9B6AD" stroke-width="5" stroke-dasharray="8 8"/>
+   <circle cx="312" cy="150" r="100" fill="none" stroke="#B9B6AD" stroke-width="5" stroke-dasharray="8 8"/>
+   <circle cx="104" cy="150" r="72" fill="none" stroke="#FFC93C" stroke-width="8"/>
+   <circle cx="312" cy="150" r="72" fill="none" stroke="#FFC93C" stroke-width="8"/>
+   <circle cx="104" cy="150" r="9" fill="#F5F2EA"/>
+   <polygon fill="#FF3B5C" points="312,122 320,142 340,136 328,152 344,164 322,164 318,180 308,164 284,172 296,152 280,138 304,142"/>
+  </svg>
+  <div style="padding:28px 32px"><h2 class="ns">Awalnya</h2><p class="kc" style="margin-top:14px">Efek cincin selalu sama, apa pun suaranya.</p></div></div>
+ <div class="node" style="left:570px;top:520px;width:438px;height:610px"><div class="kop y"><svg class="pn"><use href="#pin"/></svg></div>
+  <svg viewBox="0 0 432 300" width="432" height="300" style="display:block" aria-hidden="true">
+   <rect width="432" height="300" fill="url(#kisiP)"/>
+   <circle cx="104" cy="150" r="30" fill="none" stroke="#FFC93C" stroke-width="8"/>
+   <circle cx="312" cy="150" r="100" fill="none" stroke="#FFC93C" stroke-width="8"/>
+   <circle cx="104" cy="150" r="9" fill="#F5F2EA"/>
+   <polygon fill="#FF3B5C" points="312,122 320,142 340,136 328,152 344,164 322,164 318,180 308,164 284,172 296,152 280,138 304,142"/>
+  </svg>
+  <div style="padding:28px 32px"><h2 class="ns"><span class="chip">Akhirnya</span></h2><p class="kc" style="margin-top:14px">Tim menyamakan efek cincin dengan jangkauan suara yang asli.</p></div></div>
+ <svg class="wire" viewBox="0 0 1080 1350" aria-hidden="true">
+  <path d="M510 543 L570 543" stroke="#FFC93C" stroke-width="6" fill="none"/>
+  <polygon points="531,529 551,543 531,557" fill="#FFC93C" stroke="#11131A" stroke-width="3"/>
+  <circle cx="510" cy="543" r="9" fill="#FFC93C" stroke="#11131A" stroke-width="4"/><circle cx="570" cy="543" r="9" fill="#FFC93C" stroke="#11131A" stroke-width="4"/>
+ </svg>
+ <p class="src" data-sumber data-kecil>Game Informer, 15 Okt 2012</p>
+ <p class="no" data-kecil>4/6</p>
+</section>
+
+<!-- ============ SLIDE 5: FAKTA / DEFINISI (bidang kuning, garis) ============ -->
+<section class="slide" id="s5" style="background-color:#FFC93C;color:#11131A">
+ <p class="wm" style="color:#11131A"><i style="background:#11131A"></i>late30_studio</p>
+ <h1 class="j abs" style="left:72px;top:150px;width:936px">Yang dikejar tim: <span style="text-decoration:underline;text-decoration-thickness:12px;text-underline-offset:10px">kejelasan</span></h1>
+ <p class="ib abs" style="left:72px;top:380px;width:900px;color:#11131A">Stealth itu main mengendap-endap, dan aturannya biasanya nyaris gak kelihatan. Menurut artikelnya, yang dikejar justru kejelasan.</p>
+ <svg class="abs" data-ilustrasi="garis" style="left:72px;top:600px" width="936" height="580" viewBox="0 0 936 580" aria-hidden="true">
+  <path d="M0 300C70 60 150 540 230 280S380 60 440 290" fill="none" stroke="#11131A" stroke-width="10" stroke-dasharray="3 24" stroke-linecap="round"/>
+  <rect x="440" y="250" width="80" height="80" fill="#11131A"/>
+  <rect x="464" y="274" width="32" height="32" fill="#FFC93C"/>
+  <path d="M520 290H800" stroke="#11131A" stroke-width="34"/>
+  <circle cx="836" cy="290" r="80" fill="#11131A"/>
+  <circle cx="836" cy="290" r="30" fill="#FFC93C"/>
+ </svg>
+ <p class="src" data-sumber data-kecil style="color:#11131A">Game Developer, 2 Agu 2012</p>
+ <p class="no" data-kecil style="color:#11131A">5/6</p>
+</section>
+
+<!-- ============ SLIDE 6: PENUTUP (adegan jalur, krem bawah, lockup terang) ============ -->
+<section class="slide" id="s6">
+ <div class="dots"></div>
+ <p class="wm"><i></i>late30_studio</p>
+ <h1 class="j abs" style="left:72px;top:150px;width:936px">Cincin baru berguna setelah <span class="y">jujur</span></h1>
+ <svg class="abs" data-ilustrasi="jalur" style="left:72px;top:392px" width="936" height="340" viewBox="0 0 936 340" aria-hidden="true">
+  <line x1="0" y1="316" x2="936" y2="316" stroke="#3A4054" stroke-width="4"/>
+  <rect x="470" y="196" width="56" height="120" fill="#11131A" stroke="#3A4054" stroke-width="3"/>
+  <g transform="translate(110 316) scale(1.1)"><use href="#nin"/></g>
+  <g transform="translate(760 316) scale(1.1)"><use href="#grd"/></g>
+  <path d="M190 90C280 0 420 0 560 170" fill="none" stroke="#FFC93C" stroke-width="9" stroke-dasharray="3 20" stroke-linecap="round"/>
+  <polygon points="574,196 538,170 580,156" fill="#FFC93C"/>
+ </svg>
+ <div class="abs" style="left:0;top:760px;width:1080px;height:590px;background:var(--k);color:var(--g)">
+  <p class="ib abs" style="left:72px;top:40px;width:860px;text-wrap:pretty">Ukurannya sama dengan jangkauan suara asli, jadi pemain bisa langsung bergerak duluan.</p>
+  <p class="sub abs" style="left:72px;top:172px;width:860px;color:#C41835;font-weight:700;text-wrap:balance">Pernah ketahuan musuh tanpa tahu sebabnya? Game apa waktu itu?</p>
+  <svg class="abs" style="left:72px;top:372px" width="480" height="129" viewBox="0 0 560 150" role="img" aria-label="late30 studio"><use href="#lockupT"/></svg>
+ </div>
+ <p class="no" data-kecil>6/6</p>
+</section>
+</html>

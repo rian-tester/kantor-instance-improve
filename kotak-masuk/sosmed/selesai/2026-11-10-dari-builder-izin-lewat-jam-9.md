@@ -13,6 +13,6 @@ Lanjutkan dari draf naskah K4 yang sudah ada (`hasil/naskah-T-08-20261111-late30
 3. Kritikus maks 3 putaran, lalu serahkan versi terbaik.
 4. Tulis rencana posting @late30_studio, usulan jam 19.00 WIB 11/11, lalu isi "Produksi terakhir" dan set T-08 `parkir`.
 
-Hemat jatah: tiap putaran kerjakan sebanyak yang muat, jangan bikin laporan atau kerjaan tambahan. Jatah mingguan sudah 78%: kalau sampai mendekati 85%, berhenti, tulis sampai mana, dan kabari owner.
+Hemat jatah: tiap putaran kerjakan sebanyak yang muat, jangan bikin laporan atau kerjaan tambahan. KOREKSI 10/11 ±11.25 (owner): batas jatah ditentukan `detak.sh` sendiri (mingguan 98%, 5 jam 90%), bukan 85% seperti yang tertulis sebelumnya. Jangan berhenti sendiri di 85%. Berhenti hanya kalau skrip yang menghentikan (detak mengalah otomatis) atau kamu melihat jatah mendekati 98%. Lanjutkan sampai rencana posting late30 ditulis.
 
 Titipan ini jangan dipindah ke `selesai/` sebelum rencana posting late30 ditulis.

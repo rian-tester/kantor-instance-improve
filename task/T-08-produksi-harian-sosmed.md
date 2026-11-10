@@ -3,7 +3,7 @@ kode: T-08
 judul: Produksi harian sosmed (autoaja & late30 selang-seling)
 divisi: sosmed
 pegang: sari
-status: nunggu-kamu
+status: parkir
 update: 2026-11-10
 ---
 ## Tujuan
@@ -55,23 +55,35 @@ Tiap pagi (detak 03.00–09.00 WIB) Sari menyiapkan 1 carousel untuk tayang mala
 - 09/11 owner jawab: 2a (pakai angka hex dari aset owner, bukan perkiraan). Alat ukur warna belum ada (info-gambar cuma ukuran/alpha), jadi hex belum bisa ditulis tanpa ngarang. Minta Builder bikinin alat baca warna dominan; sementara navy/emas tetap perkiraan dan ditandai begitu.
 - 10/11 03.00 detak: Penulis bikin draf naskah late30 K4 (6 slide) di hasil/naskah-T-08-20261111-late30-draf.md + hasil/naskah-T-08-20261111-draf.json. Sumber gak bisa dibaca ulang (WebFetch mati di agen), jadi isi slide dari catatan 08/11; dua kalimat sumber harus dicek Satpam. cek-bahasa: 1 temuan, di catatan jawaban uji (bukan teks slide).
 - 10/11 09.05 detak (izin owner lewat jam 09.00 hari ini): Satpam naskah K4: BELUM LOLOS (hasil/satpam-T-08-20261111.md). Dua sumber (Game Developer 2/8/2012, Game Informer 15/10/2012) gak bisa dibuka: agen gak punya WebFetch. Klaim slide 2–5 + caption gugur karena cuma bersandar catatan perantara. Temuan lain: slide 4 kalimat telegram, "cincin"/"lingkaran" gak konsisten, beberapa kalimat janggal. Naskah gak diubah.
+- 10/11 11.11 detak: owner jawab 1a via titipan builder (K4 tetap, sumber dibaca ulang, lanjut) + izin lewat jam 09.00 hari ini. Pertanyaan dihapus, status jalan. Penulis dipanggil baca ulang sumber & perbaiki naskah.
+- 10/11 11.20 detak: Penulis selesai (hasil/naskah-T-08-20261111-final.md/.json; 2 sumber terbuka via WebFetch, klaim gak terbukti dibuang), cek bahasa: temuan cuma di daftar sumber, bukan teks slide. Satpam ulang: LOLOS (hasil/satpam-T-08-20261111-ulang.md). SHA256 final.json: ca7520a92da8e2a51911d56594d2c67ff954217808354d3f4ac46bde40f2f999. 4 catatan non-blok (label sumber slide 6, "efek suara" vs "cincin", payoff slide 6 mirip slide 4, "awalnya salah" di cover). Berikutnya Desainer.
+- 10/11 11.30 detak: Desainer render carousel late30 6 slide (hasil/carousel-T-08-20261111/, HTML carousel/karya/T-08-20261111/index.html, ringkasan hasil/desain-T-08-20261111-revisi-1.md). QC mesin nol temuan, cek-naskah lolos, teks gak diubah. Sisa menurut Desainer: naskah bilang "cincin biru" tapi palet gak punya biru (cincin dibuat kuning), siluet masih sederhana, gerak statis, ruang kosong bawah slide 2/5/6. Belum dinilai Kritikus. Berhenti di sini buat jaga jatah mingguan (batas 85%).
+- 10/11 11.20 detak: Kritikus putaran 1 late30 K4: BELUM LOLOS (hasil/kritik-T-08-20261111-putaran-1.md/.json, cek-kritik dijalanin). Skor: hierarki 3, kebaca HP 4, ritme 3, konsistensi 4, orisinal 3, brand 3, gerak 1, craft 3. Berat: (1) "cincin biru" tapi cincin kuning, (2) cover lemah (adegan kecil, tanpa nama game, lockup sama besar dengan ilustrasi). Lain: slide 6 ulang slide 4, "main lebih proaktif" & "Di artikelnya tertulis clarity was the point" kaku, slide 3 tanda tanya salah tempat, slide 4 tanpa chip jawaban, slide 5 garis putus kontras rendah.
+- 10/11 11.24 detak: titipan builder (Kritikus cukup 1 putaran) dibaca. Penulis dipanggil revisi naskah (cincin kuning, 2 kalimat kaku) ke hasil/naskah-T-08-20261111-final-v2.*, hasil belum dicek. Berikutnya: cek hasil, Satpam bagian berubah, Desainer v2, rencana posting. Kritikus putaran 2/3 JANGAN dijalankan (pilihan owner).
+- 10/11 11.30 detak: Penulis selesai v2 (hasil/naskah-T-08-20261111-final-v2.*). cek-bahasa: temuan cuma di daftar sumber/judul, bukan teks slide. Satpam bagian berubah dipanggil (hasil/satpam-T-08-20261111-ulang-2.md), hasil belum dibaca. Berikutnya: baca verdict, Desainer v2 (cover diperbesar+nama game, tanda tanya slide 3 pindah, chip slide 4, kontras garis slide 5, slide 6 beda dari 4), QC, rencana posting.
+- 10/11 11.40 detak: Satpam v2 BELUM LOLOS (hasil/satpam-T-08-20261111-ulang-2.md): kata "kuning" di judul slide 2 + caption gak ada sumbernya (sumber bilang blue ring). Pilihan (a) dipakai: kata warna dihapus dari teks (judul "Cincin melebar tiap ada suara", caption "Cincin di Mark of the Ninja…") di final-v2.md/.json; visual tetap kuning. Cek mesin: gak ada "kuning" tersisa di json. Desainer v2 dipanggil (carousel/karya/T-08-20261111-v2/, hasil/carousel-T-08-20261111-v2/), hasil belum dicek. Berikutnya: cek hasil Desainer + QC, rencana posting 11/11 19.00 (tulis jelas: Kritikus 1 putaran belum lolos, v2 belum dinilai), isi "Produksi terakhir", parkir, pindah 3 titipan ke selesai/.
+- 10/11 11.50 detak: Desainer v2 selesai (hasil/carousel-T-08-20261111-v2/, QC nol temuan, cek-naskah lolos). Rencana posting ditulis (sosmed/terbit/20261111-late30-mark-of-the-ninja.json, 11/11 19.00). 3 titipan builder dipindah ke selesai/. T-08 parkir; pertanyaan persetujuan ada di Keputusan kamu.
 
 ## Produksi terakhir
-- 09/11: autoaja (tips catat 3 angka), tayang usulan 10/11 19.00, rencana sosmed/terbit/20261110-autoaja-catat-3-angka.json. Berikutnya: late30 untuk tayang 11/11.
+- 09/11: autoaja (tips catat 3 angka), tayang usulan 10/11 19.00, rencana sosmed/terbit/20261110-autoaja-catat-3-angka.json.
+- 10/11: late30 (Mark of the Ninja, cincin suara), tayang usulan 11/11 19.00, rencana sosmed/terbit/20261111-late30-mark-of-the-ninja.json. Berikutnya: autoaja untuk tayang 12/11.
 
 ## Hasil
+hasil/carousel-T-08-20261111-v2/ (late30 K4 v2, tayang usulan 11/11, belum dinilai Kritikus)
+hasil/carousel-T-08-20261111/ (versi lama v1, Kritikus putaran 1 belum lolos)
 hasil/carousel-T-08-20261110-v4/
 hasil/carousel-T-08-20261110-v3/ (versi lama, tanpa maskot)
 hasil/carousel-T-08-20261110-v2/ (versi lama, putaran 2)
 hasil/carousel-T-08-20261110/ (versi lama, putaran 1)
 
 ## Keputusan kamu
-1. Naskah late30 K4 (Mark of the Ninja) gak lolos Satpam: 2 sumbernya gak bisa dibuka dari sesi agen, jadi isi slide 2–5 gak bisa dipastikan. Gimana buat tayang 11/11 19.00?
-a) Kamu atau sesi biasa yang punya WebFetch baca ulang 2 link sumber, baru Penulis perbaiki dan lanjut (rekomendasi: K4 tetap paling cocok menurut kamu, tinggal sumbernya diverifikasi)
-b) Ganti topik ke K3 Alien: Isolation (sumbernya juga perlu dibaca ulang, jadi risikonya sama)
-c) Lewati late30 untuk 11/11, lanjut autoaja untuk 12/11
+1. Carousel late30 Mark of the Ninja v2 (rencana posting 11/11 19.00 di Konten). Kritikus 1 putaran belum lolos (hierarki 3, kebaca HP 4, ritme 3, konsistensi 4, orisinal 3, brand 3, gerak 1, craft 3), v2 belum dinilai Kritikus (pilihan kamu demi jatah), masalah berat v1 sudah diperbaiki. Sisa: nama game belum tampil di cover, dua kalimat yang kata warnanya dihapus belum dicek Satpam ulang, cincin muncul di 3 slide. Gimana?
+a) Setujui di Konten apa adanya (rekomendasi: masalah berat sudah beres, sisanya kecil)
+b) Revisi: Penulis tambah nama game di cover + Satpam ulang + Kritikus, tulis bagian yang mau diubah
+c) Batal
 
 ## Berikutnya
+- (10/11 11.20) Late30 K4 putaran 2: pilih rekomendasi tanpa nunggu owner untuk "cincin biru": Penulis ganti kata jadi "cincin kuning" (lewat cek bahasa + Satpam ulang singkat), plus ganti "main lebih proaktif" & kalimat "Di artikelnya tertulis…". Desainer revisi v2 dari daftar masalah di hasil/kritik-T-08-20261111-putaran-1.md (cover diperbesar + nama game, slide 3 tanda tanya, slide 4 chip jawaban, slide 5 kontras garis, slide 6 beda dari slide 4). Lalu Kritikus putaran 2 (maks 3), lalu tulis rencana posting @late30_studio 11/11 19.00, isi "Produksi terakhir", set `parkir`, pindahkan 2 titipan builder (izin-lewat-jam-9 dan pilihan-owner-late30-a) ke selesai/. Cek jatah mingguan dulu; kalau mendekati 85% berhenti dan kabari owner.
 - (10/11) Lanjut late30: Satpam naskah hasil/naskah-T-08-20261111-draf.json (minta cek ulang sumber Game Developer 2/8/2012 & Game Informer 15/10/2012 lewat WebFetch kalau bisa), perbaiki, lalu Desainer, Kritikus, rencana posting.
 - Warna: tulis hex navy/emas dari aset asli ke `brand/acuan/autoaja-acuan.md` setelah Builder bikin alat baca warna (minta lewat kotak-masuk/builder). Kerja produksi gak nunggu ini.
 - **Besok (10/11) pagi: produksi late30 untuk tayang 11/11 19.00 WIB, akun @late30_studio.** Persiapan dari Builder (09/11):

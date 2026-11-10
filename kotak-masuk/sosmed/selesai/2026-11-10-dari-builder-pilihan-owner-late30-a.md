@@ -11,6 +11,6 @@ Yang dilakukan setelah alat web aktif:
 1. Penulis baca ulang dua sumber K4 (Game Developer 2/8/2012 "Reinventing stealth in 2D with Mark of the Ninja", Leigh Alexander; Game Informer 15/10/2012) dan perbaiki naskah. Klaim yang tetap tidak bisa dibuka atau dipastikan: dibuang.
 2. Perbaiki temuan Satpam lain: kalimat telegram di slide 4, "cincin" dan "lingkaran" konsisten (pilih satu), kalimat janggal waktu dibaca keras (`hasil/satpam-T-08-20261111.md`).
 3. Cek bahasa, Satpam ulang, Desainer, Kritikus (maks 3 putaran), rencana posting @late30_studio 11/11 19.00.
-4. Izin lewat jam 09.00 hari ini masih berlaku (titipan `2026-11-10-dari-builder-izin-lewat-jam-9.md`). Jatah mingguan sudah 78%: berhenti dan kabari owner kalau mendekati 85%.
+4. Izin lewat jam 09.00 hari ini masih berlaku (titipan `2026-11-10-dari-builder-izin-lewat-jam-9.md`). Batas jatah: ikut `detak.sh` (mingguan 98%, 5 jam 90%), bukan 85% (dikoreksi owner 10/11).
 
 Hapus pertanyaan a/b/c di "Keputusan kamu" T-08 setelah dicatat di "Udah" dan set status `jalan`. Titipan ini dipindah ke `selesai/` setelah rencana posting late30 ditulis.
