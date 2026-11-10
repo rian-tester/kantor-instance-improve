@@ -1,0 +1,110 @@
+/* Gaya fitur baru sejak kit 0.21.0 (gelembung task, kantor hidup, tema denah, Pesan masuk, Riwayat versi).
+   Sengaja dipisah dari gaya.css dan dimuat sesudahnya: kalau owner udah merancang ulang gaya.css, update gak nimpa
+   berkas itu, tapi berkas ini tetap ikut kepasang, jadi fitur baru gak tampil rusak. Fitur berikutnya juga taruh di sini. */
+.orang .gelembung { position: absolute; left: 50%; bottom: calc(100% + 32px); transform: translateX(-50%); width: 180px; margin: 0; padding: 6px 9px; border: 1px solid var(--kuningan); border-radius: 9px; background: var(--permukaan); color: var(--teks); font: 500 12px/1.4 var(--font); text-align: left; pointer-events: none; opacity: 0; visibility: hidden; transition: opacity .18s, visibility .18s; }
+.orang .gelembung span { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow-wrap: anywhere; }
+.orang .gelembung::before { left: clamp(10px, calc(50% - 4px + var(--ekor, 0px)), calc(100% - 18px)); bottom: -5px; width: 8px; height: 8px; border: 0; border-right: 1px solid var(--kuningan); border-bottom: 1px solid var(--kuningan); background: var(--permukaan); }
+.orang .gelembung.bawah::before { bottom: auto; top: -5px; transform: rotate(225deg); }
+.orang .gelembung.tampil { opacity: 1; visibility: visible; }
+.orang.k-nunggu .gelembung { font-weight: 750; border-width: 2px; }
+.peta.khusyuk .orang .gelembung { opacity: 0; visibility: hidden; }
+@media (prefers-color-scheme: light) {
+  .orang .gelembung { background: #fffaf0; color: #182235; border-color: #80602e; }
+  .orang .gelembung::before { background: #fffaf0; border-color: #80602e; }
+}
+@media (max-width: 600px) { .orang .gelembung { width: 132px; font-size: 11px; padding: 5px 7px; } }
+@media (prefers-reduced-motion: reduce) { .orang .gelembung { transition: none; } }
+.panel-peta { position: relative; }
+.kabar-kantor { position: absolute; z-index: 3; top: 14px; left: 18px; right: 18px; width: fit-content; max-width: calc(100% - 36px); margin: 0; padding: 7px 11px; border: 1px solid var(--kuningan); border-radius: 8px; background: var(--permukaan); color: var(--teks); font-size: 12px; pointer-events: none; }
+.kabar-kantor[hidden] { display: none; }
+.orang.figuran { cursor: default; }
+.orang[data-emosi]::after { content: attr(data-emosi); position: absolute; left: 100%; bottom: -4px; font: 700 18px/1 var(--font); padding: 3px; border-radius: 6px; color: var(--teks); background: var(--permukaan); pointer-events: none; }
+.orang[data-emosi='🎉']::before { content: ''; position: absolute; left: 50%; top: 0; width: 4px; height: 4px; background: var(--kuning); box-shadow: -14px -12px var(--hijau), 16px -18px var(--kuning), 24px 2px var(--biru), -20px 8px var(--kuningan); animation: konfeti-kantor 1.2s ease-out 3; pointer-events: none; }
+.peta.hidup-malam img.ruang { filter: brightness(.72); }
+/* Tema denah (Markas Malam, Lavender Peach, Pulau Anime): latar di luar gedung ikut tema; animasi digambar aset/tema-hidup.js. */
+.peta-gulir.tema-a { background: #0a1128; }
+.peta-gulir.tema-c { background: #1c1626; }
+.peta-gulir.tema-d { background: #06507a; }
+.tema-kanvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.peta.hidup-malam .tema-kanvas { filter: brightness(.72); }
+.tema-laut { position: absolute; z-index: 4; top: 16px; right: 16px; display: flex; align-items: center; gap: 8px; min-height: 36px; padding: 0 8px 0 0; border-radius: 10px; background: rgba(10, 18, 34, .82); backdrop-filter: blur(6px); }
+.tema-laut button { min-height: 36px; padding: 0 12px; border: 0; background: none; color: var(--teks, #eef1f6); font: inherit; font-size: 13px; font-weight: 650; cursor: pointer; }
+.tema-laut button[aria-pressed='true'] { color: #8fe3ff; }
+.tema-laut input { width: 92px; accent-color: #8fe3ff; }
+.tema-laut input[hidden] { display: none; }
+@media (prefers-reduced-motion: reduce) { .tema-kanvas { display: none; } }
+.peta[data-acara='terbit']::after { content: '🚀'; position: absolute; left: 55%; top: 35%; z-index: 3000; font-size: 28px; pointer-events: none; animation: roket-kantor 2s ease-out both; }
+@keyframes konfeti-kantor { from { transform: translateY(-12px); opacity: 1; } to { transform: translateY(18px); opacity: 0; } }
+@keyframes roket-kantor { from { transform: translate(0, 20px); opacity: 0; } 20% { opacity: 1; } to { transform: translate(40px, -90px); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .orang[data-emosi]::before, .peta[data-acara='terbit']::after { animation: none; } }
+
+/* KD-148 Pesan masuk (DM & komen): gaya ngikut panel Konten, pesan panjang tetap kebaca di 390 px. */
+.pesan-masuk { margin-top: 18px; }
+.pesan-atur { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; }
+.pesan-atur form { margin: 0; }
+.pesan-otomatis { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.pesan-otomatis select { min-height: 40px; padding: 6px 10px; border-radius: 10px; border: 1px solid var(--garis-2); background: rgba(0, 0, 0, 0.22); }
+.pesan-item { padding: 16px 0 4px; border-top: 1px solid var(--garis); overflow-wrap: anywhere; }
+.pesan-item:first-of-type { margin-top: 12px; }
+.pesan-item h3 { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0 0 4px; font-size: 16px; }
+.pesan-item .isi-pelanggan { white-space: pre-wrap; margin: 10px 0 12px; padding: 10px 12px; border-radius: 10px; background: rgba(255, 255, 255, 0.04); border: 1px solid var(--garis); }
+.pesan-item form { display: grid; gap: 8px; margin: 0 0 12px; }
+.pesan-item label { font-size: 13px; color: var(--redup); }
+.pesan-item textarea { box-sizing: border-box; width: 100%; min-height: 76px; resize: vertical; padding: 10px 12px; border-radius: 10px; border: 1px solid var(--garis-2); background: rgba(0, 0, 0, 0.22); font-size: 15px; line-height: 1.45; }
+.pesan-item textarea:focus, .pesan-otomatis select:focus { outline: none; border-color: var(--kuningan); box-shadow: 0 0 0 3px rgba(201, 161, 90, 0.2); }
+.pesan-tombol { display: flex; flex-wrap: wrap; gap: 10px; }
+
+/* Riwayat versi (Lainnya → Riwayat versi). */
+.riwayat { display: grid; gap: 14px; margin-bottom: 18px; }
+.riwayat header { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.riwayat ul { margin: 0; padding-left: 20px; display: grid; gap: 8px; line-height: 1.55; }
+.riwayat code, .riwayat-awal code { overflow-wrap: anywhere; }
+.riwayat-awal { margin-bottom: 14px; max-width: 72ch; }
+
+/* Layar penuh peta kantor (KD-149): tombol ⛶ di pojok denah atau tombol f, keluar pakai tombol yang sama atau Esc. */
+.alat-peta { position: absolute; z-index: 4; top: 16px; right: 16px; display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: 8px; max-width: calc(100% - 32px); pointer-events: none; }
+.alat-peta > * { pointer-events: auto; }
+.alat-peta .tema-laut { position: static; }
+.tombol-penuh { min-height: 36px; padding: 0 12px; border: 0; border-radius: 10px; background: rgba(10, 18, 34, .82); backdrop-filter: blur(6px); color: var(--teks, #eef1f6); font: inherit; font-size: 13px; font-weight: 650; cursor: pointer; white-space: nowrap; }
+.tombol-penuh:hover { background: rgba(16, 28, 52, .92); }
+.tombol-penuh:focus-visible { outline: 2px solid var(--kuningan, #c9a15a); outline-offset: 2px; }
+body.kantor-penuh { overflow: hidden; }
+body.kantor-penuh .panel-peta { position: fixed; inset: 0; z-index: 70; margin: 0; padding: 0; border: 0; border-radius: 0; background: var(--peta, #0b1018); display: flex; flex-direction: column; }
+body.kantor-penuh .peta-gulir { flex: 1; min-height: 0; border-radius: 0; display: flex; align-items: center; overflow: auto; }
+body.kantor-penuh .petunjuk-peta { display: none; }
+body.kantor-penuh .banner-shalat { position: absolute; z-index: 4; top: max(14px, env(safe-area-inset-top)); left: 16px; margin: 0; padding: 7px 11px; border-radius: 10px; background: rgba(10, 18, 34, .82); }
+body.kantor-penuh .alat-peta { top: max(12px, env(safe-area-inset-top)); right: max(12px, env(safe-area-inset-right)); }
+body.kantor-penuh .kartu-orang { z-index: 75; bottom: calc(16px + env(safe-area-inset-bottom)); }
+/* Denah utuh muat di layar (laptop & HP miring). */
+body.kantor-penuh .peta { flex: none; margin: auto; width: min(100vw, calc(100vh * 2560 / 1696)); width: min(100vw, calc(100dvh * 2560 / 1696)); }
+body.kantor-penuh .peta.studio { width: min(100vw, calc(100vh * 3675 / 1696)); width: min(100vw, calc(100dvh * 3675 / 1696)); }
+body.kantor-penuh .peta.masjid { width: min(100vw, calc(100vh * 3675 / 2699)); width: min(100vw, calc(100dvh * 3675 / 2699)); }
+body.kantor-penuh .peta.cozy, body.kantor-penuh .peta.modern { width: min(100vw, calc(100vh * 2528 / 1696)); width: min(100vw, calc(100dvh * 2528 / 1696)); }
+/* HP tegak: denah setinggi layar, geser kiri-kanan (kalau dipaksa muat, karakternya kekecilan). */
+@media (max-width: 860px) and (orientation: portrait) {
+  body.kantor-penuh .peta { width: calc(100vh * 2560 / 1696); width: calc(100dvh * 2560 / 1696); }
+  body.kantor-penuh .peta.studio { width: calc(100vh * 3675 / 1696); width: calc(100dvh * 3675 / 1696); }
+  body.kantor-penuh .peta.masjid { width: calc(100vh * 3675 / 2699); width: calc(100dvh * 3675 / 2699); }
+  body.kantor-penuh .peta.cozy, body.kantor-penuh .peta.modern { width: calc(100vh * 2528 / 1696); width: calc(100dvh * 2528 / 1696); }
+}
+
+/* Kantor lengkap (KD-149): denah utuh 4744x3708 (gambar 3795x2966). Lebih lebar dari layar biar karakter gak kekecilan;
+   geser kiri-kanan (atau layar penuh). */
+.peta.lengkap { width: 1500px; aspect-ratio: 4744 / 3708; }
+@media (min-width: 861px) { .peta.lengkap { width: max(100%, 1500px); } }
+.peta-gulir:has(> .peta.lengkap) { overflow: auto; max-height: calc(100vh - 220px); max-height: calc(100dvh - 220px); }
+body.kantor-penuh .peta-gulir:has(> .peta.lengkap) { max-height: none; }
+body.kantor-penuh .peta.lengkap { width: max(100vw, calc(100vh * 4744 / 3708)); width: max(100vw, calc(100dvh * 4744 / 3708)); }
+@media (max-width: 860px) and (orientation: portrait) { body.kantor-penuh .peta.lengkap { width: calc(100vh * 4744 / 3708); width: calc(100dvh * 4744 / 3708); } }
+
+/* Zoom & geser denah (KD-149): tombol − 100% + di alat peta; cubit dua jari nge-zoom denah, bukan halaman. */
+.zoom-peta { display: flex; border-radius: 10px; overflow: hidden; background: rgba(10, 18, 34, .82); backdrop-filter: blur(6px); }
+.zoom-peta button { min-width: 36px; min-height: 36px; padding: 0 8px; border: 0; background: none; color: var(--teks, #eef1f6); font: inherit; font-size: 16px; font-weight: 650; line-height: 1; cursor: pointer; }
+.zoom-peta button:nth-child(2) { min-width: 54px; font-size: 12px; font-variant-numeric: tabular-nums; }
+.zoom-peta button:hover:not(:disabled) { background: rgba(255, 255, 255, .1); }
+.zoom-peta button:disabled { opacity: .4; cursor: default; }
+.zoom-peta button:focus-visible { outline: 2px solid var(--kuningan, #c9a15a); outline-offset: -2px; }
+.peta-gulir { touch-action: pan-x pan-y; }
+.peta-gulir.di-zoom { overflow: auto; }
+.peta-gulir.di-zoom, .peta-gulir:has(> .peta.lengkap) { cursor: grab; }
+.peta-gulir.lagi-seret { cursor: grabbing; }

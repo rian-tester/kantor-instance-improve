@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="id"><meta charset="utf-8"><title>late30 arah 3: terminal pixel (contoh, bukan final)</title>
+<link rel="stylesheet" href="../../dasar.css">
+<!--
+KONSEP ARAH 3 "Terminal": jendela terminal. Satu keluarga huruf saja: DejaVu Sans Mono Bold (judul) dan Regular (isi),
+sama rasa dengan huruf blok piksel wordmark late30. Sudut persegi, bayangan keras (offset tanpa blur), garis kisi,
+kursor blok kuning sebagai penanda satu kata/ujung judul. Bar enam blok di bilah judul = nomor slide (fungsional, bukan hiasan).
+Ukuran: 88 / 40 / 32 / 22. Aksen utama pink; kuning untuk kursor dan satu penegas.
+Slide contoh: 1 cover, 5 banding (dua baris dengan batang ukuran), 6 penutup.
+CATATAN: batang di slide 5 hanya urutan (kurang berat vs lebih berat), panjangnya tidak mewakili angka. Perlu diputuskan Kritikus/Satpam
+apakah ini dianggap menyiratkan angka; jika ya, ganti dengan tanda panah.
+Tidak ada gambar placeholder. Teks persis hasil/naskah-T-07-final.json.
+-->
+<style>
+@font-face{font-family:'DejaVu Sans Mono';font-weight:400;src:local('DejaVu Sans Mono'),local('DejaVuSansMono')}
+@font-face{font-family:'DejaVu Sans Mono';font-weight:700;src:local('DejaVu Sans Mono Bold'),local('DejaVuSansMono-Bold')}
+:root{--g:#11131A;--k:#F5F2EA;--p:#FF3B5C;--y:#FFC93C;--n:#1B1E28}
+.slide{background:var(--g);color:var(--k);font-family:'DejaVu Sans Mono',monospace;font-weight:400;
+ background-image:linear-gradient(#1F2330 2px,transparent 2px),linear-gradient(90deg,#1F2330 2px,transparent 2px);background-size:54px 54px;background-position:-2px 22px}
+.bar{position:absolute;left:0;top:0;width:1080px;height:150px;background:var(--n);border-bottom:6px solid var(--k)}
+.bar i{position:absolute;top:84px;width:24px;height:24px;display:block}
+.wm{position:absolute;left:190px;top:72px;margin:0;font:700 28px/44px 'DejaVu Sans Mono',monospace}
+.no{position:absolute;right:72px;top:78px;margin:0;font:400 22px/32px 'DejaVu Sans Mono',monospace;color:#B9B6AD}
+.blok{position:absolute;top:84px;width:24px;height:24px;border:3px solid var(--l,#5A6075)}
+h1{margin:0;font:700 88px/96px 'DejaVu Sans Mono',monospace;letter-spacing:-2px}
+.ib{margin:0;font:400 32px/46px 'DejaVu Sans Mono',monospace}
+.nm{margin:0;font:700 40px/48px 'DejaVu Sans Mono',monospace}
+.src{position:absolute;left:72px;bottom:72px;margin:0;font:400 22px/30px 'DejaVu Sans Mono',monospace;color:#B9B6AD}
+.kotak{position:absolute;left:72px;width:936px;background:var(--n);border:6px solid var(--k);padding:36px 40px}
+.y{color:var(--y)}
+.kur{display:inline-block;width:44px;height:80px;background:var(--y);vertical-align:-8px;margin-left:10px}
+.trk{height:28px;border:4px solid #5A6075;margin-top:16px;position:relative}
+.trk b{position:absolute;left:0;top:0;bottom:0;display:block}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<g id="kubus"><polygon fill="#FF3B5C" points="-43.3,-25 0,0 0,50 -43.3,25"/><polygon fill="#FF3B5C" points="43.3,-25 43.3,25 0,50 0,0"/><path stroke="#11131A" stroke-width="2.4" fill="none" d="M-43.3 -25L0 0L43.3 -25M0 0V50"/><polygon points="0,-46 34.64,-26 0,-6 -34.64,-26" fill="none" stroke="#11131A" stroke-width="10.5" stroke-linejoin="bevel"/><polygon points="0,-46 34.64,-26 0,-6 -34.64,-26" fill="none" stroke="#FFC93C" stroke-width="6" stroke-linejoin="bevel"/><rect x="-5" y="-51" width="10" height="10" fill="#FFC93C" stroke="#11131A" stroke-width="2"/><rect x="29.64" y="-31" width="10" height="10" fill="#FFC93C" stroke="#11131A" stroke-width="2"/><rect x="-5" y="-11" width="10" height="10" fill="#FFC93C" stroke="#11131A" stroke-width="2"/><rect x="-39.64" y="-31" width="10" height="10" fill="#FFC93C" stroke="#11131A" stroke-width="2"/></g>
+<g id="lockup"><use href="#kubus" transform="translate(75 78) scale(1.2)"/><g transform="translate(168 25)"><g fill="none" stroke-width="18" stroke-linejoin="miter" stroke-linecap="butt"><path stroke="#F5F2EA" transform="translate(0 0)" d="M9 0V100"/><path stroke="#F5F2EA" transform="translate(32 0)" d="M9 39H45V91H9V65H45"/><path stroke="#F5F2EA" transform="translate(106 0)" d="M21 0V91H50M0 39H44"/><path stroke="#F5F2EA" transform="translate(170 0)" d="M9 65H51V39H9V91H51"/><path stroke="#FFC93C" transform="translate(250 0)" d="M6.00 9.00L33.00 9.00L45.00 21.00L45.00 38.00L33.00 50.00L45.00 62.00L45.00 79.00L33.00 91.00L6.00 91.00M20.00 50.00L33.00 50.00"/><path stroke="#FFC93C" transform="translate(318 0)" d="M21.00 9.00L33.00 9.00L45.00 21.00L45.00 79.00L33.00 91.00L21.00 91.00L9.00 79.00L9.00 21.00Z"/></g></g></g>
+</defs></svg>
+
+<!-- ============ SLIDE 1: COVER ============ -->
+<section class="slide" id="s1">
+ <div class="bar" aria-hidden="true"><i style="left:72px;background:var(--p)"></i><i style="left:104px;background:var(--y)"></i><i style="left:136px;background:var(--k)"></i>
+  <span class="blok" style="left:620px;background:var(--y);--l:#FFC93C"></span><span class="blok" style="left:656px"></span><span class="blok" style="left:692px"></span><span class="blok" style="left:728px"></span><span class="blok" style="left:764px"></span><span class="blok" style="left:800px"></span></div>
+ <p class="wm">late30_studio</p>
+ <svg viewBox="0 0 560 150" style="position:absolute;left:62px;top:190px;width:760px;height:203px" aria-hidden="true"><use href="#lockup"/></svg>
+ <div class="kotak" style="top:455px;box-shadow:16px 16px 0 var(--p);padding-top:44px;padding-bottom:48px">
+  <h1>Game 3D bisa <br>digambar <br>dari <span class="y">segitiga</span><span class="kur"></span></h1></div>
+ <p class="ib" style="position:absolute;left:72px;top:900px;width:900px;text-wrap:pretty">Lalu cahayanya? Kamu akan tahu dua cara menggambarnya dan kenapa keduanya dipakai bareng.</p>
+ <p class="no" data-kecil>1/6</p>
+</section>
+
+<!-- ============ SLIDE 5: BANDING ============ -->
+<section class="slide" id="s5">
+ <div class="bar" aria-hidden="true"><i style="left:72px;background:var(--p)"></i><i style="left:104px;background:var(--y)"></i><i style="left:136px;background:var(--k)"></i>
+  <span class="blok" style="left:620px;background:var(--y);--l:#FFC93C"></span><span class="blok" style="left:656px;background:var(--y);--l:#FFC93C"></span><span class="blok" style="left:692px;background:var(--y);--l:#FFC93C"></span><span class="blok" style="left:728px;background:var(--y);--l:#FFC93C"></span><span class="blok" style="left:764px;background:var(--y);--l:#FFC93C"></span><span class="blok" style="left:800px"></span></div>
+ <p class="wm">late30_studio</p>
+ <h1 style="position:absolute;left:72px;top:186px;width:940px">Rasterization <span class="y">vs</span> <br>ray tracing: mana <br>yang lebih berat?</h1>
+ <div class="kotak" style="top:500px;box-shadow:12px 12px 0 var(--p);padding:22px 36px 24px"><h2 class="nm">Rasterization</h2><p class="ib" style="margin-top:8px">Segitiga diubah jadi piksel. Kerja hitungnya tetap berat, tapi kurang berat dari ray tracing.</p>
+  <div class="trk" data-bar="urutan"><b style="width:58%;background:var(--p)"></b></div></div>
+ <div class="kotak" style="top:822px;box-shadow:12px 12px 0 var(--y);padding:22px 36px 24px"><h2 class="nm">Ray tracing</h2><p class="ib" style="margin-top:8px">Komputer menghitung jalur cahaya. Kerja hitungnya lebih berat dari rasterization.</p>
+  <div class="trk" data-bar="urutan"><b style="width:100%;background:var(--y)"></b></div></div>
+ <p class="ib" style="position:absolute;left:72px;top:1124px;width:936px;border-left:8px solid var(--y);padding:0 0 0 24px">Ada juga cara hybrid yang memakai keduanya sekaligus.</p>
+ <p class="src" data-sumber data-kecil>NVIDIA Developer, Ray Tracing, dibaca 8 Nov 2026</p>
+ <p class="no" data-kecil>5/6</p>
+</section>
+
+<!-- ============ SLIDE 6: PENUTUP ============ -->
+<section class="slide" id="s6">
+ <div class="bar" aria-hidden="true"><i style="left:72px;background:var(--p)"></i><i style="left:104px;background:var(--y)"></i><i style="left:136px;background:var(--k)"></i>
+  <span class="blok" style="left:620px;background:var(--y);--l:#FFC93C"></span><span class="blok" style="left:656px;background:var(--y);--l:#FFC93C"></span><span class="blok" style="left:692px;background:var(--y);--l:#FFC93C"></span><span class="blok" style="left:728px;background:var(--y);--l:#FFC93C"></span><span class="blok" style="left:764px;background:var(--y);--l:#FFC93C"></span><span class="blok" style="left:800px;background:var(--y);--l:#FFC93C"></span></div>
+ <p class="wm">late30_studio</p>
+ <div class="kotak" style="top:205px;box-shadow:16px 16px 0 var(--p);padding-top:44px;padding-bottom:48px">
+  <h1>Dipakai bareng: <br><span class="y">kualitas tinggi,</span> <br>frame rate bagus</h1></div>
+ <p class="ib" style="position:absolute;left:72px;top:650px;width:920px;text-wrap:pretty">Menurut NVIDIA, gabungan keduanya bisa menghasilkan kualitas tinggi dengan frame rate bagus, yaitu jumlah gambar per detik. Kalau game kamu punya opsi ray tracing, pernah coba menyalakannya?</p>
+ <div style="position:absolute;left:72px;top:1000px;width:936px;border-top:6px solid var(--k)"></div>
+ <svg viewBox="0 0 560 150" style="position:absolute;left:62px;top:1040px;width:640px;height:171px" aria-hidden="true"><use href="#lockup"/></svg>
+ <p class="src" data-sumber data-kecil>NVIDIA Developer, Ray Tracing, dibaca 8 Nov 2026</p>
+ <p class="no" data-kecil>6/6</p>
+</section>
+</html>

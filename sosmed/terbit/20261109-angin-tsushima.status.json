@@ -1,0 +1,64 @@
+{
+ "status": "tayang",
+ "sidik": "5d31cd3053e791d8fee1342b50f3a1c47b33075fd2fe5188a2b2a8bf649dd1d6",
+ "disetujui": "2026-11-08T14:33:40.707Z",
+ "waktuTayang": "2026-11-09T12:00:00.000Z",
+ "dimajuin": false,
+ "token": "696402018ce2f00334f4475bc30e65dbd8a3",
+ "media": [
+  {
+   "file": "hasil/carousel-T-07-angin/slide-01.png",
+   "sha": "5b1068720bcde7d4303d7d6e1c4b18cd57223fc3020a63b2e6ed7dbb2ad4bebe",
+   "mime": "image/png",
+   "url": "https://fitra-office.timku.ai.id/publik/sosmed/696402018ce2f00334f4475bc30e65dbd8a3/1.png"
+  },
+  {
+   "file": "hasil/carousel-T-07-angin/slide-02.png",
+   "sha": "6b6bf2d0e0cf81783c08c46f5fe3fd5ab38c7f9e28666d4ebf203e1e635e192a",
+   "mime": "image/png",
+   "url": "https://fitra-office.timku.ai.id/publik/sosmed/696402018ce2f00334f4475bc30e65dbd8a3/2.png"
+  },
+  {
+   "file": "hasil/carousel-T-07-angin/slide-03.png",
+   "sha": "244f143c505e69c3bf82acdd23f05ab4a67a136169d340fc9ad6f10fbb88cd2d",
+   "mime": "image/png",
+   "url": "https://fitra-office.timku.ai.id/publik/sosmed/696402018ce2f00334f4475bc30e65dbd8a3/3.png"
+  },
+  {
+   "file": "hasil/carousel-T-07-angin/slide-04.png",
+   "sha": "e2463366cef3cf609c0d6e4388408eb388a04a3169a677c2b59e58bf281e882c",
+   "mime": "image/png",
+   "url": "https://fitra-office.timku.ai.id/publik/sosmed/696402018ce2f00334f4475bc30e65dbd8a3/4.png"
+  },
+  {
+   "file": "hasil/carousel-T-07-angin/slide-05.png",
+   "sha": "1cff7d1a4eb2d1eaaa840ea1f6140cf8147524d0283db25a4f4dd1d5d71966f5",
+   "mime": "image/png",
+   "url": "https://fitra-office.timku.ai.id/publik/sosmed/696402018ce2f00334f4475bc30e65dbd8a3/5.png"
+  },
+  {
+   "file": "hasil/carousel-T-07-angin/slide-06.png",
+   "sha": "3a436921965d0c025a44ddeea320aa1e75b5c348d9347a7888300e5a25e3f075",
+   "mime": "image/png",
+   "url": "https://fitra-office.timku.ai.id/publik/sosmed/696402018ce2f00334f4475bc30e65dbd8a3/6.png"
+  },
+  {
+   "file": "hasil/carousel-T-07-angin/slide-07.png",
+   "sha": "aa15c209b00ab0ee8e99975c057c934dcad92eca69408f39954599e183e358f4",
+   "mime": "image/png",
+   "url": "https://fitra-office.timku.ai.id/publik/sosmed/696402018ce2f00334f4475bc30e65dbd8a3/7.png"
+  }
+ ],
+ "jadwal": [
+  {
+   "akunId": "6af0288bfc43f81b786740b4",
+   "platform": "instagram",
+   "username": "late30_studio",
+   "scheduleId": "6af08844b534a7be0ec97465",
+   "status": "tayang",
+   "postId": "18131170267807997",
+   "tayangPada": "2026-11-09T12:09:09.810Z"
+  }
+ ],
+ "diperbarui": "2026-11-09T12:09:09.811Z"
+}

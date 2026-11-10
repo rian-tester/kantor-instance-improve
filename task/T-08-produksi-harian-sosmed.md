@@ -1,0 +1,84 @@
+---
+kode: T-08
+judul: Produksi harian sosmed (autoaja & late30 selang-seling)
+divisi: sosmed
+pegang: sari
+status: nunggu-kamu
+update: 2026-11-10
+---
+## Tujuan
+Tiap pagi (detak 03.00–09.00 WIB) Sari menyiapkan 1 carousel untuk tayang malam hari berikutnya, bergantian akun, supaya jam 07.00 owner tinggal menyetujui di halaman Konten. Task tetap, tidak ditutup.
+
+## Aturan
+- **Selang-seling berdasarkan akun produksi terakhir**, bukan tanggal. Lihat baris "Produksi terakhir" di bawah. Akun yang diproduksi hari ini = akun yang BEDA dari produksi terakhir.
+- Konten yang diproduksi hari D tayang malam D+1. Contoh: 9/11 pagi produksi autoaja untuk tayang 10/11; 10/11 pagi produksi late30 untuk tayang 11/11.
+- Dua konten yang sudah terjadwal per 08/11 (autoaja malam 8/11, late30 malam 9/11) di luar task ini. Produksi pertama task ini: 9/11 pagi, autoaja, untuk tayang 10/11.
+- **Topik dipilih Sari sendiri** dari tema tetap, tanpa tanya owner. Owner menilai hasil akhirnya di Konten.
+  - autoaja: engagement (bukan jualan, tanpa harga/produk): tips UMKM, program pemerintah (wajib bersumber), tips social media management, tips prompt. Jangan ulang topik 5 postingan terakhir.
+  - late30: game dan 3D (hook gaya kejutan, bukan proses teknis kering). Cadangan ide: BANK-IDE.md (K3 Alien: Isolation, K4 suara Mark of the Ninja).
+- Alur tiap konten: ikut skill carousel (Penulis, cek bahasa, Satpam, Desainer, Kritikus). Pakai sistem desain yang sudah disetujui tiap akun.
+- **Batas Kritikus: maks 3 putaran.** Belum lolos setelah itu: tetap serahkan versi terbaik beserta catatan Kritikus di bagian Keputusan kamu (jangan berputar terus).
+- Rencana posting ditulis lewat skill posting-repliz dan `task: "T-08"`, usulan jam 19.00–21.45 WIB hari tayang. Owner setujui di Konten.
+- Jam kerja detak: 03.00–09.00. JANGAN lewat jam 09.00.
+- **Selesai hari ini = set task INI jadi `parkir`** (bukan beres, bukan nunggu-kamu). Alasannya: task `jalan` membangunkan Sari tiap 20 menit dan bikin jatah kebuang. Cron `55 2 * * *` mengembalikan `parkir` jadi `jalan` otomatis tiap 02.55. Selesai = konten hari itu sudah masuk Konten (rencana posting ditulis), baris "Produksi terakhir" sudah diisi, dan catatan ditulis. Pertanyaan persetujuan konten ada di task konten/Konten, bukan di T-08.
+- Belum selesai pas jam 08.40: tulis di "Berikutnya" sampai mana, biarkan `jalan`; besok lanjut.
+- Tanpa data performa per jam: pakai usulan jam di atas, jangan mengarang alasan dari angka.
+- Fakta wajib bersumber (kecuali saran praktis tanpa klaim data, sudah disetujui owner). Tanpa harga/promo di luar `brand/fakta.md`.
+- **Jangan berhenti nunggu owner di tengah produksi** (aturan Builder 09/11, atas permintaan owner). Ketemu pilihan atau keraguan: pilih rekomendasimu, lanjut, catat pilihannya di "Udah", dan tanyakan di akhir lewat Konten atau "Keputusan kamu". Pertanyaan yang nyangkut di T-08 gak boleh menghentikan produksi besok: cron 02.55 membalik `parkir` DAN `nunggu-kamu` jadi `jalan`.
+- Hanya bangun kalau ada kerjaan. Task lain milikmu yang cuma nunggu (tayang, performa) diparkir, bukan dibiarin `jalan`.
+- Aset autoaja ada di `masuk/autoaja-aset/` (maskot, logo, avatar, ikon). Aset late30 gak ada di Drive: logo dan palet di `brand/late30-logo.md`, sistem desain `brand/sistem-desain-late30.md`, selera `brand/selera-late30.md`, ilustrasi dibuat sendiri (SVG/HTML), font lokal. Jangan campur aset dua akun.
+
+## Udah
+- 08/11 task dibikin Builder atas permintaan owner, detak Sari disetel 03.00–09.00.
+
+- 09/11 03.00 detak: topik autoaja dipilih (tips UMKM: catat 3 angka tiap hari), draf naskah 6 slide di hasil/naskah-T-08-20261110-autoaja-draf.md. Belum cek bahasa/Satpam.
+- 09/11 03.20 detak: cek bahasa draf, 2 temuan diperbaiki ("2 menit" jadi "sebentar", kalimat telegram dilengkapi), ulang cek: nol temuan. Siap Satpam.
+
+- 09/11 03.40 detak: mau lanjut Satpam, tapi putaran detak gak punya alat buat manggil Pemeriksa (agen terpisah), dan Sari gak boleh nilai sendiri. Naskah tetap siap Satpam. Lanjut di sesi detak yang bisa manggil agen atau sesi biasa.
+
+- 09/11 07.00 detak: Satpam (agen pemeriksa) ternyata bisa dipanggil: BELUM LOLOS (hasil/satpam-T-08-20261110.md), 7 perbaikan tertarget (ajakan slide 6 terlalu banyak, cover/penutup, slide 5 saldo awal, slide 2 "sering" jadi "bisa jadi", register gak/saja, nada perintah, slide 4 "bayar orang"). Balik ke Penulis.
+- 09/11 07.10 detak: Penulis revisi 7 butir (hasil/naskah-T-08-20261110-autoaja-final.md + hasil/naskah-T-08-20261110-final.json). Cek bahasa mesin: temuan cuma di daftar perubahan, bukan teks slide. Satpam ulang: BELUM LOLOS, sisa 3 butir kecil D1–D3 (hasil/satpam-T-08-20261110-ulang.md): slide 5 kalimat cocokkan saldo, slide 4/6 kata "baris", slide 6 "paling sering muncul"/"itu jawabannya".
+- 09/11 07.30 detak: Penulis tambal D1–D3, cek bahasa mesin (temuan cuma di daftar perubahan), Satpam ulang ke-3: LOLOS (hasil/satpam-T-08-20261110-ulang-2.md). SHA256 hasil/naskah-T-08-20261110-final.json: 9f78ff9fa3a41f1693bf4b01c143cd94fdb6cec2b23181845594141a6d8f1020. Naskah resmi, jangan diubah tanpa cek ulang. Penanda angka "Hal N dari 3".
+
+- 09/11 07.50 detak: Desainer tulis brand/sistem-desain-autoaja.md + brand/selera-autoaja.md, render carousel 6 slide di hasil/carousel-T-08-20261110/ (QC mesin nol temuan, cek-naskah lolos, teks sama dengan naskah final). Catatan Desainer: maskot semut belum ada (aset lokal gak ada, pakai ikon garis), navy #14155E/emas #E8A33D masih perkiraan, gerak statis. Kritikus putaran 1 dipanggil (hasil/kritik-T-08-20261110-putaran-1.md), hasil belum dibaca.
+- 09/11 08.00 detak: Kritikus putaran 1 dari 3: BELUM LOLOS (hasil/kritik-T-08-20261110-putaran-1.md/.json; cek-kritik dijalanin Sari: "Belum lolos"). Skor: hierarki 4, kebaca HP 4, ritme 3, konsistensi 3, orisinal 3, brand 2, gerak 3, craft 3. Masalah berat: cover (slide 1) gak menghentikan scroll, penutup (slide 6) tanpa dunia brand, brand cuma wordmark teks (maskot/logo asli belum dipakai). Lain-lain: koin di slide 2/5/6 dan panah di slide 2/4/6 (maks 2 slide per motif), artefak segitiga putih di ikon koin slide 2, celah besar slide 2 dan 3, slide 4 mirip slide 5, rumus slide 5 tanpa label, posisi ikon gak tetap.
+- 09/11 detak: Desainer revisi putaran 2 selesai di hasil/carousel-T-08-20261110-v2/ (ringkasan hasil/desain-T-08-20261110-revisi-2.md). QC mesin nol temuan, cek-naskah lolos, teks gak diubah. Motif maks 2 slide, cover/penutup diperkuat, ikon koin diperbaiki, ikon rata kiri. Sisa (kata Desainer): label rumus slide 5 cuma lewat ikon (label teks butuh ubah naskah), maskot belum ada, gerak masih seragam, slide 3 kosong ±250 px di bawah. Belum dinilai Kritikus.
+- 09/11 07.50 detak: Kritikus putaran 2 dari 3: BELUM LOLOS (hasil/kritik-T-08-20261110-putaran-2.md/.json; cek-kritik dijalanin Sari: "Belum lolos"). Skor: hierarki 4, kebaca HP 4, ritme 3, konsistensi 4, orisinal 3, brand 3, gerak 3, craft 3. Beres: motif maks 2 slide, artefak koin, celah slide 2-3, penutup punya panel ajakan. Masalah berat sisa: cover masih ilustrasi stok (saran: elemen khas, mis. angka "3" emas besar, atau maskot asli), penutup tanpa dunia brand. Lain-lain: slide 2 dan 4 satu pola, koin beda warna/posisi, slide 3 kosong ±250 px, baris yatim slide 4/5, rumus slide 5 tanpa label (butuh ubah naskah, harus Satpam ulang), gerak seragam.
+- 09/11 08.10 detak: Desainer v3 selesai (hasil/carousel-T-08-20261110-v3/, ringkasan hasil/desain-T-08-20261110-revisi-3.md; QC mesin nol temuan, teks gak diubah, cover pakai angka "3" emas, penutup buku catatan tercentang). Kritikus putaran 3 dari 3: BELUM LOLOS (hasil/kritik-T-08-20261110-putaran-3.md/.json; cek-kritik dijalanin Sari: "Belum lolos"). Skor: hierarki 4, kebaca HP 4, ritme 3, konsistensi 4, orisinal 3, brand 3, gerak 4, craft 3. Sisa masalah berat: brand cuma wordmark (maskot/logo asli belum ada), tanpa fakta bersumber, baris yatim slide 4/5, rumus slide 5 tanpa label. Batas 3 putaran habis: versi terbaik diserahkan ke owner.
+- 09/11 10.24 detak: owner jawab 1a (serahkan v3 apa adanya, tayang 10/11) dan 2a (naskah dibiarkan). Rencana posting ditulis di sosmed/terbit/20261110-autoaja-catat-3-angka.json (usulan Sel 10/11 19.00, akun @autoaja.agency), cek repliz.mjs rencana: "Nunggu kamu setujuin", tanpa ✗. Produksi terakhir diisi, task jadi parkir (cron 02.55 bangunin lagi).
+
+- 09/11 10.25 detak: titipan builder (perintah owner di chat): carousel autoaja wajib pakai maskot, v3 jangan diserahkan. Rencana posting ditandai "JANGAN DISETUJUI DULU" di catatannya. Aset dicek (info-gambar): maskot mascot_original_V2-removebg-preview.png 500×500 transparan, logo horizontal-trans-crop.png 1093×291 transparan, keduanya cocok dipakai; flying-removebg-preview.png (maskot terbang) cadangan buat cover/penutup. Status balik `jalan`.
+
+- 09/11 10.40 detak: Desainer v4 selesai (hasil/carousel-T-08-20261110-v4/, ringkasan hasil/desain-T-08-20261110-revisi-4.md; maskot + logo asli di cover dan penutup, teks gak diubah, QC mesin nol temuan). Kritikus putaran 4 (di luar batas, permintaan owner): BELUM LOLOS (hasil/kritik-T-08-20261110-putaran-4.md/.json). Skor: hierarki 4, kebaca HP 4, ritme 4, konsistensi 4, orisinal 3, brand 4, gerak 4, craft 3. Sisa: tanpa fakta bersumber, baris yatim slide 4/5, "6/6" nempel panel + ekor api maskot terpotong di slide 6, slide 2–5 masih ikon stok. Rencana posting sudah pakai media v4 (catatan "JANGAN DISETUJUI" dicabut). Navy/emas asli dari aset belum terukur (kira-kira #1F2060 dan #E8A33D).
+- 09/11 10.34 detak: owner jawab di dashboard: rencana 20261110-autoaja-catat-3-angka (v4) disetujui & terjadwal, tayang Sel 10/11 19.00 WIB (= soal 1a, v4 apa adanya). Soal 2 (warna) belum dijawab, status tetap nunggu-kamu. Titipan pakai-maskot-t08 dipindah ke selesai/.
+
+- 09/11 owner jawab: 2a (pakai angka hex dari aset owner, bukan perkiraan). Alat ukur warna belum ada (info-gambar cuma ukuran/alpha), jadi hex belum bisa ditulis tanpa ngarang. Minta Builder bikinin alat baca warna dominan; sementara navy/emas tetap perkiraan dan ditandai begitu.
+- 10/11 03.00 detak: Penulis bikin draf naskah late30 K4 (6 slide) di hasil/naskah-T-08-20261111-late30-draf.md + hasil/naskah-T-08-20261111-draf.json. Sumber gak bisa dibaca ulang (WebFetch mati di agen), jadi isi slide dari catatan 08/11; dua kalimat sumber harus dicek Satpam. cek-bahasa: 1 temuan, di catatan jawaban uji (bukan teks slide).
+- 10/11 09.05 detak (izin owner lewat jam 09.00 hari ini): Satpam naskah K4: BELUM LOLOS (hasil/satpam-T-08-20261111.md). Dua sumber (Game Developer 2/8/2012, Game Informer 15/10/2012) gak bisa dibuka: agen gak punya WebFetch. Klaim slide 2–5 + caption gugur karena cuma bersandar catatan perantara. Temuan lain: slide 4 kalimat telegram, "cincin"/"lingkaran" gak konsisten, beberapa kalimat janggal. Naskah gak diubah.
+
+## Produksi terakhir
+- 09/11: autoaja (tips catat 3 angka), tayang usulan 10/11 19.00, rencana sosmed/terbit/20261110-autoaja-catat-3-angka.json. Berikutnya: late30 untuk tayang 11/11.
+
+## Hasil
+hasil/carousel-T-08-20261110-v4/
+hasil/carousel-T-08-20261110-v3/ (versi lama, tanpa maskot)
+hasil/carousel-T-08-20261110-v2/ (versi lama, putaran 2)
+hasil/carousel-T-08-20261110/ (versi lama, putaran 1)
+
+## Keputusan kamu
+1. Naskah late30 K4 (Mark of the Ninja) gak lolos Satpam: 2 sumbernya gak bisa dibuka dari sesi agen, jadi isi slide 2–5 gak bisa dipastikan. Gimana buat tayang 11/11 19.00?
+a) Kamu atau sesi biasa yang punya WebFetch baca ulang 2 link sumber, baru Penulis perbaiki dan lanjut (rekomendasi: K4 tetap paling cocok menurut kamu, tinggal sumbernya diverifikasi)
+b) Ganti topik ke K3 Alien: Isolation (sumbernya juga perlu dibaca ulang, jadi risikonya sama)
+c) Lewati late30 untuk 11/11, lanjut autoaja untuk 12/11
+
+## Berikutnya
+- (10/11) Lanjut late30: Satpam naskah hasil/naskah-T-08-20261111-draf.json (minta cek ulang sumber Game Developer 2/8/2012 & Game Informer 15/10/2012 lewat WebFetch kalau bisa), perbaiki, lalu Desainer, Kritikus, rencana posting.
+- Warna: tulis hex navy/emas dari aset asli ke `brand/acuan/autoaja-acuan.md` setelah Builder bikin alat baca warna (minta lewat kotak-masuk/builder). Kerja produksi gak nunggu ini.
+- **Besok (10/11) pagi: produksi late30 untuk tayang 11/11 19.00 WIB, akun @late30_studio.** Persiapan dari Builder (09/11):
+  1. Topik default: **K4 "Mark of the Ninja: suara digambar jadi lingkaran"** (hasil/ide-late30-game-menarik.md, skor 25/25, 3 sumber, preview hasil/preview-late30-K4/, owner bilang "sangat cocok"). Cadangan kalau sumber gak bisa dipastikan: K3 Alien: Isolation. Jangan balik ke K1 (sudah tayang 9/11) dan jangan topik Cairn/segitiga.
+  2. Penulis baca ulang sumber K4 sebelum naskah (postmortem Game Developer Feb 2013 belum dibuka; tanggal rilis dari Wikipedia). Klaim yang gak bisa dipastikan: dibuang dari naskah, bukan ditanyakan.
+  3. Suara late30: "kamu" + "gak" (sudah dikonfirmasi owner). Hook gaya kejutan, bukan proses teknis kering (owner pernah menolak naskah Cairn karena kering).
+  4. Desain: sistem Graph (`brand/sistem-desain-late30.md`), logo lockup v4 + avatar v5 (`brand/late30-logo.md`), font sistem lokal, ilustrasi SVG buatan sendiri tanpa screenshot game. Lihat catatan Kritikus carousel T-07 (hasil/kritik-T-07-putaran-3.md): orisinalitas ilustrasi (hindari ikon pustaka, motif maks 2 slide), label sumber min 28 px, motif jangan berulang.
+  5. Kritikus maks 3 putaran, lalu serahkan versi terbaik. Rencana posting @late30_studio, usulan jam 19.00 WIB 11/11.
+  6. Selesai: isi "Produksi terakhir" (late30), set T-08 `parkir`. Setelah itu giliran autoaja lagi (tayang 12/11).
+- Warna autoaja: tulis hex navy/emas ke `brand/acuan/autoaja-acuan.md` setelah Builder bikin alat baca warna (titipan di kotak-masuk/builder). Gak nunggu ini.

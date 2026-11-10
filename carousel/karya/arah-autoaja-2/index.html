@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../dasar.css">
+<style>
+/* Arah 2: editorial. Angka/nomor besar sebagai jangkar, ruang kosong, grid garis tipis.
+   Dua keluarga: Liberation Sans (judul/isi) + DejaVu Sans Mono (label). Ukuran: 300 / 88 / 40 / 24. */
+@font-face { font-family:"AA Sans"; font-weight:400; src:local("Liberation Sans"), local("LiberationSans"); }
+@font-face { font-family:"AA Sans"; font-weight:700; src:local("Liberation Sans Bold"), local("LiberationSans-Bold"); }
+@font-face { font-family:"AA Mono"; font-weight:400; src:local("DejaVu Sans Mono"), local("DejaVuSansMono"); }
+:root { --navy:#14155E; --emas:#E8A33D; --putih:#FFFFFF; --redup:#C9CBEF; --garis:#4A4B93; }
+body { font-family:"AA Sans", sans-serif; background:#000; }
+section.slide { background:var(--navy); color:var(--putih); }
+.mono { font-family:"AA Mono", monospace; font-size:24px; letter-spacing:1px; color:var(--redup); text-transform:uppercase; }
+.atas { position:absolute; left:72px; right:72px; top:72px; display:flex; justify-content:space-between; padding-bottom:24px; border-bottom:2px solid var(--garis); }
+.bawah { position:absolute; left:72px; right:72px; bottom:72px; display:flex; justify-content:space-between; align-items:flex-end; padding-top:24px; border-top:2px solid var(--garis); }
+.wm { font-size:40px; font-weight:700; letter-spacing:-.5px; }
+.wm i { font-style:normal; color:var(--emas); }
+h1, h2 { margin:0; font-weight:700; font-size:88px; line-height:1; letter-spacing:-3px; text-wrap:balance; }
+.angka { font-size:300px; font-weight:700; line-height:.8; letter-spacing:-14px; color:var(--emas); margin:0; }
+.isi { font-size:40px; line-height:1.25; color:var(--redup); margin:0; text-wrap:pretty; }
+.kolom { position:absolute; left:72px; width:640px; }
+.slot { width:180px; height:180px; border:3px dashed var(--redup); border-radius:20px; display:flex; align-items:center; justify-content:center; text-align:center; font-family:"AA Mono", monospace; font-size:24px; line-height:1.25; color:var(--redup); padding:0 14px; }
+.daftar { position:absolute; left:72px; right:72px; }
+.daftar div { font-size:40px; font-weight:700; letter-spacing:-.5px; padding:22px 0; border-top:2px solid var(--garis); display:flex; justify-content:space-between; }
+.daftar div span { font-family:"AA Mono", monospace; font-weight:400; font-size:24px; color:var(--emas); align-self:center; }
+</style>
+</head>
+<body>
+
+<!-- Slide 1. Tipe: cover. Jangkar: judul 88px, rendah kiri, atas kosong. Motif: grid garis + tanda tanya emas besar? tidak; motif: nomor/garis editorial. -->
+<section class="slide">
+  <div class="atas"><span class="mono" data-kecil>01 / 03</span><span class="mono" data-kecil>WhatsApp Broadcast + Reply Agent</span></div>
+  <div class="kolom" style="top:560px; width:900px">
+    <h1>Chat pelanggan numpuk, kamu balas satu-satu?</h1>
+  </div>
+  <div class="bawah"><div class="wm">auto<i>aja</i></div><span class="mono" data-kecil>Geser</span></div>
+</section>
+
+<!-- Slide 2. Tipe: angka/fakta. Jangkar: 24/7 (300px). Motif: daftar bergaris. -->
+<section class="slide">
+  <div class="atas"><span class="mono" data-kecil>02 / 03</span><span class="mono" data-kecil>Reply Agent</span></div>
+  <div class="kolom" style="top:190px; width:936px">
+    <p class="angka">24/7</p>
+  </div>
+  <div class="kolom" style="top:580px; width:936px">
+    <h2>Balasan otomatis AI, aktif terus.</h2>
+  </div>
+  <div class="daftar" style="top:850px">
+    <div>Broadcast personal ke banyak kontak <span data-kecil>01</span></div>
+    <div>Fully managed, setup gratis <span data-kecil>02</span></div>
+    <div>Tanpa biaya per-chat <span data-kecil>03</span></div>
+  </div>
+  <div class="bawah"><div class="wm">auto<i>aja</i></div></div>
+</section>
+
+<!-- Slide 3. Tipe: penutup. Jangkar: judul 88px. Motif: slot maskot, garis grid. Harga emas. -->
+<section class="slide">
+  <div class="atas"><span class="mono" data-kecil>03 / 03</span><span class="mono" data-kecil>Konsultasi</span></div>
+  <div class="kolom" style="top:330px; width:936px">
+    <h2>Konsultasi gratis lewat chat WhatsApp.</h2>
+    <p class="isi" style="margin-top:40px">Tanpa kewajiban. Kontrol lewat WhatsApp &amp; Google Sheets.</p>
+  </div>
+  <div class="kolom" style="top:820px; width:936px">
+    <p class="mono" data-kecil style="margin:0 0 12px">WhatsApp Broadcast + Reply Agent</p>
+    <p style="margin:0; font-size:88px; font-weight:700; letter-spacing:-3px; color:var(--emas); line-height:1">Mulai 1,25jt/bln</p>
+  </div>
+  <div class="bawah"><div class="wm">auto<i>aja</i></div><div class="slot" data-kecil>maskot (menyusul)</div></div>
+</section>
+
+</body>
+</html>

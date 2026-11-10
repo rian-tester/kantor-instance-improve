@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="id"><meta charset="utf-8"><title>late30_studio T-07 angin: Ghost of Tsushima / Yōtei (arah Graph)</title>
+<link rel="stylesheet" href="../../dasar.css">
+<!--
+KONSEP VISUAL (sistem: brand/sistem-desain-late30.md, arah Graph): layar editor gelap-teknis. Satu ide pemersatu:
+ARUS ANGIN (titik yang melengkung) di atas bukit, yang menunjuk ke satu tujuan. Dari cover (angin + panah ke pin)
+sampai penutup (angin yang boleh gak diikuti). Semua ilustrasi buatan sendiri (data-placeholder), tanpa screenshot,
+logo, karakter atau materi resmi game; siluet orang abstrak tanpa wajah.
+Teks persis hasil/naskah-T-07-angin-final.json (SHA256 66ecb8283b14eb0df53508f52b3e84dceac58027c25e7cefe8c45b647fc630e9).
+Gambar tidak memuat teks baru: tanda tanya, panah dan "vs" digambar sebagai bentuk SVG.
+
+Peran per slide (tipe | jangkar | motif):
+1 cover      | "Kenapa angin di game ini nunjukin arah?" 96 px | node berkepala pin + arus angin jadi daun di atas bukit, panah kuning ke pin, lockup
+2 fakta      | "Awalnya angin bukan buat menunjuk arah"        | bidang kuning penuh; titik angin berputar tanpa arah + tanda tanya (panel gelap)
+3 pertanyaan | "Lalu Jason Connell bertanya"                    | dua siluet + balon: butiran (partikel) -> panah -> penanda quest
+4 banding    | "Ke mana mata pemain melihat?" + dua node       | dua node sama tinggi berkepala pin, penanda panah dua arah di antaranya, mata ke ikon vs mata ke dunia
+5 diagram    | "Bentuk partikelnya ikut tempat"                | tiga panel: lapangan (pampas+rumput), hutan (daun), area terbakar (abu)
+6 poin       | "Angin menunjuk, kamu yang cari jalan"          | peta atas: panah angin lurus ke tujuan vs jalur berkelok pemain (tanpa angka)
+7 penutup    | "Angin boleh gak kamu ikuti"                    | alas gelap + bidang krem; angin dan jalur lain, lockup terang besar
+Kabel/pin berkepala hanya di slide 1 dan 4. Penanda tujuan: pin (slide 1), belah ketupat (slide 3 dan 6).
+Arus titik angin boleh berulang (tema); komposisinya diubah tiap slide.
+Tingkat ukuran: 96 / 40 / 32 / 28. Gerak: tidak ada (statis, cakupan diam).
+Font: Liberation Sans + DejaVu Sans Mono dari sistem lewat local(); keputusan owner final. "ō" (Yōtei) didukung Liberation Sans.
+-->
+<style>
+@font-face{font-family:'Liberation Sans';font-weight:400;src:local('Liberation Sans'),local('LiberationSans')}
+@font-face{font-family:'Liberation Sans';font-weight:700;src:local('Liberation Sans Bold'),local('LiberationSans-Bold')}
+@font-face{font-family:'DejaVu Sans Mono';font-weight:400;src:local('DejaVu Sans Mono'),local('DejaVuSansMono')}
+@font-face{font-family:'DejaVu Sans Mono';font-weight:700;src:local('DejaVu Sans Mono Bold'),local('DejaVuSansMono-Bold')}
+:root{--g:#11131A;--k:#F5F2EA;--p:#FF3B5C;--y:#FFC93C;--n:#1A1D27;--l:#3A4054;--t:#B9B6AD}
+.slide{background-color:var(--g);color:var(--k);font-family:'Liberation Sans',sans-serif;font-weight:700}
+.dots{position:absolute;left:0;top:0;width:1080px;height:1350px;background-image:radial-gradient(circle,#2B2F3D 2.5px,transparent 3px);background-size:54px 54px;background-position:27px 27px}
+.abs{position:absolute}
+.wm{position:absolute;left:72px;top:68px;margin:0;font:700 28px/36px 'DejaVu Sans Mono',monospace;display:flex;align-items:center;gap:14px}
+.wm i{width:18px;height:18px;background:var(--y);display:block}
+.no{position:absolute;right:72px;top:68px;margin:0;font:400 28px/36px 'DejaVu Sans Mono',monospace;color:var(--t)}
+.src{position:absolute;left:72px;bottom:72px;margin:0;font:400 28px/36px 'DejaVu Sans Mono',monospace;color:var(--t);white-space:nowrap}
+h1,h2{margin:0;font-weight:700;letter-spacing:-.5px}
+.j{font-size:96px;line-height:104px;text-wrap:balance}
+.ns{text-wrap:balance;margin:0;font:700 40px/48px 'Liberation Sans',sans-serif}
+.ib{margin:0;font:400 32px/48px 'Liberation Sans',sans-serif;text-wrap:pretty}
+.y{color:var(--y)}
+.node{position:absolute;background:var(--n);border:3px solid var(--l);border-radius:22px;overflow:hidden}
+.kop{height:46px;background:var(--p);display:flex;align-items:center;padding:0 18px}
+.kop.y{background:var(--y)}
+.pn{width:24px;height:24px;display:block}
+.chip{background:var(--g);color:var(--y);border-radius:6px;padding:0 12px}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="pin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="#FFC93C" stroke="#11131A" stroke-width="4"/></symbol>
+<g id="kubus"><polygon fill="#FF3B5C" points="-43.3,-25 0,0 0,50 -43.3,25"/><polygon fill="#FF3B5C" points="43.3,-25 43.3,25 0,50 0,0"/><path stroke="#11131A" stroke-width="2.4" fill="none" d="M-43.3 -25L0 0L43.3 -25M0 0V50"/><polygon points="0,-46 34.64,-26 0,-6 -34.64,-26" fill="none" stroke="#11131A" stroke-width="10.5" stroke-linejoin="bevel"/><polygon points="0,-46 34.64,-26 0,-6 -34.64,-26" fill="none" stroke="#FFC93C" stroke-width="6" stroke-linejoin="bevel"/><rect x="-5" y="-51" width="10" height="10" fill="#FFC93C" stroke="#11131A" stroke-width="2"/><rect x="29.64" y="-31" width="10" height="10" fill="#FFC93C" stroke="#11131A" stroke-width="2"/><rect x="-5" y="-11" width="10" height="10" fill="#FFC93C" stroke="#11131A" stroke-width="2"/><rect x="-39.64" y="-31" width="10" height="10" fill="#FFC93C" stroke="#11131A" stroke-width="2"/></g>
+<g id="lockup"><use href="#kubus" transform="translate(75 78) scale(1.2)"/><g transform="translate(168 25)"><g fill="none" stroke-width="18" stroke-linejoin="miter" stroke-linecap="butt"><path stroke="#F5F2EA" transform="translate(0 0)" d="M9 0V100"/><path stroke="#F5F2EA" transform="translate(32 0)" d="M9 39H45V91H9V65H45"/><path stroke="#F5F2EA" transform="translate(106 0)" d="M21 0V91H50M0 39H44"/><path stroke="#F5F2EA" transform="translate(170 0)" d="M9 65H51V39H9V91H51"/><path stroke="#FFC93C" transform="translate(250 0)" d="M6.00 9.00L33.00 9.00L45.00 21.00L45.00 38.00L33.00 50.00L45.00 62.00L45.00 79.00L33.00 91.00L6.00 91.00M20.00 50.00L33.00 50.00"/><path stroke="#FFC93C" transform="translate(318 0)" d="M21.00 9.00L33.00 9.00L45.00 21.00L45.00 79.00L33.00 91.00L21.00 91.00L9.00 79.00L9.00 21.00Z"/></g></g></g>
+<g id="lockupT"><g transform="translate(75 78) scale(1.2)"><polygon fill="#E0203F" points="-43.3,-25 0,0 0,50 -43.3,25"/><polygon fill="#E0203F" points="43.3,-25 43.3,25 0,50 0,0"/><path stroke="#F5F2EA" stroke-width="2.4" fill="none" d="M-43.3 -25L0 0L43.3 -25M0 0V50"/><polygon points="0,-46 34.64,-26 0,-6 -34.64,-26" fill="none" stroke="#11131A" stroke-width="10.5" stroke-linejoin="bevel"/><polygon points="0,-46 34.64,-26 0,-6 -34.64,-26" fill="none" stroke="#FFC93C" stroke-width="6" stroke-linejoin="bevel"/><rect x="-5" y="-51" width="10" height="10" fill="#FFC93C" stroke="#11131A" stroke-width="2"/><rect x="29.64" y="-31" width="10" height="10" fill="#FFC93C" stroke="#11131A" stroke-width="2"/><rect x="-5" y="-11" width="10" height="10" fill="#FFC93C" stroke="#11131A" stroke-width="2"/><rect x="-39.64" y="-31" width="10" height="10" fill="#FFC93C" stroke="#11131A" stroke-width="2"/></g><g transform="translate(168 25)"><g fill="none" stroke-width="18" stroke-linejoin="miter" stroke-linecap="butt"><path stroke="#11131A" transform="translate(0 0)" d="M9 0V100"/><path stroke="#11131A" transform="translate(32 0)" d="M9 39H45V91H9V65H45"/><path stroke="#11131A" transform="translate(106 0)" d="M21 0V91H50M0 39H44"/><path stroke="#11131A" transform="translate(170 0)" d="M9 65H51V39H9V91H51"/><path stroke="#E0203F" transform="translate(250 0)" d="M6.00 9.00L33.00 9.00L45.00 21.00L45.00 38.00L33.00 50.00L45.00 62.00L45.00 79.00L33.00 91.00L6.00 91.00M20.00 50.00L33.00 50.00"/><path stroke="#E0203F" transform="translate(318 0)" d="M21.00 9.00L33.00 9.00L45.00 21.00L45.00 79.00L33.00 91.00L21.00 91.00L9.00 79.00L9.00 21.00Z"/></g></g></g>
+<path id="daun" d="M-30 0C-15 -26 15 -26 30 0C15 26 -15 26 -30 0Z M-30 0L30 0"/>
+<g id="mata"><path d="M-70 0C-40 -42 40 -42 70 0C40 42 -40 42 -70 0Z" fill="#11131A" stroke="#F5F2EA" stroke-width="6"/></g>
+<g id="mata2"><path d="M-70 0C-40 -42 40 -42 70 0C40 42 -40 42 -70 0Z" fill="#F5F2EA" stroke="#F5F2EA" stroke-width="6"/></g>
+<g id="ikon"><circle cx="0" cy="0" r="34" fill="none" stroke="#F5F2EA" stroke-width="6"/><path d="M0 -30L13 8L0 0L-13 8Z" fill="#FF3B5C"/></g>
+<g id="mark"><path d="M-52 -58C-52 -128 54 -128 54 -62C54 -22 -30 -30 -30 14" fill="none" stroke-width="22" stroke-linecap="round" transform="translate(0 130)"/><circle cx="-30" cy="196" r="15" stroke="none" fill="currentColor"/></g>
+</defs></svg>
+
+<!-- ============ SLIDE 1: COVER ============ -->
+<section class="slide" id="s1">
+ <div class="dots"></div>
+ <p class="wm"><i></i>late30_studio</p>
+ <!-- PLACEHOLDER: arus angin (titik) melengkung jadi daun di atas bukit, panah kuning ke pin; buatan sendiri -->
+ <div class="node" data-placeholder="angin" style="left:72px;top:120px;width:936px;height:490px">
+  <svg viewBox="0 0 930 514" width="930" height="514" style="display:block" aria-hidden="true">
+   <g fill="none" stroke-linecap="round" stroke="#F5F2EA">
+    <path d="M20 90C200 20 360 160 540 110S690 110 730 130" stroke-width="24" stroke-dasharray="0 48" opacity=".6"/>
+    <path d="M20 310C200 240 360 370 540 320S690 290 730 270" stroke-width="24" stroke-dasharray="0 48" opacity=".8"/>
+   </g>
+   <path d="M20 200C200 130 360 270 540 215S660 195 690 195" fill="none" stroke="#FFC93C" stroke-width="22" stroke-dasharray="48 28" stroke-linecap="round"/>
+   <path d="M672 140L780 196L672 252Z" fill="#FFC93C"/>
+   <g stroke="#11131A" stroke-width="3"><use href="#daun" fill="#FFC93C" transform="translate(250 100) rotate(-20) scale(2.4)"/><use href="#daun" fill="#FF3B5C" transform="translate(810 78) rotate(25) scale(2)"/><use href="#daun" fill="#FFC93C" transform="translate(610 120) rotate(-15) scale(2.4)"/></g>
+   <path d="M0 420C150 380 300 400 450 360S700 340 830 285C880 265 910 268 930 275V514H0Z" fill="#2B2F3D" stroke="#3A4054" stroke-width="3"/>
+   <path d="M850 288C818 250 804 232 804 208C804 182 824 164 850 164C876 164 896 182 896 208C896 232 882 250 850 288Z" fill="#FFC93C" stroke="#11131A" stroke-width="10" stroke-linejoin="round"/>
+   <circle cx="850" cy="208" r="16" fill="#11131A"/>
+   <path d="M0 470C200 430 400 470 600 440S850 430 930 440V514H0Z" fill="#11131A"/>
+  </svg></div>
+ <div class="abs" style="left:72px;top:650px;width:936px"><h1 class="j" style="margin:0">Kenapa <span class="y">angin</span> di Ghost of Tsushima nunjukin arah?</h1>
+ <p class="ib" style="margin:24px 0 0;text-wrap:balance">Angin awalnya bukan fitur navigasi. Pembuatnya bilang kamu boleh gak mengikutinya, dan timnya melanjutkannya di Ghost of Yōtei.</p></div>
+ <svg class="abs" style="left:72px;top:1170px" width="373" height="100" viewBox="0 0 560 150" aria-hidden="true"><use href="#lockup"/></svg>
+ <p class="no" data-kecil>1/7</p>
+</section>
+
+<!-- ============ SLIDE 2: FAKTA (bidang kuning, angin tanpa arah) ============ -->
+<section class="slide" id="s2" style="background-color:#FFC93C;color:#11131A">
+ <p class="wm" style="color:#11131A"><i style="background:#11131A"></i>late30_studio</p>
+ <h1 class="j abs" style="left:72px;top:150px;width:936px">Awalnya <span class="chip">angin</span> bukan buat menunjuk arah</h1>
+ <!-- PLACEHOLDER: titik angin berputar ke segala arah + tanda tanya; buatan sendiri -->
+ <div class="abs" data-placeholder="angin-bingung" style="left:72px;top:510px;width:936px;height:450px;background:#11131A;border-radius:22px;overflow:hidden">
+  <svg viewBox="0 0 936 450" width="936" height="450" style="display:block" aria-hidden="true">
+   <path d="M0 450V372L70 330L130 360L215 300L300 352L380 318L470 366L560 324L650 370L740 330L830 368L936 322V450Z" fill="#2B2F3D"/>
+   <g fill="none" stroke="#F5F2EA" stroke-linecap="round">
+    <path d="M40 330C100 190 250 170 250 270S120 380 200 400S360 330 400 240" stroke-width="16"/>
+    <path d="M30 120C120 40 250 60 280 130S230 230 150 190" stroke-width="10"/>
+    <path d="M330 400C420 330 470 400 520 340S470 240 400 150" stroke-width="7" opacity=".6"/>
+    <path d="M300 40C380 20 470 60 450 130" stroke-width="7" opacity=".6"/>
+   </g>
+   <g transform="translate(700 25)"><use href="#mark" stroke="#FFC93C" color="#FFC93C"/></g>
+  </svg></div>
+ <p class="ib abs" style="left:72px;top:1010px;width:936px;text-wrap:balance">Kata Matt Vainio, artis efek visual di Sucker Punch, awalnya tim gak berniat bikin sistem angin di dunia game ini jadi penunjuk arah.</p>
+ <p class="src" data-sumber data-kecil style="color:#11131A">PlayStation Blog, Matt Vainio, 12 Jan 2021</p>
+ <p class="no" data-kecil style="color:#11131A">2/7</p>
+</section>
+
+<!-- ============ SLIDE 3: PERTANYAAN (dua siluet + balon) ============ -->
+<section class="slide" id="s3">
+ <div class="dots"></div>
+ <p class="wm"><i></i>late30_studio</p>
+ <h1 class="j abs" style="left:72px;top:150px;width:936px">Lalu Jason Connell <span class="y">bertanya</span></h1>
+ <p class="ib abs" style="left:72px;top:380px;width:936px">Lalu art director Jason Connell nanya ke Matt Vainio dan seorang engineer: bisa gak partikel (butiran kecil yang melayang di udara) jadi penunjuk arah buat quest, alias misi yang lagi kamu kejar?</p>
+ <!-- PLACEHOLDER: dua siluet abstrak tanpa wajah + balon (butiran -> panah -> penanda quest); buatan sendiri -->
+ <div class="node" data-placeholder="siluet-balon" style="left:72px;top:590px;width:936px;height:610px">
+  <svg viewBox="0 -10 930 604" width="930" height="604" style="display:block" aria-hidden="true">
+   <path d="M0 470L90 400L170 440L270 360L360 420L470 350L560 410L660 370L760 430L850 380L930 420V520H0Z" fill="#2B2F3D"/>
+   <rect x="0" y="520" width="930" height="74" fill="#11131A"/>
+   <path d="M30 594C30 480 70 445 140 445S250 480 250 594Z" fill="#A52743"/>
+   <circle cx="140" cy="378" r="50" fill="#A52743"/>
+   <path d="M270 594C270 500 305 470 365 470S460 500 460 594Z" fill="#3A4054"/>
+   <circle cx="365" cy="410" r="44" fill="#3A4054"/>
+   <rect x="300" y="60" width="590" height="270" rx="44" fill="#F5F2EA"/>
+   <path d="M318 322L398 322L205 372Z" fill="#F5F2EA"/>
+   <g transform="translate(0 20)"><g fill="none" stroke="#11131A" stroke-linecap="round">
+    <path d="M350 150L420 128" stroke-width="12"/><path d="M360 190L470 160" stroke-width="9"/><path d="M345 230L440 204" stroke-width="14"/><path d="M400 262L486 238" stroke-width="8"/>
+   </g>
+   <path d="M530 176H620" stroke="#11131A" stroke-width="12" stroke-linecap="round"/>
+   <rect x="660" y="110" width="124" height="132" rx="14" fill="#FFC93C" stroke="#11131A" stroke-width="10"/>
+   <path d="M686 148H758M686 176H758M686 204H730" stroke="#11131A" stroke-width="10" stroke-linecap="round"/>
+   <g transform="translate(850 130) scale(.34)"><use href="#mark" stroke="#E0203F" color="#E0203F"/></g></g>
+  </svg></div>
+ <p class="src" data-sumber data-kecil>PlayStation Blog, Matt Vainio, 12 Jan 2021</p>
+ <p class="no" data-kecil>3/7</p>
+</section>
+
+<!-- ============ SLIDE 4: BANDING (dua node, mata ke ikon vs mata ke dunia) ============ -->
+<section class="slide" id="s4">
+ <div class="dots"></div>
+ <p class="wm"><i></i>late30_studio</p>
+ <h1 class="j abs" style="left:72px;top:150px;width:936px">Ke mana mata pemain <span class="y">melihat?</span></h1>
+ <!-- PLACEHOLDER kiri: layar dengan dunia redup, kompas terang, mata menatap ikon -->
+ <div class="node" data-placeholder="mata-ikon" style="left:72px;top:440px;width:440px;height:540px"><div class="kop"><svg class="pn"><use href="#pin"/></svg></div>
+  <div style="padding:22px 28px 0"><h2 class="ns" style="min-height:96px">Ikon dan kompas: mata ke layar</h2></div>
+  <svg viewBox="0 30 434 350" width="434" height="350" style="display:block;margin-top:14px" aria-hidden="true">
+   <g opacity=".4"><path d="M0 250L60 215L120 240L200 190L270 235L340 200L434 245V380H0Z" fill="#3A4054"/><path d="M0 320C90 295 170 295 250 308S370 300 434 295V380H0Z" fill="#2B2F3D"/></g>
+   <rect x="228" y="30" width="176" height="104" rx="14" fill="#11131A" stroke="#FF3B5C" stroke-width="5"/>
+   <g transform="translate(290 82) scale(.8)"><use href="#ikon"/></g>
+   <rect x="334" y="70" width="48" height="10" fill="#B9B6AD"/><rect x="334" y="90" width="32" height="10" fill="#B9B6AD"/>
+   <path d="M150 300C190 250 222 200 226 146" fill="none" stroke="#FFC93C" stroke-width="6" stroke-dasharray="4 14" stroke-linecap="round"/>
+   <g transform="translate(105 330) scale(.95)"><use href="#mata"/><circle cx="14" cy="-10" r="22" fill="#FFC93C"/><circle cx="20" cy="-14" r="9" fill="#11131A"/></g>
+  </svg></div>
+ <!-- PLACEHOLDER kanan: dunia terang dengan angin, mata menatap dunia -->
+ <div class="node" data-placeholder="mata-dunia" style="left:568px;top:440px;width:440px;height:540px"><div class="kop y"><svg class="pn"><use href="#pin"/></svg></div>
+  <div style="padding:22px 28px 0"><h2 class="ns" style="min-height:96px">Angin: mata ke dunia</h2></div>
+  <svg viewBox="0 30 434 350" width="434" height="350" style="display:block;margin-top:14px" aria-hidden="true">
+   <path d="M0 250L60 215L120 240L200 190L270 235L340 200L434 245V380H0Z" fill="#3A4054"/>
+   <path d="M0 320C90 295 170 295 250 308S370 300 434 295V380H0Z" fill="#2B2F3D"/>
+   <circle cx="350" cy="62" r="24" fill="#FF3B5C"/>
+   <g fill="none" stroke="#F5F2EA" stroke-linecap="round" stroke-width="8">
+    <path d="M14 110C100 70 170 150 250 110S370 70 420 100" opacity=".85"/>
+    <path d="M14 158C100 118 170 198 250 158S340 130 400 150" opacity=".5"/>
+   </g>
+   <path d="M150 312C210 265 290 225 340 206" fill="none" stroke="#FFC93C" stroke-width="6" stroke-dasharray="4 14" stroke-linecap="round"/>
+   <g transform="translate(105 330) scale(.95)"><use href="#mata"/><circle cx="20" cy="-6" r="22" fill="#FFC93C"/><circle cx="27" cy="-8" r="9" fill="#11131A"/></g>
+  </svg></div>
+ <!-- penanda antar sisi: panah dua arah, di celah antar node -->
+ <svg class="abs" style="left:518px;top:530px" width="44" height="44" viewBox="0 0 44 44" aria-hidden="true">
+  <circle cx="22" cy="22" r="20" fill="#FF3B5C" stroke="#11131A" stroke-width="4"/>
+  <path d="M10 22H34" stroke="#11131A" stroke-width="5" stroke-linecap="round"/>
+  <path d="M16 15L8 22L16 29Z M28 15L36 22L28 29Z" fill="#11131A" stroke="#11131A" stroke-width="2" stroke-linejoin="round"/>
+ </svg>
+ <p class="ib abs" style="left:72px;top:1030px;width:936px">Jason Connell bilang banyak orang cuma menatap kompas atau ikon. Angin dipakai supaya kamu tetap di dunia game.</p>
+ <p class="src" data-sumber data-kecil>Game Informer, Jason Connell, 20 Mei 2021</p>
+ <p class="no" data-kecil>4/7</p>
+</section>
+
+<!-- ============ SLIDE 5: DIAGRAM TIGA TEMPAT ============ -->
+<section class="slide" id="s5">
+ <div class="dots"></div>
+ <p class="wm"><i></i>late30_studio</p>
+ <h1 class="j abs" style="left:72px;top:150px;width:936px">Bentuk partikelnya <span class="y">ikut tempat</span></h1>
+ <!-- PLACEHOLDER: tiga panel buatan sendiri, lapangan / hutan / area terbakar; arah angin sama di ketiganya -->
+ <div class="node" data-placeholder="lapangan" style="left:72px;top:400px;width:296px;height:560px">
+  <svg viewBox="0 0 290 554" width="290" height="554" style="display:block" aria-hidden="true"><svg y="96" width="290" height="458" viewBox="0 96 290 458">
+   <path d="M0 330C80 300 180 320 290 290V554H0Z" fill="#2B2F3D"/>
+   <path d="M0 400C90 370 190 390 290 365V554H0Z" fill="#3A4054"/>
+   <g stroke="#F5F2EA" stroke-width="5" stroke-linecap="round" fill="none"><path d="M20 460l-6-50M50 470l8-60M85 455l-4-48M120 470l10-56M160 462l-6-52M195 472l12-60M232 458l-4-54M262 468l8-52"/></g>
+   <g stroke="#B9B6AD" stroke-width="4" fill="none"><path d="M40 420L34 330M100 410L110 310M170 415L160 320M225 410L232 330"/></g>
+   <g fill="#F5F2EA"><circle cx="34" cy="326" r="14"/><circle cx="110" cy="306" r="16"/><circle cx="160" cy="316" r="13"/><circle cx="232" cy="326" r="15"/></g>
+   <g fill="#F5F2EA" opacity=".85"><circle cx="90" cy="190" r="9"/><circle cx="130" cy="170" r="7"/><circle cx="175" cy="150" r="10"/><circle cx="215" cy="125" r="7"/><circle cx="255" cy="105" r="9"/></g>
+   <g fill="none" stroke="#F5F2EA" stroke-width="6" stroke-linecap="round" opacity=".5"><path d="M10 250C80 220 170 250 240 215"/><path d="M10 130C80 100 170 130 220 105"/></g>
+  </svg>
+  <rect width="290" height="96" fill="#1A1D27"/><circle cx="58" cy="48" r="30" fill="#11131A" stroke="#3A4054" stroke-width="3"/>
+  <path d="M44 62L48 36M58 62V30M72 62L68 36" stroke="#F5F2EA" stroke-width="5" stroke-linecap="round" fill="none"/></svg></div>
+ <div class="node" data-placeholder="hutan" style="left:392px;top:400px;width:296px;height:560px">
+  <svg viewBox="0 0 290 554" width="290" height="554" style="display:block" aria-hidden="true"><svg y="96" width="290" height="458" viewBox="0 96 290 458">
+   <rect x="38" y="60" width="28" height="494" fill="#3A4054"/><rect x="130" y="20" width="34" height="534" fill="#3A4054"/><rect x="232" y="90" width="26" height="464" fill="#3A4054"/>
+   <path d="M0 480C90 455 190 470 290 450V554H0Z" fill="#2B2F3D"/>
+   <g fill="#FFC93C" stroke="#11131A" stroke-width="2"><use href="#daun" transform="translate(70 250) rotate(-30)"/><use href="#daun" transform="translate(185 190) rotate(20) scale(1.1)"/><use href="#daun" transform="translate(240 300) rotate(-45)"/></g>
+   <g fill="#FF3B5C" stroke="#11131A" stroke-width="2"><use href="#daun" transform="translate(110 340) rotate(25) scale(1.1)"/><use href="#daun" transform="translate(205 395) rotate(-15)"/><use href="#daun" transform="translate(45 410) rotate(40)"/></g>
+   <g fill="none" stroke="#F5F2EA" stroke-width="6" stroke-linecap="round" opacity=".5"><path d="M10 250C80 220 170 250 240 215"/><path d="M10 470C80 440 170 470 240 435"/></g>
+  </svg>
+  <rect width="290" height="96" fill="#1A1D27"/><circle cx="58" cy="48" r="30" fill="#11131A" stroke="#3A4054" stroke-width="3"/>
+  <path d="M58 24L76 54H40Z" fill="#F5F2EA"/><rect x="54" y="54" width="8" height="10" fill="#F5F2EA"/></svg></div>
+ <div class="node" data-placeholder="abu" style="left:712px;top:400px;width:296px;height:560px">
+  <svg viewBox="0 0 290 554" width="290" height="554" style="display:block" aria-hidden="true"><svg y="96" width="290" height="458" viewBox="0 96 290 458">
+   <rect width="290" height="554" fill="#1A1D27"/>
+   <circle cx="200" cy="330" r="130" fill="#FF3B5C" opacity=".14"/>
+   <path d="M0 440C90 410 190 430 290 405V554H0Z" fill="#11131A"/>
+   <g fill="#11131A" stroke="#3A4054" stroke-width="3"><path d="M40 440L34 330L52 350L58 300L74 440Z"/><path d="M150 430L146 280L166 320L176 270L190 430Z"/><path d="M236 430L232 350L248 370L258 335L270 430Z"/></g>
+   <g fill="#B9B6AD"><circle cx="40" cy="260" r="6"/><circle cx="85" cy="230" r="5"/><circle cx="130" cy="200" r="7"/><circle cx="170" cy="170" r="5"/><circle cx="215" cy="140" r="7"/><circle cx="255" cy="120" r="5"/><circle cx="70" cy="330" r="5"/><circle cx="215" cy="260" r="6"/><circle cx="110" cy="300" r="4"/></g>
+   <g fill="#FFC93C"><circle cx="100" cy="380" r="5"/><circle cx="200" cy="360" r="4"/><circle cx="60" cy="400" r="3"/><circle cx="250" cy="300" r="4"/></g>
+   <g fill="none" stroke="#F5F2EA" stroke-width="6" stroke-linecap="round" opacity=".5"><path d="M10 250C80 220 170 250 240 215"/><path d="M10 150C80 120 170 150 220 125"/></g>
+  </svg>
+  <rect width="290" height="96" fill="#1A1D27"/><circle cx="58" cy="48" r="30" fill="#11131A" stroke="#3A4054" stroke-width="3"/>
+  <path d="M58 22C72 38 76 46 72 56C68 66 48 66 44 56C40 46 52 40 58 22Z" fill="#FF3B5C"/></svg></div>
+ <p class="ib abs" style="left:72px;top:1010px;width:936px">Di lapangan angin membawa bulu pampas (rumput berbulu halus) dan rumput, di hutan membawa daun, dan di area terbakar membawa abu.</p>
+ <p class="src" data-sumber data-kecil>PlayStation Blog, Matt Vainio, 12 Jan 2021</p>
+ <p class="no" data-kecil>5/7</p>
+</section>
+
+<!-- ============ SLIDE 6: POIN (peta atas: lurus vs berkelok) ============ -->
+<section class="slide" id="s6">
+ <div class="dots"></div>
+ <p class="wm"><i></i>late30_studio</p>
+ <!-- PLACEHOLDER: peta dari atas buatan sendiri; panah angin lurus ke tujuan, jalur berkelok memutari rintangan -->
+ <div class="node" data-placeholder="peta" style="left:72px;top:130px;width:936px;height:560px">
+  <svg viewBox="0 0 930 554" width="930" height="554" style="display:block" aria-hidden="true"><g transform="translate(0 20)">
+   <g fill="none" stroke="#3A4054" stroke-width="3"><path d="M40 50C200 10 400 60 560 30S820 50 900 20"/><path d="M60 520C220 480 420 540 600 510S820 520 900 490"/><path d="M700 300C760 260 860 270 890 330S820 420 740 410S660 340 700 300Z"/></g>
+   <path d="M360 270C360 190 430 170 510 180S610 250 570 330S440 380 380 340S350 300 360 270Z" fill="#2B2F3D" stroke="#3A4054" stroke-width="4"/>
+   <path d="M130 420C190 480 260 470 330 445S440 430 520 430S650 400 660 330S690 240 730 200S780 160 800 130" fill="none" stroke="#FF3B5C" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+   <path d="M130 420L690 184" fill="none" stroke="#FFC93C" stroke-width="12" stroke-linecap="butt"/>
+   <path d="M0 -32L66 0L0 32Z" fill="#FFC93C" transform="translate(680 191) rotate(-22.9)"/>
+   <circle cx="130" cy="420" r="20" fill="#F5F2EA" stroke="#11131A" stroke-width="6"/>
+   <path d="M828 80L876 128L828 176L780 128Z" fill="#FFC93C" stroke="#11131A" stroke-width="8" stroke-linejoin="round" transform="translate(-10 -10)"/>
+   <circle cx="818" cy="118" r="10" fill="#11131A"/>
+  </g></svg></div>
+ <h1 class="j abs" style="left:72px;top:730px;width:880px">Angin menunjuk, kamu yang <span class="y">cari jalan</span></h1>
+ <p class="ib abs" style="left:72px;top:1086px;width:936px">Angin menunjuk lurus ke tujuan, dan jalannya kamu cari sendiri. Jadi angin memberi arah, bukan rute.</p>
+ <p class="src" data-sumber data-kecil>PlayStation Blog, Matt Vainio, 12 Jan 2021</p>
+ <p class="no" data-kecil>6/7</p>
+</section>
+
+<!-- ============ SLIDE 7: PENUTUP (gelap atas, krem bawah, lockup terang) ============ -->
+<section class="slide" id="s7">
+ <div class="dots"></div>
+ <p class="wm"><i></i>late30_studio</p>
+ <div class="abs" style="left:72px;top:150px;width:936px"><h1 class="j" style="margin:0">Angin cuma petunjuk, boleh kamu <span class="y">abaikan</span></h1>
+ <p class="ib" style="margin:24px 0 0"><span style="display:block;max-width:830px;text-wrap:pretty">Kata Nate Fox dari Sucker Punch, angin memang menunjukkan arah, tapi kamu bebas gak mengikutinya. Timnya melanjutkan itu di Yōtei.</span> <span style="display:block;margin-top:20px;font:700 40px/52px 'Liberation Sans',sans-serif;color:#FFC93C;text-wrap:pretty">Game apa yang pernah menuntun kamu lewat petunjuk halus?</span></p></div>
+ <div class="abs" style="left:0;top:790px;width:1080px;height:560px;background:var(--k);color:var(--g)">
+  <!-- PLACEHOLDER: satu panah angin (tiga chevron merah, miring ke atas) dan jalur samping berupa batu pijakan gelap yang boleh dipilih; bukit buatan sendiri -->
+  <svg class="abs" data-placeholder="angin-pijakan" style="left:72px;top:20px" width="936" height="190" viewBox="0 30 936 190" aria-hidden="true">
+   <path d="M60 100H700" fill="none" stroke="#E0203F" stroke-width="18" stroke-linecap="butt"/>
+   <path d="M330 100C430 100 450 175 560 175H830" fill="none" stroke="#11131A" stroke-width="14" stroke-linecap="round"/>
+   <circle cx="60" cy="100" r="22" fill="#F5F2EA" stroke="#11131A" stroke-width="8"/>
+   <circle cx="850" cy="175" r="24" fill="none" stroke="#11131A" stroke-width="10"/>
+  </svg>
+  <svg class="abs" style="left:56px;top:253px" width="560" height="150" viewBox="0 0 560 150" aria-hidden="true"><use href="#lockupT"/></svg>
+  <p class="src" data-sumber data-kecil style="color:#4A4C57">COGconnected, Nate Fox, 24 Jul 2025</p>
+ </div>
+ <p class="no" data-kecil>7/7</p>
+</section>
+</html>

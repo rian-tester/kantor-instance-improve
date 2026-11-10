@@ -1,0 +1,6 @@
+.rahasia/
+hasil/
+catatan/.notif-brake-*
+catatan/statistik-pemakaian.jsonl
+node_modules/
+.env

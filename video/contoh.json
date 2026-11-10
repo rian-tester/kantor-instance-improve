@@ -1,0 +1,9 @@
+{
+  "adegan": [
+    {"teks": "Ide kamu masih di catatan?", "catatan": "Ambil satu pesan yang mau kamu ceritain.", "frame": 60},
+    {"teks": "Satu pesan. Satu cerita.", "catatan": "Susun awal yang jelas, lalu tunjukin hasilnya.", "frame": 150},
+    {"teks": "Sekarang jadi video.", "catatan": "Cek dulu, baru kasih ke owner.", "frame": 90}
+  ],
+  "musik": "audio/contoh.wav",
+  "musikVolume": 0.65
+}

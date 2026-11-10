@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../dasar.css">
+<style>
+/* autoaja.agency, edukasi engagement (putaran 2). Gabungan editorial + navy murni. Satu keluarga: Liberation Sans lokal.
+   Empat ukuran: 420 (angka) / 96 (judul) / 56 (isi, wordmark cover dan penutup) / 36 (label, wordmark, nomor).
+   Warna PERKIRAAN: navy #14155E, emas #E8A33D (aksen tunggal), navy2 #2B2C8C, redup #C9CBEF. */
+@font-face { font-family:"AA Sans"; font-weight:400; src:local("Liberation Sans"), local("LiberationSans"); }
+@font-face { font-family:"AA Sans"; font-weight:700; src:local("Liberation Sans Bold"), local("LiberationSans-Bold"); }
+:root { --navy:#14155E; --navy2:#2B2C8C; --emas:#E8A33D; --putih:#FFFFFF; --redup:#C9CBEF; }
+body { font-family:"AA Sans", sans-serif; background:#000; }
+section.slide { background:var(--navy); color:var(--putih); padding:72px; display:flex; flex-direction:column; }
+.atas { display:flex; justify-content:space-between; align-items:center; height:64px; flex:none; }
+.wm { font-size:36px; font-weight:700; letter-spacing:-.3px; line-height:1; margin:0; }
+.wm i { font-style:normal; color:var(--emas); }
+.wm.besar { font-size:56px; letter-spacing:-1.5px; }
+.no { position:absolute; right:72px; bottom:72px; font-size:36px; line-height:1; color:var(--redup); margin:0; }
+h1, h2 { margin:0; font-weight:700; font-size:96px; line-height:1; letter-spacing:-3px; text-wrap:balance; }
+.garis { width:140px; height:8px; background:var(--emas); margin:36px 0 36px; flex:none; transform-origin:left center; animation:tarik .5s ease-out both; }
+.isi { font-size:56px; line-height:1.2; margin:0; color:var(--redup); text-wrap:pretty; }
+.isi.putih { color:var(--putih); }
+.label { font-size:36px; line-height:1.2; font-weight:700; color:var(--emas); margin:0; letter-spacing:.3px; }
+.angka { font-size:420px; font-weight:700; line-height:.8; letter-spacing:-16px; color:var(--emas); margin:0; }
+.s { fill:none; stroke:var(--putih); stroke-width:4.5; stroke-linecap:round; stroke-linejoin:round; }
+.d { fill:var(--emas); }
+.besar-ikon { position:absolute; }
+.sisi { border-radius:12px; padding:28px 32px 32px; }
+.sisi .isi { color:inherit; }
+.sisi .label { margin-bottom:10px; }
+.sebelum { background:var(--navy2); color:var(--putih); }
+.sebelum .label { color:#E3E4FA; }
+.sesudah { background:var(--putih); color:var(--navy); border-left:12px solid var(--emas); }
+.sesudah .label { color:var(--navy2); }
+.panah { display:block; width:56px; height:64px; margin:6px 0 6px 40px; }
+.langkah { position:relative; padding:0 0 0 72px; margin:0 0 64px; }
+.langkah::before { content:""; position:absolute; left:6px; top:6px; width:28px; height:28px; border-radius:50%; background:var(--emas); }
+.langkah::after { content:""; position:absolute; left:18px; top:42px; bottom:-60px; width:4px; background:var(--emas); opacity:.5; }
+.langkah.akhir::after { display:none; }
+.langkah .isi { color:var(--putih); }
+.cta { border:4px solid var(--emas); border-radius:16px; padding:28px 32px 32px; animation:nyala 1.1s ease-out .9s both; }
+.hal { display:flex; align-items:baseline; gap:20px; }
+.empat { display:flex; gap:0; margin-top:32px; flex:none; border-top:3px solid rgba(201,203,239,.35); border-bottom:3px solid rgba(201,203,239,.35); }
+.empat > div { flex:1; display:flex; justify-content:center; padding:16px 0; }
+.empat > div + div { border-left:3px solid rgba(201,203,239,.35); }
+.spasi { flex:1; }
+
+/* Gerak: masuk bermakna lalu diam, tanpa loop. Cover: kail berayun sekali, badge emas pop terakhir. Penutup: panel menyala sekali. Selesai < 2 s. Judul/angka tidak mulai transparan. */
+@keyframes naik { from { transform:translateY(36px); } to { transform:none; } }
+@keyframes fade { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:none; } }
+@keyframes tarik { from { transform:scaleX(0); } to { transform:none; } }
+@keyframes ayun { 0% { transform:rotate(14deg); } 35% { transform:rotate(-8deg); } 65% { transform:rotate(4deg); } 100% { transform:none; } }
+@keyframes pop { from { transform:scale(.2); } to { transform:none; } }
+@keyframes nyala { 0% { background:rgba(232,163,61,.45); } 100% { background:rgba(232,163,61,0); } }
+.n0 { animation:naik .5s cubic-bezier(.2,.8,.3,1) both; }
+.f1 { animation:fade .5s ease-out .4s both; }
+.f2 { animation:fade .5s ease-out .75s both; }
+.f3 { animation:fade .5s ease-out 1.1s both; }
+.kail { transform-origin:57% 8%; animation:ayun 1.1s ease-out both; }
+.badge { transform-origin:center; transform-box:fill-box; animation:pop .45s cubic-bezier(.3,1.6,.5,1) 1s both; }
+</style>
+</head>
+<body>
+
+<!-- KONSEP: kartu pengetahuan navy ala feed asli (judul putih tebal, garis emas), jangkar berbeda tiap slide. Tanpa produk, harga, gelembung chat, maskot.
+     Elemen khas: wordmark teks + garis emas di semua slide; badge notifikasi emas hanya di cover (kail), titik langkah di slide 4, kamera slide 5.
+     TEMPAT MASKOT: belum ada aset; semut astronot nanti boleh mengisi pojok kanan atas cover dan penutup. Logo asli belum ada.
+     Peta: 1 cover/judul+kail besar+badge | 2 angka/"1" 420 | 3 banding/judul+panel sejajar | 4 langkah/judul+titik bertaut | 5 poin/judul+kamera | 6 penutup/judul+empat penanda ikon+panel ajakan. -->
+
+<!-- Slide 1. Tipe: cover. Jangkar: judul 96 px + kail besar. Motif: kail + badge emas. -->
+<section class="slide">
+  <div class="atas"><p class="wm besar">auto<i>aja</i>.agency</p></div>
+  <svg class="besar-ikon" style="right:56px; top:150px; width:640px; height:640px" viewBox="0 0 80 80" aria-hidden="true">
+    <g class="kail"><path class="s" style="stroke-width:3.6" d="M46 6 V50 C46 68 18 68 18 50 V42 M10 50 L18 42 L26 50 M38 6 H54"/></g>
+    <circle class="d badge" cx="63" cy="14" r="4.5"/>
+  </svg>
+  <div class="spasi"></div>
+  <h1 class="n0">Posting tiap hari, tapi tetap sepi?</h1>
+  <div class="garis"></div>
+  <p class="isi f1" style="margin-bottom:84px">Ada empat hal yang bisa kamu cek, plus satu pertanyaan sebelum posting. Geser ya.</p>
+  <p class="no">1/6</p>
+</section>
+
+<!-- Slide 2. Tipe: angka. Jangkar: "1" emas 420 px. Motif: angka raksasa. -->
+<section class="slide">
+  <div class="atas"><p class="wm">auto<i>aja</i>.agency</p></div>
+  <div class="hal" style="margin-top:56px"><span class="label">Hal</span> <span class="angka n0">1</span> <span class="label">dari 4</span></div>
+  <div class="spasi"></div>
+  <h2 class="f1">Satu postingan, satu pesan</h2>
+  <div class="garis" style="animation-delay:.3s"></div>
+  <p class="isi f2" style="margin-bottom:84px">Kalau satu gambar memuat info stok, jam buka, dan cerita sekaligus, orang bisa bingung mau ingat apa. Pilih satu saja untuk ditonjolkan.</p>
+  <p class="no">2/6</p>
+</section>
+
+<!-- Slide 3. Tipe: banding. Jangkar: judul 96 px + dua panel sejajar + panah. Motif: dua bidang. -->
+<section class="slide">
+  <div class="atas"><p class="wm">auto<i>aja</i>.agency</p></div>
+  <p class="label" style="margin-top:28px">Hal 2 dari 4</p>
+  <h2 class="n0" style="margin-top:16px">Mulai dari isinya, bukan basa-basi</h2>
+  <div class="garis"></div>
+  <div class="sisi sebelum f1">
+    <p class="label">Sebelum (contoh):</p> <p class="isi">Halo kakak-kakak semua, selamat pagi, hari ini kami mau kasih info.</p>
+  </div>
+  <svg class="panah f2" viewBox="0 0 56 64" aria-hidden="true"><path d="M28 4 V50 M10 34 L28 54 L46 34" fill="none" stroke="#E8A33D" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <div class="sisi sesudah f3">
+    <p class="label">Sesudah (contoh):</p> <p class="isi">Cara bikin kue ulang tahun yang rapi, ini langkahnya.</p>
+  </div>
+  <p class="label f3" style="color:var(--redup); margin-top:28px; font-weight:400">Contoh ilustrasi, bukan postingan asli.</p>
+  <p class="no">3/6</p>
+</section>
+
+<!-- Slide 4. Tipe: langkah bernomor. Jangkar: judul 96 px + tiga titik emas bertaut garis (motif titik emas). -->
+<section class="slide">
+  <div class="atas"><p class="wm">auto<i>aja</i>.agency</p></div>
+  <p class="label" style="margin-top:28px">Hal 3 dari 4</p>
+  <h2 class="n0" style="margin-top:16px">Balas komentar dalam tiga langkah</h2>
+  <div class="garis"></div>
+  <div style="margin-top:36px">
+    <div class="langkah f1"><p class="label">Langkah 1:</p> <p class="isi">baca semua komentar di hari yang sama.</p></div>
+    <div class="langkah f2"><p class="label">Langkah 2:</p> <p class="isi">balas pakai nama orangnya.</p></div>
+    <div class="langkah akhir f3"><p class="label">Langkah 3:</p> <p class="isi">tutup dengan pertanyaan kecil yang mudah dijawab.</p></div>
+  </div>
+  <p class="no">4/6</p>
+</section>
+
+<!-- Slide 5. Tipe: poin. Jangkar: judul 96 px + kamera besar dengan titik emas, dekat judul. -->
+<section class="slide">
+  <div class="atas"><p class="wm">auto<i>aja</i>.agency</p></div>
+  <p class="label" style="margin-top:28px">Hal 4 dari 4</p>
+  <h2 class="n0" style="margin-top:16px">Tunjukkan proses, bukan hanya hasil</h2>
+  <svg class="besar-ikon" style="right:72px; top:420px; width:340px; height:340px" viewBox="0 0 80 80" aria-hidden="true">
+    <rect class="s" style="stroke-width:2.2" x="8" y="24" width="64" height="42" rx="6"/>
+    <circle class="s" style="stroke-width:2.2" cx="40" cy="45" r="13"/>
+    <path class="s" style="stroke-width:2.2" d="M28 24 L32 14 H48 L52 24"/>
+    <circle class="d badge" cx="64" cy="32" r="3.5"/>
+  </svg>
+  <div class="spasi"></div>
+  <div class="garis" style="margin-top:0"></div>
+  <p class="isi f1" style="margin-bottom:84px; text-wrap:wrap">Foto dapur, meja kerja, atau tangan yang sedang membuat pesanan bisa memancing pertanyaan, dan pertanyaan itu bahan untuk kamu jawab.</p>
+  <p class="no">5/6</p>
+</section>
+
+<!-- Slide 6. Tipe: penutup. Jangkar: judul 96 px + pertanyaan. Empat penanda ikon (tanpa teks) mewakili empat hal; panel ajakan menyala sekali. -->
+<section class="slide">
+  <div class="atas"><p class="wm besar">auto<i>aja</i>.agency</p></div>
+  <h2 class="n0" style="margin-top:28px">Tanyakan ini sebelum posting</h2>
+  <div class="garis"></div>
+  <p class="isi putih f1">Setelah orang membaca postinganmu, apa yang bisa mereka lakukan? Menyimpan, membalas, atau datang ke tokomu.</p>
+  <div class="empat f2" aria-hidden="true">
+    <div><svg width="104" height="104" viewBox="0 0 80 80"><circle class="s" cx="40" cy="40" r="30"/><circle class="s" cx="40" cy="40" r="17"/><circle class="s" cx="40" cy="40" r="4"/></svg></div>
+    <div><svg width="104" height="104" viewBox="0 0 80 80"><path class="s" d="M14 66 L18 50 L52 16 L64 28 L30 62 Z M46 22 L58 34"/></svg></div>
+    <div><svg width="104" height="104" viewBox="0 0 80 80"><path class="s" d="M40 70 C10 48 12 22 28 22 C35 22 40 28 40 32 C40 28 45 22 52 22 C68 22 70 48 40 70Z"/></svg></div>
+    <div><svg width="104" height="104" viewBox="0 0 80 80"><rect class="s" x="8" y="24" width="64" height="42" rx="6"/><circle class="s" cx="40" cy="45" r="13"/><path class="s" d="M28 24 L32 14 H48 L52 24"/></svg></div>
+  </div>
+  <div class="spasi"></div>
+  <div class="cta" style="margin:40px 0 84px; flex:none">
+    <p class="isi putih">Simpan untuk dicek lagi, lalu ceritakan hal yang kamu lewatkan di komentar.</p>
+  </div>
+  <p class="no">6/6</p>
+</section>
+
+</body>
+</html>

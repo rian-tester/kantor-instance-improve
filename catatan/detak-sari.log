@@ -1,0 +1,356 @@
+== 2026-11-08 20:58:08 putaran 1 (sari)
+Putaran detak selesai. Jawaban owner di T-02 sudah kucatat, laporan malam sudah dibuat, dan notif terkirim.
+
+- **T-02:** owner menyetujui carousel autoaja "Foto produk AI melenceng? Coba lima unsur ini (tes engagement)", terjadwal tayang 21.45 WIB malam ini. Jawabannya kucatat di "Udah". Pertanyaan 1 (persetujuan posting) dan baris `Jawaban owner:`-nya kuhapus. Dua pertanyaan lain belum dijawab, jadi tetap kutanyakan dan task tetap `nunggu-kamu`: naskah tanpa fakta bersumber dikecualikan atau tidak, dan perumpamaan "fotografer" di slide 5 dipertahankan atau tidak.
+- **Laporan:** ada di `hasil/laporan-2026-11-08-malam.md`.
+- **Notif:** satu notif sudah terkirim, "Laporan malam".
+- **Catatan:** sudah ditulis di `catatan/sari.md`.
+- **T-07:** tidak kusentuh, masih menunggu owner.
+
+Aku tidak menyentuh Drive dan tidak mengirim apa pun ke luar. Langkah berikutnya: tulis `brand/sistem-desain-autoaja.md` setelah dua pertanyaan itu dijawab.
+   ↳ 8 giliran · 27 dtk · token baru 8 + cache 137.4k · keluar 3.4k · jatah 5 jam 52% · mingguan 28%
+== 2026-11-08 20:59:20 putaran 2 (sari)
+Putaran detak ini hampir selesai. Jawaban owner di T-02 ternyata sudah tercatat semua, "Keputusan kamu" kosong dan status sudah `jalan`. Aku baru menambah satu baris di "Udah" dan satu baris di `catatan/sari.md`.
+
+Langkah berikutnya di T-02 adalah menulis `brand/sistem-desain-autoaja.md`. Itu butuh Desainer dan Kritikus, jadi aku tunda ke sesi biasa. Tidak ada notif dan tidak ada yang dikirim keluar.
+
+Carousel autoaja baru tayang jam 21.45, jadi evaluasi performanya belum bisa dimulai.
+   ↳ 9 giliran · 27 dtk · token baru 12 + cache 192.8k · keluar 1.9k · jatah 5 jam 54% · mingguan 28%
+== 2026-11-08 21:33:39 putaran 3 (sari)
+Putaran detak selesai. Aku nggak kirim notif karena nggak ada yang perlu kamu jawab.
+
+- **T-07:** jawaban kamu (1a, carousel "angin Ghost of Tsushima" udah kamu setujuin di Konten, usulan tayang Senin 9 Nov 19.00 WIB) sudah kucatat di "Udah". Keputusan dikosongin dan status balik ke `jalan`.
+- **Belum dicek:** aku belum ngecek jadwalnya di Repliz. Itu kerjaan sesi biasa, dan jadwalnya nggak kuubah.
+- **Berikutnya:** setelah tayang, baca `sosmed/performa/terbaru.md` dan catat hasil tesnya.
+- **Catatan:** `catatan/sari.md` sudah kuupdate.
+
+Tugas lain nggak kusentuh. Laporan juga belum waktunya.
+   ↳ 10 giliran · 20 dtk · token baru 14 + cache 257.5k · keluar 2.2k · jatah 5 jam 88% · mingguan 33%
+-- 2026-11-08 21:34:11 sari: dipicu jawaban owner, ngalah: jatah Claude 5 jam udah 88%, disisain buat kamu sampai 01:10
+== 2026-11-09 03:00:01 putaran 1 (sari)
+Putaran detak ini baru selesai satu langkah kecil: aku milih topik dan nulis draf naskah untuk T-08. Draf itu belum dicek bahasa, belum lewat Satpam, belum didesain, dan rencana posting belum ditulis.
+
+- **Jawaban owner:** gak ada yang baru yang kelihatan di konteks. Aku gak lihat baris `Jawaban owner:`. Task T-02 dan T-07 kepotong di konteks, jadi mungkin ada yang kelewat.
+- **Topik:** autoaja, tips UMKM "catat 3 angka tiap hari" (uang masuk, uang keluar, sisa). Ini saran praktis tanpa klaim data, tanpa harga atau produk. Rencananya tayang 10/11.
+- **Hasil:** draf 6 slide plus caption ada di `hasil/naskah-T-08-20261110-autoaja-draf.md`. Aku nulisnya sendiri karena detak gak punya Penulis.
+- **Task dan catatan:** T-08 sudah diupdate (tanggal, "Udah", "Berikutnya") dan statusnya tetap `jalan`. Catatan ditulis di `catatan/sari.md`.
+- **Belum dilihat:** cek rangkum-revisi hari Senin belum kulakukan.
+- **Notif dan laporan:** gak ada notif, dan laporan belum waktunya.
+
+Kalau sesi berikutnya belum sempat nyelesaiin sisa alurnya, posting 10/11 bisa mundur.
+   ↳ 9 giliran · 23 dtk · token baru 8 + cache 146.7k · keluar 3.1k · jatah 5 jam 1% · mingguan 34%
+== 2026-11-09 03:20:02 putaran 2 (sari)
+Putaran detak selesai. Aku cuma ngerjain satu langkah kecil di T-08, dan Satpam, Desainer, serta Kritikus belum jalan.
+
+- **Cek bahasa:** draf carousel autoaja untuk tayang 10/11 (tips catat 3 angka tiap hari) awalnya kena 2 temuan. Aku perbaiki di `hasil/naskah-T-08-20261110-autoaja-draf.md`: "2 menit" jadi "sebentar", dan kalimat yang terlalu telegram dilengkapi. Cek ulang hasilnya nol temuan.
+- **Task dan catatan:** T-08 dan `catatan/sari.md` sudah kuupdate. Task tetap `jalan`, dan langkah berikutnya Satpam cek naskah.
+- **Lain-lain:** nggak ada jawaban owner baru dan nggak ada titipan baru. Laporan juga belum waktunya, jadi nggak ada notif. Cek rangkum-revisi belum kulihat; hari ini Senin, bukan Jumat.
+
+Kalau Satpam, Desainer, dan Kritikus belum kelar sebelum jam 09.00, tayang 10/11 bisa mundur.
+   ↳ 14 giliran · 20 dtk · token baru 12 + cache 219.4k · keluar 2.9k · jatah 5 jam 3% · mingguan 34%
+== 2026-11-09 03:40:01 putaran 3 (sari)
+Putaran detak 03.40: T-08 belum maju. Langkah berikutnya adalah cek Satpam atas naskah autoaja, dan putaran detak gak punya alat buat manggil agen Pemeriksa. Aku juga gak boleh menilai naskahku sendiri, jadi aku berhenti di situ.
+
+- Gak ada jawaban owner baru, titipan kotak masuk baru, atau laporan yang jatuh tempo.
+- Naskah `hasil/naskah-T-08-20261110-autoaja-draf.md` tetap siap Satpam (cek bahasa sudah nol temuan).
+- Status T-08 tetap `jalan`. Aku nambah satu baris di "Udah" dan satu baris di `catatan/sari.md`.
+- Gak ada notif, karena gak ada yang perlu dijawab owner.
+
+Satpam dilanjut di detak berikutnya yang bisa manggil agen, atau di sesi biasa. Kalau Satpam baru kelar setelah jam 09.00, konten autoaja ini bisa tayang mundur dari 10/11.
+   ↳ 6 giliran · 13 dtk · token baru 8 + cache 141.8k · keluar 1.5k · jatah 5 jam 4% · mingguan 34%
+== 2026-11-09 04:00:02 putaran 4 (sari)
+Putaran detak 04.00: tidak ada yang bisa dikerjakan, jadi tidak ada perubahan di task dan tidak ada notif.
+
+- **Jawaban owner:** tidak ada baris `Jawaban owner:` baru, dan tidak ada titipan baru di kotak masuk.
+- **T-08:** masih mentok di Satpam. Naskah autoaja untuk tayang 10/11 sudah nol temuan di cek bahasa, tapi putaran detak tidak bisa memanggil agen Pemeriksa dan aku tidak boleh menilai sendiri. Langkah itu menunggu sesi biasa atau detak yang bisa memanggil agen. Kalau tidak sempat sebelum 10/11, tayang mundur dan owner perlu diberi tahu.
+- **Rangkum-revisi:** dilewatin karena `brand/rangkum-revisi.md` belum ada.
+- **Catatan:** sudah ditulis di `catatan/sari.md`.
+   ↳ 5 giliran · 13 dtk · token baru 10 + cache 174k · keluar 1.4k · jatah 5 jam 4% · mingguan 34%
+== 2026-11-09 04:20:02 putaran 5 (sari)
+Putaran detak 04.20: tidak ada kerjaan yang bisa kukerjakan.
+
+- Tidak ada jawaban owner baru dan tidak ada titipan baru. Titipan Tsushima sudah tercatat di putaran sebelumnya.
+- T-08 masih menunggu Satpam. Putaran detak tidak bisa memanggil agen Pemeriksa, dan aku tidak boleh menilai naskah sendiri. Lanjutannya di sesi biasa atau sesi detak yang bisa memanggil agen.
+- Tidak ada notif dan tidak ada laporan.
+
+Aku sudah menulis "gak ada kerjaan" di `catatan/sari.md`.
+   ↳ 4 giliran · 7 dtk · token baru 6 + cache 103.6k · keluar 918 · jatah 5 jam 5% · mingguan 34%
+== 2026-11-09 04:40:02 putaran 6 (sari)
+Putaran detak 04.40: gak ada kerjaan, jadi aku cuma nulis itu di `catatan/sari.md`.
+
+- Gak ada jawaban owner baru dan gak ada titipan baru di kotak masuk.
+- T-08 masih berhenti di Satpam. Detak gak bisa manggil agen Pemeriksa, dan aku gak boleh nilai naskah sendiri. Naskah autoaja (`hasil/naskah-T-08-20261110-autoaja-draf.md`) sudah nol temuan di cek bahasa, jadi tinggal nunggu sesi yang bisa manggil agen. Kalau terlalu lama, tayang 10/11 bisa mundur.
+- Gak ada notif karena belum ada yang perlu dijawab owner.
+   ↳ 3 giliran · 7 dtk · token baru 6 + cache 103.5k · keluar 831 · jatah 5 jam 6% · mingguan 34%
+== 2026-11-09 05:00:01 putaran 7 (sari)
+Putaran detak 05.00: gak ada kerjaan yang bisa dikerjain sekarang.
+
+- Gak ada jawaban owner baru dan gak ada titipan baru di kotak masuk.
+- T-08 masih nunggu Satpam. Detak gak bisa manggil agen Pemeriksa, dan aku gak boleh nilai naskah sendiri. Lanjutnya di sesi yang bisa manggil agen.
+- Gak ada notif dan laporan belum waktunya. Aku cuma nambah 1 baris di `catatan/sari.md`.
+   ↳ 4 giliran · 10 dtk · token baru 8 + cache 137.9k · keluar 901 · jatah 5 jam 7% · mingguan 34%
+== 2026-11-09 05:20:01 putaran 8 (sari)
+Putaran detak 05.20: gak ada kerjaan. Gak ada jawaban owner, gak ada titipan baru, dan gak ada notif yang dikirim.
+
+T-08 masih nunggu Satpam. Detak gak bisa manggil agen Pemeriksa, dan Sari gak boleh nilai naskah sendiri. Lanjutnya di sesi biasa yang bisa manggil agen. Aku udah catat ini di `catatan/sari.md`.
+   ↳ 4 giliran · 6 dtk · token baru 8 + cache 136.9k · keluar 699 · jatah 5 jam 8% · mingguan 34%
+== 2026-11-09 05:40:01 putaran 9 (sari)
+Detak 05.40: gak ada kerjaan yang bisa aku kerjain di putaran ini, dan gak ada notif.
+
+- Gak ada jawaban owner baru dan gak ada titipan baru di kotak masuk.
+- T-08 (draf naskah autoaja untuk tayang 10/11) masih nunggu Satpam. Detak gak bisa manggil agen Pemeriksa, dan aku gak boleh menilai naskah sendiri.
+- Kalau sesi berikutnya yang bisa manggil agen belum jalan sebelum jam 09.00, konten 10/11 bisa mundur. Itu tetap tercatat di "Berikutnya" T-08.
+- Aku udah nulis baris putaran ini di `catatan/sari.md`.
+   ↳ 4 giliran · 8 dtk · token baru 6 + cache 103.1k · keluar 959 · jatah 5 jam 9% · mingguan 34%
+== 2026-11-09 06:00:01 putaran 10 (sari)
+Putaran detak 06.00: gak ada kerjaan baru, jadi aku cuma nulis catatan di `catatan/sari.md`.
+
+- Gak ada `Jawaban owner:` baru di task mana pun.
+- Gak ada titipan baru di kotak masuk. Titipan Tsushima sudah tercatat sebelumnya.
+- T-08 masih nunggu Satpam. Detak gak bisa manggil agen Pemeriksa dan aku gak boleh nilai sendiri, jadi lanjutnya di sesi biasa.
+- Gak ada notif karena gak ada yang perlu owner jawab.
+   ↳ 6 giliran · 12 dtk · token baru 12 + cache 207k · keluar 1.2k · jatah 5 jam 10% · mingguan 34%
+== 2026-11-09 06:20:01 putaran 11 (sari)
+Putaran detak 06.20: gak ada kerjaan yang bisa aku kerjain.
+
+- **Jawaban owner:** gak ada.
+- **Titipan baru:** gak ada.
+- **T-08:** masih nunggu Satpam. Detak gak bisa manggil agen Pemeriksa, dan aku gak boleh nilai sendiri. Lanjut di sesi yang bisa manggil agen.
+- **Laporan:** belum waktunya, dilewatin.
+- **Notif:** gak ada yang dikirim.
+- **Catatan:** sudah ditulis di `catatan/sari.md`.
+   ↳ 5 giliran · 11 dtk · token baru 10 + cache 171.6k · keluar 1.1k · jatah 5 jam 11% · mingguan 34%
+== 2026-11-09 06:40:02 putaran 12 (sari)
+Putaran 06.40: gak ada kerjaan yang bisa aku kerjain.
+
+- Gak ada jawaban owner baru dan gak ada titipan baru.
+- T-08 masih nunggu cek Satpam. Detak gak bisa manggil agen Pemeriksa, dan aku gak boleh nilai sendiri. Lanjutnya di sesi yang bisa manggil agen.
+- Gak ada notif dan gak ada perubahan task. Aku cuma nambah 1 baris di `catatan/sari.md`.
+   ↳ 5 giliran · 10 dtk · token baru 10 + cache 170.9k · keluar 1.2k · jatah 5 jam 11% · mingguan 35%
+== 2026-11-09 07:00:02 putaran 13 (sari)
+Putaran detak selesai, tapi ada satu kesalahan dari aku: `catatan/sari.md` sempat ketimpa karena aku nulis ke berkas itu sebelum membacanya utuh.
+
+**Yang rusak:** catatan lama di bawah 15 baris terakhir hilang dan gak ada cadangannya. Aku pulihin 15 baris terakhir dari konteks putaran, lalu kasih tanda di baris pertama. Detail kerjaan lama masih ada di task T-02, T-07, dan T-08. Kamu mungkin perlu cek apakah ada cadangan di luar kantor.
+
+**Yang beres:**
+- **Jawaban owner:** gak ada baris `Jawaban owner:` baru di task Sari, jadi gak ada yang perlu dicatat.
+- **Laporan pagi:** sudah dibuat di `hasil/laporan-2026-11-09-pagi.md`, notifnya terkirim. Gak ada yang nunggu keputusan kamu.
+- **T-08:** manggil pemeriksa ternyata bisa dari sesi ini. Hasil Satpam untuk naskah autoaja: **belum lolos**, 7 perbaikan tertarget (detail di `hasil/satpam-T-08-20261110.md`). Task sudah diupdate: berikutnya Penulis revisi, lalu cek bahasa, lalu Satpam ulang. Konten untuk tayang 10/11 masih bisa mundur kalau revisinya gak rampung sebelum jam 09.00.
+
+**Belum aku cek:** soal rangkum-revisi, `brand/rangkum-revisi.md` belum ada, jadi dilewatin lagi.
+   ↳ 15 giliran · 96 dtk · token baru 14 + cache 290.2k · keluar 5k · jatah 5 jam 19% · mingguan 35%
+== 2026-11-09 07:10:01 putaran 14 (sari)
+Putaran detak selesai. T-08 belum rampung: naskah autoaja untuk tayang 10/11 masih belum lolos Satpam.
+
+- **Revisi:** Penulis sudah merevisi 7 butir dari Satpam. Hasilnya ada di `hasil/naskah-T-08-20261110-autoaja-final.md` dan `hasil/naskah-T-08-20261110-final.json`.
+- **Cek bahasa mesin:** lima temuan, semuanya di daftar perubahan dan penomoran, bukan di teks slide. Aku gak mengubah apa-apa.
+- **Satpam ulang:** belum lolos, tinggal 3 butir kecil (D1–D3) di `hasil/satpam-T-08-20261110-ulang.md`.
+  - **D1, slide 5:** kalimat mencocokkan saldo sulit dibaca keras.
+  - **D2, slide 4 dan 6:** kata "baris" muncul di slide 6 tanpa pernah diperkenalkan.
+  - **D3, slide 6:** "paling sering muncul" dan "itu jawabannya" terlalu pasti.
+- **Task dan catatan:** `task/T-08-produksi-harian-sosmed.md` dan `catatan/sari.md` sudah diupdate. Langkah berikutnya: Penulis menambal D1–D3, lalu cek bahasa, Satpam ulang, Desainer, Kritikus, dan rencana posting.
+
+Gak ada jawaban owner baru, gak ada titipan baru, dan gak ada notif. Kalau tambalan D1–D3 lolos dan desain rampung tepat waktu, tayang 10/11 masih mungkin. Kalau gak, tayangnya mundur dan aku kabari owner.
+   ↳ 6 giliran · 12 dtk · token baru 8 + cache 133.8k · keluar 1.8k · jatah 5 jam 23% · mingguan 36%
+== 2026-11-09 07:20:02 putaran 15 (sari)
+Putaran ini naskah T-08 (autoaja, tayang 10/11) sudah lolos Satpam di putaran ketiga. Hasilnya ada di `hasil/satpam-T-08-20261110-ulang-2.md`.
+
+- **Revisi:** Penulis menambal tiga butir sisa D1–D3, hanya di kalimat yang disebut Satpam.
+- **Cek bahasa:** tool-nya mengeluarkan enam temuan. Lima ada di daftar perubahan dan satu di penomoran daftar, jadi bukan teks slide. Satpam sendiri menjalankan `cek-bahasa` dan hasilnya nol temuan.
+- **Naskah resmi:** `hasil/naskah-T-08-20261110-final.json`, SHA256 `9f78ff9f…1020`. Jangan diubah tanpa cek ulang Satpam.
+- **Task:** `task/T-08-produksi-harian-sosmed.md` dan `catatan/sari.md` sudah diperbarui. Status task tetap `jalan`.
+- **Berikutnya:** Desainer render carousel dengan penanda "Hal N dari 3", lalu Kritikus (maksimal 3 putaran), lalu rencana posting untuk 10/11. Aku belum cek apakah `brand/sistem-desain-autoaja.md` sudah ada.
+
+Tidak ada notif dan tidak ada jawaban owner yang masuk putaran ini. Laporan juga belum waktunya.
+   ↳ 11 giliran · 40 dtk · token baru 16 + cache 286.4k · keluar 2.8k · jatah 5 jam 27% · mingguan 36%
+== 2026-11-09 07:30:01 putaran 16 (sari)
+Kritikus menilai carousel autoaja T-08 putaran 1 dari 3: belum lolos. Aku sudah jalankan `cek-kritik` dan hasilnya sama.
+
+- **Skor:** brand 2, hierarki 4, kebaca HP 4, sisanya 3.
+- **Masalah berat:**
+  - Cover (slide 1) tidak menghentikan scroll.
+  - Penutup (slide 6) tidak punya dunia brand.
+  - Brand baru ditandai wordmark teks. Maskot dan logo asli belum dipakai.
+- **Masalah lain:**
+  - Motif koin dan panah muncul di lebih dari dua slide.
+  - Ikon koin di slide 2 punya artefak segitiga putih.
+  - Slide 4 mirip slide 5.
+  - Rumus di slide 5 tidak berlabel.
+- **Cek sumber teks:** Kritikus bilang teks di PNG sama dengan naskah final. Cek bahasa nol dia ambil dari catatan Satpam, tidak dijalankan ulang. Aku belum memastikan ulang hash naskahnya.
+
+Task T-08 tetap `jalan`. "Berikutnya" sudah kuganti dengan Desainer revisi putaran 2 (naskah tidak diubah) lalu Kritikus putaran 2. `catatan/sari.md` juga sudah kutulis. Tidak ada notif ke owner putaran ini.
+
+Satu hal yang butuh owner, belum kutanyakan: maskot semut astronot belum punya berkas lokal. Owner perlu membagikan berkasnya dari folder `png asset` ke "siapa saja yang memiliki link", lalu aku tarik pakai `node alat/drive.mjs unduh`. Kalau tidak sempat, revisi jalan tanpa maskot dan aku bilang itu terus terang ke owner.
+   ↳ 6 giliran · 19 dtk · token baru 10 + cache 185k · keluar 2.7k · jatah 5 jam 36% · mingguan 37%
+== 2026-11-09 07:40:01 putaran 17 (sari)
+Putaran detak ini: Desainer sudah merevisi carousel T-08 (autoaja, tayang 10/11) di putaran 2 dari 3. Kritikus belum menilainya.
+
+- **Hasil:** carousel baru ada di `hasil/carousel-T-08-20261110-v2/`, ringkasannya di `hasil/desain-T-08-20261110-revisi-2.md`. Versi lama tetap disimpan.
+- **Perubahan:**
+  - Motif koin dan panah sudah maksimal 2 slide.
+  - Cover dan penutup diperkuat.
+  - Artefak segitiga putih di ikon koin sudah hilang.
+  - Posisi ikon sekarang tetap.
+  - Teks slide tidak diubah.
+- **Pengecekan:** pengecekan render mesin nol temuan dan cek-naskah lolos.
+- **Masih tersisa:**
+  - Maskot semut belum ada berkas lokal, jadi revisi ini tanpa maskot.
+  - Label rumus slide 5 hanya lewat ikon, karena label tertulis butuh ubah naskah.
+  - Slide 3 masih kosong sekitar 250 px di bawah.
+  - Gerak animasi masih seragam.
+- **Berikutnya:** Kritikus putaran 2.
+- **Task:** T-08 tetap `jalan`, "Hasil" dan "Berikutnya" sudah diperbarui. Edit tanggal `update:` tidak jalan karena isinya sudah 2026-11-09. Catatan di `catatan/sari.md` sudah ditulis.
+- **Owner:** tidak ada jawaban owner baru dan tidak ada notif.
+   ↳ 8 giliran · 15 dtk · token baru 8 + cache 127.7k · keluar 2.4k · jatah 5 jam 40% · mingguan 37%
+== 2026-11-09 07:50:02 putaran 18 (sari)
+Putaran 2 dari Kritikus untuk T-08 (carousel autoaja) hasilnya belum lolos. `cek-kritik` aku jalankan dan hasilnya sama: "Belum lolos".
+
+- **Skor:** hierarki 4, kebaca HP 4, ritme 3, konsistensi 4 (naik dari 3), orisinal 3, brand 3 (naik dari 2), gerak 3, craft 3.
+- **Sudah beres dari putaran 1:** motif koin dan panah maksimal dua slide, artefak koin di slide 2 hilang, celah slide 2–3 rapat, dan penutup punya panel ajakan.
+- **Masih berat:**
+  - Cover masih terlihat seperti ilustrasi stok.
+  - Penutup belum punya dunia brand.
+- **Rumus slide 5:** label masuk/keluar/sisa butuh ubah naskah, jadi harus lewat Satpam lagi.
+
+Task T-08 dan `catatan/sari.md` sudah aku update. Berikutnya Desainer bikin putaran 3 (terakhir) di `hasil/carousel-T-08-20261110-v3/`, lalu Kritikus. Cover pakai elemen khas karena berkas maskot semut belum ada.
+
+Kalau putaran 3 masih belum lolos, versi terbaik aku serahkan ke "Keputusan kamu" bersama catatan Kritikus. Di situ aku tanya soal berkas maskot dan label rumus slide 5.
+
+Gak ada notif putaran ini. Gak ada jawaban owner baru, dan gak ada titipan baru di kotak masuk.
+   ↳ 11 giliran · 132 dtk · token baru 16 + cache 325.5k · keluar 3.6k · jatah 5 jam 45% · mingguan 38%
+== 2026-11-09 08:10:02 putaran 19 (sari)
+T-08 sekarang `nunggu-kamu`: carousel autoaja v3 sudah 3 putaran Kritikus dan belum lolos standar penuh. Sudah ada 1 notif ke owner.
+
+- **Skor putaran 3:** hierarki 4, kebaca HP 4, konsistensi 4, gerak 4, sedangkan ritme, orisinal, brand, dan craft masih 3. Cek mesin nol temuan, dan `cek-kritik` bilang "Belum lolos".
+- **Perubahan di v3:**
+  - cover pakai angka "3" emas besar
+  - penutup pakai buku catatan tercentang
+  - pola slide 2 dan slide 4 dibedakan
+  - slide 3 tidak kosong lagi di bawah
+- **Sisa masalah:** brand masih cuma wordmark karena maskot dan logo asli belum ada. Naskah tanpa fakta bersumber. Ada baris yatim di slide 4 dan 5, dan rumus slide 5 tanpa label.
+- **Keputusan owner:** serahkan v3 apa adanya untuk tayang 10/11 (rekomendasiku), atau tunggu berkas maskot dari `png asset`, atau batal. Satu pertanyaan lagi soal menambal naskah. Rencana posting belum ditulis, nunggu jawaban itu.
+
+Hasil ada di `hasil/carousel-T-08-20261110-v3/`. Task dan `catatan/sari.md` sudah diupdate.
+   ↳ 11 giliran · 23 dtk · token baru 12 + cache 242.2k · keluar 3.4k · jatah 5 jam 8% · mingguan 38%
+== 2026-11-09 08:30:01 putaran 20 (sari)
+Putaran detak 09/11 08.30: tidak ada jawaban owner dan tidak ada kerjaan baru.
+
+- **T-08** masih `nunggu-kamu` dan tidak aku sentuh. Pertanyaan maskot di sana sebagian sudah usang, karena Builder sudah menaruh maskot semut dan 12 aset autoaja lainnya di `masuk/autoaja-aset/`. Aku belum memakainya atau mengubah pertanyaannya. Itu nunggu owner menjawab.
+- **T-02 dan T-07** tidak ada langkah yang bisa dikerjakan sekarang.
+- **Titipan kotak masuk** soal aset autoaja sengaja tidak dipindah ke `selesai/`, karena masih dibutuhkan saat T-08 lanjut.
+- Aku tidak mengirim notif dan tidak membuat laporan, karena belum waktunya.
+- Aku sudah menulis catatan putaran ini di `catatan/sari.md`.
+   ↳ 5 giliran · 14 dtk · token baru 8 + cache 147.9k · keluar 1.6k · jatah 5 jam 10% · mingguan 38%
+-- 2026-11-09 09:42:44 sari: dipicu jawaban owner, ngalah: udah 20 putaran hari ini (batas 18)
+== 2026-11-09 10:24:43 putaran 21 (sari)
+Putaran detak selesai. Owner sudah jawab T-08 (1a dan 2a), jadi aku kerjain itu duluan.
+
+- **Jawaban owner:** versi v3 diserahkan apa adanya dan naskah dibiarkan. Dua jawaban itu dicatat di "Udah", lalu pertanyaannya aku hapus.
+- **Rencana posting:** aku tulis `sosmed/terbit/20261110-autoaja-catat-3-angka.json`. Akunnya @autoaja.agency, usulan tayang Selasa 10/11 jam 19.00, dan `task` diisi T-08. Cek `repliz.mjs rencana` bilang "Nunggu kamu setujuin", tanpa ✗.
+- **Status T-08:** jadi `parkir`, baris "Produksi terakhir" sudah diisi, dan cron 02.55 yang membangunkannya lagi.
+- **Notif:** 1 notif terkirim. Owner tinggal setujuin konten itu di halaman Konten.
+- **Catatan:** sudah ditulis di `catatan/sari.md`.
+
+Titipan builder soal 13 aset autoaja belum aku pindah ke `selesai/`. Maskotnya tidak dipakai di v3, dan berkas itu masih berguna buat konten autoaja berikutnya.
+
+Besok pagi giliran produksi late30, buat tayang 11/11.
+   ↳ 23 giliran · 44 dtk · token baru 26 + cache 641.6k · keluar 5.7k · jatah 5 jam 28% · mingguan 41%
+== 2026-11-09 10:25:58 putaran 22 (sari)
+Putaran ini aku cuma ngerjain persiapan untuk T-08. Carousel v4 pakai maskot belum dibikin.
+
+- **Titipan builder soal maskot:** ini perintah owner supaya carousel autoaja pakai maskot, jadi v3 tanpa maskot gak jadi diserahkan.
+- **Rencana posting:** di `sosmed/terbit/20261110-autoaja-catat-3-angka.json`, catatannya sekarang bertuliskan "JANGAN DISETUJUI DULU". Media-nya masih v3, nanti diganti ke v4.
+- **Aset:** `mascot_original_V2-removebg-preview.png` dan `horizontal-trans-crop.png` sudah dicek dan cocok dipakai, dua-duanya transparan.
+- **Status:** T-08 balik jadi `jalan`, dan "Berikutnya" sudah diisi langkah v4.
+- **Notif:** gak ada, karena belum ada yang perlu dijawab owner.
+
+Langkah berikutnya: Desainer bikin v4 di `hasil/carousel-T-08-20261110-v4/`, lalu Kritikus, lalu rencana posting ditulis ulang. Titipan builder belum kupindah ke `selesai/`, sesuai permintaannya, sampai v4 diserahkan. Jatah detak kali ini sengaja dihemat, jadi v4 dimulai di putaran berikutnya.
+   ↳ 10 giliran · 25 dtk · token baru 8 + cache 165.1k · keluar 3k · jatah 5 jam 31% · mingguan 41%
+== 2026-11-09 10:26:39 putaran 23 (sari)
+Aku lagi nutup putaran detak ini. Carousel v4 sudah dinilai dan T-08 sudah di `nunggu-kamu`, jadi tinggal cek akhir.
+
+- **Kritikus putaran 4:** belum lolos standar penuh (craft 3, orisinal 3, sisanya 4). Batas putaran sudah habis, jadi v4 diserahkan apa adanya.
+- **Rencana posting:** `sosmed/terbit/20261110-autoaja-catat-3-angka.json` sudah pakai media v4. Usulan tayang Sel 10/11 19.00.
+- **Keputusan owner:** ada 2 pertanyaan di T-08, yaitu setujuin v4 atau rapihin jadi v5, dan konfirmasi warna navy/emas.
+- **Notif dan catatan:** 1 notif sudah terkirim. Catatan putaran sudah ditulis di `catatan/sari.md`.
+
+Titipan builder soal maskot belum aku pindah ke `selesai/`. Itu nunggu jawaban owner. Aku gak ngapa-ngapain lagi sampai owner jawab.
+   ↳ 12 giliran · 31 dtk · token baru 14 + cache 311.8k · keluar 4.1k · jatah 5 jam 42% · mingguan 42%
+== 2026-11-09 10:32:17 putaran 24 (sari)
+Putaran detak ini gak ada kerjaan, jadi aku cuma nulis catatan di `catatan/sari.md`.
+
+- **Jawaban owner:** gak ada baris `Jawaban owner:` di task Sari. Yang ketemu cuma di `task/nonaktif/T-04`, dan itu bukan punya Sari.
+- **Titipan kotak masuk:** gak ada yang baru.
+- **T-08:** masih `nunggu-kamu` (setujuin v4 atau v5, plus konfirmasi warna), jadi gak aku sentuh.
+- **Notif dan laporan:** gak ada notif. Laporan belum waktunya.
+
+Satu catatan: aku nulis catatan pakai `echo >>` di Bash. Aturan kantor bilang ubah berkas pakai Edit atau Write, jadi lain kali aku pakai itu.
+   ↳ 4 giliran · 11 dtk · token baru 6 + cache 111.9k · keluar 785 · jatah 5 jam 43% · mingguan 42%
+== 2026-11-09 10:32:32 putaran 24 (sari)
+Putaran ini gak ada yang dikerjain, jadi aku cuma nulis catatan di `catatan/sari.md`.
+
+- **Jawaban owner:** gak ada. Pencarian `Jawaban owner:` di `task/` cuma kena `task/nonaktif/T-04-landing-page.md` dan `task/README.md`, dua-duanya bukan task Sari.
+- **Titipan kotak masuk:** gak ada yang baru.
+- **T-08:** masih `nunggu-kamu` (setujuin v4 atau minta v5, plus konfirmasi warna), jadi gak disentuh.
+- **Laporan:** belum waktunya, dilewatin.
+- **Notif:** gak ada.
+   ↳ 6 giliran · 12 dtk · token baru 10 + cache 186.5k · keluar 1k · jatah 5 jam 44% · mingguan 42%
+== 2026-11-09 10:34:50 putaran 25 (sari)
+Putaran detak selesai. Jawaban owner di T-08 sudah dicatat.
+
+- **Jawaban owner:** rencana posting autoaja v4 (pakai maskot dan logo asli) disetujui dan terjadwal tayang Sel 10/11 jam 19.00 WIB. Aku artikan itu sebagai jawaban 1a. Pertanyaan 1 dan baris `Jawaban owner:`-nya sudah dihapus, hasilnya dicatat di "Udah".
+- **Soal 2 (konfirmasi warna navy dan emas):** belum dijawab, jadi T-08 tetap `nunggu-kamu`. Kerja produksi 10/11 tidak nunggu soal ini.
+- **Titipan:** `pakai-maskot-t08` dipindah ke `selesai/` karena v4 sudah diserahkan.
+- **Notif:** tidak dikirim. Laporan juga belum waktunya.
+
+Satu hal yang aku tidak cek: file rencana posting `sosmed/terbit/20261110-autoaja-catat-3-angka.json` tidak dibuka lagi. Aku mengandalkan status "disetujui & terjadwal" dari dashboard.
+   ↳ 11 giliran · 21 dtk · token baru 14 + cache 306.3k · keluar 3k · jatah 5 jam 46% · mingguan 42%
+== 2026-11-09 10:40:59 putaran 26 (sari)
+Jawaban owner di T-08 (soal 2, warna: 2a) sudah dicatat, tapi hex warnanya belum bisa aku tulis.
+
+- **Yang dikerjain:** jawaban dicatat di "Udah", soal 2 dihapus, dan "Keputusan kamu" dikosongin.
+- **Kenapa hex belum ditulis:** `alat/info-gambar.mjs` cuma ngasih ukuran dan alpha, bukan warna. Nulis angka tanpa ngukur berarti ngarang. Navy (kira-kira #1F2060) dan emas (#E8A33D) tetap perkiraan.
+- **Titipan ke Builder:** aku bikin titipan minta alat baca warna dominan di `kotak-masuk/builder/2026-11-09-dari-sari-alat-baca-warna.md`. Begitu alatnya ada, hex ditulis ke `brand/acuan/autoaja-acuan.md`.
+- **Status T-08:** jadi `parkir`. Rencana posting v4 sudah disetujui dan terjadwal 10/11 19.00, jadi gak ada kerjaan lain hari ini. Cron 02.55 bangunin lagi, produksi late30 buat tayang 11/11 ada di "Berikutnya".
+- **Catatan:** sudah ditulis di `catatan/sari.md`. Gak ada notif, gak ada titipan baru, dan laporan belum waktunya.
+   ↳ 11 giliran · 21 dtk · token baru 12 + cache 255.5k · keluar 2.9k · jatah 5 jam 50% · mingguan 43%
+== 2026-11-10 03:00:01 putaran 1 (sari)
+Putaran ini aku selesaiin draf naskah late30 untuk tayang 11/11. Naskah belum lewat Satpam, jadi belum bisa dipakai.
+
+- **Naskah:** 6 slide tentang Mark of the Ninja (suara digambar jadi lingkaran), di `hasil/naskah-T-08-20261111-late30-draf.md` dan `hasil/naskah-T-08-20261111-draf.json`.
+- **Sumber:** belum dibaca ulang, karena WebFetch mati di sesi agen. Isi slide diambil dari catatan baca 08/11, jadi dua kalimat sumber harus dicek Satpam.
+- **Cek bahasa:** `cek-bahasa.py` nemu 1 hal, tapi di catatan jawaban uji, bukan di teks slide.
+- **Task dan catatan:** T-08 dan `catatan/sari.md` sudah diupdate. T-08 tetap `jalan`.
+- **Berikutnya:** Satpam, lalu Desainer, Kritikus, dan rencana posting 11/11.
+
+Gak ada jawaban owner baru, gak ada titipan, dan gak ada notif.
+   ↳ 7 giliran · 14 dtk · token baru 10 + cache 157.2k · keluar 1.7k · jatah 5 jam 71% · mingguan 76%
+== 2026-11-10 09:03:21 putaran 2 (sari)
+Laporan pagi sudah jadi di `hasil/laporan-2026-11-10-pagi.md`, dan notifnya sudah terkirim. Ini satu-satunya notif putaran ini.
+
+- **Jawaban owner:** tidak ada yang baru.
+- **Produksi late30:** tidak aku lanjutkan, karena sudah 09.03 dan batas kerja T-08 jam 09.00. Draf naskah K4 sudah ada, tinggal Satpam, Desainer, dan Kritikus. Itu lanjut di sesi berikutnya, jadi T-08 tetap `jalan`.
+- **Catatan:** `catatan/sari.md` sudah diisi.
+   ↳ 8 giliran · 20 dtk · token baru 8 + cache 136.4k · keluar 2k · jatah 5 jam 11% · mingguan 78%
+== 2026-11-10 09:03:44 putaran 3 (sari)
+Laporan pagi sudah dibuat di `hasil/laporan-2026-11-10-pagi.md` dan notifnya terkirim. Karena sudah lewat 09.00 (jam kerja detak), produksi late30 tidak kulanjutkan.
+
+- **Jawaban owner:** tidak ada yang baru, tidak ada yang menunggu keputusan kamu.
+- **Autoaja:** carousel v4 sudah disetujui dan terjadwal tayang hari ini 19.00 WIB.
+- **Late30:** naskah K4 (6 slide) masih draf dan belum dicek Satpam. Langkah berikutnya di T-08: Satpam, lalu Desainer, Kritikus, dan rencana posting untuk 11/11 19.00. Waktunya mepet karena lanjutannya baru bisa di sesi detak berikutnya.
+- **Task:** status T-08 tidak kuubah (masih `jalan`) dan tidak kutambah baris "Udah", karena tidak ada langkah produksi yang selesai putaran ini.
+- **Berkas nyasar:** aku salah bikin berkas kosong `catatan/sari.md.baru` (isinya cuma "x"). Aku tidak menghapusnya karena hapus file harus tanya kamu dulu. Tolong hapus atau minta Builder yang menghapus. Sudah kucatat di `catatan/sari.md`.
+   ↳ 8 giliran · 24 dtk · token baru 10 + cache 179k · keluar 2.3k · jatah 5 jam 12% · mingguan 78%
+== 2026-11-10 09:04:11 putaran 3 (sari)
+Naskah late30 K4 (Mark of the Ninja) tidak lolos Satpam, jadi produksi berhenti di sini dan butuh keputusan kamu.
+
+- **Penyebab:** dua sumbernya (Game Developer 2/8/2012 dan Game Informer 15/10/2012) tidak bisa dibuka. Agen pemeriksa tidak punya WebFetch, jadi klaim di slide 2–5 dan caption tidak bisa dipastikan. Satpam menilai semuanya gugur.
+- **Temuan lain:** slide 4 berisi kalimat telegram, istilah "cincin" dan "lingkaran" tidak konsisten, dan beberapa kalimat terdengar janggal kalau dibaca keras.
+- **Yang sudah kukerjakan:** T-08 jadi `nunggu-kamu` dengan satu pertanyaan, `catatan/sari.md` diperbarui, dan satu notif terkirim. Hasil Satpam ada di `hasil/satpam-T-08-20261111.md`. Naskah tidak kuubah.
+- **Pilihan untuk tayang 11/11 19.00:**
+  - **a) (rekomendasi)** Sesi yang punya WebFetch membaca ulang dua link, lalu Penulis memperbaiki naskah.
+  - **b)** Ganti ke K3 Alien: Isolation. Sumbernya juga perlu dibaca ulang, jadi risikonya sama.
+  - **c)** Lewati late30 untuk 11/11 dan lanjut autoaja untuk 12/11.
+
+Titipan builder soal izin lewat jam 09.00 belum kupindah ke `selesai/`, karena rencana posting late30 belum ditulis.
+   ↳ 6 giliran · 19 dtk · token baru 8 + cache 118.8k · keluar 2.4k · jatah 5 jam 16% · mingguan 78%

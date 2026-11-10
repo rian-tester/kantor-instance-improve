@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="id"><meta charset="utf-8"><title>late30_studio T-07: Game 3D dari segitiga (arah Graph)</title>
+<link rel="stylesheet" href="../../dasar.css">
+<!--
+KONSEP VISUAL (sistem: brand/sistem-desain-late30.md): "Graph", layar editor node. Dunia brand = alur kerja 3D yang disambung.
+Satu ide pemersatu: segitiga -> piksel -> sinar cahaya -> gabungan. Tiap slide mengambil satu bagian alur itu.
+Kabel+pin+node berkepala HANYA di slide 1 dan 5. Slide lain memakai bingkai datar, bidang warna, atau ilustrasi.
+
+Peran per slide (tipe | jangkar | motif):
+1 cover    | judul "Game 3D bisa digambar dari segitiga" 96 px | node+kabel, mesh (placeholder)
+2 poin     | judul "Objek 3D dibentuk dari segitiga" 96 px     | mesh segitiga (ilustrasi medan buatan sendiri)
+3 poin+visual | judul "Layarnya sendiri cuma 2D" 96 px         | piksel (layar berkisi, segitiga jadi blok)
+4 fakta/definisi | judul "Ray tracing menelusuri jalur cahaya" | sinar cahaya (garis putus-putus), bidang kuning
+5 banding  | judul "Rasterization vs ray tracing: ..." + chip kuning "lebih berat" | node+kabel
+6 penutup  | judul "Dipakai bareng: ..." + ajakan; lockup terang di bidang krem | lockup, bidang krem
+
+Ilustrasi mesh di slide 1 dan 2, layar piksel di slide 3, sinar di slide 4 = buatan sendiri, PLACEHOLDER
+sampai owner menyediakan tangkapan editor/karya miliknya. Tidak ada tangkapan layar atau foto pihak lain.
+Font: Liberation Sans + DejaVu Sans Mono dari sistem lewat local(); final menunggu keputusan owner.
+Tingkat ukuran: 96 / 40 / 32 / 28. Gerak: tidak ada (statis).
+Teks persis hasil/naskah-T-07-final.json.
+-->
+<style>
+@font-face{font-family:'Liberation Sans';font-weight:400;src:local('Liberation Sans'),local('LiberationSans')}
+@font-face{font-family:'Liberation Sans';font-weight:700;src:local('Liberation Sans Bold'),local('LiberationSans-Bold')}
+@font-face{font-family:'DejaVu Sans Mono';font-weight:400;src:local('DejaVu Sans Mono'),local('DejaVuSansMono')}
+@font-face{font-family:'DejaVu Sans Mono';font-weight:700;src:local('DejaVu Sans Mono Bold'),local('DejaVuSansMono-Bold')}
+:root{--g:#11131A;--k:#F5F2EA;--p:#FF3B5C;--y:#FFC93C;--n:#1A1D27;--l:#3A4054;--t:#B9B6AD}
+.slide{background-color:var(--g);color:var(--k);font-family:'Liberation Sans',sans-serif;font-weight:700}
+.dots{position:absolute;left:0;top:0;width:1080px;height:1350px;background-image:radial-gradient(circle,#2B2F3D 2.5px,transparent 3px);background-size:54px 54px;background-position:27px 27px}
+.abs{position:absolute}
+.wm{position:absolute;left:72px;top:68px;margin:0;font:700 28px/36px 'DejaVu Sans Mono',monospace;display:flex;align-items:center;gap:14px}
+.wm i{width:18px;height:18px;background:var(--y);display:block}
+.no{position:absolute;right:72px;top:68px;margin:0;font:400 28px/36px 'DejaVu Sans Mono',monospace;color:var(--t)}
+.src{position:absolute;left:72px;bottom:72px;margin:0;font:400 28px/36px 'DejaVu Sans Mono',monospace;color:var(--t);white-space:nowrap}
+h1,h2{margin:0;font-weight:700;letter-spacing:-.5px}
+.j{font-size:96px;line-height:104px;text-wrap:balance}
+.ns{margin:0;font:700 40px/48px 'Liberation Sans',sans-serif}
+.kc{margin:0;font:400 32px/46px 'Liberation Sans',sans-serif;text-wrap:pretty}
+.ib{margin:0;font:400 32px/48px 'Liberation Sans',sans-serif;text-wrap:pretty}
+.y{color:var(--y)}
+.p{color:var(--p)}
+.node{position:absolute;background:var(--n);border:3px solid var(--l);border-radius:22px;overflow:hidden}
+.kop{height:46px;background:var(--p);display:flex;align-items:center;padding:0 18px}
+.kop.y{background:var(--y)}
+.kop.k{background:var(--k)}
+.pn{width:24px;height:24px;display:block}
+.wire{position:absolute;left:0;top:0;width:1080px;height:1350px}
+.chip{background:var(--y);color:var(--g);border-radius:6px;padding:0 8px;font-weight:700}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="pin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="#FFC93C" stroke="#11131A" stroke-width="4"/></symbol>
+<g id="kubus"><polygon fill="#FF3B5C" points="-43.3,-25 0,0 0,50 -43.3,25"/><polygon fill="#FF3B5C" points="43.3,-25 43.3,25 0,50 0,0"/><path stroke="#11131A" stroke-width="2.4" fill="none" d="M-43.3 -25L0 0L43.3 -25M0 0V50"/><polygon points="0,-46 34.64,-26 0,-6 -34.64,-26" fill="none" stroke="#11131A" stroke-width="10.5" stroke-linejoin="bevel"/><polygon points="0,-46 34.64,-26 0,-6 -34.64,-26" fill="none" stroke="#FFC93C" stroke-width="6" stroke-linejoin="bevel"/><rect x="-5" y="-51" width="10" height="10" fill="#FFC93C" stroke="#11131A" stroke-width="2"/><rect x="29.64" y="-31" width="10" height="10" fill="#FFC93C" stroke="#11131A" stroke-width="2"/><rect x="-5" y="-11" width="10" height="10" fill="#FFC93C" stroke="#11131A" stroke-width="2"/><rect x="-39.64" y="-31" width="10" height="10" fill="#FFC93C" stroke="#11131A" stroke-width="2"/></g>
+<g id="lockup"><use href="#kubus" transform="translate(75 78) scale(1.2)"/><g transform="translate(168 25)"><g fill="none" stroke-width="18" stroke-linejoin="miter" stroke-linecap="butt"><path stroke="#F5F2EA" transform="translate(0 0)" d="M9 0V100"/><path stroke="#F5F2EA" transform="translate(32 0)" d="M9 39H45V91H9V65H45"/><path stroke="#F5F2EA" transform="translate(106 0)" d="M21 0V91H50M0 39H44"/><path stroke="#F5F2EA" transform="translate(170 0)" d="M9 65H51V39H9V91H51"/><path stroke="#FFC93C" transform="translate(250 0)" d="M6.00 9.00L33.00 9.00L45.00 21.00L45.00 38.00L33.00 50.00L45.00 62.00L45.00 79.00L33.00 91.00L6.00 91.00M20.00 50.00L33.00 50.00"/><path stroke="#FFC93C" transform="translate(318 0)" d="M21.00 9.00L33.00 9.00L45.00 21.00L45.00 79.00L33.00 91.00L21.00 91.00L9.00 79.00L9.00 21.00Z"/></g></g></g>
+<g id="lockupT"><g transform="translate(75 78) scale(1.2)"><polygon fill="#E0203F" points="-43.3,-25 0,0 0,50 -43.3,25"/><polygon fill="#E0203F" points="43.3,-25 43.3,25 0,50 0,0"/><path stroke="#F5F2EA" stroke-width="2.4" fill="none" d="M-43.3 -25L0 0L43.3 -25M0 0V50"/><polygon points="0,-46 34.64,-26 0,-6 -34.64,-26" fill="none" stroke="#11131A" stroke-width="10.5" stroke-linejoin="bevel"/><polygon points="0,-46 34.64,-26 0,-6 -34.64,-26" fill="none" stroke="#FFC93C" stroke-width="6" stroke-linejoin="bevel"/><rect x="-5" y="-51" width="10" height="10" fill="#FFC93C" stroke="#11131A" stroke-width="2"/><rect x="29.64" y="-31" width="10" height="10" fill="#FFC93C" stroke="#11131A" stroke-width="2"/><rect x="-5" y="-11" width="10" height="10" fill="#FFC93C" stroke="#11131A" stroke-width="2"/><rect x="-39.64" y="-31" width="10" height="10" fill="#FFC93C" stroke="#11131A" stroke-width="2"/></g><g transform="translate(168 25)"><g fill="none" stroke-width="18" stroke-linejoin="miter" stroke-linecap="butt"><path stroke="#11131A" transform="translate(0 0)" d="M9 0V100"/><path stroke="#11131A" transform="translate(32 0)" d="M9 39H45V91H9V65H45"/><path stroke="#11131A" transform="translate(106 0)" d="M21 0V91H50M0 39H44"/><path stroke="#11131A" transform="translate(170 0)" d="M9 65H51V39H9V91H51"/><path stroke="#E0203F" transform="translate(250 0)" d="M6.00 9.00L33.00 9.00L45.00 21.00L45.00 38.00L33.00 50.00L45.00 62.00L45.00 79.00L33.00 91.00L6.00 91.00M20.00 50.00L33.00 50.00"/><path stroke="#E0203F" transform="translate(318 0)" d="M21.00 9.00L33.00 9.00L45.00 21.00L45.00 79.00L33.00 91.00L21.00 91.00L9.00 79.00L9.00 21.00Z"/></g></g></g>
+<pattern id="kisiT" width="38.75" height="38.75" patternUnits="userSpaceOnUse"><path d="M38.75 0H0V38.75" fill="none" stroke="#2B2F3D" stroke-width="2"/></pattern>
+<pattern id="kisiP" width="38.75" height="38.75" patternUnits="userSpaceOnUse"><path d="M38.75 0H0V38.75" fill="none" stroke="#1A1D27" stroke-width="3"/></pattern>
+<linearGradient id="lit" gradientUnits="userSpaceOnUse" x1="155" y1="0" x2="775" y2="0"><stop offset="0" stop-color="#FF3B5C"/><stop offset="1" stop-color="#8A1F37"/></linearGradient>
+<radialGradient id="gb" cx=".32" cy=".28" r=".85"><stop offset="0" stop-color="#FFC2CC"/><stop offset=".22" stop-color="#FF3B5C"/><stop offset=".68" stop-color="#A52743"/><stop offset="1" stop-color="#4C1121"/></radialGradient>
+<radialGradient id="gl"><stop offset="0" stop-color="#FFC93C" stop-opacity=".95"/><stop offset=".35" stop-color="#FFC93C" stop-opacity=".35"/><stop offset="1" stop-color="#FFC93C" stop-opacity="0"/></radialGradient>
+<linearGradient id="fd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#000"/></linearGradient>
+<g id="bola"><circle r="92" fill="url(#gb)"/><ellipse cx="-38" cy="-48" rx="20" ry="10" fill="#FFF1C2" opacity=".55" transform="rotate(-35 -38 -48)"/></g>
+<marker id="pnh" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#11131A"/></marker>
+</defs></svg>
+
+<!-- ============ SLIDE 1: COVER ============ -->
+<section class="slide" id="s1">
+ <div class="dots"></div>
+ <p class="wm"><i></i>late30_studio</p>
+ <div class="node" style="left:708px;top:190px;width:300px;height:380px"><div class="kop"><svg class="pn"><use href="#pin"/></svg></div>
+  <svg viewBox="0 0 560 150" style="position:absolute;left:22px;top:190px;width:252px;height:68px" aria-hidden="true"><use href="#lockup"/></svg></div>
+ <!-- PLACEHOLDER: objek 3D bola bershading + titik cahaya, buatan sendiri, bukan tangkapan layar editor -->
+ <div class="node" data-placeholder="objek3d" style="left:72px;top:190px;width:600px;height:380px"><div class="kop y"><svg class="pn"><use href="#pin"/></svg></div>
+  <svg viewBox="0 0 594 330" style="position:absolute;left:0;top:46px;width:594px;height:330px" aria-hidden="true">
+   <rect x="0" y="262" width="600" height="70" fill="#11131A" opacity=".45"/>
+   <line x1="0" y1="262" x2="600" y2="262" stroke="#3A4054" stroke-width="3"/>
+   <circle cx="100" cy="86" r="96" fill="url(#gl)"/>
+   <g stroke="#FFC93C" stroke-width="6" stroke-linecap="round"><line x1="100" y1="32" x2="100" y2="46"/><line x1="46" y1="86" x2="60" y2="86"/><line x1="62" y1="48" x2="72" y2="58"/><line x1="138" y1="48" x2="128" y2="58"/></g>
+   <ellipse cx="420" cy="296" rx="150" ry="16" fill="#000" opacity=".6"/>
+   <use href="#bola" transform="translate(390 160) scale(1.5)"/>
+   <circle cx="100" cy="86" r="16" fill="#FFC93C" stroke="#FFF1C2" stroke-width="4"/></svg></div>
+ <div class="node" style="left:72px;top:640px;width:936px"><div class="kop"><svg class="pn"><use href="#pin"/></svg></div>
+  <div style="padding:52px 40px 44px">
+   <h1 class="j">Game 3D <br>bisa digambar <br>dari <span class="y">segitiga</span></h1>
+   <p class="ib" style="margin-top:36px;max-width:800px;line-height:56px;font-size:40px">Lalu cahayanya? Kamu akan tahu dua cara menggambarnya dan kenapa keduanya dipakai bareng.</p>
+  </div></div>
+ <svg class="wire" viewBox="0 0 1080 1350" aria-hidden="true">
+  <path d="M372 570 L372 640" stroke="#FFC93C" stroke-width="6" fill="none"/>
+  <path d="M858 570 L858 640" stroke="#FF3B5C" stroke-width="6" fill="none"/>
+  <circle cx="372" cy="570" r="11" fill="#FFC93C" stroke="#11131A" stroke-width="4"/><circle cx="858" cy="570" r="11" fill="#FFC93C" stroke="#11131A" stroke-width="4"/>
+  <circle cx="372" cy="640" r="11" fill="#FFC93C" stroke="#11131A" stroke-width="4"/><circle cx="858" cy="640" r="11" fill="#FFC93C" stroke="#11131A" stroke-width="4"/>
+ </svg>
+ <p class="no" data-kecil>1/6</p>
+</section>
+
+<!-- ============ SLIDE 2: POIN (mesh) ============ -->
+<section class="slide" id="s2">
+ <div class="dots"></div>
+ <p class="wm"><i></i>late30_studio</p>
+ <h1 class="j abs" style="left:72px;top:150px;width:936px">Objek 3D dibentuk dari <span class="y">segitiga</span></h1>
+ <p class="ib abs" style="left:72px;top:400px;width:820px">Di grafik real-time seperti game, objek 3D dibentuk dari segitiga berbagai bentuk dan ukuran. Kumpulan segitiga ini namanya <span class="y">mesh.</span></p>
+ <p class="src" data-sumber data-kecil>NVIDIA Developer, Ray Tracing, dibaca 8 Nov 2026</p>
+ <p class="no" data-kecil>2/6</p>
+ <!-- PLACEHOLDER: medan segitiga (mesh) buatan sendiri -->
+ <svg class="abs" data-placeholder="mesh" style="left:72px;top:660px" width="936" height="480" viewBox="0 0 936 480" aria-hidden="true">
+  <g stroke="#F5F2EA" stroke-opacity=".5" stroke-width="2.5" stroke-linejoin="round">
+   <polygon fill="#FF3B5C" points="0,260 150,150 200,330"/>
+   <polygon fill="#D93352" points="0,260 0,380 200,330"/>
+   <polygon fill="#F0405A" points="150,150 300,230 200,330"/>
+   <polygon fill="#B52A48" points="300,230 380,300 200,330"/>
+   <polygon fill="#FF3B5C" points="300,230 470,40 380,300"/>
+   <polygon fill="#C42E4D" points="470,40 560,330 380,300"/>
+   <polygon fill="#A52743" points="470,40 640,200 560,330"/>
+   <polygon fill="#C42E4D" points="640,200 730,290 560,330"/>
+   <polygon fill="#B52A48" points="640,200 780,110 730,290"/>
+   <polygon fill="#9A2541" points="780,110 936,230 730,290"/>
+   <polygon fill="#B52A48" points="936,230 936,350 730,290"/>
+   <polygon fill="#D93352" points="0,380 0,480 200,330"/>
+   <polygon fill="#A52743" points="0,480 260,480 200,330"/>
+   <polygon fill="#E2354F" points="200,330 380,300 260,480"/>
+   <polygon fill="#9A2541" points="380,300 520,480 260,480"/>
+   <polygon fill="#D93352" points="380,300 560,330 520,480"/>
+   <polygon fill="#A52743" points="560,330 760,480 520,480"/>
+   <polygon fill="#F0405A" points="560,330 730,290 760,480"/>
+   <polygon fill="#9A2541" points="730,290 936,350 760,480"/>
+   <polygon fill="#C42E4D" points="936,350 936,480 760,480"/>
+  </g>
+  <g fill="#FFC93C" stroke="#11131A" stroke-width="2">
+   <rect x="144" y="144" width="12" height="12"/><rect x="294" y="224" width="12" height="12"/><rect x="464" y="34" width="12" height="12"/><rect x="634" y="194" width="12" height="12"/><rect x="774" y="104" width="12" height="12"/><rect x="194" y="324" width="12" height="12"/><rect x="374" y="294" width="12" height="12"/><rect x="554" y="324" width="12" height="12"/><rect x="724" y="284" width="12" height="12"/>
+  </g>
+ </svg>
+</section>
+
+<!-- ============ SLIDE 3: POIN + VISUAL (piksel) ============ -->
+<section class="slide" id="s3">
+ <div class="dots"></div>
+ <p class="wm"><i></i>late30_studio</p>
+ <div class="abs" style="left:72px;top:140px;width:936px;height:420px;background:var(--n);border:3px solid var(--l);border-radius:22px;overflow:hidden" data-placeholder="layar">
+  <svg width="812" height="372" viewBox="0 0 930 426.25" aria-hidden="true" style="display:block;margin:22px auto 0">
+   <rect width="930" height="426.25" fill="url(#kisiT)"/>
+   <g fill="url(#lit)">
+    <rect x="426.25" y="0" width="77.5" height="38.75"/>
+    <rect x="426.25" y="38.75" width="77.5" height="38.75"/>
+    <rect x="387.5" y="77.5" width="155" height="38.75"/>
+    <rect x="348.75" y="116.25" width="232.5" height="38.75"/>
+    <rect x="348.75" y="155" width="232.5" height="38.75"/>
+    <rect x="310" y="193.75" width="310" height="38.75"/>
+    <rect x="271.25" y="232.5" width="387.5" height="38.75"/>
+    <rect x="271.25" y="271.25" width="387.5" height="38.75"/>
+    <rect x="232.5" y="310" width="465" height="38.75"/>
+    <rect x="193.75" y="348.75" width="542.5" height="38.75"/>
+    <rect x="155" y="387.5" width="620" height="38.75"/>
+   </g>
+   <rect width="930" height="426.25" fill="url(#kisiP)"/>
+  </svg>
+ </div>
+ <h1 class="j abs" style="left:72px;top:610px;width:936px">Layarnya sendiri cuma <span class="y">2D</span></h1>
+ <p class="ib abs" style="left:72px;top:860px;width:900px">Cara pertama, rasterization, mengubah objek 3D jadi gambar di layar 2D. Komputer mengubah segitiganya jadi piksel, yaitu titik-titik gambar di layar. Warnanya ikut menyesuaikan cahaya yang mengenainya.</p>
+ <p class="src" data-sumber data-kecil>NVIDIA Developer, Ray Tracing, dibaca 8 Nov 2026</p>
+ <p class="no" data-kecil>3/6</p>
+</section>
+
+<!-- ============ SLIDE 4: FAKTA / DEFINISI (bidang kuning, sinar) ============ -->
+<section class="slide" id="s4" style="background-color:#FFC93C;color:#11131A">
+ <p class="wm" style="color:#11131A"><i style="background:#11131A"></i>late30_studio</p>
+ <h1 class="j abs" style="left:72px;top:140px;width:936px">Ray tracing menelusuri jalur cahaya</h1>
+ <!-- PLACEHOLDER: diagram sinar buatan sendiri -->
+ <svg class="abs" data-placeholder="sinar" style="left:72px;top:490px" width="936" height="500" viewBox="0 0 936 500" aria-hidden="true">
+  <g fill="#11131A">
+   <rect x="0" y="40" width="120" height="84" rx="10"/><polygon points="120,62 176,36 176,128 120,102"/>
+   <circle cx="60" cy="82" r="20" fill="#FFC93C"/>
+  </g>
+  <path d="M196 84 L430 440 L804 121" stroke="#11131A" stroke-width="8" fill="none" stroke-dasharray="24 16" stroke-linejoin="round" marker-end="url(#pnh)"/>
+  <ellipse cx="600" cy="444" rx="80" ry="10" fill="#11131A" opacity=".6"/>
+  <use href="#bola" transform="translate(640 408) scale(.42)"/>
+  <rect x="0" y="448" width="936" height="12" fill="#11131A"/>
+  <circle cx="430" cy="446" r="14" fill="#FFC93C" stroke="#11131A" stroke-width="6"/>
+  <g stroke="#11131A" stroke-width="8" stroke-linecap="round"><line x1="840" y1="14" x2="840" y2="38"/><line x1="840" y1="142" x2="840" y2="166"/><line x1="788" y1="90" x2="812" y2="90"/><line x1="868" y1="90" x2="892" y2="90"/><line x1="802" y1="52" x2="818" y2="68"/><line x1="878" y1="112" x2="862" y2="128"/><line x1="878" y1="52" x2="862" y2="68"/></g>
+  <circle cx="840" cy="90" r="36" fill="#11131A"/>
+ </svg>
+ <p class="ib abs" style="left:72px;top:1040px;width:900px;color:#11131A">Cara kedua, ray tracing, menelusuri jalur cahaya dari kamera virtual di game sampai ke sumber cahaya. Pantulan dan bayangannya tampak realistis.</p>
+ <p class="src" data-sumber data-kecil style="color:#11131A">NVIDIA Developer, Ray Tracing, dibaca 8 Nov 2026</p>
+ <p class="no" data-kecil style="color:#11131A">4/6</p>
+</section>
+
+<!-- ============ SLIDE 5: BANDING (node + kabel) ============ -->
+<section class="slide" id="s5">
+ <div class="dots"></div>
+ <p class="wm"><i></i>late30_studio</p>
+ <h1 class="j abs" style="left:72px;top:140px;width:936px">Rasterization <span class="p">vs</span> ray tracing: mana yang lebih berat?</h1>
+ <div class="node" style="left:72px;top:520px;width:450px;height:360px"><div class="kop"><svg class="pn"><use href="#pin"/></svg></div>
+  <div style="padding:28px 32px"><h2 class="ns">Rasterization</h2><p class="kc" style="margin-top:14px">Segitiga diubah jadi piksel. Hitungannya tetap berat, tapi gak seberat ray tracing.</p></div></div>
+ <div class="node" style="left:558px;top:520px;width:450px;height:360px"><div class="kop y"><svg class="pn"><use href="#pin"/></svg></div>
+  <div style="padding:28px 32px"><h2 class="ns">Ray tracing</h2><p class="kc" style="margin-top:14px">Komputer menghitung jalur cahaya. Hitungannya <span class="chip">lebih berat</span> dari rasterization.</p></div></div>
+ <div class="node" style="left:72px;top:980px;width:936px"><div class="kop k"><svg class="pn"><use href="#pin"/></svg></div>
+  <div style="padding:18px 32px 22px"><p class="kc">Ada juga cara hybrid yang memakai keduanya sekaligus.</p></div></div>
+ <svg class="wire" viewBox="0 0 1080 1350" aria-hidden="true">
+  <path d="M297 880 C297 940 420 920 420 980" stroke="#FF3B5C" stroke-width="6" fill="none"/>
+  <path d="M783 880 C783 940 660 920 660 980" stroke="#FFC93C" stroke-width="6" fill="none"/>
+  <circle cx="297" cy="880" r="11" fill="#FFC93C" stroke="#11131A" stroke-width="4"/><circle cx="783" cy="880" r="11" fill="#FFC93C" stroke="#11131A" stroke-width="4"/>
+  <circle cx="420" cy="980" r="11" fill="#FFC93C" stroke="#11131A" stroke-width="4"/><circle cx="660" cy="980" r="11" fill="#FFC93C" stroke="#11131A" stroke-width="4"/>
+ </svg>
+ <p class="src" data-sumber data-kecil>NVIDIA Developer, Ray Tracing, dibaca 8 Nov 2026</p>
+ <p class="no" data-kecil>5/6</p>
+</section>
+
+<!-- ============ SLIDE 6: PENUTUP (bidang krem + lockup terang) ============ -->
+<section class="slide" id="s6">
+ <div class="dots"></div>
+ <p class="wm"><i></i>late30_studio</p>
+ <h1 class="j abs" style="left:72px;top:140px;width:936px"><span class="y">Dipakai bareng:</span> kualitas tinggi, frame rate bagus</h1>
+ <div class="abs" style="left:0;top:560px;width:1080px;height:790px;background:var(--k);color:var(--g)">
+  <p class="ib abs" style="left:72px;top:64px;width:840px;text-wrap:balance">Menurut NVIDIA, gabungan keduanya bisa menghasilkan kualitas tinggi dengan frame rate bagus, yaitu jumlah gambar per detik. <span style="display:block;margin-top:28px;font:700 40px/52px 'Liberation Sans',sans-serif;color:#C41835;text-wrap:balance">Kalau game kamu punya opsi <span style="white-space:nowrap">ray tracing,</span> pernah coba menyalakannya?</span></p>
+  <svg class="abs" style="left:56px;top:420px" width="560" height="150" viewBox="0 0 560 150" aria-hidden="true"><use href="#lockupT"/></svg>
+  <!-- PLACEHOLDER: objek 3D yang sama dengan cover, kini dengan bayangan dan pantulan -->
+  <svg class="abs" data-placeholder="objek3d" style="left:660px;top:350px" width="348" height="290" viewBox="0 0 348 290" aria-hidden="true">
+   <defs><mask id="mp" maskUnits="userSpaceOnUse" x="0" y="190" width="348" height="100"><rect x="0" y="190" width="348" height="100" fill="url(#fd)"/></mask></defs>
+   <circle cx="66" cy="70" r="64" fill="url(#gl)"/>
+   <circle cx="66" cy="70" r="11" fill="#FFC93C" stroke="#11131A" stroke-width="4"/>
+   <ellipse cx="206" cy="194" rx="96" ry="12" fill="#11131A" opacity=".3"/>
+   <g mask="url(#mp)" opacity=".4"><g transform="translate(0 388) scale(1 -1)"><use href="#bola" transform="translate(180 120) scale(.85)"/></g></g>
+   <use href="#bola" transform="translate(180 116) scale(.85)"/>
+  </svg>
+  <p class="src" data-sumber data-kecil style="color:#4A4C57">NVIDIA Developer, Ray Tracing, dibaca 8 Nov 2026</p>
+ </div>
+ <p class="no" data-kecil>6/6</p>
+</section>
+</html>

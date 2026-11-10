@@ -1,0 +1,16 @@
+import {loadFont} from '@remotion/fonts';
+import {staticFile} from 'remotion';
+export const SAIRA = 'Saira Condensed';
+loadFont({family: SAIRA, url: staticFile('font/saira-condensed-600-latin.woff2'), weight: '600'});
+loadFont({family: SAIRA, url: staticFile('font/saira-condensed-700-latin.woff2'), weight: '700'});
+loadFont({family: SAIRA, url: staticFile('font/saira-condensed-800-latin.woff2'), weight: '800'});
+export const MONO = 'JetBrains Mono';
+loadFont({family: MONO, url: staticFile('font/jetbrains-mono-500-latin.woff2'), weight: '500'});
+loadFont({family: MONO, url: staticFile('font/jetbrains-mono-700-latin.woff2'), weight: '700'});
+loadFont({family: MONO, url: staticFile('font/jetbrains-mono-800-latin.woff2'), weight: '800'});
+export const SLAB = 'Roboto Slab';
+loadFont({family: SLAB, url: staticFile('font/roboto-slab-600-latin.woff2'), weight: '600'});
+loadFont({family: SLAB, url: staticFile('font/roboto-slab-800-latin.woff2'), weight: '800'});
+loadFont({family: SLAB, url: staticFile('font/roboto-slab-900-latin.woff2'), weight: '900'});
+export const TANGAN = 'Kalam';
+loadFont({family: TANGAN, url: staticFile('font/kalam-700-latin.woff2'), weight: '700'});

@@ -1,0 +1,16 @@
+{
+ "tampilan": "modern",
+ "owner": "owner-peci",
+ "rupa": {"laras": "frontend-dev-1"},
+ "hidup": {
+  "nyala": true,
+  "ramai": "sedang"
+ },
+ "tema": "d",
+ "lokasi": {
+  "nama": "Jakarta",
+  "lintang": -6.2088,
+  "bujur": 106.8456,
+  "zona": "Asia/Jakarta"
+ }
+}

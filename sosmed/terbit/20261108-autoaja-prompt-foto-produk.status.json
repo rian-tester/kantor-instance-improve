@@ -1,0 +1,58 @@
+{
+ "status": "tayang",
+ "sidik": "ff7b946d846b4d60468b39d2c8ae5886ad0138be26e6c411c2d8921e16b1c0e0",
+ "disetujui": "2026-11-08T13:57:37.850Z",
+ "waktuTayang": "2026-11-08T14:45:00.000Z",
+ "dimajuin": false,
+ "token": "b9b01cebbab4d0f7a416a61af454369cf294",
+ "media": [
+  {
+   "file": "hasil/carousel-autoaja-prompt/slide-01.png",
+   "sha": "331e95b293b3b34d01bad6bedc1d09bead7d36e078c1bebfae1e04998cfc35a4",
+   "mime": "image/png",
+   "url": "https://fitra-office.timku.ai.id/publik/sosmed/b9b01cebbab4d0f7a416a61af454369cf294/1.png"
+  },
+  {
+   "file": "hasil/carousel-autoaja-prompt/slide-02.png",
+   "sha": "e2f92c4fb6276c03f43c048af7c01fbed0b8298c51c8e81245c1d7d28bec42fb",
+   "mime": "image/png",
+   "url": "https://fitra-office.timku.ai.id/publik/sosmed/b9b01cebbab4d0f7a416a61af454369cf294/2.png"
+  },
+  {
+   "file": "hasil/carousel-autoaja-prompt/slide-03.png",
+   "sha": "d853549de93273e21fa5288e29759644ab9e3180347bd05765a68ba19bbdf47e",
+   "mime": "image/png",
+   "url": "https://fitra-office.timku.ai.id/publik/sosmed/b9b01cebbab4d0f7a416a61af454369cf294/3.png"
+  },
+  {
+   "file": "hasil/carousel-autoaja-prompt/slide-04.png",
+   "sha": "0c9755a03b9a4307662319e38b4be7737a3658d6d52772e974dd4b240b2b48cd",
+   "mime": "image/png",
+   "url": "https://fitra-office.timku.ai.id/publik/sosmed/b9b01cebbab4d0f7a416a61af454369cf294/4.png"
+  },
+  {
+   "file": "hasil/carousel-autoaja-prompt/slide-05.png",
+   "sha": "24b63dfffa6a7ea7adc89fe7671c0bc134429486281c662adda0022993b036e4",
+   "mime": "image/png",
+   "url": "https://fitra-office.timku.ai.id/publik/sosmed/b9b01cebbab4d0f7a416a61af454369cf294/5.png"
+  },
+  {
+   "file": "hasil/carousel-autoaja-prompt/slide-06.png",
+   "sha": "4e4b1178b62fef9a5528138c024074f83c8563eadddd61346d3791c554e0922a",
+   "mime": "image/png",
+   "url": "https://fitra-office.timku.ai.id/publik/sosmed/b9b01cebbab4d0f7a416a61af454369cf294/6.png"
+  }
+ ],
+ "jadwal": [
+  {
+   "akunId": "6af02863fc43f81b7867405e",
+   "platform": "instagram",
+   "username": "autoaja.agency",
+   "scheduleId": "6af07fd20f7642abd174f4da",
+   "status": "tayang",
+   "postId": "18103063592361259",
+   "tayangPada": "2026-11-08T14:49:08.496Z"
+  }
+ ],
+ "diperbarui": "2026-11-08T14:49:08.497Z"
+}

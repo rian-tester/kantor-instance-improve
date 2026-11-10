@@ -1,0 +1,28 @@
+<!doctype html>
+<!-- Template carousel Lembur.id (video 11). 1 halaman = 1 slide 1080x1350. Warna & huruf diganti di :root.
+     render.mjs ngisi {{...}} dari naskah.json terus motret tiap slide jadi PNG. -->
+<!-- ref f277d9960f48baca -->
+<html lang="id"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--utama:#3B2A20;--aksen:#E8A33D;--latar:#F6EFE6;--huruf:'Plus Jakarta Sans',system-ui,sans-serif}
+*{margin:0;box-sizing:border-box}
+body{width:1080px;height:1350px;background:var(--latar);color:var(--utama);font-family:var(--huruf);overflow:hidden}
+.slide{width:1080px;height:1350px;padding:110px 96px;display:flex;flex-direction:column;justify-content:center;position:relative}
+.nomor{position:absolute;top:70px;right:96px;font-size:30px;font-weight:700;opacity:.5}
+.judul{font-size:92px;font-weight:800;line-height:1.05;letter-spacing:-.02em}
+.isi{font-size:52px;font-weight:600;line-height:1.3}
+.aksen{color:var(--aksen)}
+.garis{width:120px;height:12px;background:var(--aksen);border-radius:6px;margin-bottom:56px}
+.brand{position:absolute;bottom:70px;left:96px;font-size:30px;font-weight:700}
+.slide.hook{background:var(--utama);color:var(--latar)}
+.slide.hook .garis{background:var(--aksen)}
+</style></head>
+<body>
+<section class="slide {{jenis}}">
+  <div class="nomor">{{nomor}}/{{total}}</div>
+  <div class="garis"></div>
+  <div class="{{kelas_teks}}">{{teks}}</div>
+  <div class="brand">{{brand}}</div>
+</section>
+</body></html>

@@ -1,0 +1,529 @@
+{
+  "durasi": 37.95,
+  "kata": [
+    {
+      "t": "Periksa",
+      "mulai": 0.1,
+      "akhir": 0.32
+    },
+    {
+      "t": "pengaturan",
+      "mulai": 0.34,
+      "akhir": 0.6
+    },
+    {
+      "t": "monitor",
+      "mulai": 0.64,
+      "akhir": 1.0
+    },
+    {
+      "t": "seratus",
+      "mulai": 1.1,
+      "akhir": 1.48
+    },
+    {
+      "t": "empat",
+      "mulai": 1.48,
+      "akhir": 1.75
+    },
+    {
+      "t": "puluh",
+      "mulai": 1.75,
+      "akhir": 2.02
+    },
+    {
+      "t": "empat",
+      "mulai": 2.02,
+      "akhir": 2.29
+    },
+    {
+      "t": "hertz,",
+      "mulai": 2.29,
+      "akhir": 2.56
+    },
+    {
+      "t": "apakah",
+      "mulai": 2.86,
+      "akhir": 3.18
+    },
+    {
+      "t": "Windows",
+      "mulai": 3.36,
+      "akhir": 3.8
+    },
+    {
+      "t": "masih",
+      "mulai": 3.84,
+      "akhir": 4.08
+    },
+    {
+      "t": "di",
+      "mulai": 4.1,
+      "akhir": 4.18
+    },
+    {
+      "t": "enam",
+      "mulai": 4.4,
+      "akhir": 4.59
+    },
+    {
+      "t": "puluh",
+      "mulai": 4.59,
+      "akhir": 4.84
+    },
+    {
+      "t": "hertz?",
+      "mulai": 4.84,
+      "akhir": 5.08
+    },
+    {
+      "t": "Hertz",
+      "mulai": 5.36,
+      "akhir": 5.56
+    },
+    {
+      "t": "menunjukkan",
+      "mulai": 5.64,
+      "akhir": 5.92
+    },
+    {
+      "t": "berapa",
+      "mulai": 6.0,
+      "akhir": 6.26
+    },
+    {
+      "t": "kali",
+      "mulai": 6.32,
+      "akhir": 6.52
+    },
+    {
+      "t": "layar",
+      "mulai": 6.56,
+      "akhir": 6.78
+    },
+    {
+      "t": "ganti",
+      "mulai": 6.84,
+      "akhir": 7.04
+    },
+    {
+      "t": "gambar",
+      "mulai": 7.1,
+      "akhir": 7.34
+    },
+    {
+      "t": "tiap",
+      "mulai": 7.4,
+      "akhir": 7.58
+    },
+    {
+      "t": "detik,",
+      "mulai": 7.62,
+      "akhir": 8.02
+    },
+    {
+      "t": "Windows",
+      "mulai": 8.3,
+      "akhir": 8.7
+    },
+    {
+      "t": "menyebutnya",
+      "mulai": 8.76,
+      "akhir": 9.28
+    },
+    {
+      "t": "refresh",
+      "mulai": 9.52,
+      "akhir": 9.94
+    },
+    {
+      "t": "rate.",
+      "mulai": 10.02,
+      "akhir": 10.28
+    },
+    {
+      "t": "Di",
+      "mulai": 10.56,
+      "akhir": 10.62
+    },
+    {
+      "t": "Windows",
+      "mulai": 10.66,
+      "akhir": 10.94
+    },
+    {
+      "t": "sebelas,",
+      "mulai": 10.98,
+      "akhir": 11.52
+    },
+    {
+      "t": "buka",
+      "mulai": 11.72,
+      "akhir": 11.92
+    },
+    {
+      "t": "Start,",
+      "mulai": 12.12,
+      "akhir": 12.46
+    },
+    {
+      "t": "Settings,",
+      "mulai": 12.74,
+      "akhir": 13.26
+    },
+    {
+      "t": "System,",
+      "mulai": 13.54,
+      "akhir": 14.04
+    },
+    {
+      "t": "Display,",
+      "mulai": 14.32,
+      "akhir": 14.84
+    },
+    {
+      "t": "lalu",
+      "mulai": 15.12,
+      "akhir": 15.5
+    },
+    {
+      "t": "Advanced",
+      "mulai": 15.66,
+      "akhir": 16.1
+    },
+    {
+      "t": "display.",
+      "mulai": 16.16,
+      "akhir": 16.6
+    },
+    {
+      "t": "Di",
+      "mulai": 16.88,
+      "akhir": 16.94
+    },
+    {
+      "t": "bagian",
+      "mulai": 17.0,
+      "akhir": 17.44
+    },
+    {
+      "t": "Choose",
+      "mulai": 17.6,
+      "akhir": 17.9
+    },
+    {
+      "t": "a",
+      "mulai": 17.96,
+      "akhir": 17.98
+    },
+    {
+      "t": "refresh",
+      "mulai": 18.06,
+      "akhir": 18.48
+    },
+    {
+      "t": "rate,",
+      "mulai": 18.56,
+      "akhir": 18.8
+    },
+    {
+      "t": "pilih",
+      "mulai": 19.08,
+      "akhir": 19.32
+    },
+    {
+      "t": "angka",
+      "mulai": 19.48,
+      "akhir": 19.76
+    },
+    {
+      "t": "yang",
+      "mulai": 19.8,
+      "akhir": 19.94
+    },
+    {
+      "t": "paling",
+      "mulai": 20.06,
+      "akhir": 20.36
+    },
+    {
+      "t": "tinggi.",
+      "mulai": 20.42,
+      "akhir": 20.76
+    },
+    {
+      "t": "Periksa",
+      "mulai": 21.04,
+      "akhir": 21.22
+    },
+    {
+      "t": "ulang",
+      "mulai": 21.26,
+      "akhir": 21.46
+    },
+    {
+      "t": "pilihan",
+      "mulai": 21.5,
+      "akhir": 21.66
+    },
+    {
+      "t": "pengaturan",
+      "mulai": 21.72,
+      "akhir": 22.16
+    },
+    {
+      "t": "layar",
+      "mulai": 22.2,
+      "akhir": 22.5
+    },
+    {
+      "t": "ini,",
+      "mulai": 22.56,
+      "akhir": 22.82
+    },
+    {
+      "t": "cukup",
+      "mulai": 23.16,
+      "akhir": 23.62
+    },
+    {
+      "t": "dengan",
+      "mulai": 23.68,
+      "akhir": 23.88
+    },
+    {
+      "t": "satu",
+      "mulai": 23.96,
+      "akhir": 24.12
+    },
+    {
+      "t": "klik.",
+      "mulai": 24.18,
+      "akhir": 24.64
+    },
+    {
+      "t": "Angka",
+      "mulai": 24.92,
+      "akhir": 25.18
+    },
+    {
+      "t": "yang",
+      "mulai": 25.22,
+      "akhir": 25.36
+    },
+    {
+      "t": "ada",
+      "mulai": 25.42,
+      "akhir": 25.54
+    },
+    {
+      "t": "tanda",
+      "mulai": 25.6,
+      "akhir": 25.82
+    },
+    {
+      "t": "bintangnya",
+      "mulai": 25.86,
+      "akhir": 26.48
+    },
+    {
+      "t": "tidak",
+      "mulai": 26.56,
+      "akhir": 26.72
+    },
+    {
+      "t": "mendukung",
+      "mulai": 26.82,
+      "akhir": 27.18
+    },
+    {
+      "t": "resolusi",
+      "mulai": 27.24,
+      "akhir": 27.76
+    },
+    {
+      "t": "yang",
+      "mulai": 27.8,
+      "akhir": 27.92
+    },
+    {
+      "t": "sedang",
+      "mulai": 27.98,
+      "akhir": 28.24
+    },
+    {
+      "t": "kamu",
+      "mulai": 28.26,
+      "akhir": 28.58
+    },
+    {
+      "t": "pakai.",
+      "mulai": 28.6,
+      "akhir": 29.0
+    },
+    {
+      "t": "Pengaturan",
+      "mulai": 29.28,
+      "akhir": 29.44
+    },
+    {
+      "t": "layar",
+      "mulai": 29.48,
+      "akhir": 29.62
+    },
+    {
+      "t": "perlu",
+      "mulai": 29.64,
+      "akhir": 29.96
+    },
+    {
+      "t": "sesuai",
+      "mulai": 30.0,
+      "akhir": 30.44
+    },
+    {
+      "t": "kemampuan",
+      "mulai": 30.48,
+      "akhir": 30.64
+    },
+    {
+      "t": "monitor",
+      "mulai": 30.68,
+      "akhir": 31.16
+    },
+    {
+      "t": "yang",
+      "mulai": 31.18,
+      "akhir": 31.32
+    },
+    {
+      "t": "dibeli,",
+      "mulai": 31.36,
+      "akhir": 31.82
+    },
+    {
+      "t": "agar",
+      "mulai": 32.12,
+      "akhir": 32.46
+    },
+    {
+      "t": "tidak",
+      "mulai": 32.48,
+      "akhir": 32.58
+    },
+    {
+      "t": "terbatas",
+      "mulai": 32.6,
+      "akhir": 33.04
+    },
+    {
+      "t": "pada",
+      "mulai": 33.08,
+      "akhir": 33.26
+    },
+    {
+      "t": "enam",
+      "mulai": 33.52,
+      "akhir": 33.69
+    },
+    {
+      "t": "puluh.",
+      "mulai": 33.69,
+      "akhir": 33.9
+    },
+    {
+      "t": "Setelah",
+      "mulai": 34.18,
+      "akhir": 34.34
+    },
+    {
+      "t": "kamu",
+      "mulai": 34.36,
+      "akhir": 34.64
+    },
+    {
+      "t": "cek",
+      "mulai": 34.68,
+      "akhir": 34.82
+    },
+    {
+      "t": "pengaturan,",
+      "mulai": 34.86,
+      "akhir": 35.34
+    },
+    {
+      "t": "monitor",
+      "mulai": 35.66,
+      "akhir": 35.98
+    },
+    {
+      "t": "kamu",
+      "mulai": 36.04,
+      "akhir": 36.44
+    },
+    {
+      "t": "aktif",
+      "mulai": 36.52,
+      "akhir": 36.9
+    },
+    {
+      "t": "di",
+      "mulai": 36.92,
+      "akhir": 37.0
+    },
+    {
+      "t": "berapa",
+      "mulai": 37.02,
+      "akhir": 37.3
+    },
+    {
+      "t": "hertz?",
+      "mulai": 37.34,
+      "akhir": 37.7
+    }
+  ],
+  "kalimat": [
+    {
+      "mulai": 0.1,
+      "akhir": 5.08,
+      "teks": "Periksa pengaturan monitor seratus empat puluh empat hertz, apakah Windows masih di enam puluh hertz?"
+    },
+    {
+      "mulai": 5.36,
+      "akhir": 10.28,
+      "teks": "Hertz menunjukkan berapa kali layar ganti gambar tiap detik, Windows menyebutnya refresh rate."
+    },
+    {
+      "mulai": 10.56,
+      "akhir": 16.6,
+      "teks": "Di Windows sebelas, buka Start, Settings, System, Display, lalu Advanced display."
+    },
+    {
+      "mulai": 16.88,
+      "akhir": 20.76,
+      "teks": "Di bagian Choose a refresh rate, pilih angka yang paling tinggi."
+    },
+    {
+      "mulai": 21.04,
+      "akhir": 24.64,
+      "teks": "Periksa ulang pilihan pengaturan layar ini, cukup dengan satu klik."
+    },
+    {
+      "mulai": 24.92,
+      "akhir": 29.0,
+      "teks": "Angka yang ada tanda bintangnya tidak mendukung resolusi yang sedang kamu pakai."
+    },
+    {
+      "mulai": 29.28,
+      "akhir": 33.9,
+      "teks": "Pengaturan layar perlu sesuai kemampuan monitor yang dibeli, agar tidak terbatas pada enam puluh."
+    },
+    {
+      "mulai": 34.18,
+      "akhir": 37.7,
+      "teks": "Setelah kamu cek pengaturan, monitor kamu aktif di berapa hertz?"
+    }
+  ],
+  "mulut": [],
+  "keras": []
+}

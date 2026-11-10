@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../dasar.css">
+<style>
+/* autoaja.agency, edukasi prompt AI. Satu keluarga: Liberation Sans lokal. Empat ukuran: 420 (angka) / 96 (judul) / 56 (isi, wordmark cover/penutup) / 36 (label, wordmark, nomor, catatan).
+   Warna PERKIRAAN: navy #14155E, emas #E8A33D (aksen tunggal), navy2 #2B2C8C, redup #C9CBEF. */
+@font-face { font-family:"AA Sans"; font-weight:400; src:local("Liberation Sans"), local("LiberationSans"); }
+@font-face { font-family:"AA Sans"; font-weight:700; src:local("Liberation Sans Bold"), local("LiberationSans-Bold"); }
+:root { --navy:#14155E; --navy2:#2B2C8C; --emas:#E8A33D; --putih:#FFFFFF; --redup:#C9CBEF; --krem:#F6E3BE; }
+body { font-family:"AA Sans", sans-serif; background:#000; }
+section.slide { background:var(--navy); color:var(--putih); padding:72px 72px 156px; display:flex; flex-direction:column; }
+.atas { display:flex; align-items:center; height:64px; flex:none; }
+.wm { font-size:36px; font-weight:700; letter-spacing:-.3px; line-height:1; margin:0; }
+.wm i { font-style:normal; color:var(--emas); }
+.wm.besar { font-size:56px; letter-spacing:-1.5px; }
+.no { position:absolute; right:72px; bottom:72px; font-size:36px; line-height:1; color:var(--redup); margin:0; }
+h1, h2 { margin:0; font-weight:700; font-size:96px; line-height:1; letter-spacing:-3px; text-wrap:balance; }
+.garis { width:140px; height:8px; background:var(--emas); margin:36px 0; flex:none; transform-origin:left center; animation:tarik .5s ease-out both; }
+.isi { font-size:56px; line-height:1.2; margin:0; color:var(--redup); text-wrap:pretty; }
+.isi.putih { color:var(--putih); }
+.lb { display:block; font-size:36px; line-height:1.2; font-weight:700; color:var(--emas); letter-spacing:.3px; margin-bottom:6px; }
+.cat { font-size:36px; line-height:1.2; margin:0; color:var(--redup); }
+.angka { font-size:420px; font-weight:700; line-height:.6; letter-spacing:-16px; color:var(--emas); display:inline-block; margin:0 24px 0 8px; vertical-align:baseline; }
+.s { fill:none; stroke:var(--putih); stroke-linecap:round; stroke-linejoin:round; }
+.spasi { flex:1; }
+.sisi { border-radius:12px; padding:24px 32px 28px; position:relative; }
+.sebelum { background:var(--navy2); color:var(--putih); }
+.sebelum .lb { color:#E3E4FA; }
+.sesudah { background:var(--putih); color:var(--navy); border-left:12px solid var(--emas); margin-top:20px; }
+.sesudah .lb { color:var(--navy2); }
+.sesudah .isi { color:var(--navy); }
+.sebelum .isi { color:var(--putih); }
+.bulat { position:absolute; right:48px; top:-44px; width:72px; height:72px; z-index:2; }
+.butir { margin:0 0 36px; padding-left:28px; border-left:8px solid var(--emas); }
+.butir .isi { color:var(--putih); }
+.kotak { border:4px solid var(--emas); border-radius:16px; padding:28px 32px 32px; animation:nyala 1.1s ease-out .9s both; }
+.tombol { background:var(--emas); color:var(--navy); padding:0 14px; border-radius:10px; font-weight:700; box-decoration-break:clone; -webkit-box-decoration-break:clone; }
+.kata { color:var(--emas); line-height:1.12; }
+.simpan { display:flex; align-items:center; gap:20px; margin-top:44px; }
+.simpan svg { flex:none; }
+.simpan .lb { margin:0; font-size:36px; color:var(--putih); }
+
+@keyframes naik { from { transform:translateY(36px); } to { transform:none; } }
+@keyframes fade { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:none; } }
+@keyframes tarik { from { transform:scaleX(0); } to { transform:none; } }
+@keyframes pop { from { transform:scale(.3); } to { transform:none; } }
+@keyframes geser { from { transform:translate(-232px,80px); } to { transform:none; } }
+@keyframes gambar { from { stroke-dashoffset:300; } to { stroke-dashoffset:0; } }
+@keyframes nyala { 0% { background:rgba(232,163,61,.45); } 100% { background:rgba(232,163,61,0); } }
+@keyframes sinar { from { opacity:.1; } to { opacity:.55; } }
+.n0 { animation:naik .5s cubic-bezier(.2,.8,.3,1) both; }
+.f1 { animation:fade .5s ease-out .4s both; }
+.f2 { animation:fade .5s ease-out .75s both; }
+.f3 { animation:fade .5s ease-out 1.1s both; }
+.titik { animation:geser .8s cubic-bezier(.3,.9,.4,1) .2s both; }
+.panah { stroke-dasharray:300; animation:gambar .6s ease-out .9s both; }
+.lima { transform-origin:center; transform-box:fill-box; animation:pop .5s cubic-bezier(.3,1.5,.5,1) both; }
+.sinar { animation:sinar .8s ease-out .5s both; }
+</style>
+</head>
+<body>
+
+<!-- KONSEP: kartu pengetahuan navy dengan satu contoh netral (toples keripik, ilustrasi CSS/SVG buatan sendiri, bukan foto, tanpa merek).
+     Elemen khas autoaja: wordmark teks + garis emas di semua slide; bingkai bidik foto dengan titik emas yang "melenceng" di cover.
+     TEMPAT MASKOT: belum ada aset; mascot boleh mengisi pojok kanan atas cover dan penutup nanti. Logo asli belum ada.
+     Peta (tipe | jangkar | motif):
+     1 cover | judul 96 "Foto produk AI melenceng?" | bingkai bidik + titik emas (ikon garis, titik emas)
+     2 angka | "5" 420 emas | angka raksasa
+     3 banding | judul + dua panel sejajar + panah | dua bidang
+     4 daftar 1-3 | judul "Unsur 1 sampai 3" | ilustrasi toples + sinar jendela
+     5 daftar 4-5 | judul "Unsur 4 dan 5" | ilustrasi toples di meja + sudut
+     6 penutup | judul kerangka + pertanyaan 56 | penanda simpan (ikon garis), kotak ajakan
+     Motif ikon garis: slide 1 dan 6. Titik emas tokoh utama: slide 1 saja. Ilustrasi toples: slide 4 dan 5. -->
+
+<!-- Slide 1. Tipe: cover. -->
+<section class="slide">
+  <div class="atas"><p class="wm besar">auto<i>aja</i>.agency</p></div>
+  <svg style="margin-top:16px; flex:none" width="936" height="400" viewBox="0 0 936 400" aria-hidden="true">
+    <path class="s" style="stroke-width:10" d="M6 110 V6 H110 M826 6 H930 V110 M930 290 V394 H826 M110 394 H6 V290"/>
+    <circle class="s" style="stroke-width:6; opacity:.7" cx="468" cy="200" r="64"/>
+    <path class="s" style="stroke-width:6; opacity:.7" d="M468 112 V148 M468 252 V288 M380 200 H416 M520 200 H556"/>
+    <path class="s panah" style="stroke:#E8A33D; stroke-width:6; stroke-dasharray:14 16" d="M690 128 C640 150 590 172 548 188"/>
+    <circle cx="468" cy="200" r="9" fill="#FFFFFF" opacity=".7"/>
+    <circle class="titik" cx="700" cy="120" r="30" fill="#E8A33D"/>
+  </svg>
+  <div class="spasi"></div>
+  <h1 class="n0">Foto produk AI melenceng? Coba lima unsur ini.</h1>
+  <div class="garis"></div>
+  <p class="isi f1">Prompt adalah kalimat perintah yang kamu tulis ke Gemini atau GPT. Geser untuk lima unsurnya dan satu pertanyaan di akhir.</p>
+  <p class="no">1/6</p>
+</section>
+
+<!-- Slide 2. Tipe: angka. -->
+<section class="slide">
+  <div class="atas"><p class="wm">auto<i>aja</i>.agency</p></div>
+  <h2 style="margin-top:110px; text-wrap:wrap" class="n0">Ada <span class="angka lima">5</span> unsur dalam satu prompt</h2>
+  <div class="garis" style="margin-top:44px"></div>
+  <div class="spasi"></div>
+  <p class="isi f2">AI membaca petunjuk dari tulisanmu. Coba sebut produk, bahan atau warna, cahaya, latar, dan sudut foto produkmu, supaya petunjuknya lengkap.</p>
+  <p class="no">2/6</p>
+</section>
+
+<!-- Slide 3. Tipe: banding sejajar. -->
+<section class="slide">
+  <div class="atas"><p class="wm">auto<i>aja</i>.agency</p></div>
+  <h2 class="n0" style="margin-top:24px">Prompt biasa vs prompt jelas</h2>
+  <div class="spasi"></div>
+  <div class="sisi sebelum f1">
+    <p class="isi"><span class="lb">Prompt biasa (contoh):</span> Buatkan foto toples keripik.</p>
+  </div>
+  <div class="sisi sesudah f2">
+    <svg class="bulat" viewBox="0 0 72 72" aria-hidden="true"><circle cx="36" cy="36" r="34" fill="#E8A33D" stroke="#14155E" stroke-width="5"/><path d="M36 16 V54 M20 40 L36 56 L52 40" fill="none" stroke="#14155E" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <p class="isi"><span class="lb">Prompt jelas (contoh):</span> Buatkan foto toples kaca berisi keripik singkong cokelat keemasan, cahaya jendela pagi, di atas meja kayu, dari sudut miring.</p>
+  </div>
+  <p class="cat f3" style="margin-top:20px">Contoh ilustrasi, bukan hasil asli.</p>
+  <p class="no">3/6</p>
+</section>
+
+<!-- Slide 4. Tipe: daftar unsur 1-3 dengan ilustrasi toples dan sinar jendela. -->
+<section class="slide">
+  <div class="atas"><p class="wm">auto<i>aja</i>.agency</p></div>
+  <h2 class="n0" style="margin-top:24px">Unsur 1 sampai 3</h2>
+  <div class="garis" style="margin:28px 0 32px"></div>
+  <div class="butir f1"><p class="isi"><span class="lb">Unsur 1, produk:</span> sebut bendanya, misalnya toples keripik.</p></div>
+  <div class="butir f2"><p class="isi"><span class="lb">Unsur 2, bahan atau warna:</span> kaca bening, keripik cokelat keemasan.</p></div>
+  <div class="butir f3"><p class="isi"><span class="lb">Unsur 3, cahaya:</span> cahaya jendela pagi yang lembut.</p></div>
+  <div class="spasi"></div>
+  <svg width="936" height="300" viewBox="0 0 936 300" aria-hidden="true" style="flex:none">
+    <rect class="s" style="stroke-width:5" x="80" y="6" width="190" height="130" rx="8"/>
+    <path class="s" style="stroke-width:4" d="M175 6 V136 M80 71 H270"/>
+    <path class="sinar" d="M90 146 L260 146 L720 290 L330 290 Z" fill="#E8A33D" opacity=".5"/>
+    <g transform="translate(640 0) scale(1.3)">
+      <rect x="0" y="52" width="170" height="14" rx="5" fill="#FFFFFF"/>
+      <rect x="10" y="66" width="150" height="150" rx="22" fill="#2B2C8C" stroke="#FFFFFF" stroke-width="5"/>
+      <g fill="#E8A33D"><ellipse cx="50" cy="196" rx="26" ry="10"/><ellipse cx="108" cy="198" rx="28" ry="10"/><ellipse cx="78" cy="180" rx="26" ry="10"/><ellipse cx="124" cy="176" rx="22" ry="9"/><ellipse cx="44" cy="170" rx="22" ry="9"/><ellipse cx="86" cy="158" rx="24" ry="9"/></g>
+    </g>
+    <rect x="0" y="282" width="936" height="8" rx="4" fill="#F6E3BE"/>
+  </svg>
+  <p class="cat f3" style="margin-top:16px">Contoh ilustrasi, bukan hasil asli.</p>
+  <p class="no">4/6</p>
+</section>
+
+<!-- Slide 5. Tipe: daftar unsur 4-5 dengan ilustrasi meja, kain, dan sudut pandang. -->
+<section class="slide">
+  <div class="atas"><p class="wm">auto<i>aja</i>.agency</p></div>
+  <h2 class="n0" style="margin-top:24px">Unsur 4 dan 5</h2>
+  <div class="garis" style="margin:28px 0 32px"></div>
+  <div class="butir f1"><p class="isi"><span class="lb">Unsur 4, latar:</span> meja kayu terang dengan kain polos.</p></div>
+  <div class="butir f2"><p class="isi"><span class="lb">Unsur 5, sudut:</span> dari depan, atau miring dari atas.</p></div>
+  <p class="isi putih f3" style="margin-top:8px">Tulis seolah kamu menjelaskan ke fotografer yang belum pernah melihat produkmu.</p>
+  <div class="spasi"></div>
+  <svg width="936" height="250" viewBox="0 0 936 250" aria-hidden="true" style="flex:none">
+    <rect x="0" y="206" width="936" height="40" rx="6" fill="#F6E3BE"/>
+    <path d="M0 226 H936 M200 206 V246 M640 206 V246" stroke="#E8A33D" stroke-width="4" fill="none" opacity=".7"/>
+    <path d="M300 206 C330 176 380 196 430 170 C520 170 560 190 620 206 Z" fill="#C9CBEF"/>
+    <g transform="translate(360 -20) scale(1.25)">
+      <rect x="0" y="34" width="150" height="12" rx="5" fill="#FFFFFF"/>
+      <rect x="8" y="46" width="134" height="140" rx="20" fill="#2B2C8C" stroke="#FFFFFF" stroke-width="5"/>
+      <g fill="#E8A33D"><ellipse cx="44" cy="170" rx="24" ry="9"/><ellipse cx="98" cy="172" rx="26" ry="9"/><ellipse cx="70" cy="155" rx="24" ry="9"/><ellipse cx="108" cy="150" rx="20" ry="8"/><ellipse cx="40" cy="146" rx="20" ry="8"/></g>
+    </g>
+    <path class="s panah" style="stroke:#E8A33D; stroke-width:6; stroke-dasharray:14 16" d="M850 20 C760 30 660 70 590 120"/>
+    <path class="s" style="stroke:#E8A33D; stroke-width:6" d="M600 96 L586 124 L616 124"/>
+  </svg>
+  <p class="cat f3" style="margin-top:16px">Contoh ilustrasi, bukan hasil asli.</p>
+  <p class="no">5/6</p>
+</section>
+
+<!-- Slide 6. Tipe: penutup. -->
+<section class="slide">
+  <div class="atas"><p class="wm besar">auto<i>aja</i>.agency</p></div>
+  <h2 class="n0" style="margin-top:20px">Kerangka prompt: <span class="kata" style="display:block">produk,</span> <span class="kata" style="display:block">bahan,</span> <span class="kata" style="display:block">cahaya,</span> <span class="kata" style="display:block">latar,</span> <span class="kata" style="display:block">sudut</span></h2>
+  <div class="simpan f1" style="margin-top:28px">
+    <svg width="64" height="80" viewBox="0 0 64 80" aria-hidden="true"><path class="s" style="stroke-width:5" d="M10 8 H54 V72 L32 56 L10 72 Z"/></svg>
+    <p class="isi putih" style="font-size:36px; font-weight:700">Simpan kerangka ini untuk dicek sebelum menulis prompt.</p>
+  </div>
+  <div class="kotak" style="margin-top:28px; flex:none">
+    <p class="isi putih" style="font-weight:700">Dari lima unsur tadi, unsur apa yang paling sering kamu lupa tulis? <span class="tombol">Jawab di komentar.</span></p>
+  </div>
+  <p class="no">6/6</p>
+</section>
+
+</body>
+</html>

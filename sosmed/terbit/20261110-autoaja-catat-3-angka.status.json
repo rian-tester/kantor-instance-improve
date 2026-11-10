@@ -1,0 +1,56 @@
+{
+ "status": "terjadwal",
+ "sidik": "4c4654e62c3f89692ad8c0c764b9645b927237b672033d8f5e76e3a045be36d4",
+ "disetujui": "2026-11-09T03:34:20.091Z",
+ "waktuTayang": "2026-11-10T12:00:00.000Z",
+ "dimajuin": false,
+ "token": "cd07b5103c743324c2b40e6c1ed3eab578a1",
+ "media": [
+  {
+   "file": "hasil/carousel-T-08-20261110-v4/slide-01.png",
+   "sha": "fac8d26a86c084109a8af8593a005f6f72af0e054eb09942485da3177ebd432f",
+   "mime": "image/png",
+   "url": "https://fitra-office.timku.ai.id/publik/sosmed/cd07b5103c743324c2b40e6c1ed3eab578a1/1.png"
+  },
+  {
+   "file": "hasil/carousel-T-08-20261110-v4/slide-02.png",
+   "sha": "1e9e6d1903f324137fbd3214cfdd49411b6fa8d1d4fa24615226a17079907af0",
+   "mime": "image/png",
+   "url": "https://fitra-office.timku.ai.id/publik/sosmed/cd07b5103c743324c2b40e6c1ed3eab578a1/2.png"
+  },
+  {
+   "file": "hasil/carousel-T-08-20261110-v4/slide-03.png",
+   "sha": "bcd5f34cdc3eeefe894bbec756edc035231c98a71ed3c06186b87d1dc5ad27a2",
+   "mime": "image/png",
+   "url": "https://fitra-office.timku.ai.id/publik/sosmed/cd07b5103c743324c2b40e6c1ed3eab578a1/3.png"
+  },
+  {
+   "file": "hasil/carousel-T-08-20261110-v4/slide-04.png",
+   "sha": "c270420fefa3f162bd4d258d556691c0000bfba64331691ac6a5316d3b05b8f7",
+   "mime": "image/png",
+   "url": "https://fitra-office.timku.ai.id/publik/sosmed/cd07b5103c743324c2b40e6c1ed3eab578a1/4.png"
+  },
+  {
+   "file": "hasil/carousel-T-08-20261110-v4/slide-05.png",
+   "sha": "c55956bf159e2e7bff49aba46b1e19fa9801b558903036826f20fec0a0ba7b97",
+   "mime": "image/png",
+   "url": "https://fitra-office.timku.ai.id/publik/sosmed/cd07b5103c743324c2b40e6c1ed3eab578a1/5.png"
+  },
+  {
+   "file": "hasil/carousel-T-08-20261110-v4/slide-06.png",
+   "sha": "7ca219213835a330d0aa15ab502f4b0a92ef494102a4ebdeed53a0388a8799a5",
+   "mime": "image/png",
+   "url": "https://fitra-office.timku.ai.id/publik/sosmed/cd07b5103c743324c2b40e6c1ed3eab578a1/6.png"
+  }
+ ],
+ "jadwal": [
+  {
+   "akunId": "6af02863fc43f81b7867405e",
+   "platform": "instagram",
+   "username": "autoaja.agency",
+   "scheduleId": "6af13f3c97048c5c4ae031fc",
+   "status": "terjadwal"
+  }
+ ],
+ "diperbarui": "2026-11-09T03:34:20.480Z"
+}

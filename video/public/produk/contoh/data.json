@@ -1,0 +1,42 @@
+{
+  "folder": "produk/contoh",
+  "audio": "",
+  "bgm": "",
+  "durasi": 15,
+  "kata": [],
+  "aksen": "#74c8af",
+  "adegan": [
+    {
+      "jenis": "hook",
+      "mulai": 0,
+      "akhir": 3,
+      "gambar": "tas.svg",
+      "judul": "Tas untuk barang harian"
+    },
+    {
+      "jenis": "reveal",
+      "mulai": 3,
+      "akhir": 6,
+      "gambar": "tas.svg",
+      "nama": "Tas Reka",
+      "tag": "Contoh produk rekaan"
+    },
+    {
+      "jenis": "sorot",
+      "mulai": 6,
+      "akhir": 10,
+      "gambar": "tas.svg",
+      "judul": "Lihat bagian dalam",
+      "sub": "Isi contoh, bukan klaim listing"
+    },
+    {
+      "jenis": "cta",
+      "mulai": 10,
+      "akhir": 15,
+      "gambar": "tas.svg",
+      "judul": "Cek detail produk",
+      "sub": "Ganti dengan data produk kamu"
+    }
+  ],
+  "sfx": []
+}

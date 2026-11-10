@@ -1,0 +1,4 @@
+/* Geometri alat saja. Huruf, warna dan komposisi ditulis Desainer per karya. */
+* { box-sizing: border-box; }
+body { margin: 0; }
+section.slide { position: relative; width: 1080px; height: 1350px; overflow: hidden; }

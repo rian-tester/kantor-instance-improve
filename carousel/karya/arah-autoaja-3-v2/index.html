@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../dasar.css">
+<style>
+/* Arah 3 v2: hangat-percakapan. Satu keluarga (Liberation Sans lokal). Ukuran: 300 (angka 24/7) / 120 (judul, harga) / 52 (isi, gelembung, pil) / 36 (label, kaki, tag). */
+@font-face { font-family:"AA Sans"; font-weight:400; src:local("Liberation Sans"), local("LiberationSans"); }
+@font-face { font-family:"AA Sans"; font-weight:700; src:local("Liberation Sans Bold"), local("LiberationSans-Bold"); }
+:root { --navy:#14155E; --navy2:#2B2C8C; --emas:#E8A33D; --putih:#FFFFFF; --redup:#C9CBEF; }
+body { font-family:"AA Sans", sans-serif; background:#000; }
+section.slide { background:var(--navy); color:var(--putih); padding:72px; display:flex; flex-direction:column; }
+h1, h2 { margin:0; font-weight:700; font-size:120px; line-height:1; letter-spacing:-4px; text-wrap:balance; }
+.wm { font-size:36px; font-weight:700; letter-spacing:-.5px; line-height:1.2; }
+.wm i { font-style:normal; color:var(--emas); }
+.wm span { font-weight:400; color:var(--redup); letter-spacing:0; }
+.garis { width:140px; height:8px; background:var(--emas); margin-top:36px; }
+.janji { font-size:36px; line-height:1.25; color:var(--redup); margin:28px 0 0; }
+.chat { display:flex; flex-direction:column; gap:16px; }
+.b { font-size:52px; line-height:1.15; padding:20px 32px; border-radius:40px; max-width:800px; width:fit-content; text-wrap:pretty; }
+.masuk { background:var(--navy2); color:var(--putih); border-bottom-left-radius:8px; }
+.keluar { background:var(--putih); color:var(--navy); border-bottom-right-radius:8px; align-self:flex-end; font-weight:700; }
+.tag { display:block; font-size:36px; font-weight:700; color:var(--navy2); margin-bottom:6px; letter-spacing:0; }
+.pil { font-size:52px; font-weight:700; line-height:1.1; border:4px solid var(--emas); color:var(--emas); border-radius:70px; padding:10px 36px; width:fit-content; white-space:nowrap; }
+.pils { display:flex; flex-direction:column; gap:16px; }
+.angka { font-size:300px; font-weight:700; line-height:1; letter-spacing:-12px; color:var(--emas); margin:0; }
+.sisi { border-radius:12px; padding:28px 36px 32px; }
+.sisi .l { font-size:36px; font-weight:700; letter-spacing:2px; margin-bottom:10px; }
+.sisi p { margin:0; font-size:52px; line-height:1.15; text-wrap:pretty; }
+.sebelum { background:var(--navy2); color:var(--redup); }
+.sesudah { background:var(--putih); color:var(--navy); }
+.sesudah .l { color:var(--navy2); }
+.vs { font-size:36px; font-weight:700; color:var(--emas); text-align:center; margin:14px 0; }
+.blok { background:var(--emas); color:var(--navy); border-radius:16px; padding:44px 48px 48px; }
+.blok .harga { font-size:120px; font-weight:700; line-height:1; letter-spacing:-4px; margin:0; text-wrap:balance; }
+.blok .cta { font-size:52px; font-weight:700; line-height:1.15; margin:28px 0 0; padding-top:24px; border-top:4px solid var(--navy); }
+.spasi { flex:1; }
+.kaki { margin-top:auto; padding-top:24px; }
+
+/* Gerak: masuk lalu diam. Semua selesai sebelum 2 s, teks tidak bergerak lagi. */
+@keyframes masuk { from { opacity:0; transform:translateY(40px); } to { opacity:1; transform:none; } }
+@keyframes muncul { from { opacity:0; transform:scale(.92); } to { opacity:1; transform:none; } }
+.g1 { animation:masuk .45s ease-out .4s both; }
+.g2 { animation:masuk .45s ease-out .8s both; }
+.g3 { animation:masuk .45s ease-out 1.5s both; }
+.g4 { animation:masuk .45s ease-out 1.5s both; }
+.m1 { animation:muncul .5s ease-out .4s both; transform-origin:left center; }
+.m2 { animation:masuk .5s ease-out .8s both; }
+.m3 { animation:muncul .5s ease-out .8s both; transform-origin:left bottom; }
+</style>
+</head>
+<body>
+
+<!-- Slide 1. Tipe: cover. Jangkar: judul 120 px. Motif: tumpukan gelembung chat masuk (motif gelembung 1 dari maks 2). Produk: wordmark + WhatsApp Broadcast + Reply Agent di kaki; dunia brand = chat.
+     Teks gelembung = CONTOH PERCAKAPAN (ilustrasi, bukan testimoni/klaim); perlu disetujui owner/Pemeriksa. Masuk berurutan 0,4 / 0,8 / 1,5 s. -->
+<section class="slide">
+  <h1>Chat pelanggan numpuk, kamu balas satu-satu?</h1>
+  <div class="garis"></div>
+  <p class="janji">Geser, ini cara menghentikannya.</p>
+  <div class="spasi"></div>
+  <div class="chat">
+    <div class="b masuk g1">Kak, ready?</div>
+    <div class="b masuk g2">Harganya berapa?</div>
+    <div class="b masuk g3">Halo? Kok belum dibalas?</div>
+  </div>
+  <div class="kaki wm">auto<i>aja</i> &middot; <span>WhatsApp Broadcast + Reply Agent</span></div>
+</section>
+
+<!-- Slide 2. Tipe: poin. Jangkar: judul 120 px. Motif: gelembung masuk + balasan putih (motif gelembung 2 dari maks 2). Contoh percakapan; balasan memakai harga dari brand/fakta.md. Balasan muncul 1,5 s, sesudah gelembung masuk (0,4 s). -->
+<section class="slide">
+  <h2>Balasan otomatis AI, langsung jalan.</h2>
+  <div class="spasi"></div>
+  <div class="chat">
+    <div class="b masuk g1">Harganya berapa?</div>
+    <div class="b keluar g4"><span class="tag" data-kecil>balasan otomatis AI</span>Mulai 1,25jt/bln, setup gratis.</div>
+  </div>
+  <div class="spasi"></div>
+  <div class="pils">
+    <span class="pil">Dikelola penuh tim kami</span>
+    <span class="pil">Tanpa biaya per-chat</span>
+  </div>
+  <div class="kaki wm">auto<i>aja</i> &middot; <span>WhatsApp Broadcast + Reply Agent</span></div>
+</section>
+
+<!-- Slide 3. Tipe: angka. Jangkar: 24/7 emas 300 px. Motif: angka raksasa (tanpa gelembung). Angka dari fakta.md "sistem aktif 24/7"; label dekat angka. -->
+<section class="slide">
+  <div class="spasi"></div>
+  <p class="angka m1">24/7</p>
+  <h2 class="m2" style="margin-top:36px">Balasan otomatis, siang dan malam.</h2>
+  <div class="spasi"></div>
+  <div class="kaki wm">auto<i>aja</i> &middot; <span>WhatsApp Broadcast + Reply Agent</span></div>
+</section>
+
+<!-- Slide 4. Tipe: banding. Jangkar: judul "Manual vs autoaja." 120 px. Motif: dua bidang sebelum/sesudah (bidang bersudut kecil, bukan gelembung). -->
+<section class="slide">
+  <h2>Manual vs autoaja.</h2>
+  <div class="spasi"></div>
+  <div class="sisi sebelum">
+    <div class="l" data-kecil>SEBELUM</div>
+    <p>Chat dibalas satu-satu, sendirian.</p>
+  </div>
+  <div class="vs" data-kecil>vs</div>
+  <div class="sisi sesudah m3">
+    <div class="l" data-kecil>SESUDAH</div>
+    <p><b>Balasan otomatis AI, dikelola penuh tim kami.</b></p>
+  </div>
+  <div class="spasi"></div>
+  <div class="kaki wm">auto<i>aja</i> &middot; <span>WhatsApp Broadcast + Reply Agent</span></div>
+</section>
+
+<!-- Slide 5. Tipe: penutup. Jangkar: harga 120 px di blok emas. Motif: blok emas (tanpa gelembung).
+     TEMPAT MASKOT: semut astronot belum ada. Kalau aset sudah dibawa owner, taruh di ruang kosong atas kanan (sebelah wordmark). Sekarang tidak ada slot tampil. -->
+<section class="slide">
+  <div class="wm" style="font-size:120px; line-height:1; letter-spacing:-4px">auto<i>aja</i></div>
+  <div class="wm" style="margin-top:12px"><span>WhatsApp Broadcast + Reply Agent</span></div>
+  <div class="spasi"></div>
+  <h2 style="font-size:52px; line-height:1.15; letter-spacing:0; margin-bottom:40px">Konsultasi gratis lewat chat WhatsApp, tanpa kewajiban.</h2>
+  <div class="blok m3">
+    <p class="harga">Mulai 1,25jt/bln</p>
+    <p class="cta">Chat kami di WhatsApp</p>
+  </div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../dasar.css">
+<style>
+/* Arah 3: hangat-percakapan. Gelembung chat buatan sendiri (tanpa merek lain) + slot maskot. Satu keluarga (Liberation Sans). Ukuran: 100 / 44 / 36 / 24. */
+@font-face { font-family:"AA Sans"; font-weight:400; src:local("Liberation Sans"), local("LiberationSans"); }
+@font-face { font-family:"AA Sans"; font-weight:700; src:local("Liberation Sans Bold"), local("LiberationSans-Bold"); }
+:root { --navy:#14155E; --navy2:#2B2C8C; --emas:#E8A33D; --putih:#FFFFFF; --redup:#C9CBEF; }
+body { font-family:"AA Sans", sans-serif; background:#000; }
+section.slide { background:var(--navy); color:var(--putih); padding:72px; display:flex; flex-direction:column; }
+h1, h2 { margin:0; font-weight:700; font-size:100px; line-height:1; letter-spacing:-3px; text-wrap:balance; }
+.wm { font-size:36px; font-weight:700; letter-spacing:-.5px; }
+.wm i { font-style:normal; color:var(--emas); }
+.chat { display:flex; flex-direction:column; gap:20px; }
+.b { font-size:44px; line-height:1.2; padding:26px 34px; border-radius:36px; max-width:760px; width:fit-content; text-wrap:pretty; }
+.masuk { background:var(--navy2); color:var(--putih); border-bottom-left-radius:8px; }
+.keluar { background:var(--putih); color:var(--navy); border-bottom-right-radius:8px; align-self:flex-end; font-weight:700; }
+.emas { background:var(--emas); color:var(--navy); border-bottom-right-radius:8px; align-self:flex-end; font-weight:700; }
+.tag { font-size:24px; color:var(--redup); align-self:flex-end; margin-top:-8px; }
+.kepala { display:flex; align-items:center; gap:20px; padding-bottom:28px; border-bottom:2px solid var(--navy2); }
+.slot { flex:none; border:3px dashed var(--redup); border-radius:50%; display:flex; align-items:center; justify-content:center; text-align:center; font-size:24px; line-height:1.15; color:var(--redup); }
+.pil { font-size:36px; font-weight:700; border:3px solid var(--emas); color:var(--emas); border-radius:60px; padding:12px 30px; }
+.spasi { flex:1; }
+</style>
+</head>
+<body>
+
+<!-- Slide 1. Tipe: cover. Jangkar: judul 100px. Motif: tumpukan gelembung chat masuk. Produk: wordmark; dunia brand = chat WhatsApp. -->
+<section class="slide">
+  <h1>Chat pelanggan numpuk, kamu balas satu-satu?</h1>
+  <div class="spasi"></div>
+  <div class="chat">
+    <div class="b masuk">Kak, ready?</div>
+    <div class="b masuk">Harganya berapa?</div>
+    <div class="b masuk">Halo? Kok belum dibalas?</div>
+  </div>
+  <div class="spasi"></div>
+  <div class="wm">auto<i>aja</i> &middot; WhatsApp Broadcast + Reply Agent</div>
+</section>
+
+<!-- Slide 2. Tipe: poin. Jangkar: judul 100px. Motif: balasan keluar (gelembung putih) + pil emas. -->
+<section class="slide">
+  <h2>Balasan otomatis AI, aktif 24/7.</h2>
+  <div class="spasi"></div>
+  <div class="chat">
+    <div class="b masuk">Kak, ready?</div>
+    <div class="b keluar">Halo kak, ada yang bisa dibantu?</div>
+    <div class="tag" data-kecil>balasan otomatis AI</div>
+  </div>
+  <div class="spasi"></div>
+  <div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:56px">
+    <span class="pil">Fully managed</span><span class="pil">Setup gratis</span><span class="pil">Tanpa biaya per-chat</span>
+  </div>
+  <div class="wm">auto<i>aja</i></div>
+</section>
+
+<!-- Slide 3. Tipe: penutup. Jangkar: judul 100px. Motif: slot maskot bulat + gelembung emas (harga). -->
+<section class="slide">
+  <div class="kepala">
+    <div class="slot" data-kecil style="width:180px; height:180px">maskot (menyusul)</div>
+    <div>
+      <div class="wm">auto<i>aja</i></div>
+      <div style="font-size:36px; color:var(--redup)">WhatsApp Broadcast + Reply Agent</div>
+    </div>
+  </div>
+  <div class="spasi"></div>
+  <h2>Konsultasi gratis lewat chat WhatsApp.</h2>
+  <div class="spasi"></div>
+  <div class="chat">
+    <div class="b masuk">Tanpa kewajiban.</div>
+    <div class="b emas">Mulai 1,25jt/bln</div>
+  </div>
+</section>
+
+</body>
+</html>

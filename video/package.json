@@ -1,0 +1,23 @@
+{
+  "name": "kantor-video",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "render": "node jalankan.mjs render",
+    "still": "node jalankan.mjs still",
+    "studio": "remotion studio src/index.tsx",
+    "still-contoh": "node jalankan.mjs still-contoh",
+    "render-contoh": "node jalankan.mjs render-contoh",
+    "status-latar": "node render-latar.mjs status"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.529",
+    "@remotion/fonts": "4.0.529",
+    "@remotion/motion-blur": "4.0.529",
+    "@remotion/paths": "4.0.529",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "remotion": "4.0.529"
+  }
+}

@@ -1,0 +1,506 @@
+[
+  {
+    "id": "ContohToken169",
+    "file": "tunggal/ContohToken169",
+    "data": "strawberry/data.json",
+    "fps": 30,
+    "width": 1920,
+    "height": 1080,
+    "frames": 1258,
+    "hero": [
+      15,
+      604,
+      1006
+    ]
+  },
+  {
+    "id": "ContohToken916",
+    "file": "tunggal/ContohToken916",
+    "data": "strawberry916/data.json",
+    "fps": 30,
+    "width": 1080,
+    "height": 1920,
+    "frames": 1210,
+    "hero": [
+      15,
+      581,
+      968
+    ]
+  },
+  {
+    "id": "ContohRefreshRate",
+    "file": "tunggal/ContohRefreshRate",
+    "data": "refresh-rate/data.json",
+    "fps": 60,
+    "width": 1080,
+    "height": 1920,
+    "frames": 2321,
+    "hero": [
+      30,
+      1114,
+      1857
+    ]
+  },
+  {
+    "id": "ContohJejakAir",
+    "file": "data-gelap/ContohJejakAir",
+    "data": "air/data.json",
+    "fps": 30,
+    "width": 1080,
+    "height": 1920,
+    "frames": 1778,
+    "hero": [
+      15,
+      853,
+      1422
+    ]
+  },
+  {
+    "id": "ContohSuaraBatuk",
+    "file": "data-gelap/ContohSuaraBatuk",
+    "data": "batuk/data.json",
+    "fps": 30,
+    "width": 1080,
+    "height": 1920,
+    "frames": 1792,
+    "hero": [
+      15,
+      860,
+      1434
+    ]
+  },
+  {
+    "id": "ContohCaptcha",
+    "file": "data-gelap/ContohCaptcha",
+    "data": "captcha/data.json",
+    "fps": 30,
+    "width": 1080,
+    "height": 1920,
+    "frames": 1792,
+    "hero": [
+      15,
+      860,
+      1434
+    ]
+  },
+  {
+    "id": "ContohVideoCallPalsu",
+    "file": "data-gelap/ContohVideoCallPalsu",
+    "data": "deepfake/data.json",
+    "fps": 30,
+    "width": 1080,
+    "height": 1920,
+    "frames": 1777,
+    "hero": [
+      15,
+      853,
+      1422
+    ]
+  },
+  {
+    "id": "ContohDifusi",
+    "file": "data-gelap/ContohDifusi",
+    "data": "diffusion/data.json",
+    "fps": 30,
+    "width": 1080,
+    "height": 1920,
+    "frames": 1254,
+    "hero": [
+      15,
+      602,
+      1003
+    ]
+  },
+  {
+    "id": "ContohSuaraKetik",
+    "file": "data-gelap/ContohSuaraKetik",
+    "data": "ketik/data.json",
+    "fps": 30,
+    "width": 1080,
+    "height": 1920,
+    "frames": 1792,
+    "hero": [
+      15,
+      860,
+      1434
+    ]
+  },
+  {
+    "id": "ContohLangkah37",
+    "file": "data-gelap/ContohLangkah37",
+    "data": "langkah/data.json",
+    "fps": 30,
+    "width": 1080,
+    "height": 1920,
+    "frames": 1799,
+    "hero": [
+      15,
+      864,
+      1439
+    ]
+  },
+  {
+    "id": "ContohListrik",
+    "file": "data-gelap/ContohListrik",
+    "data": "listrik/data.json",
+    "fps": 30,
+    "width": 1080,
+    "height": 1920,
+    "frames": 1789,
+    "hero": [
+      15,
+      859,
+      1431
+    ]
+  },
+  {
+    "id": "ContohTokenLatih",
+    "file": "data-gelap/ContohTokenLatih",
+    "data": "llama/data.json",
+    "fps": 30,
+    "width": 1080,
+    "height": 1920,
+    "frames": 2729,
+    "hero": [
+      15,
+      1310,
+      2183
+    ]
+  },
+  {
+    "id": "ContohOtak",
+    "file": "data-gelap/ContohOtak",
+    "data": "otak/data.json",
+    "fps": 30,
+    "width": 1080,
+    "height": 1920,
+    "frames": 1792,
+    "hero": [
+      15,
+      860,
+      1434
+    ]
+  },
+  {
+    "id": "ContohProtein",
+    "file": "data-gelap/ContohProtein",
+    "data": "protein/data.json",
+    "fps": 30,
+    "width": 1080,
+    "height": 1920,
+    "frames": 1777,
+    "hero": [
+      15,
+      853,
+      1422
+    ]
+  },
+  {
+    "id": "ContohPetaMakna",
+    "file": "data-gelap/ContohPetaMakna",
+    "data": "raja/data.json",
+    "fps": 30,
+    "width": 1080,
+    "height": 1920,
+    "frames": 2525,
+    "hero": [
+      15,
+      1212,
+      2020
+    ]
+  },
+  {
+    "id": "ContohTransformer",
+    "file": "data-gelap/ContohTransformer",
+    "data": "transformer/data.json",
+    "fps": 30,
+    "width": 1080,
+    "height": 1920,
+    "frames": 1792,
+    "hero": [
+      15,
+      860,
+      1434
+    ]
+  },
+  {
+    "id": "ContohJumpCut",
+    "file": "meja-editor/ContohJumpCut",
+    "data": "k10/data.json",
+    "fps": 30,
+    "width": 1080,
+    "height": 1920,
+    "frames": 1773,
+    "hero": [
+      15,
+      851,
+      1418
+    ]
+  },
+  {
+    "id": "ContohMilidetik",
+    "file": "meja-editor/ContohMilidetik",
+    "data": "k1/data.json",
+    "fps": 30,
+    "width": 1080,
+    "height": 1920,
+    "frames": 1781,
+    "hero": [
+      15,
+      855,
+      1425
+    ]
+  },
+  {
+    "id": "ContohMitos8Detik",
+    "file": "meja-editor/ContohMitos8Detik",
+    "data": "k2/data.json",
+    "fps": 30,
+    "width": 1080,
+    "height": 1920,
+    "frames": 1790,
+    "hero": [
+      15,
+      859,
+      1432
+    ]
+  },
+  {
+    "id": "ContohUpload82Tahun",
+    "file": "meja-editor/ContohUpload82Tahun",
+    "data": "k3/data.json",
+    "fps": 30,
+    "width": 1080,
+    "height": 1920,
+    "frames": 1782,
+    "hero": [
+      15,
+      855,
+      1426
+    ]
+  },
+  {
+    "id": "ContohKuleshov",
+    "file": "meja-editor/ContohKuleshov",
+    "data": "k4/data.json",
+    "fps": 30,
+    "width": 1080,
+    "height": 1920,
+    "frames": 1790,
+    "hero": [
+      15,
+      859,
+      1432
+    ]
+  },
+  {
+    "id": "ContohKedipan",
+    "file": "meja-editor/ContohKedipan",
+    "data": "k5/data.json",
+    "fps": 30,
+    "width": 1080,
+    "height": 1920,
+    "frames": 1795,
+    "hero": [
+      15,
+      862,
+      1436
+    ]
+  },
+  {
+    "id": "ContohEditBlind",
+    "file": "meja-editor/ContohEditBlind",
+    "data": "k6/data.json",
+    "fps": 30,
+    "width": 1080,
+    "height": 1920,
+    "frames": 1789,
+    "hero": [
+      15,
+      859,
+      1431
+    ]
+  },
+  {
+    "id": "ContohFps",
+    "file": "meja-editor/ContohFps",
+    "data": "k7/data.json",
+    "fps": 30,
+    "width": 1080,
+    "height": 1920,
+    "frames": 1790,
+    "hero": [
+      15,
+      859,
+      1432
+    ]
+  },
+  {
+    "id": "ContohTanpaSuara",
+    "file": "meja-editor/ContohTanpaSuara",
+    "data": "k8/data.json",
+    "fps": 30,
+    "width": 1080,
+    "height": 1920,
+    "frames": 1690,
+    "hero": [
+      15,
+      811,
+      1352
+    ]
+  },
+  {
+    "id": "ContohHitungView",
+    "file": "meja-editor/ContohHitungView",
+    "data": "k9/data.json",
+    "fps": 30,
+    "width": 1080,
+    "height": 1920,
+    "frames": 1790,
+    "hero": [
+      15,
+      859,
+      1432
+    ]
+  },
+  {
+    "id": "ContohHdd",
+    "file": "neon-grid/ContohHdd",
+    "data": "o10/data.json",
+    "fps": 30,
+    "width": 1080,
+    "height": 1920,
+    "frames": 1774,
+    "hero": [
+      15,
+      852,
+      1419
+    ]
+  },
+  {
+    "id": "ContohPetaVoxel",
+    "file": "neon-grid/ContohPetaVoxel",
+    "data": "o1/data.json",
+    "fps": 30,
+    "width": 1080,
+    "height": 1920,
+    "frames": 1781,
+    "hero": [
+      15,
+      855,
+      1425
+    ]
+  },
+  {
+    "id": "ContohPikselAI",
+    "file": "neon-grid/ContohPikselAI",
+    "data": "o2/data.json",
+    "fps": 30,
+    "width": 1080,
+    "height": 1920,
+    "frames": 1784,
+    "hero": [
+      15,
+      856,
+      1427
+    ]
+  },
+  {
+    "id": "ContohRenderFrame",
+    "file": "neon-grid/ContohRenderFrame",
+    "data": "o3/data.json",
+    "fps": 30,
+    "width": 1080,
+    "height": 1920,
+    "frames": 1771,
+    "hero": [
+      15,
+      850,
+      1417
+    ]
+  },
+  {
+    "id": "ContohUkuranGame",
+    "file": "neon-grid/ContohUkuranGame",
+    "data": "o4/data.json",
+    "fps": 30,
+    "width": 1080,
+    "height": 1920,
+    "frames": 1758,
+    "hero": [
+      15,
+      844,
+      1406
+    ]
+  },
+  {
+    "id": "ContohOverflow",
+    "file": "neon-grid/ContohOverflow",
+    "data": "o5/data.json",
+    "fps": 30,
+    "width": 1080,
+    "height": 1920,
+    "frames": 1657,
+    "hero": [
+      15,
+      795,
+      1326
+    ]
+  },
+  {
+    "id": "ContohCore",
+    "file": "neon-grid/ContohCore",
+    "data": "o6/data.json",
+    "fps": 30,
+    "width": 1080,
+    "height": 1920,
+    "frames": 1661,
+    "hero": [
+      15,
+      797,
+      1329
+    ]
+  },
+  {
+    "id": "ContohPing",
+    "file": "neon-grid/ContohPing",
+    "data": "o7/data.json",
+    "fps": 30,
+    "width": 1080,
+    "height": 1920,
+    "frames": 1735,
+    "hero": [
+      15,
+      833,
+      1388
+    ]
+  },
+  {
+    "id": "ContohSuhuCpu",
+    "file": "neon-grid/ContohSuhuCpu",
+    "data": "o8/data.json",
+    "fps": 30,
+    "width": 1080,
+    "height": 1920,
+    "frames": 1773,
+    "hero": [
+      15,
+      851,
+      1418
+    ]
+  },
+  {
+    "id": "ContohRilisGame",
+    "file": "neon-grid/ContohRilisGame",
+    "data": "o9/data.json",
+    "fps": 30,
+    "width": 1080,
+    "height": 1920,
+    "frames": 1719,
+    "hero": [
+      15,
+      825,
+      1375
+    ]
+  }
+]

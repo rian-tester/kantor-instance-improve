@@ -1,0 +1,446 @@
+{
+  "hari": "2026-11-08",
+  "sidik": "c17c02985d0c2933e3f01d5e25a67486cb5a2ffe4526b480298691c4443ec35b",
+  "v": 2,
+  "models": [
+    {
+      "endpoint_id": "fal-ai/flux/schnell",
+      "jenis": "gambar",
+      "buat": "Gambar murah buat draft",
+      "catatan": "Cepat; cek harga image/megapixel dulu.",
+      "status": "active",
+      "harga": {
+        "endpoint_id": "fal-ai/flux/schnell",
+        "unit_price": 0.003,
+        "unit": "megapixels",
+        "currency": "USD"
+      }
+    },
+    {
+      "endpoint_id": "fal-ai/flux/dev",
+      "jenis": "gambar",
+      "buat": "Gambar bagus buat materi final",
+      "catatan": "Lebih rinci dari draft; jangan minta teks di gambar.",
+      "status": "active",
+      "harga": {
+        "endpoint_id": "fal-ai/flux/dev",
+        "unit_price": 0.025,
+        "unit": "megapixels",
+        "currency": "USD"
+      }
+    },
+    {
+      "endpoint_id": "fal-ai/nano-banana/edit",
+      "jenis": "edit",
+      "buat": "Edit foto owner atau produk",
+      "catatan": "Pakai foto asli sebagai image_urls. Harga image; satu hasil.",
+      "status": "active",
+      "harga": {
+        "endpoint_id": "fal-ai/nano-banana/edit",
+        "unit_price": 0.0398,
+        "unit": "images",
+        "currency": "USD"
+      }
+    },
+    {
+      "endpoint_id": "minimax/h3-max/image-to-video",
+      "jenis": "video",
+      "buat": "Video dari gambar, hemat",
+      "catatan": "Hasil bisa lebih panjang ±0,7 detik; estimasi ditambah 1 detik.",
+      "pemetaan": {
+        "fieldGambar": "image_url",
+        "durasi": {
+          "nilai": [
+            5,
+            10,
+            15
+          ],
+          "format": "angka",
+          "bawaan": 5,
+          "batas": [
+            0.92,
+            15
+          ]
+        },
+        "rasio": null,
+        "tetap": {
+          "prompt_expansion_mode": "balanced",
+          "resolution": "768P"
+        },
+        "marginDurasi": 1,
+        "promptMaks": 10000
+      },
+      "status": "active",
+      "harga": {
+        "endpoint_id": "minimax/h3-max/image-to-video",
+        "unit_price": 0.035,
+        "unit": "seconds",
+        "currency": "USD"
+      }
+    },
+    {
+      "endpoint_id": "fal-ai/kling-video/v2.6/pro/image-to-video",
+      "jenis": "video",
+      "buat": "Video dari gambar, bagus",
+      "catatan": "Suara Kling cuma Mandarin/Inggris. Audio dimatikan.",
+      "pemetaan": {
+        "fieldGambar": "start_image_url",
+        "durasi": {
+          "nilai": [
+            5,
+            10
+          ],
+          "format": "string",
+          "bawaan": 5
+        },
+        "rasio": null,
+        "tetap": {
+          "generate_audio": false
+        },
+        "marginDurasi": 0,
+        "promptMaks": 2500
+      },
+      "status": "active",
+      "harga": {
+        "endpoint_id": "fal-ai/kling-video/v2.6/pro/image-to-video",
+        "unit_price": 0.07,
+        "unit": "seconds",
+        "currency": "USD"
+      }
+    },
+    {
+      "endpoint_id": "fal-ai/veo3.1/fast/image-to-video",
+      "jenis": "video",
+      "buat": "Video dari gambar, premium",
+      "catatan": "Audio dimatikan.",
+      "pemetaan": {
+        "fieldGambar": "image_url",
+        "durasi": {
+          "nilai": [
+            4,
+            6,
+            8
+          ],
+          "format": "Ns",
+          "bawaan": 8
+        },
+        "rasio": {
+          "field": "aspect_ratio",
+          "nilai": [
+            "auto",
+            "16:9",
+            "9:16"
+          ],
+          "bawaan": "9:16"
+        },
+        "tetap": {
+          "resolution": "720p",
+          "generate_audio": false
+        },
+        "marginDurasi": 0,
+        "promptMaks": 10000
+      },
+      "status": "tanpa-status",
+      "harga": {
+        "endpoint_id": "fal-ai/veo3.1/fast/image-to-video",
+        "unit_price": 0.15,
+        "unit": "seconds",
+        "currency": "USD"
+      }
+    },
+    {
+      "endpoint_id": "minimax/h3-max/text-to-video",
+      "jenis": "video",
+      "buat": "Video dari teks, hemat",
+      "catatan": "Hasil bisa lebih panjang ±0,7 detik; estimasi ditambah 1 detik.",
+      "pemetaan": {
+        "fieldGambar": null,
+        "durasi": {
+          "nilai": [
+            5,
+            10,
+            15
+          ],
+          "format": "angka",
+          "bawaan": 5,
+          "batas": [
+            0.92,
+            15
+          ]
+        },
+        "rasio": {
+          "field": "aspect_ratio",
+          "nilai": [
+            "21:9",
+            "16:9",
+            "4:3",
+            "1:1",
+            "3:4",
+            "9:16"
+          ],
+          "bawaan": "9:16"
+        },
+        "tetap": {
+          "prompt_expansion_mode": "balanced",
+          "resolution": "768P"
+        },
+        "marginDurasi": 1,
+        "promptMaks": 10000
+      },
+      "status": "active",
+      "harga": {
+        "endpoint_id": "minimax/h3-max/text-to-video",
+        "unit_price": 0.035,
+        "unit": "seconds",
+        "currency": "USD"
+      }
+    },
+    {
+      "endpoint_id": "fal-ai/kling-video/v2.6/pro/text-to-video",
+      "jenis": "video",
+      "buat": "Video dari teks, bagus",
+      "catatan": "Suara Kling cuma Mandarin/Inggris. Audio dimatikan.",
+      "pemetaan": {
+        "fieldGambar": null,
+        "durasi": {
+          "nilai": [
+            5,
+            10
+          ],
+          "format": "string",
+          "bawaan": 5
+        },
+        "rasio": {
+          "field": "aspect_ratio",
+          "nilai": [
+            "16:9",
+            "9:16",
+            "1:1"
+          ],
+          "bawaan": "9:16"
+        },
+        "tetap": {
+          "generate_audio": false
+        },
+        "marginDurasi": 0,
+        "promptMaks": 2500
+      },
+      "status": "active",
+      "harga": {
+        "endpoint_id": "fal-ai/kling-video/v2.6/pro/text-to-video",
+        "unit_price": 0.07,
+        "unit": "seconds",
+        "currency": "USD"
+      }
+    },
+    {
+      "endpoint_id": "fal-ai/gemini-3.1-flash-tts",
+      "jenis": "suara",
+      "buat": "Voiceover hemat, bawaan",
+      "pemetaan": {
+        "fieldTeks": "prompt",
+        "teksMaks": 50000,
+        "fieldSuara": "voice",
+        "suaraBawaan": "Kore",
+        "tetap": {
+          "language_code": "Indonesian (Indonesia)",
+          "output_format": "mp3"
+        },
+        "fieldGaya": "style_instructions",
+        "gayaMaks": 4000,
+        "suaraNilai": [
+          "Achernar",
+          "Achird",
+          "Algenib",
+          "Algieba",
+          "Alnilam",
+          "Aoede",
+          "Autonoe",
+          "Callirrhoe",
+          "Charon",
+          "Despina",
+          "Enceladus",
+          "Erinome",
+          "Fenrir",
+          "Gacrux",
+          "Iapetus",
+          "Kore",
+          "Laomedeia",
+          "Leda",
+          "Orus",
+          "Pulcherrima",
+          "Puck",
+          "Rasalgethi",
+          "Sadachbia",
+          "Sadaltager",
+          "Schedar",
+          "Sulafat",
+          "Umbriel",
+          "Vindemiatrix",
+          "Zephyr",
+          "Zubenelgenubi"
+        ]
+      },
+      "status": "active",
+      "harga": {
+        "endpoint_id": "fal-ai/gemini-3.1-flash-tts",
+        "unit_price": 0.05,
+        "unit": "1000 characters",
+        "currency": "USD"
+      }
+    },
+    {
+      "endpoint_id": "fal-ai/elevenlabs/tts/eleven-v3",
+      "jenis": "suara",
+      "buat": "Voiceover ekspresif",
+      "pemetaan": {
+        "fieldTeks": "text",
+        "teksMaks": 5000,
+        "fieldSuara": "voice",
+        "suaraBawaan": "Rachel",
+        "tetap": {
+          "language_code": "id"
+        }
+      },
+      "status": "active",
+      "harga": {
+        "endpoint_id": "fal-ai/elevenlabs/tts/eleven-v3",
+        "unit_price": 0.1,
+        "unit": "1000 characters",
+        "currency": "USD"
+      }
+    },
+    {
+      "endpoint_id": "fal-ai/minimax/speech-2.8-hd",
+      "jenis": "suara",
+      "buat": "Voiceover ekspresif",
+      "pemetaan": {
+        "fieldTeks": "prompt",
+        "teksMaks": 10000,
+        "fieldSuara": "voice_setting.voice_id",
+        "suaraBawaan": "Wise_Woman",
+        "tetap": {
+          "language_boost": "Indonesian",
+          "output_format": "url",
+          "audio_setting": {
+            "format": "mp3"
+          }
+        }
+      },
+      "status": "active",
+      "harga": {
+        "endpoint_id": "fal-ai/minimax/speech-2.8-hd",
+        "unit_price": 0.1,
+        "unit": "1000 characters",
+        "currency": "USD"
+      }
+    },
+    {
+      "endpoint_id": "fal-ai/minimax-music/v2",
+      "jenis": "musik",
+      "buat": "Lagu dari lirik + gaya, hemat (bawaan)",
+      "catatan": "Durasi lagu ditentuin model. Tag [Intro]/[Verse]/[Chorus] di lirik boleh.",
+      "pemetaan": {
+        "fieldGaya": "prompt",
+        "gayaMin": 10,
+        "gayaMaks": 300,
+        "fieldLirik": "lyrics_prompt",
+        "lirikMin": 10,
+        "lirikMaks": 3000,
+        "tetap": {}
+      },
+      "status": "active",
+      "harga": {
+        "endpoint_id": "fal-ai/minimax-music/v2",
+        "unit_price": 0.03,
+        "unit": "generations",
+        "currency": "USD"
+      }
+    },
+    {
+      "endpoint_id": "fal-ai/minimax-music/v2.6",
+      "jenis": "musik",
+      "buat": "Lagu dari lirik + gaya, lebih rapi",
+      "catatan": "Durasi lagu ditentuin model. Gaya boleh lebih panjang (sampai 2.000 karakter).",
+      "pemetaan": {
+        "fieldGaya": "prompt",
+        "gayaMin": 10,
+        "gayaMaks": 2000,
+        "fieldLirik": "lyrics",
+        "lirikMin": 10,
+        "lirikMaks": 3500,
+        "tetap": {}
+      },
+      "status": "active",
+      "harga": {
+        "endpoint_id": "fal-ai/minimax-music/v2.6",
+        "unit_price": 0.15,
+        "unit": "audios",
+        "currency": "USD"
+      }
+    },
+    {
+      "endpoint_id": "fal-ai/elevenlabs/music",
+      "jenis": "musik",
+      "buat": "Lagu dengan durasi pasti, vokal banyak bahasa (termasuk Jepang)",
+      "catatan": "Harga per menit audio, dibulatkan ke atas (30 detik dihitung 1 menit). Lirik dibagi per bait (dipisah baris kosong).",
+      "pemetaan": {
+        "rencana": true,
+        "gayaMin": 10,
+        "gayaMaks": 1000,
+        "lirikMin": 10,
+        "lirikMaks": 5000,
+        "durasi": {
+          "bawaan": 60,
+          "batas": [
+            10,
+            300
+          ]
+        },
+        "tetap": {
+          "respect_sections_durations": true
+        }
+      },
+      "status": "active",
+      "harga": {
+        "endpoint_id": "fal-ai/elevenlabs/music",
+        "unit_price": 0.6,
+        "unit": "minutes",
+        "currency": "USD"
+      }
+    },
+    {
+      "endpoint_id": "fal-ai/elevenlabs/speech-to-text/scribe-v2",
+      "jenis": "transkrip",
+      "buat": "Kata terucap dengan waktu",
+      "pemetaan": {
+        "tetap": {
+          "language_code": "ind"
+        }
+      },
+      "status": "active",
+      "harga": {
+        "endpoint_id": "fal-ai/elevenlabs/speech-to-text/scribe-v2",
+        "unit_price": 0.008,
+        "unit": "minutes",
+        "currency": "USD"
+      }
+    },
+    {
+      "endpoint_id": "fal-ai/birefnet",
+      "jenis": "edit",
+      "buat": "Hapus latar produk",
+      "harga": {
+        "endpoint_id": "fal-ai/birefnet",
+        "unit_price": 0.000575,
+        "unit": "compute seconds",
+        "currency": "USD"
+      },
+      "catatan": "dicek Ezzar",
+      "pemetaan": {
+        "fieldGambar": "image_url"
+      },
+      "status": "active"
+    }
+  ]
+}

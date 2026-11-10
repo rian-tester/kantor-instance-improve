@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="id"><meta charset="utf-8"><title>PREVIEW late30_studio K3: Alien Isolation (teks contoh)</title>
+<link rel="stylesheet" href="../../dasar.css">
+<!--
+PREVIEW UNTUK PILIH IDE (T-07, K3). TEKS INI CONTOH, BELUM DIPERIKSA SATPAM, BISA BERUBAH. Bukan naskah final.
+Sistem: brand/sistem-desain-late30.md (Graph). Sumber fakta: hasil/ide-late30-game-menarik.md (B1; kutipan perlu cek ulang).
+Slide 1 cover | jangkar: hook 96 px | motif: kerucut pandang + gelombang suara mengejar siluet (placeholder), lockup
+Slide 2 fakta (payoff) | jangkar: "Alien gak pernah dikasih tahu posisimu" | motif: peta, area umum vs titik pemain; bidang kuning
+Tanpa screenshot, logo, karakter, atau materi resmi game. Makhluk dan pemain = siluet buatan sendiri. Font lokal. Statis.
+-->
+<style>
+@font-face{font-family:'Liberation Sans';font-weight:400;src:local('Liberation Sans'),local('LiberationSans')}
+@font-face{font-family:'Liberation Sans';font-weight:700;src:local('Liberation Sans Bold'),local('LiberationSans-Bold')}
+@font-face{font-family:'DejaVu Sans Mono';font-weight:400;src:local('DejaVu Sans Mono'),local('DejaVuSansMono')}
+@font-face{font-family:'DejaVu Sans Mono';font-weight:700;src:local('DejaVu Sans Mono Bold'),local('DejaVuSansMono-Bold')}
+:root{--g:#11131A;--k:#F5F2EA;--p:#FF3B5C;--y:#FFC93C;--n:#1A1D27;--l:#3A4054;--t:#B9B6AD}
+.slide{background-color:var(--g);color:var(--k);font-family:'Liberation Sans',sans-serif;font-weight:700}
+.dots{position:absolute;left:0;top:0;width:1080px;height:1350px;background-image:radial-gradient(circle,#2B2F3D 2.5px,transparent 3px);background-size:54px 54px;background-position:27px 27px}
+.abs{position:absolute}
+.wm{position:absolute;left:72px;top:68px;margin:0;font:700 28px/36px 'DejaVu Sans Mono',monospace;display:flex;align-items:center;gap:14px}
+.wm i{width:18px;height:18px;background:var(--y);display:block}
+.no{position:absolute;right:72px;top:68px;margin:0;font:400 28px/36px 'DejaVu Sans Mono',monospace;color:var(--t)}
+.src{position:absolute;left:72px;bottom:72px;margin:0;font:400 28px/36px 'DejaVu Sans Mono',monospace;color:var(--t);white-space:nowrap}
+h1,h2{margin:0;font-weight:700;letter-spacing:-.5px}
+.j{font-size:96px;line-height:104px;text-wrap:balance}
+.ib{margin:0;font:400 32px/48px 'Liberation Sans',sans-serif;text-wrap:pretty}
+.y{color:var(--y)}
+.node{position:absolute;background:var(--n);border:3px solid var(--l);border-radius:22px;overflow:hidden}
+.kop{height:46px;background:var(--p);display:flex;align-items:center;padding:0 18px}
+.kop.y{background:var(--y)}
+.pn{width:24px;height:24px;display:block}
+</style>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="pin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="#FFC93C" stroke="#11131A" stroke-width="4"/></symbol>
+<g id="kubus"><polygon fill="#FF3B5C" points="-43.3,-25 0,0 0,50 -43.3,25"/><polygon fill="#FF3B5C" points="43.3,-25 43.3,25 0,50 0,0"/><path stroke="#11131A" stroke-width="2.4" fill="none" d="M-43.3 -25L0 0L43.3 -25M0 0V50"/><polygon points="0,-46 34.64,-26 0,-6 -34.64,-26" fill="none" stroke="#11131A" stroke-width="10.5" stroke-linejoin="bevel"/><polygon points="0,-46 34.64,-26 0,-6 -34.64,-26" fill="none" stroke="#FFC93C" stroke-width="6" stroke-linejoin="bevel"/><rect x="-5" y="-51" width="10" height="10" fill="#FFC93C" stroke="#11131A" stroke-width="2"/><rect x="29.64" y="-31" width="10" height="10" fill="#FFC93C" stroke="#11131A" stroke-width="2"/><rect x="-5" y="-11" width="10" height="10" fill="#FFC93C" stroke="#11131A" stroke-width="2"/><rect x="-39.64" y="-31" width="10" height="10" fill="#FFC93C" stroke="#11131A" stroke-width="2"/></g>
+<g id="lockup"><use href="#kubus" transform="translate(75 78) scale(1.2)"/><g transform="translate(168 25)"><g fill="none" stroke-width="18" stroke-linejoin="miter" stroke-linecap="butt"><path stroke="#F5F2EA" transform="translate(0 0)" d="M9 0V100"/><path stroke="#F5F2EA" transform="translate(32 0)" d="M9 39H45V91H9V65H45"/><path stroke="#F5F2EA" transform="translate(106 0)" d="M21 0V91H50M0 39H44"/><path stroke="#F5F2EA" transform="translate(170 0)" d="M9 65H51V39H9V91H51"/><path stroke="#FFC93C" transform="translate(250 0)" d="M6.00 9.00L33.00 9.00L45.00 21.00L45.00 38.00L33.00 50.00L45.00 62.00L45.00 79.00L33.00 91.00L6.00 91.00M20.00 50.00L33.00 50.00"/><path stroke="#FFC93C" transform="translate(318 0)" d="M21.00 9.00L33.00 9.00L45.00 21.00L45.00 79.00L33.00 91.00L21.00 91.00L9.00 79.00L9.00 21.00Z"/></g></g></g>
+<!-- makhluk siluet buatan sendiri, menghadap kanan; alas di y=0 -->
+<g id="mkh"><path d="M-60 -10C-120 -20 -150 -50 -170 -90" fill="none" stroke="#FF3B5C" stroke-width="9" stroke-linecap="round"/><path d="M-45 -150C-10 -165 50 -140 70 -105L120 -98L70 -90C60 -60 45 -30 36 0L18 0L8 -50L-6 0L-26 0L-20 -70C-40 -90 -55 -120 -45 -150Z" fill="#FF3B5C" stroke="#11131A" stroke-width="3" stroke-linejoin="round"/><circle cx="62" cy="-108" r="4" fill="#11131A"/></g>
+<g id="plr"><circle cx="0" cy="-92" r="17" fill="#F5F2EA"/><path d="M-20 -72L20 -72L26 -20L16 0L6 0L0 -22L-6 0L-16 0L-26 -20Z" fill="#F5F2EA"/></g>
+</defs></svg>
+
+<!-- ============ SLIDE 1: COVER ============ -->
+<section class="slide" id="s1">
+ <div class="dots"></div>
+ <p class="wm"><i></i>late30_studio</p>
+ <p class="no" data-kecil>1/2 contoh</p>
+ <!-- PLACEHOLDER: lorong, kerucut pandang makhluk, gelombang suara dari pemain; buatan sendiri -->
+ <div class="node" data-placeholder="indra" style="left:72px;top:140px;width:936px;height:580px"><div class="kop"><svg class="pn"><use href="#pin"/></svg></div>
+  <svg viewBox="0 0 930 530" width="930" height="530" style="display:block" aria-hidden="true">
+   <rect x="0" y="0" width="930" height="90" fill="#11131A"/><g stroke="#2B2F3D" stroke-width="10"><line x1="0" y1="40" x2="930" y2="40"/><line x1="0" y1="70" x2="930" y2="70"/></g>
+   <g fill="#11131A" stroke="#3A4054" stroke-width="3"><rect x="300" y="150" width="90" height="290"/><rect x="460" y="150" width="60" height="290"/></g>
+   <polygon points="255,342 600,190 600,470" fill="#FFC93C" opacity=".22"/>
+   <path d="M255 342L600 190M255 342L600 470" stroke="#FFC93C" stroke-width="5" stroke-dasharray="18 12"/>
+   <g fill="none" stroke="#FF3B5C" stroke-linecap="round">
+    <path d="M735 326A70 70 0 0 0 735 434" stroke-width="8"/>
+    <path d="M690 273A140 140 0 0 0 690 487" stroke-width="8" opacity=".85"/>
+    <path d="M645 219A210 210 0 0 0 645 541" stroke-width="8" opacity=".65"/>
+    <path d="M600 166A280 280 0 0 0 600 594" stroke-width="8" opacity=".45"/>
+   </g>
+   <rect x="0" y="440" width="930" height="90" fill="#2B2F3D"/><line x1="0" y1="440" x2="930" y2="440" stroke="#3A4054" stroke-width="3"/>
+   <use href="#mkh" transform="translate(150 440)"/>
+   <use href="#plr" transform="translate(790 440)"/>
+  </svg></div>
+ <h1 class="j abs" style="left:72px;top:760px;width:936px">Kenapa alien ini terasa selalu <span class="y">tahu posisimu?</span></h1>
+ <svg class="abs" style="left:72px;top:1156px" width="420" height="112" viewBox="0 0 560 150" aria-hidden="true"><use href="#lockup"/></svg>
+</section>
+
+<!-- ============ SLIDE 2: PAYOFF (bidang kuning) ============ -->
+<section class="slide" id="s2" style="background-color:#FFC93C;color:#11131A">
+ <p class="wm" style="color:#11131A"><i style="background:#11131A"></i>late30_studio</p>
+ <p class="no" data-kecil style="color:#11131A">2/2 contoh</p>
+ <h1 class="j abs" style="left:72px;top:140px;width:936px">Alien gak pernah dikasih tahu posisimu</h1>
+ <p class="ib abs" style="left:72px;top:480px;width:900px">Ada sistem direktur yang tahu posisimu. Tapi dia cuma mengarahkan alien ke area umum.</p>
+ <!-- PLACEHOLDER: peta; area umum (putus-putus) vs titik pemain; makhluk di luar -->
+ <svg class="abs" data-placeholder="peta" style="left:72px;top:640px" width="936" height="540" viewBox="0 0 936 540" aria-hidden="true">
+  <g fill="none" stroke="#11131A" stroke-width="6"><rect x="3" y="3" width="930" height="534" rx="8"/><path d="M3 270H300V160H520V270H933M300 160V3M520 160V3M300 270V380H600V537"/></g>
+  <circle cx="720" cy="270" r="150" fill="#11131A" opacity=".1"/>
+  <circle cx="720" cy="270" r="150" fill="none" stroke="#11131A" stroke-width="8" stroke-dasharray="26 16"/>
+  <circle cx="755" cy="305" r="16" fill="#11131A" stroke="#FFC93C" stroke-width="5"/>
+  <text x="640" y="238" font-family="Liberation Sans" font-weight="700" font-size="28" fill="#11131A">area umum</text>
+  <text x="690" y="358" font-family="Liberation Sans" font-weight="700" font-size="28" fill="#11131A">kamu</text>
+  <path d="M290 390C400 390 480 330 560 290" fill="none" stroke="#11131A" stroke-width="8" stroke-linecap="round"/>
+  <path d="M552 262L590 280L556 318Z" fill="#11131A"/>
+  <g transform="translate(200 470) scale(.7)" fill="#11131A" stroke="none"><path d="M-60 -10C-120 -20 -150 -50 -170 -90" fill="none" stroke="#11131A" stroke-width="9" stroke-linecap="round"/><path d="M-50 -60C-40 -105 10 -125 40 -118C80 -128 120 -112 140 -96C110 -92 80 -88 50 -84C40 -60 30 -30 28 0L10 0L8 -40L-14 0L-34 0Z"/></g>
+ </svg>
+ <p class="src" data-sumber data-kecil style="color:#11131A">Game Developer, Thompson, 20 Mei 2020</p>
+</section>
+</html>

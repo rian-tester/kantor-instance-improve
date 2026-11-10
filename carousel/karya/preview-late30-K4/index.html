@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="id"><meta charset="utf-8"><title>PREVIEW late30_studio K4: suara digambar (teks contoh)</title>
+<link rel="stylesheet" href="../../dasar.css">
+<!--
+PREVIEW UNTUK PILIH IDE (T-07, K4). TEKS INI CONTOH, BELUM DIPERIKSA SATPAM, BISA BERUBAH. Bukan naskah final.
+Sistem: brand/sistem-desain-late30.md (Graph). Sumber fakta: hasil/ide-late30-game-menarik.md (C1, C2).
+Slide 1 cover | jangkar: hook 96 px | motif: lingkaran suara dari siluet di bangunan sederhana (placeholder), lockup
+Slide 2 banding/payoff | jangkar: "Lahir dari tester yang bingung" | motif: dua node sama tinggi (lingkaran generik vs cocok persis)
+Tanpa screenshot, logo, karakter, atau materi resmi game. Font: Liberation Sans + DejaVu Sans Mono lokal. Statis.
+-->
+<style>
+@font-face{font-family:'Liberation Sans';font-weight:400;src:local('Liberation Sans'),local('LiberationSans')}
+@font-face{font-family:'Liberation Sans';font-weight:700;src:local('Liberation Sans Bold'),local('LiberationSans-Bold')}
+@font-face{font-family:'DejaVu Sans Mono';font-weight:400;src:local('DejaVu Sans Mono'),local('DejaVuSansMono')}
+@font-face{font-family:'DejaVu Sans Mono';font-weight:700;src:local('DejaVu Sans Mono Bold'),local('DejaVuSansMono-Bold')}
+:root{--g:#11131A;--k:#F5F2EA;--p:#FF3B5C;--y:#FFC93C;--n:#1A1D27;--l:#3A4054;--t:#B9B6AD}
+.slide{background-color:var(--g);color:var(--k);font-family:'Liberation Sans',sans-serif;font-weight:700}
+.dots{position:absolute;left:0;top:0;width:1080px;height:1350px;background-image:radial-gradient(circle,#2B2F3D 2.5px,transparent 3px);background-size:54px 54px;background-position:27px 27px}
+.abs{position:absolute}
+.wm{position:absolute;left:72px;top:68px;margin:0;font:700 28px/36px 'DejaVu Sans Mono',monospace;display:flex;align-items:center;gap:14px}
+.wm i{width:18px;height:18px;background:var(--y);display:block}
+.no{position:absolute;right:72px;top:68px;margin:0;font:400 28px/36px 'DejaVu Sans Mono',monospace;color:var(--t)}
+.src{position:absolute;left:72px;bottom:72px;margin:0;font:400 28px/36px 'DejaVu Sans Mono',monospace;color:var(--t);white-space:nowrap}
+h1,h2{margin:0;font-weight:700;letter-spacing:-.5px}
+.j{font-size:96px;line-height:104px;text-wrap:balance}
+.ns{margin:0;font:700 40px/48px 'Liberation Sans',sans-serif}
+.kc{margin:0;font:400 32px/46px 'Liberation Sans',sans-serif;text-wrap:pretty}
+.ib{margin:0;font:400 32px/48px 'Liberation Sans',sans-serif;text-wrap:pretty}
+.y{color:var(--y)}
+.node{position:absolute;background:var(--n);border:3px solid var(--l);border-radius:22px;overflow:hidden}
+.kop{height:46px;background:var(--p);display:flex;align-items:center;padding:0 18px}
+.kop.y{background:var(--y)}
+.pn{width:24px;height:24px;display:block}
+</style>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="pin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="#FFC93C" stroke="#11131A" stroke-width="4"/></symbol>
+<g id="kubus"><polygon fill="#FF3B5C" points="-43.3,-25 0,0 0,50 -43.3,25"/><polygon fill="#FF3B5C" points="43.3,-25 43.3,25 0,50 0,0"/><path stroke="#11131A" stroke-width="2.4" fill="none" d="M-43.3 -25L0 0L43.3 -25M0 0V50"/><polygon points="0,-46 34.64,-26 0,-6 -34.64,-26" fill="none" stroke="#11131A" stroke-width="10.5" stroke-linejoin="bevel"/><polygon points="0,-46 34.64,-26 0,-6 -34.64,-26" fill="none" stroke="#FFC93C" stroke-width="6" stroke-linejoin="bevel"/><rect x="-5" y="-51" width="10" height="10" fill="#FFC93C" stroke="#11131A" stroke-width="2"/><rect x="29.64" y="-31" width="10" height="10" fill="#FFC93C" stroke="#11131A" stroke-width="2"/><rect x="-5" y="-11" width="10" height="10" fill="#FFC93C" stroke="#11131A" stroke-width="2"/><rect x="-39.64" y="-31" width="10" height="10" fill="#FFC93C" stroke="#11131A" stroke-width="2"/></g>
+<g id="lockup"><use href="#kubus" transform="translate(75 78) scale(1.2)"/><g transform="translate(168 25)"><g fill="none" stroke-width="18" stroke-linejoin="miter" stroke-linecap="butt"><path stroke="#F5F2EA" transform="translate(0 0)" d="M9 0V100"/><path stroke="#F5F2EA" transform="translate(32 0)" d="M9 39H45V91H9V65H45"/><path stroke="#F5F2EA" transform="translate(106 0)" d="M21 0V91H50M0 39H44"/><path stroke="#F5F2EA" transform="translate(170 0)" d="M9 65H51V39H9V91H51"/><path stroke="#FFC93C" transform="translate(250 0)" d="M6.00 9.00L33.00 9.00L45.00 21.00L45.00 38.00L33.00 50.00L45.00 62.00L45.00 79.00L33.00 91.00L6.00 91.00M20.00 50.00L33.00 50.00"/><path stroke="#FFC93C" transform="translate(318 0)" d="M21.00 9.00L33.00 9.00L45.00 21.00L45.00 79.00L33.00 91.00L21.00 91.00L9.00 79.00L9.00 21.00Z"/></g></g></g>
+<g id="nin"><circle cx="0" cy="-92" r="17" fill="#F5F2EA"/><path d="M-4 -90L40 -98L24 -84Z" fill="#FF3B5C"/><path d="M-20 -72L20 -72L26 -20L16 0L6 0L0 -22L-6 0L-16 0L-26 -20Z" fill="#F5F2EA"/><path d="M-20 -66L-44 -44L-38 -38L-14 -56Z" fill="#F5F2EA"/></g>
+</defs></svg>
+
+<!-- ============ SLIDE 1: COVER ============ -->
+<section class="slide" id="s1">
+ <div class="dots"></div>
+ <p class="wm"><i></i>late30_studio</p>
+ <p class="no" data-kecil>1/2 contoh</p>
+ <!-- PLACEHOLDER: siluet di bangunan sederhana, lingkaran suara melebar; buatan sendiri -->
+ <div class="node" data-placeholder="suara" style="left:72px;top:140px;width:936px;height:520px"><div class="kop"><svg class="pn"><use href="#pin"/></svg></div>
+  <svg viewBox="0 0 930 530" width="930" height="530" style="display:block" aria-hidden="true">
+   <rect x="0" y="150" width="250" height="300" fill="#11131A" stroke="#3A4054" stroke-width="3"/>
+   <rect x="650" y="210" width="280" height="240" fill="#11131A" stroke="#3A4054" stroke-width="3"/>
+   <g fill="#2B2F3D"><rect x="40" y="190" width="50" height="60"/><rect x="130" y="190" width="50" height="60"/><rect x="40" y="290" width="50" height="60"/><rect x="700" y="250" width="50" height="60"/><rect x="800" y="250" width="50" height="60"/></g>
+   <circle cx="400" cy="372" r="300" fill="#FF3B5C" opacity=".07"/>
+   <circle cx="400" cy="372" r="300" fill="none" stroke="#FF3B5C" stroke-width="5" opacity=".5"/>
+   <circle cx="400" cy="372" r="200" fill="#FF3B5C" opacity=".1"/>
+   <circle cx="400" cy="372" r="200" fill="none" stroke="#FF3B5C" stroke-width="6" opacity=".8"/>
+   <circle cx="400" cy="372" r="100" fill="#FFC93C" opacity=".12"/>
+   <circle cx="400" cy="372" r="100" fill="none" stroke="#FFC93C" stroke-width="8"/>
+   <rect x="0" y="440" width="930" height="90" fill="#2B2F3D"/><line x1="0" y1="440" x2="930" y2="440" stroke="#3A4054" stroke-width="3"/>
+   <use href="#nin" transform="translate(400 440)"/>
+   <!-- penjaga di luar lingkaran -->
+   <g fill="#B9B6AD" transform="translate(800 440)"><circle cx="0" cy="-92" r="16"/><path d="M-20 -72L20 -72L24 -20L14 0L4 0L0 -22L-4 0L-14 0L-24 -20Z"/></g>
+  </svg></div>
+ <h1 class="j abs" style="left:72px;top:700px;width:936px">Kenapa game stealth ini menggambar <span class="y">suaramu?</span></h1>
+ <svg class="abs" style="left:72px;top:1156px" width="420" height="112" viewBox="0 0 560 150" aria-hidden="true"><use href="#lockup"/></svg>
+</section>
+
+<!-- ============ SLIDE 2: PAYOFF (banding sebelum/sesudah) ============ -->
+<section class="slide" id="s2">
+ <div class="dots"></div>
+ <p class="wm"><i></i>late30_studio</p>
+ <p class="no" data-kecil>2/2 contoh</p>
+ <h1 class="j abs" style="left:72px;top:150px;width:936px">Lahir dari tester yang <span class="y">bingung</span></h1>
+ <p class="ib abs" style="left:72px;top:400px;width:900px">Efek suaranya awalnya generik. Lalu dibuat cocok persis dengan jangkauan suaranya.</p>
+ <!-- PLACEHOLDER: lingkaran generik vs lingkaran yang pas jangkauan -->
+ <div class="node" data-placeholder="radius-generik" style="left:72px;top:620px;width:450px;height:520px"><div class="kop"><svg class="pn"><use href="#pin"/></svg></div>
+  <div style="padding:24px 32px 0"><h2 class="ns">Awalnya generik</h2></div>
+  <svg viewBox="0 0 444 330" width="444" height="330" style="position:absolute;left:0;top:150px" aria-hidden="true">
+   <circle cx="222" cy="170" r="110" fill="none" stroke="#B9B6AD" stroke-width="6" stroke-dasharray="4 16" stroke-linecap="round"/>
+   <circle cx="222" cy="170" r="60" fill="none" stroke="#B9B6AD" stroke-width="6" stroke-dasharray="4 16" stroke-linecap="round"/>
+   <g fill="#F5F2EA"><circle cx="222" cy="140" r="12"/><path d="M204 156L240 156L246 210L198 210Z"/></g>
+   <rect x="380" y="132" width="26" height="70" fill="#B9B6AD"/>
+  </svg></div>
+ <div class="node" data-placeholder="radius-pas" style="left:558px;top:620px;width:450px;height:520px"><div class="kop y"><svg class="pn"><use href="#pin"/></svg></div>
+  <div style="padding:24px 32px 0"><h2 class="ns">Dibuat <span class="y">cocok persis</span></h2></div>
+  <svg viewBox="0 0 444 330" width="444" height="330" style="position:absolute;left:0;top:150px" aria-hidden="true">
+   <circle cx="222" cy="170" r="150" fill="#FFC93C" opacity=".12"/>
+   <circle cx="222" cy="170" r="150" fill="none" stroke="#FFC93C" stroke-width="8"/>
+   <circle cx="222" cy="170" r="76" fill="none" stroke="#FFC93C" stroke-width="8" opacity=".6"/>
+   <g fill="#F5F2EA"><circle cx="222" cy="140" r="12"/><path d="M204 156L240 156L246 210L198 210Z"/></g>
+   <rect x="380" y="132" width="26" height="70" fill="#B9B6AD"/>
+  </svg></div>
+ <p class="src" data-sumber data-kecil>Game Informer, 15 Okt 2012</p>
+</section>
+</html>

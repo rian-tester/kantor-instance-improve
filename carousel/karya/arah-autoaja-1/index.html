@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../dasar.css">
+<style>
+/* Arah 1: tipografi murni, rapat, tegas. Satu keluarga font (Liberation Sans), empat ukuran: 120 / 52 / 36 / 24. */
+@font-face { font-family:"AA Sans"; font-weight:400; src:local("Liberation Sans"), local("LiberationSans"); }
+@font-face { font-family:"AA Sans"; font-weight:700; src:local("Liberation Sans Bold"), local("LiberationSans-Bold"); }
+:root { --navy:#14155E; --emas:#E8A33D; --putih:#FFFFFF; --redup:#C9CBEF; }
+body { font-family:"AA Sans", sans-serif; background:#000; }
+section.slide { background:var(--navy); color:var(--putih); padding:72px; display:flex; flex-direction:column; }
+h1, h2 { margin:0; font-weight:700; font-size:120px; line-height:.98; letter-spacing:-4px; text-wrap:balance; }
+.ikon { width:96px; height:96px; fill:none; stroke:var(--putih); stroke-width:4; stroke-linecap:round; stroke-linejoin:round; }
+.garis { width:140px; height:6px; background:var(--emas); margin:44px 0; }
+.sub { font-size:52px; line-height:1.15; letter-spacing:-1px; color:var(--redup); margin:0; text-wrap:pretty; }
+.sub b { color:var(--putih); font-weight:700; }
+.isi { flex:1; display:flex; flex-direction:column; justify-content:center; }
+.kaki { display:flex; justify-content:space-between; align-items:flex-end; }
+.wm { font-size:36px; font-weight:700; letter-spacing:-.5px; }
+.wm i { font-style:normal; color:var(--emas); }
+.produk { font-size:36px; color:var(--redup); margin-top:6px; }
+.slot { width:200px; height:200px; border:3px dashed var(--redup); border-radius:24px; display:flex; align-items:center; justify-content:center; text-align:center; font-size:24px; line-height:1.2; color:var(--redup); padding:0 20px; }
+.baris { font-size:52px; font-weight:700; letter-spacing:-1px; line-height:1.1; padding:30px 0; border-top:3px solid var(--emas); }
+.baris:last-child { border-bottom:3px solid var(--emas); }
+.harga { font-size:52px; font-weight:700; color:var(--emas); letter-spacing:-1px; }
+</style>
+</head>
+<body>
+
+<!-- Slide 1. Tipe: cover. Jangkar: judul 120px. Motif: gelembung chat (ikon). Produk: label WhatsApp Broadcast + Reply Agent + wordmark. -->
+<section class="slide">
+  <svg class="ikon" viewBox="0 0 96 96"><path d="M14 18h68a6 6 0 0 1 6 6v38a6 6 0 0 1-6 6H44L26 84V68H14a6 6 0 0 1-6-6V24a6 6 0 0 1 6-6z"/><path d="M28 36h40M28 50h24"/></svg>
+  <div class="isi">
+    <h1>Chat pelanggan numpuk, kamu balas satu-satu?</h1>
+    <div class="garis"></div>
+  </div>
+  <div class="kaki">
+    <div>
+      <div class="wm">auto<i>aja</i></div>
+      <div class="produk">WhatsApp Broadcast + Reply Agent</div>
+    </div>
+    <div class="slot" data-kecil>maskot (menyusul)</div>
+  </div>
+</section>
+
+<!-- Slide 2. Tipe: poin. Jangkar: judul 120px. Motif: garis emas pemisah (daftar). -->
+<section class="slide">
+  <svg class="ikon" viewBox="0 0 96 96"><path d="M12 48h60M52 26l22 22-22 22"/></svg>
+  <div class="isi">
+    <h2>Broadcast personal, balasan otomatis AI.</h2>
+    <div class="garis"></div>
+    <div>
+      <div class="baris">Fully managed</div>
+      <div class="baris">Setup gratis, aktif 24/7</div>
+      <div class="baris">Tanpa biaya per-chat</div>
+    </div>
+  </div>
+  <div class="kaki"><div class="wm">auto<i>aja</i></div></div>
+</section>
+
+<!-- Slide 3. Tipe: penutup. Jangkar: judul 120px. Motif: ikon centang chat, slot maskot. Produk + harga + wordmark. -->
+<section class="slide">
+  <svg class="ikon" viewBox="0 0 96 96"><path d="M14 18h68a6 6 0 0 1 6 6v38a6 6 0 0 1-6 6H44L26 84V68H14a6 6 0 0 1-6-6V24a6 6 0 0 1 6-6z"/><path d="M32 44l12 12 22-24"/></svg>
+  <div class="isi">
+    <h2>Konsultasi gratis lewat chat WhatsApp.</h2>
+    <div class="garis"></div>
+    <p class="sub">Tanpa kewajiban. Kontrol lewat WhatsApp &amp; Google Sheets.</p>
+    <p class="harga" style="margin-top:36px">Mulai 1,25jt/bln</p>
+  </div>
+  <div class="kaki">
+    <div>
+      <div class="wm">auto<i>aja</i></div>
+      <div class="produk">WhatsApp Broadcast + Reply Agent</div>
+    </div>
+    <div class="slot" data-kecil>maskot (menyusul)</div>
+  </div>
+</section>
+
+</body>
+</html>

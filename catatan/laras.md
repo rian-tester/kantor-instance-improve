@@ -1,0 +1,3 @@
+- 08/11 putaran detak: catat jawaban owner T-06 (kurs per tagihan, tagihan udah ditaruh). Tapi `masuk/keuangan/` kosong, jadi tanya ulang di T-06. Belum ada transaksi di kas.
+- 08/11 putaran detak: owner jawab T-06 1b (rekap fal aja). Rekap jadi di hasil/biaya-2026-11.md (fal est. $0,156). Belum: tagihan lain & rekap akhir bulan.
+- 09/11 putaran detak 23.55: bikin laporan pemakaian pertama di hasil/laporan-pemakaian-2026-11-09.md, notif ditahan sampai 07.00. Belum: simpan ke Drive (folder Hasil gak ketemu) dan bagian per akun.

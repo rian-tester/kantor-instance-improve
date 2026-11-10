@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../dasar.css">
+<style>
+/* autoaja.agency T-08 v2. Satu keluarga Liberation Sans lokal. Empat ukuran: 420 / 96 / 56 / 36.
+   Warna PERKIRAAN: navy #14155E, navy2 #2B2C8C, emas #E8A33D, redup #C9CBEF. */
+@font-face { font-family:"AA Sans"; font-weight:400; src:local("Liberation Sans"), local("LiberationSans"); }
+@font-face { font-family:"AA Sans"; font-weight:700; src:local("Liberation Sans Bold"), local("LiberationSans-Bold"); }
+:root { --navy:#14155E; --navy2:#2B2C8C; --emas:#E8A33D; --putih:#FFFFFF; --redup:#C9CBEF; }
+body { font-family:"AA Sans", sans-serif; background:#000; }
+section.slide { background:var(--navy); color:var(--putih); padding:72px; display:flex; flex-direction:column; }
+.atas { order:-1; height:64px; flex:none; display:flex; align-items:center; }
+.wm { font-size:36px; font-weight:700; letter-spacing:-.3px; line-height:1; margin:0; }
+.wm i { font-style:normal; color:var(--emas); }
+.wm.besar { font-size:56px; letter-spacing:-1.5px; }
+.no { position:absolute; right:72px; bottom:72px; font-size:36px; line-height:1; color:var(--redup); margin:0; }
+h1, h2 { margin:0; font-weight:700; font-size:96px; line-height:1; letter-spacing:-3px; text-wrap:balance; }
+.garis { width:140px; height:8px; background:var(--emas); margin:36px 0; flex:none; }
+.isi { font-size:56px; line-height:1.2; margin:0; color:var(--redup); text-wrap:pretty; }
+.label { order:2; font-size:36px; line-height:1.2; font-weight:700; color:var(--emas); margin:28px 0 0; letter-spacing:.3px; }
+.angka { display:inline-block; font-size:420px; font-weight:700; line-height:.8; letter-spacing:-16px; color:var(--emas); margin:0 16px; }
+.hal { margin:72px 0 0; white-space:nowrap; font-size:36px; font-weight:700; color:var(--emas); line-height:1.2; }
+/* progres 1-2-3: elemen sistem tetap (bukan motif), posisi sama di slide 3-5 */
+.dots { order:3; display:flex; gap:16px; margin-top:20px; flex:none; }
+.dots span { width:28px; height:28px; border-radius:50%; border:4px solid var(--emas); box-sizing:border-box; }
+.dots span.on { background:var(--emas); }
+/* garis ikon seragam, tebal tetap 6 px */
+svg .s, svg .e, svg .sf, svg .ef { vector-effect:non-scaling-stroke; stroke-width:6px; stroke-linecap:round; stroke-linejoin:round; }
+.s { fill:none; stroke:var(--putih); }
+.e { fill:none; stroke:var(--emas); }
+.sf { fill:var(--navy); stroke:var(--putih); }
+.ef { fill:var(--navy); stroke:var(--emas); }
+.d { fill:var(--emas); }
+.spasi { flex:1; }
+.bar { border-left:12px solid var(--emas); padding-left:32px; }
+.panel { background:var(--navy2); border-radius:24px; overflow:hidden; position:relative; flex:none; }
+.panel svg { position:absolute; left:0; top:0; }
+.cta { background:var(--emas); border-radius:16px; padding:28px 32px 32px; flex:none; margin:40px 0 84px; }
+.cta .isi { color:var(--navy); font-weight:700; }
+@keyframes naik { from { transform:translateY(36px); } to { transform:none; } }
+@keyframes fade { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:none; } }
+@keyframes tarik { from { transform:scaleX(0); } to { transform:none; } }
+.n0 { animation:naik .5s cubic-bezier(.2,.8,.3,1) both; }
+.f1 { animation:fade .5s ease-out .4s both; }
+.garis { transform-origin:left center; animation:tarik .5s ease-out both; }
+</style>
+</head>
+<body>
+
+<!-- KONSEP v2: kartu pengetahuan navy ala feed @autoaja.agency, satu aksen emas, ikon garis tebal 6 px seragam.
+     Cerita: catatan malam hari. Cover dan penutup memakai bidang navy2 berisi buku catatan (cover: buku putih padat + lingkaran emas; penutup: versi kecil, gema cover).
+     Maskot semut astronot belum ada berkas lokal, tidak digambar. Ikon sisi kiri di x72 semua slide.
+     Peta (tipe | jangkar | motif):
+     1 cover | judul 96 | buku catatan (bidang besar)
+     2 poin | judul 96 | koin + panah aliran
+     3 angka | "1" emas 420 | angka raksasa
+     4 langkah | judul 96 | dompet + panah keluar (teks dulu, ikon di bawah)
+     5 fakta/rumus | judul 96 | rumus koin - dompet = koin (ikon dulu, judul di bawah)
+     6 penutup | judul 96 + ajakan | buku catatan (gema cover)
+     Motif: buku 1,6; koin+panah 2 (koin juga 5, panah juga 4: masing-masing 2 slide); angka raksasa 3; dompet 4,5. Progres 1-2-3 = elemen tetap slide 3-5. -->
+
+<!-- Slide 1 cover -->
+<section class="slide">
+  <div class="atas"><p class="wm besar">auto<i>aja</i>.agency</p></div>
+  <div class="panel" style="margin-top:28px; height:500px">
+    <svg width="936" height="500" viewBox="0 0 936 500" aria-hidden="true">
+      <circle cx="760" cy="250" r="230" fill="#E8A33D"/>
+      <g transform="rotate(-6 340 250)">
+        <rect x="150" y="40" width="380" height="430" rx="30" fill="#FFFFFF"/>
+        <rect x="150" y="40" width="70" height="430" rx="30" fill="#C9CBEF"/>
+        <circle cx="290" cy="150" r="20" fill="#E8A33D"/><rect x="335" y="140" width="140" height="20" rx="10" fill="#14155E"/>
+        <circle cx="290" cy="250" r="20" fill="#E8A33D"/><rect x="335" y="240" width="140" height="20" rx="10" fill="#14155E"/>
+        <circle cx="290" cy="350" r="20" fill="#E8A33D"/><rect x="335" y="340" width="140" height="20" rx="10" fill="#14155E"/>
+      </g>
+    </svg>
+  </div>
+  <div class="spasi"></div>
+  <h1 class="n0">Uang jualan ke mana? Catat 3 angka.</h1>
+  <div class="garis"></div>
+  <p class="isi f1" style="margin-bottom:84px">Catat tiap malam sebelum tutup warung atau toko, biar kelihatan ke mana uangmu pergi.</p>
+  <p class="no">1/6</p>
+</section>
+
+<!-- Slide 2 poin -->
+<section class="slide">
+  <div class="atas"><p class="wm">auto<i>aja</i>.agency</p></div>
+  <h2 class="n0" style="margin-top:56px">Jualan ramai, tapi uang terasa gak ada?</h2>
+  <div class="garis"></div>
+  <svg style="flex:none; margin-top:24px" width="936" height="400" viewBox="0 0 936 400" aria-hidden="true">
+    <path class="sf" d="M20 300 v30 a130 40 0 0 0 260 0 v-30 Z"/>
+    <path class="sf" d="M20 220 v30 a130 40 0 0 0 260 0 v-30 Z"/>
+    <ellipse class="sf" cx="150" cy="300" rx="130" ry="40"/>
+    <ellipse class="sf" cx="150" cy="220" rx="130" ry="40"/>
+    <path class="sf" d="M20 140 v30 a130 40 0 0 0 260 0 v-30 Z"/>
+    <ellipse class="sf" cx="150" cy="140" rx="130" ry="40"/>
+    <path class="e" d="M360 230 H900 M780 140 L900 230 L780 320"/>
+  </svg>
+  <div class="spasi"></div>
+  <p class="isi f1" style="margin-bottom:84px">Bisa jadi bukan karena sepi, tapi karena gak kelihatan ke mana uangnya pergi.</p>
+  <p class="no">2/6</p>
+</section>
+
+<!-- Slide 3 angka -->
+<section class="slide">
+  <div class="atas"><p class="wm">auto<i>aja</i>.agency</p></div>
+  <p class="hal" style="order:2">Hal <span class="angka n0">1</span> dari 3</p>
+  <div class="dots" style="margin-top:28px"><span class="on"></span><span></span><span></span></div>
+  <h2 class="f1" style="order:4; margin-top:96px">Uang masuk hari ini</h2>
+  <div class="garis" style="order:5; animation-delay:.3s"></div>
+  <p class="isi f1" style="order:6">Coba jumlahkan semua uang tunai, transfer, dan QRIS (bayar lewat scan kode). Tulis totalnya jadi satu angka.</p>
+  <p class="no">3/6</p>
+</section>
+
+<!-- Slide 4 langkah: teks dulu, ikon di bawah -->
+<section class="slide">
+  <div class="atas"><p class="wm">auto<i>aja</i>.agency</p></div>
+  <p class="label">Hal 2 dari 3</p>
+  <div class="dots"><span></span><span class="on"></span><span></span></div>
+  <h2 class="n0" style="order:4; margin-top:44px">Uang keluar hari ini</h2>
+  <div class="garis" style="order:5"></div>
+  <p class="isi f1 bar" style="order:6">Belanja bahan, ongkos, dan gaji atau upah orang yang bantu jualan. Pengeluaran kecil juga bisa dicatat. Catat per jenis, jadi satu baris tiap jenis.</p>
+  <div class="spasi" style="order:7"></div>
+  <svg style="order:8; flex:none; margin-bottom:96px" width="936" height="260" viewBox="0 0 936 260" aria-hidden="true">
+    <rect class="s" x="3" y="20" width="340" height="220" rx="28"/>
+    <path class="s" d="M3 80 H343"/>
+    <circle class="d" cx="280" cy="170" r="16"/>
+    <path class="e" d="M420 130 H900 M780 40 L900 130 L780 220"/>
+  </svg>
+  <p class="no">4/6</p>
+</section>
+
+<!-- Slide 5 rumus: ikon dulu, judul di bawah -->
+<section class="slide">
+  <div class="atas"><p class="wm">auto<i>aja</i>.agency</p></div>
+  <p class="label">Hal 3 dari 3</p>
+  <div class="dots"><span></span><span></span><span class="on"></span></div>
+  <svg style="order:4; flex:none; margin-top:56px" width="936" height="300" viewBox="0 0 936 300" aria-hidden="true">
+    <!-- masuk: tiga koin emas -->
+    <path class="ef" d="M16 190 v26 a84 26 0 0 0 168 0 v-26 Z"/>
+    <ellipse class="ef" cx="100" cy="190" rx="84" ry="26"/>
+    <path class="ef" d="M16 126 v26 a84 26 0 0 0 168 0 v-26 Z"/>
+    <ellipse class="ef" cx="100" cy="126" rx="84" ry="26"/>
+    <path class="ef" d="M16 62 v26 a84 26 0 0 0 168 0 v-26 Z"/>
+    <ellipse class="ef" cx="100" cy="62" rx="84" ry="26"/>
+    <!-- minus -->
+    <path class="s" d="M228 150 H276"/>
+    <!-- keluar: dompet putih -->
+    <rect class="s" x="330" y="76" width="200" height="150" rx="22"/>
+    <path class="s" d="M330 118 H530"/>
+    <circle fill="#FFFFFF" cx="490" cy="184" r="12"/>
+    <!-- sama dengan -->
+    <path class="s" d="M580 132 H632 M580 168 H632"/>
+    <!-- sisa: satu koin emas padat -->
+    <path d="M690 130 v26 a110 34 0 0 0 220 0 v-26 Z" fill="#E8A33D"/>
+    <ellipse cx="800" cy="130" rx="110" ry="34" fill="#E8A33D"/>
+    <ellipse cx="800" cy="130" rx="70" ry="20" fill="none" stroke="#14155E" stroke-width="6"/>
+  </svg>
+  <div class="spasi" style="order:5"></div>
+  <h2 class="n0" style="order:6">Sisa hari ini</h2>
+  <div class="garis" style="order:7"></div>
+  <p class="isi f1" style="order:8; text-wrap:wrap; margin-bottom:84px">Uang masuk dikurangi uang keluar. Coba cocokkan: uang di laci dan rekening malam ini, dikurangi uang pagi tadi, harusnya sama dengan sisa ini.</p>
+  <p class="no">5/6</p>
+</section>
+
+<!-- Slide 6 penutup -->
+<section class="slide">
+  <div class="atas"><p class="wm besar">auto<i>aja</i>.agency</p></div>
+  <div class="panel" style="margin-top:24px; height:200px">
+    <svg width="936" height="200" viewBox="0 0 936 200" aria-hidden="true">
+      <circle cx="800" cy="100" r="150" fill="#E8A33D"/>
+      <g transform="rotate(-6 150 100)">
+        <rect x="48" y="20" width="200" height="164" rx="18" fill="#FFFFFF"/>
+        <rect x="48" y="20" width="40" height="164" rx="18" fill="#C9CBEF"/>
+        <circle cx="120" cy="68" r="11" fill="#E8A33D"/><rect x="144" y="62" width="70" height="12" rx="6" fill="#14155E"/>
+        <circle cx="120" cy="104" r="11" fill="#E8A33D"/><rect x="144" y="98" width="70" height="12" rx="6" fill="#E8A33D"/>
+        <circle cx="120" cy="140" r="11" fill="#E8A33D"/><rect x="144" y="134" width="70" height="12" rx="6" fill="#14155E"/>
+      </g>
+    </svg>
+  </div>
+  <h2 class="n0" style="margin-top:40px">Besok pagi, lihat angka keluar dulu</h2>
+  <div class="garis"></div>
+  <p class="isi f1">Jenis pengeluaran yang paling besar bisa jadi jawabannya: ke situ uangmu pergi.</p>
+  <div class="spasi"></div>
+  <div class="cta">
+    <p class="isi">Dari tiga angka tadi, mana yang paling sering kelupaan kamu catat?</p>
+  </div>
+  <p class="no">6/6</p>
+</section>
+
+</body>
+</html>
