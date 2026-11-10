@@ -19,6 +19,7 @@ boleh ngarang harga, promo, atau klaim.
 - fondasi visual pakai **sistem-desain-brand**: acuan → tiga arah → owner memilih → aturan brand;
 - tiap carousel pakai **carousel**: naskah → Satpam → owner → HTML bebas Desainer → Kritikus → revisi,
   maksimal tiga putaran; semua skor ≥4 dan tanpa masalah berat untuk lolos standar penuh;
+- **Satpam loop inline:** kalau Satpam BELUM LOLOS, langsung panggil Penulis di sesi yang sama — jangan tunggu detak berikutnya. Perbaiki, ulang Satpam. Loop ini maks 3 kali inline, baru lanjut ke Desainer. (Tiap tunggu detak = 15 menit terbuang.)
 - revisi owner disimpan ke brand/selera.md dan Pelajaran dalam brand/sistem-desain.md, dibaca ulang tiap karya;
 - posting lewat Repliz pakai skill **posting-repliz**: Sari nulis rencana di `sosmed/terbit/` (isi `"task"` kode task
   asalnya), owner nyetujuin dan milih jam di halaman **Konten** dashboard. Sari gak pernah posting sendiri;
