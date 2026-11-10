@@ -1,2 +1,0 @@
-0.23.7
-Perbaikan fal: transkrip, suara, gambar, dan video gak gampang gagal lagi di VPS yang koneksinya lambat. Alat nyoba lagi sendiri waktu ngambil hasil, tanpa kirim ulang permintaan, jadi gak bayar dobel. Kalau hasilnya tetap gak nyampe, ada perintah buat ngambilnya dari ID permintaan. Daftar lengkapnya ada di dashboard, Lainnya, Riwayat versi.

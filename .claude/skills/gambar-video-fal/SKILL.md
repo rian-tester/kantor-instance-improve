@@ -25,6 +25,7 @@ owner atau produk, pakai itu sebagai bahan edit. Jangan bikin klaim produk dari 
    Untuk video, tonton hasilnya dan cek gerakan, produk, dan detail wajah. Gagal atau belum selesai bukan alasan
    buat mencoba lagi otomatis, karena biaya bisa sudah terpakai.
 6. Catat estimasi biaya dan file hasil di laporan. `node alat/fal.mjs riwayat` membaca catatan biaya.
+7. Kalau pesan gagal bilang permintaan udah terkirim (ada ID-nya), JANGAN jalanin perintah generate lagi: itu bayar dobel. Ambil hasilnya: `node alat/fal.mjs ambil <ID dari pesan>` (transkrip: tambahin `--keluar konten/<nama>.kata.json`).
    Nilainya estimasi konservatif, bukan tagihan aktual fal. Kunci cuma diisi di dashboard, jangan minta di chat.
 
 

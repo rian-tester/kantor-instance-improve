@@ -6,7 +6,7 @@ description: Cara nyatet biaya API, langganan layanan, nota, & mutasi rekening k
 # Pembukuan
 
 **Buku kas cuma diubah lewat `node alat/kas.mjs`** (file `keuangan/kas.csv` dikunci pagar). Jangan ngitung total di
-kepala: semua angka keluar dari alat. Satu perintah per langkah, tanpa variabel/`&&`/`|`.
+kepala: semua angka keluar dari alat. 
 
 ## Biaya API & layanan (fokus kantor ini)
 - **fal (gambar, video, suara):** tiap panggilan udah dicatat otomatis di `catatan/fal-biaya.jsonl` (estimasi USD).

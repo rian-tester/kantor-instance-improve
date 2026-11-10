@@ -11,6 +11,7 @@ export async function main(K, argv) {
   if (perintah === 'riwayat') return F.riwayat(K).slice(-20);
   if (perintah === 'harga') return F.harga(K, args);
   if (perintah === 'jalan' && args.length === 1) return F.jalan(K, args[0]);
+  if (perintah === 'ambil' && (args.length === 1 || (args.length === 3 && args[1] === '--keluar'))) return F.ambil(K, args[0], args.length === 3 ? { keluar: args[2] } : {});
   if (['gambar', 'edit', 'video', 'suara', 'transkrip', 'musik'].includes(perintah)) {
     const opsi = {};
     for (let i = 0; i < args.length; i += 2) {
@@ -20,7 +21,7 @@ export async function main(K, argv) {
     }
     return F.siapkan(K, perintah, opsi);
   }
-  throw new F.FalGagal('Pakai: node alat/fal.mjs status | model | harga <endpoint…> | gambar | edit | video | suara | musik | transkrip | riwayat. Video cuma bikin permintaan. Kamu setujuin di dashboard.');
+  throw new F.FalGagal('Pakai: node alat/fal.mjs status | model | harga <endpoint…> | gambar | edit | video | suara | musik | transkrip | riwayat | ambil <id-permintaan> [--keluar berkas.kata.json]. Video cuma bikin permintaan. Kamu setujuin di dashboard.');
 }
 if (process.argv[1] && fs.realpathSync(process.argv[1]) === fileURLToPath(import.meta.url)) main(K, process.argv.slice(2)).then((h) => console.log(F.pesanAman(K, JSON.stringify(h, null, 2)))).catch((e) => {
   console.error(e instanceof F.FalGagal ? F.pesanAman(K, e.message) : 'Aku gak bisa memproses fal. Cek file kantor dan coba lagi.');

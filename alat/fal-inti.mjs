@@ -8,6 +8,8 @@ const API = (process.env.FAL_API || 'https://api.fal.ai').replace(/\/$/, '');
 const QUEUE = (process.env.FAL_QUEUE || 'https://queue.fal.run').replace(/\/$/, '');
 const MIME = { '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp', '.mp4': 'video/mp4', '.mp3': 'audio/mpeg', '.json': 'application/json' };
 export class FalGagal extends Error {}
+// Gangguan sementara (jaringan putus, host lambat, 5xx): permintaan yang udah terkirim tetap bisa diambil hasilnya lewat `ambil`.
+export class FalSementara extends FalGagal {}
 const gagal = (pesan) => { throw new FalGagal(pesan); };
 export const baca = (f, cadangan = null) => { try { return JSON.parse(fs.readFileSync(f, 'utf8')); } catch { return cadangan; } };
 export function tulis(f, isi, mode = 0o600) {
@@ -77,19 +79,36 @@ export function pesanAman(K, teks) {
   const key = baca(jalur(K).kunci)?.key;
   return key ? String(teks).split(key).join('[kunci disembunyikan]') : String(teks);
 }
-async function minta(K, url, { method = 'GET', body, auth = true, bolehTidakAda = false } = {}) {
+const jedaUlang = () => Number(process.env.FAL_ULANG_JEDA_MS ?? 1000);
+const maksUlang = () => Number(process.env.FAL_ULANG_MAKS ?? 5);
+const tungguMs = (ms) => new Promise((ok) => setTimeout(ok, ms));
+const hostDari = (url) => { try { return new URL(url).host; } catch { return 'fal'; } };
+// GET (dan unggah/initiate yang aman diulang) dicoba lagi dengan jeda naik kalau jaringan putus, timeout, 429, atau 5xx.
+// POST kirim permintaan generate TIDAK pernah diulang di sini: ulang buta = bayar dobel.
+async function minta(K, url, { method = 'GET', body, auth = true, bolehTidakAda = false, ulang = method === 'GET' } = {}) {
   const key = baca(jalur(K).kunci)?.key;
   if (auth && !key) gagal('fal belum nyambung. Kamu bisa isi kunci di dashboard → Gambar & video AI (fal).');
   let r;
-  try { r = await fetch(url, { method, redirect: 'error', headers: { ...(auth ? { Authorization: `Key ${key}` } : {}), ...(body ? { 'Content-Type': 'application/json' } : {}) }, body: body ? JSON.stringify(body) : undefined, signal: AbortSignal.timeout(30000) }); }
-  catch { if (auth) catatPemakaianKunci(K, key, 'gagal'); gagal('Aku gak bisa nyambung ke fal. Coba lagi nanti.'); }
+  for (let n = 0; ; n++) {
+    try {
+      r = await fetch(url, { method, redirect: 'error', headers: { ...(auth ? { Authorization: `Key ${key}` } : {}), ...(body ? { 'Content-Type': 'application/json' } : {}) }, body: body ? JSON.stringify(body) : undefined, signal: AbortSignal.timeout(30000) });
+      if (ulang && n < maksUlang() && (r.status >= 500 || r.status === 429 || r.status === 408)) { await tungguMs(jedaUlang() * 2 ** n); continue; }
+      break;
+    } catch (e) {
+      if (ulang && n < maksUlang()) { await tungguMs(jedaUlang() * 2 ** n); continue; }
+      if (auth) catatPemakaianKunci(K, key, 'gagal');
+      const kode = e?.cause?.code || e?.cause?.name || e?.name || 'error';
+      throw new FalSementara(`Aku gak bisa nyambung ke ${hostDari(url)} (${kode}) setelah ${n + 1} percobaan. Coba lagi nanti.`);
+    }
+  }
   if (auth) catatPemakaianKunci(K, key, r.ok ? 'berhasil' : r.status === 401 ? 'ditolak' : 'gagal', r.status);
   if (!r.ok) {
     if (r.status === 404 && bolehTidakAda) return r;
     const teks = await r.text();
     if (r.status === 401) gagal('kunci fal salah. Kamu bisa isi ulang di dashboard.');
     if (r.status === 402 || /balance|insufficient|credit|billing/i.test(teks)) gagal('saldo fal habis, isi di fal.ai/dashboard/billing');
-    gagal(`fal nolak permintaan (HTTP ${r.status}). Kamu bisa coba lagi nanti.`);
+    if (r.status >= 500 || r.status === 429 || r.status === 408) throw new FalSementara(`fal nolak permintaan (HTTP ${r.status} dari ${hostDari(url)}). Kamu bisa coba lagi nanti.`);
+    gagal(`fal nolak permintaan (HTTP ${r.status} dari ${hostDari(url)}). Kamu bisa coba lagi nanti.`);
   }
   return r;
 }
@@ -265,6 +284,65 @@ export async function jalan(K, id) {
   if (baca(jalur(K).setuju, {})[id] !== p.sidik) gagal('Video belum kamu setujuin atau isinya berubah. Setujuin ulang di dashboard.');
   return jalankan(K, id, p.r, p.sidik);
 }
+// Polling status request_id sampai COMPLETED. Tiap GET sudah dicoba ulang di minta(); kalau tetap putus atau lewat batas waktu,
+// pesannya nyebut request_id dan cara ngambil hasilnya tanpa kirim ulang (kirim ulang = bayar dobel).
+const dasarAntrean = (model, requestId) => `${QUEUE}/${model.split('/').slice(0, 2).join('/')}/requests/${requestId}`;
+const petunjukAmbil = (requestId) => ` Permintaan udah terkirim ke fal (ID ${requestId}), jadi jangan kirim ulang biar gak bayar dobel. Ambil hasilnya dengan: node alat/fal.mjs ambil ${requestId}`;
+async function tungguSelesai(K, dasar) {
+  const akhir = Date.now() + Number(process.env.FAL_POLL_TIMEOUT_MS || 600000);
+  let selesai = false;
+  while (Date.now() < akhir) {
+    const st = await (await minta(K, `${dasar}/status`)).json();
+    if (st.status === 'COMPLETED') { selesai = true; break; }
+    if (!['IN_QUEUE', 'IN_PROGRESS'].includes(st.status)) gagal('Antrean fal gagal. Cek dashboard fal; aku gak mengulang otomatis.');
+    await tunggu(Number(process.env.FAL_POLL_INTERVAL_MS || 2000));
+  }
+  if (!selesai) throw new FalSementara('Antrean fal melewati batas waktu. Biaya tetap dicatat.');
+}
+async function simpanHasil(K, J, r, catatan, id, dasar, { keluarTranskrip } = {}) {
+  const hasil = await (await minta(K, dasar)).json();
+  const media = [...(hasil.audio ? [hasil.audio] : []), ...(hasil.images || []), ...(hasil.image ? [hasil.image] : []), ...(hasil.video ? [hasil.video] : [])];
+  if (r.jenis !== 'transkrip' && (!media.length || media.length > 4)) gagal('Hasil fal gak berisi media yang bisa aku simpan.');
+  if (r.jenis === 'suara' && (!hasil.audio || media.length !== 1)) gagal('Jawaban suara fal harus berisi satu audio.');
+  if (r.jenis === 'musik' && (!hasil.audio || media.length !== 1)) gagal('Jawaban musik fal harus berisi satu audio MP3.');
+  const folder = path.join(J.hasil, hariWib()); fs.mkdirSync(folder, { recursive: true });
+  if (!fs.realpathSync(folder).startsWith(`${fs.realpathSync(K)}${path.sep}konten${path.sep}fal${path.sep}`)) gagal('Folder hasil fal gak aman.');
+  if (r.jenis === 'transkrip') {
+    const file = keluarTranskrip || (r.audio ? `${berkasKantor(K, r.audio, Object.keys(MIME_AUDIO))}.kata.json` : path.join(folder, `transkrip-${id}.kata.json`));
+    const data = transkripData(hasil);
+    fs.writeFileSync(file, JSON.stringify(data, null, 2) + '\n', {flag: 'wx', mode: 0o600});
+    catatan.berkas.push(path.relative(K, file));
+  }
+  for (const [i, m] of (r.jenis === 'transkrip' ? [] : media).entries()) {
+    let u; try { u = new URL(m.url); } catch { gagal('URL hasil fal gak sah.'); }
+    const lokalTes = process.env.FAL_API && u.origin === new URL(API).origin;
+    if ((!lokalTes && (u.protocol !== 'https:' || !(u.hostname === 'fal.media' || u.hostname.endsWith('.fal.media')))) || u.username || u.password) gagal('Host hasil fal gak dikenal. Aku gak mengunduh dari URL itu.');
+    const unduh = await minta(K, u.href, { auth: false });
+    const mime = (unduh.headers.get('content-type') || '').split(';')[0];
+    const ext = Object.keys(MIME).find((e) => MIME[e] === mime);
+    if (!ext) gagal('Jenis hasil fal gak didukung.');
+    if (r.jenis === 'suara' && ext !== '.mp3') gagal('Hasil suara fal harus MP3.');
+    if (r.jenis === 'musik' && ext !== '.mp3') gagal('Jawaban musik fal harus berisi satu audio MP3.');
+    const file = path.join(folder, r.jenis === 'suara' ? `suara-${id}.mp3` : `${r.keluar}-${id}-${i + 1}${ext}`);
+    const chunks = []; let ukuran = 0;
+    for await (const chunk of unduh.body) {
+      ukuran += chunk.byteLength;
+      if (ukuran > 250 * 1024 * 1024) gagal('Hasil fal lebih dari 250 MB. Aku berhenti mengunduh.');
+      chunks.push(chunk);
+    }
+    fs.writeFileSync(file, Buffer.concat(chunks), { flag: 'wx', mode: 0o600 });
+    catatan.berkas.push(path.relative(K, file));
+    if (r.jenis === 'musik') {
+      // Durasi lagu cuma dicatat kalau pasti (dari fal atau ffprobe). Taksiran dari ukuran berkas (8 kbps) ngaco buat musik 128–256 kbps.
+      const d = durasiAudio(K, file, hasil.duration_ms);
+      if (['duration_ms', 'ffprobe'].includes(d.sumber)) catatan.durasi = d;
+    }
+    if (r.jenis === 'suara') {
+      catatan.durasi = durasiAudio(K, file, hasil.duration_ms);
+      catatan.sidikAudio = crypto.createHash('sha256').update(Buffer.concat(chunks)).digest('hex');
+    }
+  }
+}
 async function jalankan(K, id, r, sidik) {
   const J = jalur(K); fs.mkdirSync(path.dirname(J.biaya), { recursive: true });
   const lock = `${J.biaya}.lock`;
@@ -294,7 +372,7 @@ async function jalankan(K, id, r, sidik) {
       else gagal('Pakai perintah edit atau video untuk gambar sumber.');
     }
     delete input.durasiDetik;
-    catatan = { id, waktu: new Date().toISOString(), model: r.model, estimasi: biaya, status: 'mengirim', request_id: null, berkas: [] };
+    catatan = { id, waktu: new Date().toISOString(), model: r.model, estimasi: biaya, status: 'mengirim', request_id: null, berkas: [], jenis: r.jenis, keluar: r.keluar, ...(r.audio ? { audio: path.relative(K, r.audio) } : {}) };
     catat(catatan);
     if (sidik) tulis(path.join(J.antre, `${id}.status.json`), { status: 'antre', sidik });
     if (r.audio) input.audio_url = await unggahAudio(K, r.audio, r.sidikAudio);
@@ -302,65 +380,60 @@ async function jalankan(K, id, r, sidik) {
     const q = await (await minta(K, `${QUEUE}/${r.model}`, { method: 'POST', body: input })).json();
     if (!/^[a-z0-9_-]{1,150}$/i.test(q.request_id || '')) gagal('fal gak balikin ID antrean yang sah. Cek dashboard fal sebelum mencoba lagi.');
     catatan.request_id = q.request_id; catatan.status = 'antre'; catat(catatan);
-    const endpoint = r.model.split('/').slice(0, 2).join('/');
-    const dasar = `${QUEUE}/${endpoint}/requests/${q.request_id}`;
-    const akhir = Date.now() + Number(process.env.FAL_POLL_TIMEOUT_MS || 600000);
-    let selesai = false;
-    while (Date.now() < akhir) {
-      const st = await (await minta(K, `${dasar}/status`)).json();
-      if (st.status === 'COMPLETED') { selesai = true; break; }
-      if (!['IN_QUEUE', 'IN_PROGRESS'].includes(st.status)) gagal('Antrean fal gagal. Cek dashboard fal; aku gak mengulang otomatis.');
-      await tunggu(Number(process.env.FAL_POLL_INTERVAL_MS || 2000));
-    }
-    if (!selesai) gagal('Antrean fal melewati batas waktu. Biaya tetap dicatat. Cek dashboard fal sebelum mencoba lagi.');
-    const hasil = await (await minta(K, dasar)).json();
-    const media = [...(hasil.audio ? [hasil.audio] : []), ...(hasil.images || []), ...(hasil.image ? [hasil.image] : []), ...(hasil.video ? [hasil.video] : [])];
-    if (r.jenis !== 'transkrip' && (!media.length || media.length > 4)) gagal('Hasil fal gak berisi media yang bisa aku simpan.');
-    if (r.jenis === 'suara' && (!hasil.audio || media.length !== 1)) gagal('Jawaban suara fal harus berisi satu audio.');
-    if (r.jenis === 'musik' && (!hasil.audio || media.length !== 1)) gagal('Jawaban musik fal harus berisi satu audio MP3.');
-    const folder = path.join(J.hasil, hariWib()); fs.mkdirSync(folder, { recursive: true });
-    if (!fs.realpathSync(folder).startsWith(`${fs.realpathSync(K)}${path.sep}konten${path.sep}fal${path.sep}`)) gagal('Folder hasil fal gak aman.');
-    if (r.jenis === 'transkrip') {
-      const file = r.audio ? `${berkasKantor(K, r.audio, Object.keys(MIME_AUDIO))}.kata.json` : path.join(folder, `transkrip-${id}.kata.json`);
-      const data = transkripData(hasil);
-      fs.writeFileSync(file, JSON.stringify(data, null, 2) + '\n', {flag: 'wx', mode: 0o600});
-      catatan.berkas.push(path.relative(K, file));
-    }
-    for (const [i, m] of (r.jenis === 'transkrip' ? [] : media).entries()) {
-      let u; try { u = new URL(m.url); } catch { gagal('URL hasil fal gak sah.'); }
-      const lokalTes = process.env.FAL_API && u.origin === new URL(API).origin;
-      if ((!lokalTes && (u.protocol !== 'https:' || !(u.hostname === 'fal.media' || u.hostname.endsWith('.fal.media')))) || u.username || u.password) gagal('Host hasil fal gak dikenal. Aku gak mengunduh dari URL itu.');
-      const unduh = await minta(K, u.href, { auth: false });
-      const mime = (unduh.headers.get('content-type') || '').split(';')[0];
-      const ext = Object.keys(MIME).find((e) => MIME[e] === mime);
-      if (!ext) gagal('Jenis hasil fal gak didukung.');
-      if (r.jenis === 'suara' && ext !== '.mp3') gagal('Hasil suara fal harus MP3.');
-      if (r.jenis === 'musik' && ext !== '.mp3') gagal('Jawaban musik fal harus berisi satu audio MP3.');
-      const file = path.join(folder, r.jenis === 'suara' ? `suara-${id}.mp3` : `${r.keluar}-${id}-${i + 1}${ext}`);
-      const chunks = []; let ukuran = 0;
-      for await (const chunk of unduh.body) {
-        ukuran += chunk.byteLength;
-        if (ukuran > 250 * 1024 * 1024) gagal('Hasil fal lebih dari 250 MB. Aku berhenti mengunduh.');
-        chunks.push(chunk);
-      }
-      fs.writeFileSync(file, Buffer.concat(chunks), { flag: 'wx', mode: 0o600 });
-      catatan.berkas.push(path.relative(K, file));
-      if (r.jenis === 'musik') {
-        // Durasi lagu cuma dicatat kalau pasti (dari fal atau ffprobe). Taksiran dari ukuran berkas (8 kbps) ngaco buat musik 128–256 kbps.
-        const d = durasiAudio(K, file, hasil.duration_ms);
-        if (['duration_ms', 'ffprobe'].includes(d.sumber)) catatan.durasi = d;
-      }
-      if (r.jenis === 'suara') {
-        catatan.durasi = durasiAudio(K, file, hasil.duration_ms);
-        catatan.sidikAudio = crypto.createHash('sha256').update(Buffer.concat(chunks)).digest('hex');
-      }
-    }
+    const dasar = dasarAntrean(r.model, q.request_id);
+    await tungguSelesai(K, dasar);
+    await simpanHasil(K, J, r, catatan, id, dasar);
     catatan.status = 'selesai'; catat(catatan);
     if (sidik) tulis(path.join(J.antre, `${id}.status.json`), { status: 'selesai', sidik });
     return catatan;
   } catch (e) {
+    if (e instanceof FalSementara && catatan?.request_id) e = new FalSementara(e.message + petunjukAmbil(catatan.request_id));
     if (catatan) { if (sidik) tulis(path.join(J.antre, `${id}.status.json`), { status: 'gagal', sidik }); catatan.status = 'gagal'; catatan.pesan = e instanceof FalGagal ? e.message : 'Aku gak bisa menyimpan hasil fal.'; catat(catatan); }
     throw e instanceof FalGagal ? e : new FalGagal('Aku gak bisa memproses fal. Cek ruang disk dan file kantor.');
+  } finally { fs.rmdirSync(lock); }
+}
+
+// Ambil hasil request_id yang UDAH terkirim (kasus: submit lolos, polling/ambil hasil putus). Gak kirim ulang, jadi gak bayar dobel.
+// Biaya sama dengan catatan lamanya (id sama, estimasi sama). Transkrip: --keluar <berkas>.kata.json di kantor, bawaan
+// <audio>.kata.json kalau audionya tercatat, kalau enggak konten/fal/<tanggal>/transkrip-<id>.kata.json.
+export async function ambil(K, requestId, opsi = {}) {
+  if (!/^[a-z0-9_-]{1,150}$/i.test(requestId || '')) gagal('Tulis ID permintaan fal yang sah.');
+  const J = jalur(K); fs.mkdirSync(path.dirname(J.biaya), { recursive: true });
+  const lock = `${J.biaya}.lock`;
+  try { fs.mkdirSync(lock); } catch { gagal('Ada panggilan fal yang masih jalan. Tunggu sampai selesai; kalau proses terputus, minta bantuan buat cek catatan biaya.'); }
+  try {
+    const rec = riwayat(K).findLast((h) => h.request_id === requestId);
+    if (!rec) gagal('ID itu gak ada di catatan biaya kantor ini. Aku cuma ngambil hasil permintaan yang dikirim dari kantor ini. Cek ID-nya di dashboard fal.');
+    if (rec.status === 'selesai') return { ...rec, catatan: 'Permintaan ini sudah selesai dan hasilnya sudah tersimpan.' };
+    const model = modelKurasi().find((m) => m.endpoint_id === rec.model);
+    if (!model) gagal('Model permintaan ini gak ada di daftar kit. Cek dashboard fal.');
+    const r = { jenis: rec.jenis || model.jenis, model: rec.model, keluar: rec.keluar || rec.jenis || model.jenis, ...(rec.audio ? { audio: path.resolve(K, rec.audio) } : {}) };
+    let keluarTranskrip;
+    if (r.jenis === 'transkrip') {
+      if (opsi.keluar) {
+        const rel = path.relative(K, path.resolve(K, opsi.keluar));
+        if (!opsi.keluar.endsWith('.kata.json') || path.isAbsolute(opsi.keluar) || rel.startsWith('..') || rel.split(path.sep).some((x) => x.startsWith('.'))) gagal('--keluar harus berkas .kata.json di dalam folder kantor, bukan di folder tersembunyi.');
+        let induk; try { induk = fs.realpathSync(path.dirname(path.resolve(K, opsi.keluar))); } catch { gagal('Folder untuk --keluar belum ada. Bikin dulu folder-nya.'); }
+        const akar = fs.realpathSync(K);
+        if (induk !== akar && !induk.startsWith(akar + path.sep)) gagal('--keluar harus di dalam folder kantor.');
+        keluarTranskrip = path.join(induk, path.basename(opsi.keluar));
+      } else if (r.audio) {
+        try { keluarTranskrip = `${berkasKantor(K, r.audio, Object.keys(MIME_AUDIO))}.kata.json`; } catch { keluarTranskrip = undefined; }
+      }
+      if (keluarTranskrip && fs.existsSync(keluarTranskrip)) gagal('Berkas transkrip itu sudah ada. Pakai --keluar nama lain.');
+    }
+    const catatan = { ...rec, waktu: new Date().toISOString(), status: 'selesai', berkas: [], diambilUlang: true }; delete catatan.pesan;
+    const catat = (isi) => fs.appendFileSync(J.biaya, `${JSON.stringify(isi, (k, v) => typeof v === 'string' ? pesanAman(K, v) : v)}\n`, { mode: 0o600 });
+    const dasar = dasarAntrean(r.model, requestId);
+    try {
+      await tungguSelesai(K, dasar);
+      await simpanHasil(K, J, r, catatan, rec.id, dasar, { keluarTranskrip });
+    } catch (e) {
+      if (e instanceof FalSementara) throw new FalSementara(e.message + ` Hasil masih aman di fal. Coba lagi: node alat/fal.mjs ambil ${requestId}`);
+      throw e;
+    }
+    catat(catatan);
+    return catatan;
   } finally { fs.rmdirSync(lock); }
 }
 
@@ -397,16 +470,24 @@ async function unggahAudio(K, file, sidik) {
   const bytes = fs.readFileSync(abs);
   if (crypto.createHash('sha256').update(bytes).digest('hex') !== sidik) gagal('Audio berubah setelah durasinya diperiksa. Kamu bisa cek ulang sebelum transkrip.');
   const storage = (process.env.FAL_STORAGE || 'https://rest.alpha.fal.ai').replace(/\/$/, '');
-  const d = await (await minta(K, `${storage}/storage/upload/initiate?storage_type=fal-cdn-v3`, {method: 'POST', body: {content_type, file_name: path.basename(abs)}})).json();
+  const d = await (await minta(K, `${storage}/storage/upload/initiate?storage_type=fal-cdn-v3`, {method: 'POST', ulang: true, body: {content_type, file_name: path.basename(abs)}})).json();
   let upload, hasil;
   try { upload = new URL(d.upload_url); hasil = new URL(d.file_url); } catch { gagal('Jawaban penyimpanan fal gak lengkap.'); }
   const sah = (u) => (u.protocol === 'https:' || (process.env.FAL_STORAGE && u.origin === new URL(storage).origin)) && !u.username && !u.password;
   if (!sah(upload) || !sah(hasil)) gagal('URL penyimpanan fal gak sah.');
   // URL unggah bertanda tangan: jangan kirim Authorization ke host penyimpanan.
   let r;
-  try { r = await fetch(upload, {method: 'PUT', redirect: 'error', headers: {'Content-Type': content_type}, body: bytes, signal: AbortSignal.timeout(60000)}); }
-  catch { gagal('Aku belum bisa mengunggah audio ke fal.'); }
-  if (!r.ok) gagal('Penyimpanan fal nolak unggahan audio.');
+  for (let n = 0; ; n++) {
+    try {
+      r = await fetch(upload, {method: 'PUT', redirect: 'error', headers: {'Content-Type': content_type}, body: bytes, signal: AbortSignal.timeout(60000)});
+      if (r.status >= 500 && n < maksUlang()) { await tungguMs(jedaUlang() * 2 ** n); continue; }
+      break;
+    } catch (e) {
+      if (n < maksUlang()) { await tungguMs(jedaUlang() * 2 ** n); continue; }
+      throw new FalSementara(`Aku belum bisa mengunggah audio ke ${upload.host} (${e?.cause?.code || e?.name || 'error'}) setelah ${n + 1} percobaan.`);
+    }
+  }
+  if (!r.ok) gagal(`Penyimpanan fal (${upload.host}) nolak unggahan audio (HTTP ${r.status}).`);
   return hasil.href;
 }
 async function siapkanAudio(K, jenis, opsi) {

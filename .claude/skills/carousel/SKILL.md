@@ -29,7 +29,6 @@ satu template lalu menyebutnya gaya brand.
    node carousel/render.mjs carousel/karya/<task>/index.html hasil/carousel-<task>
    Alat menghasilkan PNG, HP, kontak, grid, strip waktu, qc.json. Buka semuanya.
    Render nyetak ringkasan + temuan per slide. Baca ulang: `node alat/qc-ringkas.mjs hasil/carousel-<task>/qc.json`.
-   Satu perintah per langkah: tanpa `| tail`, `;`, `&&`, atau `python3 -c`.
    Mesin harus nol; kontras di atas foto tetap cek mata. Tidak membuat MP4.
 6. Panggil Kritikus sebagai agen/sesi terpisah dari Desainer. Simpan tiap putaran
    hasil/kritik-<task>-putaran-N.json. Skor Ale: hierarki, kebaca HP, ritme,

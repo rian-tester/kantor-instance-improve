@@ -20,8 +20,7 @@ tiap angka ditulis sumbernya.
 - Ada kolom nama/nomor HP/alamat pembeli? Jangan disalin ke hasil. Buat rekap gak butuh data pribadi.
 
 ## 2. Hitung pakai alat
-Satu perintah per langkah, persis kayak contoh. Jangan pakai variabel (`f=...`), `&&`, `;`, atau `|`: perintah
-gabungan bikin pagar minta izin owner dulu.
+Jalankan persis kayak contoh. Angka tetap dihitung alat, bukan dikira-kira di kepala.
 
 ```
 node alat/hitung-csv.mjs <file.csv> --jumlah total                          # total omzet
