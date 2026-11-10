@@ -12,8 +12,8 @@ JAM_BANGUN="${JAM_BANGUN:-6}"                  # jam mulai kerja
 JAM_TIDUR="${JAM_TIDUR:-24}"                   # mulai jam ini detak tidur (24 = gak tidur malam). Boleh lebih kecil dari
                                                # JAM_BANGUN buat jadwal nyebrang tengah malam (Lembur malam: 22 → 6)
 LAPORAN="${LAPORAN:-pagi:7 malam:19}"          # laporan <jenis>:<jam mulai>, dibikin di 3 jam pertama abis jam itu
-BATAS_JATAH_5JAM="${BATAS_JATAH_5JAM:-60}"     # % jatah 5 jam: lewat ini detak ngalah, sisanya buat owner
-BATAS_JATAH_MINGGU="${BATAS_JATAH_MINGGU:-70}" # % jatah mingguan: lewat ini detak ngalah
+BATAS_JATAH_5JAM="${BATAS_JATAH_5JAM:-90}"     # % jatah 5 jam: lewat ini detak ngalah, sisanya buat owner
+BATAS_JATAH_MINGGU="${BATAS_JATAH_MINGGU:-98}" # % jatah mingguan: lewat ini detak ngalah
 MODEL_DETAK="${MODEL_DETAK:-sonnet}"           # detak cukup Sonnet (lebih irit jatah); ngobrol langsung tetap model pilihan owner
 PICU="${DETAK_PICU:-}"                         # diisi dashboard pas owner barusan jawab: gak ketahan jam tidur, nunggu
                                                # putaran yang lagi jalan, & alasan kalau ngalah dicatat buat dashboard
@@ -21,7 +21,16 @@ cd "$KANTOR" || exit 1
 mkdir -p catatan
 LOG="catatan/detak-$NAMA.log"
 # Dipicu owner tapi gak bisa jalan: alasannya dicatat biar dashboard bisa bilang kenapa. Dari cron: diem aja kayak biasa.
-ngalah(){ [ -n "$PICU" ] && echo "-- $(date '+%F %T') $NAMA: dipicu jawaban owner, ngalah: $1" >> "$LOG"; exit 0; }
+ngalah(){
+  if [ -n "$PICU" ]; then
+    echo "-- $(date '+%F %T') $NAMA: dipicu jawaban owner, ngalah: $1" >> "$LOG"
+  else
+    echo "-- $(date '+%F %T') $NAMA: ngalah dari cron: $1" >> "$LOG"
+    _BRAKE_KEY="catatan/.notif-brake-$NAMA-$HARI"
+    [ ! -f "$_BRAKE_KEY" ] && { touch "$_BRAKE_KEY"; bash notif.sh "⚠️ $NAMA berhenti otomatis" "$1" 2>/dev/null || true; }
+  fi
+  exit 0
+}
 # Plugin yang gagal sebelum login dicoba lagi, tanpa memanggil AI.
 if [ -f catatan/.video-plugin-belum ] && [ -f "$HOME/kit-kantor-ai/cek/cek-video.sh" ]; then
   ( flock -n 8 || exit 0;
@@ -138,9 +147,7 @@ MENTAH="catatan/.detak-$NAMA-terakhir.jsonl"
 SETELAN=(); [ -f .claude/settings.json ] && SETELAN=(--settings .claude/settings.json)
 # Google Drive udah disambungin owner: konektor akun Claude ikut kebaca (satpam di .claude/settings.json yang ngunci
 # foldernya), plus ToolSearch buat buka alat Drive-nya. Belum nyambung: konektor gak dimuat sama sekali (lebih irit).
-MCP=(--strict-mcp-config); ALAT=Read,Write,Edit,Bash,Glob,Grep
-# Sosmed butuh manggil agen terpisah (Penulis, Pemeriksa/Satpam, Desainer, Kritikus). Manajer lain tetap tanpa Agent.
-[ "$NAMA" = sari ] && ALAT="$ALAT,Agent"
+MCP=(--strict-mcp-config); ALAT=Read,Write,Edit,Bash,Glob,Grep,WebFetch,WebSearch,Agent
 [ -f .drive/folder.json ] && { MCP=(); ALAT="$ALAT,ToolSearch"; }
 timeout 20m claude -p "$PROMPT" --model "$MODEL_DETAK" --max-turns 15 "${SETELAN[@]}" \
   --tools "$ALAT" "${MCP[@]}" --disable-slash-commands \
