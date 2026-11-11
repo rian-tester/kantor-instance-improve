@@ -1,5 +1,5 @@
 {
- "status": "terjadwal",
+ "status": "tayang",
  "sidik": "60e3eb4b7c99c2354acd8a4a7e4346dc376977fecf96a5178186d1cea35e6da3",
  "disetujui": "2026-11-10T04:32:06.030Z",
  "waktuTayang": "2026-11-11T12:00:00.000Z",
@@ -49,8 +49,10 @@
    "platform": "instagram",
    "username": "late30_studio",
    "scheduleId": "6af29e46622c83e95195b44a",
-   "status": "terjadwal"
+   "status": "tayang",
+   "postId": "18651071308009107",
+   "tayangPada": "2026-11-11T12:06:00.348Z"
   }
  ],
- "diperbarui": "2026-11-10T04:32:06.448Z"
+ "diperbarui": "2026-11-11T12:06:00.349Z"
 }

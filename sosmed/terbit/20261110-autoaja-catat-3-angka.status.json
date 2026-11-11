@@ -1,5 +1,5 @@
 {
- "status": "terjadwal",
+ "status": "tayang",
  "sidik": "4c4654e62c3f89692ad8c0c764b9645b927237b672033d8f5e76e3a045be36d4",
  "disetujui": "2026-11-09T03:34:20.091Z",
  "waktuTayang": "2026-11-10T12:00:00.000Z",
@@ -49,8 +49,10 @@
    "platform": "instagram",
    "username": "autoaja.agency",
    "scheduleId": "6af13f3c97048c5c4ae031fc",
-   "status": "terjadwal"
+   "status": "tayang",
+   "postId": "17985932445065646",
+   "tayangPada": "2026-11-10T12:11:45.904Z"
   }
  ],
- "diperbarui": "2026-11-09T03:34:20.480Z"
+ "diperbarui": "2026-11-10T12:11:45.905Z"
 }

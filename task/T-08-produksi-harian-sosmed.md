@@ -4,7 +4,7 @@ judul: Produksi harian sosmed (autoaja & late30 selang-seling)
 divisi: sosmed
 pegang: sari
 status: parkir
-update: 2026-11-10
+update: 2026-11-11
 ---
 ## Tujuan
 Tiap pagi (detak 03.00–09.00 WIB) Sari menyiapkan 1 carousel untuk tayang malam hari berikutnya, bergantian akun, supaya jam 07.00 owner tinggal menyetujui di halaman Konten. Task tetap, tidak ditutup.
@@ -63,13 +63,20 @@ Tiap pagi (detak 03.00–09.00 WIB) Sari menyiapkan 1 carousel untuk tayang mala
 - 10/11 11.30 detak: Penulis selesai v2 (hasil/naskah-T-08-20261111-final-v2.*). cek-bahasa: temuan cuma di daftar sumber/judul, bukan teks slide. Satpam bagian berubah dipanggil (hasil/satpam-T-08-20261111-ulang-2.md), hasil belum dibaca. Berikutnya: baca verdict, Desainer v2 (cover diperbesar+nama game, tanda tanya slide 3 pindah, chip slide 4, kontras garis slide 5, slide 6 beda dari 4), QC, rencana posting.
 - 10/11 11.40 detak: Satpam v2 BELUM LOLOS (hasil/satpam-T-08-20261111-ulang-2.md): kata "kuning" di judul slide 2 + caption gak ada sumbernya (sumber bilang blue ring). Pilihan (a) dipakai: kata warna dihapus dari teks (judul "Cincin melebar tiap ada suara", caption "Cincin di Mark of the Ninja…") di final-v2.md/.json; visual tetap kuning. Cek mesin: gak ada "kuning" tersisa di json. Desainer v2 dipanggil (carousel/karya/T-08-20261111-v2/, hasil/carousel-T-08-20261111-v2/), hasil belum dicek. Berikutnya: cek hasil Desainer + QC, rencana posting 11/11 19.00 (tulis jelas: Kritikus 1 putaran belum lolos, v2 belum dinilai), isi "Produksi terakhir", parkir, pindah 3 titipan ke selesai/.
 - 10/11 11.50 detak: Desainer v2 selesai (hasil/carousel-T-08-20261111-v2/, QC nol temuan, cek-naskah lolos). Rencana posting ditulis (sosmed/terbit/20261111-late30-mark-of-the-ninja.json, 11/11 19.00). 3 titipan builder dipindah ke selesai/. T-08 parkir; pertanyaan persetujuan ada di Keputusan kamu.
+- 11/11 sesi biasa (`lanjut T-08`): owner setujui rencana late30 v2 di Konten (titipan owner 10/11), status Repliz `tayang` Rab 11/11 19.06 WIB (@late30_studio). autoaja 10/11 juga `tayang` (19.11 WIB). Pertanyaan persetujuan di "Keputusan kamu" dihapus. Mulai produksi autoaja untuk tayang 12/11.
+- 11/11 autoaja untuk tayang 12/11 (sesi biasa): Penulis draf (hasil/naskah-T-08-20261112-draf.*), cek-bahasa 1 temuan (judul slide 3–5 telegram) dibenerin, nol temuan. Satpam 1 BELUM LOLOS (caption kalimat 1 klaim tanpa sumber; hasil/satpam-T-08-20261112.md). Penulis revisi (hasil/naskah-T-08-20261112-final.*), cek-bahasa nol, Satpam 2 LOLOS (hasil/satpam-T-08-20261112-ulang.md). SHA256 final.json: 46981aa35638b98adfd63e836f9156a6dde1b6e68b029b7eca3fe47d07a06623 (sudah kucek sendiri).
+- 11/11 Desainer v1 (hasil/carousel-T-08-20261112/, QC nol) → Kritikus 1 BELUM LOLOS (ritme 3, orisinal 3, brand 3, craft 3; slide 2–5 kembar, cover tanpa logo asli). Desainer v2 (hasil/carousel-T-08-20261112-v2/, QC nol, teks sama dengan naskah beku) → Kritikus 2 skor 4 semua, tanpa masalah berat (hasil/kritik-T-08-20261112-putaran-2.md/.json). Alat cek-kritik.mjs tetap "Belum lolos" cuma karena `fakta_bersumber` tidak (batas craft 3); itu diizinkan di T-08 (saran praktis tanpa data), jadi json kritik gak kuubah.
+- 11/11 rencana posting ditulis: sosmed/terbit/20261112-autoaja-satu-pertanyaan-tiga-postingan.json (usulan Kam 12/11 19.00 @autoaja.agency), repliz.mjs rencana: "Nunggu kamu setujuin", tanpa ✗. Catatan Desainer: maskot dicabut dari cover (aturan motif maks 2 slide), navy/emas masih perkiraan, gerak CSS saja.
 
 ## Produksi terakhir
 - 09/11: autoaja (tips catat 3 angka), tayang usulan 10/11 19.00, rencana sosmed/terbit/20261110-autoaja-catat-3-angka.json.
-- 10/11: late30 (Mark of the Ninja, cincin suara), tayang usulan 11/11 19.00, rencana sosmed/terbit/20261111-late30-mark-of-the-ninja.json. Berikutnya: autoaja untuk tayang 12/11.
+- 10/11: late30 (Mark of the Ninja, cincin suara), tayang usulan 11/11 19.00, rencana sosmed/terbit/20261111-late30-mark-of-the-ninja.json. Sudah tayang 11/11 19.06.
+- 11/11: autoaja (satu pertanyaan pembeli jadi tiga postingan), tayang usulan 12/11 19.00, rencana sosmed/terbit/20261112-autoaja-satu-pertanyaan-tiga-postingan.json. Berikutnya: late30 untuk tayang 13/11 (K3 Alien: Isolation atau ide lain di BANK-IDE.md).
 
 ## Hasil
-hasil/carousel-T-08-20261111-v2/ (late30 K4 v2, tayang usulan 11/11, belum dinilai Kritikus)
+hasil/carousel-T-08-20261112-v2/ (autoaja satu pertanyaan jadi tiga postingan, usulan tayang 12/11, Kritikus 2 skor 4 semua)
+hasil/carousel-T-08-20261112/ (versi lama v1, Kritikus putaran 1 belum lolos)
+hasil/carousel-T-08-20261111-v2/ (late30 K4 v2, sudah tayang 11/11)
 hasil/carousel-T-08-20261111/ (versi lama v1, Kritikus putaran 1 belum lolos)
 hasil/carousel-T-08-20261110-v4/
 hasil/carousel-T-08-20261110-v3/ (versi lama, tanpa maskot)
@@ -77,10 +84,10 @@ hasil/carousel-T-08-20261110-v2/ (versi lama, putaran 2)
 hasil/carousel-T-08-20261110/ (versi lama, putaran 1)
 
 ## Keputusan kamu
-1. Carousel late30 Mark of the Ninja v2 (rencana posting 11/11 19.00 di Konten). Kritikus 1 putaran belum lolos (hierarki 3, kebaca HP 4, ritme 3, konsistensi 4, orisinal 3, brand 3, gerak 1, craft 3), v2 belum dinilai Kritikus (pilihan kamu demi jatah), masalah berat v1 sudah diperbaiki. Sisa: nama game belum tampil di cover, dua kalimat yang kata warnanya dihapus belum dicek Satpam ulang, cincin muncul di 3 slide. Gimana?
-a) Setujui di Konten apa adanya (rekomendasi: masalah berat sudah beres, sisanya kecil)
-b) Revisi: Penulis tambah nama game di cover + Satpam ulang + Kritikus, tulis bagian yang mau diubah
-c) Batal
+1. Setujuin "Satu pertanyaan pembeli, jadi tiga postingan" (autoaja, usulan Kam 12/11 19.00) di halaman Konten?
+   Kenapa: pratinjau, caption, dan pilihan jam ada di sana. Catatan: Kritikus 2 skor 4 semua tanpa masalah berat, tapi tanpa fakta bersumber (saran praktis, diizinkan T-08).
+a) Udah, aku setujuin di Konten (rekomendasi: semua pemeriksaan lolos)
+b) Mau diubah dulu: tulis catatannya lewat tombol Minta revisi di Konten
 
 ## Berikutnya
 - (10/11 11.20) Late30 K4 putaran 2: pilih rekomendasi tanpa nunggu owner untuk "cincin biru": Penulis ganti kata jadi "cincin kuning" (lewat cek bahasa + Satpam ulang singkat), plus ganti "main lebih proaktif" & kalimat "Di artikelnya tertulis…". Desainer revisi v2 dari daftar masalah di hasil/kritik-T-08-20261111-putaran-1.md (cover diperbesar + nama game, slide 3 tanda tanya, slide 4 chip jawaban, slide 5 kontras garis, slide 6 beda dari slide 4). Lalu Kritikus putaran 2 (maks 3), lalu tulis rencana posting @late30_studio 11/11 19.00, isi "Produksi terakhir", set `parkir`, pindahkan 2 titipan builder (izin-lewat-jam-9 dan pilihan-owner-late30-a) ke selesai/. Cek jatah mingguan dulu; kalau mendekati 85% berhenti dan kabari owner.

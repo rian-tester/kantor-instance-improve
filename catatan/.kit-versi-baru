@@ -1,0 +1,2 @@
+0.23.8
+Alat konektor (MCP) sekarang jalan tanpa tombol izin, termasuk alat baru. Tim cuma nanya kamu buat alat yang ngeluarin uang, ngirim keluar ke orang lain, atau ngehapus di luar kantor. Berkas rahasia dan jalur yang dikunci tetap ditahan. Baru: panel "Alat yang dipakai tim hari ini" di Ringkasan, dan tombol Parkir, Beres, dan Batalkan buat task di dashboard. Penjagaan berkas rahasia juga diperketat: tim gak bisa lagi mindahin atau nautin folder pembungkusnya buat ngakalin pagar. Daftar lengkapnya ada di dashboard, Lainnya, Riwayat versi.

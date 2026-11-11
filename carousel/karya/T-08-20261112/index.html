@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../dasar.css">
+<style>
+/* autoaja.agency T-08 20261112. Satu keluarga Liberation Sans lokal. Empat ukuran: 420 / 96 / 56 / 36.
+   Warna PERKIRAAN: navy #14155E, navy2 #2B2C8C, emas #E8A33D, redup #C9CBEF. */
+@font-face { font-family:"AA Sans"; font-weight:400; src:local("Liberation Sans"), local("LiberationSans"); }
+@font-face { font-family:"AA Sans"; font-weight:700; src:local("Liberation Sans Bold"), local("LiberationSans-Bold"); }
+:root { --navy:#14155E; --navy2:#2B2C8C; --emas:#E8A33D; --putih:#FFFFFF; --redup:#C9CBEF; }
+body { font-family:"AA Sans", sans-serif; background:#000; }
+section.slide { background:var(--navy); color:var(--putih); padding:72px; display:flex; flex-direction:column; }
+.atas { height:64px; flex:none; display:flex; align-items:center; }
+.wm { font-size:36px; font-weight:700; letter-spacing:-.3px; line-height:1; margin:0; }
+.wm i { font-style:normal; color:var(--emas); }
+.no { position:absolute; right:72px; bottom:72px; font-size:36px; line-height:1; color:var(--redup); margin:0; }
+h1, h2 { margin:0; font-weight:700; font-size:96px; line-height:1; letter-spacing:-3px; text-wrap:balance; }
+.garis { width:140px; height:8px; background:var(--emas); margin:36px 0; flex:none; transform-origin:left center; animation:tarik .5s ease-out both; }
+.isi { font-size:56px; line-height:1.2; margin:0; color:var(--redup); text-wrap:pretty; }
+.kecil { font-size:36px; line-height:1.3; margin:0; color:var(--redup); text-wrap:pretty; }
+.label { font-size:36px; line-height:1.2; font-weight:700; color:var(--emas); margin:0; letter-spacing:.3px; }
+svg .s, svg .e, svg .ef, svg .sf { vector-effect:non-scaling-stroke; stroke-width:6px; stroke-linecap:round; stroke-linejoin:round; }
+.s { fill:none; stroke:var(--putih); }
+.e { fill:none; stroke:var(--emas); }
+.ef { fill:var(--navy); stroke:var(--emas); }
+.sf { fill:var(--navy); stroke:var(--putih); }
+.d { fill:var(--emas); }
+.spasi { flex:1; }
+.bar { border-left:12px solid var(--emas); padding-left:32px; }
+.panel { background:var(--navy2); border-radius:24px; overflow:hidden; position:relative; flex:none; }
+.panel svg, .panel > img { position:absolute; display:block; }
+.pelat { position:absolute; background:var(--putih); border-radius:20px; display:flex; align-items:center; justify-content:center; }
+.pelat img { display:block; }
+.cta { background:var(--emas); border-radius:16px; padding:28px 32px 32px; flex:none; margin:36px 0 84px; }
+.cta .kecil, .cta .isi { color:var(--navy); font-weight:700; }
+.vis { flex:none; width:936px; height:330px; margin-top:32px; }
+@keyframes naik { from { transform:translateY(36px); } to { transform:none; } }
+@keyframes fade { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:none; } }
+@keyframes tarik { from { transform:scaleX(0); } to { transform:none; } }
+@keyframes gambar { from { stroke-dashoffset:1; } to { stroke-dashoffset:0; } }
+@keyframes muncul { from { opacity:0; transform:translateY(-30px); } to { opacity:1; transform:none; } }
+@keyframes geser { from { opacity:0; transform:translateX(-60px); } to { opacity:1; transform:none; } }
+@keyframes terbang { from { opacity:0; transform:translate(-80px,50px); } to { opacity:1; transform:none; } }
+.n0 { animation:naik .5s cubic-bezier(.2,.8,.3,1) both; }
+.f1 { animation:fade .5s ease-out .4s both; }
+.tanya { stroke-dasharray:1; stroke-dashoffset:0; animation:gambar 1s ease-in-out .1s both; }
+.maskot { animation:geser .6s ease-out both; }
+.terbang { animation:terbang .8s cubic-bezier(.2,.8,.3,1) both; }
+.k { animation:muncul .4s ease-out both; }
+.k1 { animation-delay:.1s; } .k2 { animation-delay:.3s; } .k3 { animation-delay:.5s; } .k4 { animation-delay:.7s; }
+</style>
+</head>
+<body>
+
+<!-- KONSEP: kartu pengetahuan navy ala feed @autoaja.agency, satu aksen emas, garis 6 px seragam.
+     Cerita: satu pertanyaan pembeli (satu tanda tanya emas) bercabang jadi tiga format. Slide 3-5 masing-masing
+     digambar sebagai format aslinya: foto persegi + satu baris caption, carousel kartu bertumpuk, story tegak
+     dengan gelombang suara. Digambar sendiri, bukan ikon pustaka. Brand hadir di cover dan penutup
+     (maskot semut astronot dan logo horizontal asli, berkas owner, tidak digambar ulang).
+     Peta (tipe | jangkar | motif):
+     1 cover | judul 96 + tanda tanya emas + maskot | maskot berdiri, tanda tanya cabang tiga
+     2 poin  | judul 96 | tiga baris chat kembar (pertanyaan yang berulang), satu disorot
+     3 langkah | label Postingan 1 dari 3 + judul 96 | bingkai foto persegi + satu baris caption
+     4 langkah | label Postingan 2 dari 3 + judul 96 | kartu carousel bertumpuk
+     5 langkah | label Postingan 3 dari 3 + judul 96 | story tegak + gelombang suara
+     6 penutup | judul 96 + ajakan | maskot terbang, logo, panel emas
+     Hitungan motif: maskot 1,6; logo 1,6; tanda tanya 1; baris chat 2; bingkai foto 3; kartu carousel 4; story 5. Maks dua slide per motif.
+     Tipe dipakai: cover, poin, langkah (angka/urutan), penutup = empat. -->
+
+<!-- Slide 1 cover -->
+<section class="slide">
+  <div class="atas"><p class="wm">auto<i>aja</i>.agency</p></div>
+  <div class="panel" style="margin-top:24px; height:500px">
+    <img class="maskot" src="../../../masuk/autoaja-aset/mascot_original_V2-removebg-preview.png" alt="" width="420" height="420" style="left:0; top:80px; clip-path:polygon(50px 0,100% 0,100% 100%,0 100%,0 50px,50px 50px)">
+    <svg width="936" height="500" viewBox="0 0 936 500" aria-hidden="true">
+      <path class="tanya" pathLength="1" d="M500 120 C500 60 560 40 610 40 C670 40 720 75 720 130 C720 190 650 205 630 250 L630 290" fill="none" stroke="#E8A33D" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="630" cy="352" r="26" fill="#E8A33D"/>
+      <path class="e" d="M630 395 C630 430 560 440 520 470 M630 395 L630 470 M630 395 C630 430 700 440 740 470" style="stroke-width:6px"/>
+      <rect class="s" x="470" y="458" width="64" height="30" rx="8" style="stroke-width:6px"/>
+      <rect class="s" x="600" y="458" width="64" height="30" rx="8" style="stroke-width:6px"/>
+      <rect class="s" x="728" y="458" width="64" height="30" rx="8" style="stroke-width:6px"/>
+    </svg>
+  </div>
+  <div class="spasi"></div>
+  <h1 class="n0">Satu pertanyaan pembeli, jadi tiga postingan.</h1>
+  <div class="garis"></div>
+  <p class="isi f1" style="margin-bottom:84px">Biar kamu gak perlu cari ide baru tiap hari.</p>
+  <p class="no">1/6</p>
+</section>
+
+<!-- Slide 2 poin -->
+<section class="slide">
+  <div class="atas"><p class="wm">auto<i>aja</i>.agency</p></div>
+  <h2 class="n0" style="margin-top:56px">Tiap hari bingung mau posting apa?</h2>
+  <div class="garis"></div>
+  <p class="isi f1 bar">Coba buka chat pembeli kemarin. Pertanyaan yang muncul berulang itu udah bisa jadi ide konten.</p>
+  <div class="spasi"></div>
+  <svg style="flex:none; margin-bottom:96px" width="936" height="330" viewBox="0 0 936 330" aria-hidden="true">
+    <g class="k k1"><rect class="sf" x="3" y="3" width="640" height="84" rx="42"/><circle class="d" cx="48" cy="45" r="16"/><path class="s" d="M90 45 H560"/></g>
+    <g class="k k2"><rect class="sf" x="3" y="123" width="640" height="84" rx="42"/><circle class="d" cx="48" cy="165" r="16"/><path class="s" d="M90 165 H560"/></g>
+    <g class="k k3"><rect class="ef" x="3" y="243" width="640" height="84" rx="42"/><circle class="d" cx="48" cy="285" r="16"/><path class="e" d="M90 285 H560"/></g>
+    <path class="e" d="M690 285 H900 M830 230 L900 285 L830 340" transform="translate(0 -10)"/>
+  </svg>
+  <p class="no">2/6</p>
+</section>
+
+<!-- Slide 3: foto -->
+<section class="slide">
+  <div class="atas"><p class="wm">auto<i>aja</i>.agency</p></div>
+  <p class="label" style="margin-top:40px">Postingan 1 dari 3</p>
+  <h2 class="n0" style="margin-top:28px">Jawab singkat di satu foto</h2>
+  <div class="garis"></div>
+  <p class="isi f1 bar">Satu foto dan satu kalimat jawaban di caption. Cukup untuk pembeli yang cuma mau tahu cepat.</p>
+  <div class="spasi"></div>
+  <svg class="vis" style="margin-bottom:84px" width="936" height="330" viewBox="0 0 936 330" aria-hidden="true">
+    <rect class="sf" x="3" y="3" width="324" height="324" rx="12"/>
+    <path class="e" d="M3 60 V3 H60 M270 3 H327 V60 M327 270 V327 H270 M60 327 H3 V270"/>
+    <circle class="d" cx="165" cy="165" r="62"/>
+    <path class="s" d="M420 120 H900 M420 165 H760"/>
+    <path class="e" d="M420 210 H600"/>
+  </svg>
+  <p class="no">3/6</p>
+</section>
+
+<!-- Slide 4: carousel -->
+<section class="slide">
+  <div class="atas"><p class="wm">auto<i>aja</i>.agency</p></div>
+  <p class="label" style="margin-top:40px">Postingan 2 dari 3</p>
+  <h2 class="n0" style="margin-top:28px">Jawab lengkap di satu carousel</h2>
+  <div class="garis"></div>
+  <p class="isi f1 bar">Coba pecah jawaban yang sama jadi carousel, satu poin per slide. Isinya tetap sama, cuma lebih rinci.</p>
+  <div class="spasi"></div>
+  <svg class="vis" style="margin-bottom:84px" width="936" height="330" viewBox="0 0 936 330" aria-hidden="true">
+    <g class="k k1"><rect class="sf" x="3" y="3" width="250" height="324" rx="14"/></g>
+    <g class="k k2"><rect class="sf" x="175" y="3" width="250" height="324" rx="14"/><path class="e" d="M210 50 H330"/><path class="s" d="M210 100 H390 M210 140 H360"/></g>
+    <g class="k k3"><rect class="sf" x="347" y="3" width="250" height="324" rx="14"/><path class="e" d="M382 50 H502"/><path class="s" d="M382 100 H562 M382 140 H532"/></g>
+    <g class="k k4"><rect class="ef" x="519" y="3" width="250" height="324" rx="14"/><path class="e" d="M554 50 H674"/><path class="s" d="M554 100 H734 M554 140 H704"/></g>
+    <path class="e" d="M810 165 H900 M868 130 L900 165 L868 200"/>
+  </svg>
+  <p class="no">4/6</p>
+</section>
+
+<!-- Slide 5: story -->
+<section class="slide">
+  <div class="atas"><p class="wm">auto<i>aja</i>.agency</p></div>
+  <p class="label" style="margin-top:40px">Postingan 3 dari 3</p>
+  <h2 class="n0" style="margin-top:28px">Jawab sendiri lewat story</h2>
+  <div class="garis"></div>
+  <p class="isi f1 bar">Bisa rekam kamu menjawab di story, pakai suara sendiri. Ponsel aja cukup, gak perlu alat khusus.</p>
+  <div class="spasi"></div>
+  <svg class="vis" style="margin-bottom:84px" width="936" height="330" viewBox="0 0 936 330" aria-hidden="true">
+    <rect class="sf" x="3" y="3" width="186" height="324" rx="26"/>
+    <path class="e" d="M28 28 H98"/><path class="s" d="M114 28 H164"/>
+    <circle class="e" cx="62" cy="76" r="18"/>
+    <path class="s" d="M28 160 V190 M56 140 V210 M84 120 V230 M112 145 V205 M140 165 V185"/>
+    <path class="s" d="M300 165 V165 M300 150 V180 M340 120 V210 M380 90 V240 M420 50 V280 M460 100 V230 M500 130 V200 M540 70 V260 M580 120 V210 M620 150 V180" style="stroke:#E8A33D; stroke-width:14px"/>
+    <path class="s" d="M680 165 H900" style="stroke-dasharray:2 26; stroke-width:10px"/>
+  </svg>
+  <p class="no">5/6</p>
+</section>
+
+<!-- Slide 6 penutup -->
+<section class="slide">
+  <div class="atas"><p class="wm">auto<i>aja</i>.agency</p></div>
+  <div class="panel" style="margin-top:16px; height:260px">
+    <div class="pelat f1" style="left:32px; top:60px; width:400px; height:140px"><img src="../../../masuk/autoaja-aset/horizontal-trans-crop.png" alt="" width="330" height="88"></div>
+    <img class="terbang" src="../../../masuk/autoaja-aset/flying-removebg-preview.png" alt="" width="230" height="230" style="left:620px; top:14px; -webkit-mask-image:linear-gradient(to right, transparent 0, #000 30%)">
+  </div>
+  <h2 class="n0" style="margin-top:36px">Ide minggu depan mungkin udah ada di chat kamu</h2>
+  <div class="garis" style="margin:28px 0"></div>
+  <div class="spasi"></div>
+  <div class="cta">
+    <p class="isi" style="font-size:56px">Coba catat satu pertanyaan dari chat hari ini, lalu pakai untuk tiga hari ke depan.</p>
+  </div>
+  <p class="no">6/6</p>
+</section>
+
+</body>
+</html>

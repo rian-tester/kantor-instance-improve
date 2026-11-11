@@ -3,8 +3,8 @@ kode: T-11
 judul: Landing page late30_studio (versi dummy)
 divisi: web
 pegang: dimas
-status: nunggu-kamu
-update: 2026-11-10
+status: parkir
+update: 2026-11-11
 ---
 ## Tujuan
 Satu landing page late30_studio di `web/pratinjau/`, tampil di link pratinjau, layak tayang secara desain, dengan kontak dummy. Selesai kalau `node alat/web.mjs ukur` bersih, foto HP + laptop sudah dicek, dan owner dapat link pratinjau. Belum diterbitkan: kontak dummy harus diganti dulu (lihat Aturan).
@@ -35,6 +35,8 @@ Satu landing page late30_studio di `web/pratinjau/`, tampil di link pratinjau, l
 - 10/11 task dibikin Builder atas permintaan owner. Dimas diaktifkan lagi di `ORGANISASI.md`. Bahan dan titipan disiapkan di `kotak-masuk/web/` dan `masuk/web/late30/`.
 - 10/11 owner jawab tujuan halaman: hub profil + contoh konten. Dimas bikin halaman (satu index.html + gaya.css, font Archivo + JetBrains Mono, logo late30 lockup + avatar kecil buat favicon, share.jpg, robots, sitemap). `alat/web.mjs ukur` bersih, foto HP + laptop sudah dicek. Kontak dummy ditandai `data-dummy` + label DUMMY di halaman.
 
+- 11/11 owner jawab lewat dashboard (19:24): "batalkan dan parkir". Task diparkir, pertanyaan font + kontak dihapus dari "Keputusan kamu".
+
 ## Rencana desain (Dimas, 10/11)
 - Tujuan halaman: hub profil + contoh konten (owner jawab 10/11: pilihan a).
 - Pola: satu halaman dengan "kabel" vertikal di kiri yang menyambung beberapa jendela node: Hero (siapa) → Topik → Contoh konten → Ikuti → Hubungi. Halaman dibaca seperti alur graph.
@@ -49,14 +51,9 @@ web/foto/index-hp.png
 web/pratinjau/gambar/share.jpg
 
 ## Keputusan kamu
-1. Halaman udah jadi di link pratinjau: https://pratinjau.fitra-office.timku.ai.id/21cf6b7a079a9243849ac471/ . Font Archivo + JetBrains Mono oke?
-a) Oke, pakai itu (rekomendasi: beda dari carousel yang masih font sementara, dua-duanya lisensi OFL)
-b) Ganti font: tulis maunya
-2. Halaman ini belum boleh diterbitkan: nomor WA (6280000000000) dan email (halo@contoh.invalid) masih DUMMY. Gimana?
-a) Aku kasih kontak asli nanti, tunggu dulu (rekomendasi)
-b) Hapus bagian kontak, terbitin tanpa kontak
-c) Revisi tampilan: tulis bagian yang mau diubah
+(kosong, owner udah jawab semua)
 
 ## Berikutnya
-- Setelah jawaban owner: ganti font/kontak sesuai jawaban, `node alat/web.mjs ukur`, foto ulang, lalu minta owner pencet Terbitkan di dashboard (Dimas gak nerbitin sendiri).
+- Diparkir 11/11 atas permintaan owner (jawaban dashboard 19:24: "batalkan dan parkir"). Font Archivo + JetBrains Mono dan kontak dummy belum diputuskan.
+- Cara lanjut: `lanjut T-11`, tanyain ulang font + kontak asli, ganti dummy, `node alat/web.mjs ukur`, foto ulang, lalu minta owner pencet Terbitkan di dashboard (Dimas gak nerbitin sendiri).
 - Kalau owner kasih karya/tangkapan editor sendiri, ganti 3 ilustrasi placeholder di bagian contoh carousel.
