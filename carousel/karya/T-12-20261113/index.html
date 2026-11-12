@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="id"><meta charset="utf-8"><title>late30_studio T-12: Dua otak alien (Graph)</title>
+<link rel="stylesheet" href="../../dasar.css">
+<!--
+KONSEP VISUAL (sistem Graph, brand/sistem-desain-late30.md): layar editor gelap-teknis. Ide pemersatu: DENAH DARI ATAS dengan dua "otak".
+Direktur = penanda kuning (lingkaran bidik) yang tahu titik pemain (lingkaran krem). Alien = siluet pink dengan kerucut pandang kuning dan cincin suara;
+alien cuma memegang kerucut dan cincin, jadi titik pemain di sisinya digambar sebagai lingkaran putus-putus bertanda tanya (tempat yang benar: di posisi pemain).
+Semua ilustrasi SVG buatan sendiri, tanpa tangkapan layar atau materi game, tanpa ikon pustaka. Tidak ada teks di dalam ilustrasi (teks hanya dari naskah beku).
+Teks persis hasil/naskah-T-12-20261113-final.json (SHA256 00d4041d...2a22fbd). Font lokal: Liberation Sans + DejaVu Sans Mono. Ukuran: 96 / 40 / 32 / 28.
+Gerak: tidak ada (statis). Tidak mengaku lolos aspek gerak.
+
+Peran per slide (tipe | jangkar | motif):
+1 cover          | judul "Alien di Alien: Isolation gak tahu posisi pastimu" 96 px | denah ruangan + kerucut + bidik direktur; lockup dalam bidang kecil
+2 poin           | judul "Alien dikendalikan dua sistem" 96 px                     | node+kabel (dua node sama tinggi: alien dan direktur)
+3 fakta (kuning) | judul "Direktur tahu posisimu, alien gak tahu titik pastinya"   | denah dua panel kiri-kanan (direktur tahu, alien tanda tanya); bidang kuning
+4 poin visual    | judul "Alien harus mencari sendiri" 96 px                       | kerucut pandang makin terang tiga tahap + cincin suara (visual besar di atas)
+5 poin           | judul "Alien juga bisa lupa" 96 px                              | jejak memudar (titik kuning makin pudar jadi garis putus)
+6 penutup        | judul "Yang bisa kamu lakuin" 96 px + ajakan 40 px              | tiga petak aksi (kerucut pendek, cincin kecil, jejak pudar), bidang krem, lockup terang besar
+Hitungan motif: denah 1,3; node+kabel 2; kerucut 4,6 (juga petak S1 sebagai bagian denah = 1,4,6 dilaporkan di catatan); jejak pudar 5,6; lockup 1,6; bidang kuning 3, krem 6.
+Lima tipe dari enam dipakai (cover, poin, fakta, poin visual, penutup). Kabel/pin hanya slide 2.
+-->
+<style>
+@font-face{font-family:'Liberation Sans';font-weight:400;src:local('Liberation Sans'),local('LiberationSans')}
+@font-face{font-family:'Liberation Sans';font-weight:700;src:local('Liberation Sans Bold'),local('LiberationSans-Bold')}
+@font-face{font-family:'DejaVu Sans Mono';font-weight:400;src:local('DejaVu Sans Mono'),local('DejaVuSansMono')}
+@font-face{font-family:'DejaVu Sans Mono';font-weight:700;src:local('DejaVu Sans Mono Bold'),local('DejaVuSansMono-Bold')}
+:root{--g:#11131A;--k:#F5F2EA;--p:#FF3B5C;--y:#FFC93C;--n:#1A1D27;--l:#3A4054;--t:#B9B6AD}
+.slide{background-color:var(--g);color:var(--k);font-family:'Liberation Sans',sans-serif;font-weight:700}
+.dots{position:absolute;left:0;top:0;width:1080px;height:1350px;background-image:radial-gradient(circle,#2B2F3D 2.5px,transparent 3px);background-size:54px 54px;background-position:27px 27px}
+.abs{position:absolute}
+.wm{position:absolute;left:72px;top:68px;margin:0;font:700 28px/36px 'DejaVu Sans Mono',monospace;display:flex;align-items:center;gap:14px}
+.wm i{width:18px;height:18px;background:var(--y);display:block}
+.no{position:absolute;right:72px;top:68px;margin:0;font:400 28px/36px 'DejaVu Sans Mono',monospace;color:var(--t)}
+.src{position:absolute;left:72px;bottom:72px;margin:0;font:400 28px/36px 'DejaVu Sans Mono',monospace;color:var(--t);white-space:nowrap}
+h1,h2{margin:0;font-weight:700;letter-spacing:-.5px}
+.j{font-size:96px;line-height:104px;text-wrap:balance}
+.sub{margin:0;font:400 40px/52px 'Liberation Sans',sans-serif;text-wrap:pretty}
+.ib{margin:0;font:400 32px/48px 'Liberation Sans',sans-serif;text-wrap:pretty}
+.y{color:var(--y)}
+.node{position:absolute;background:var(--n);border:3px solid var(--l);border-radius:22px;overflow:hidden}
+.kop{height:46px;background:var(--p);display:flex;align-items:center;padding:0 18px}
+.kop.y{background:var(--y)}
+.pn{width:24px;height:24px;display:block}
+.wire{position:absolute;left:0;top:0;width:1080px;height:1350px}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="pin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="#FFC93C" stroke="#11131A" stroke-width="4"/></symbol>
+<g id="kubus"><polygon fill="#FF3B5C" points="-43.3,-25 0,0 0,50 -43.3,25"/><polygon fill="#FF3B5C" points="43.3,-25 43.3,25 0,50 0,0"/><path stroke="#11131A" stroke-width="2.4" fill="none" d="M-43.3 -25L0 0L43.3 -25M0 0V50"/><polygon points="0,-46 34.64,-26 0,-6 -34.64,-26" fill="none" stroke="#11131A" stroke-width="10.5" stroke-linejoin="bevel"/><polygon points="0,-46 34.64,-26 0,-6 -34.64,-26" fill="none" stroke="#FFC93C" stroke-width="6" stroke-linejoin="bevel"/><rect x="-5" y="-51" width="10" height="10" fill="#FFC93C" stroke="#11131A" stroke-width="2"/><rect x="29.64" y="-31" width="10" height="10" fill="#FFC93C" stroke="#11131A" stroke-width="2"/><rect x="-5" y="-11" width="10" height="10" fill="#FFC93C" stroke="#11131A" stroke-width="2"/><rect x="-39.64" y="-31" width="10" height="10" fill="#FFC93C" stroke="#11131A" stroke-width="2"/></g>
+<g id="lockup"><use href="#kubus" transform="translate(75 78) scale(1.2)"/><g transform="translate(168 25)"><g fill="none" stroke-width="18" stroke-linejoin="miter" stroke-linecap="butt"><path stroke="#F5F2EA" transform="translate(0 0)" d="M9 0V100"/><path stroke="#F5F2EA" transform="translate(32 0)" d="M9 39H45V91H9V65H45"/><path stroke="#F5F2EA" transform="translate(106 0)" d="M21 0V91H50M0 39H44"/><path stroke="#F5F2EA" transform="translate(170 0)" d="M9 65H51V39H9V91H51"/><path stroke="#FFC93C" transform="translate(250 0)" d="M6.00 9.00L33.00 9.00L45.00 21.00L45.00 38.00L33.00 50.00L45.00 62.00L45.00 79.00L33.00 91.00L6.00 91.00M20.00 50.00L33.00 50.00"/><path stroke="#FFC93C" transform="translate(318 0)" d="M21.00 9.00L33.00 9.00L45.00 21.00L45.00 79.00L33.00 91.00L21.00 91.00L9.00 79.00L9.00 21.00Z"/></g></g></g>
+<g id="lockupT"><g transform="translate(75 78) scale(1.2)"><polygon fill="#E0203F" points="-43.3,-25 0,0 0,50 -43.3,25"/><polygon fill="#E0203F" points="43.3,-25 43.3,25 0,50 0,0"/><path stroke="#F5F2EA" stroke-width="2.4" fill="none" d="M-43.3 -25L0 0L43.3 -25M0 0V50"/><polygon points="0,-46 34.64,-26 0,-6 -34.64,-26" fill="none" stroke="#11131A" stroke-width="10.5" stroke-linejoin="bevel"/><polygon points="0,-46 34.64,-26 0,-6 -34.64,-26" fill="none" stroke="#FFC93C" stroke-width="6" stroke-linejoin="bevel"/><rect x="-5" y="-51" width="10" height="10" fill="#FFC93C" stroke="#11131A" stroke-width="2"/><rect x="29.64" y="-31" width="10" height="10" fill="#FFC93C" stroke="#11131A" stroke-width="2"/><rect x="-5" y="-11" width="10" height="10" fill="#FFC93C" stroke="#11131A" stroke-width="2"/><rect x="-39.64" y="-31" width="10" height="10" fill="#FFC93C" stroke="#11131A" stroke-width="2"/></g><g transform="translate(168 25)"><g fill="none" stroke-width="18" stroke-linejoin="miter" stroke-linecap="butt"><path stroke="#11131A" transform="translate(0 0)" d="M9 0V100"/><path stroke="#11131A" transform="translate(32 0)" d="M9 39H45V91H9V65H45"/><path stroke="#11131A" transform="translate(106 0)" d="M21 0V91H50M0 39H44"/><path stroke="#11131A" transform="translate(170 0)" d="M9 65H51V39H9V91H51"/><path stroke="#E0203F" transform="translate(250 0)" d="M6.00 9.00L33.00 9.00L45.00 21.00L45.00 38.00L33.00 50.00L45.00 62.00L45.00 79.00L33.00 91.00L6.00 91.00M20.00 50.00L33.00 50.00"/><path stroke="#E0203F" transform="translate(318 0)" d="M21.00 9.00L33.00 9.00L45.00 21.00L45.00 79.00L33.00 91.00L21.00 91.00L9.00 79.00L9.00 21.00Z"/></g></g></g>
+<pattern id="kisiP" width="38.75" height="38.75" patternUnits="userSpaceOnUse"><path d="M38.75 0H0V38.75" fill="none" stroke="#2B2F3D" stroke-width="2"/></pattern>
+<linearGradient id="cg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FFC93C" stop-opacity=".9"/><stop offset="1" stop-color="#FFC93C" stop-opacity=".18"/></linearGradient>
+<!-- alien dari atas, kepala memanjang menghadap +x -->
+<g id="al">
+ <path d="M-36 0L-84 0" stroke="#FF3B5C" stroke-width="8" stroke-linecap="round"/>
+ <path fill="#FF3B5C" d="M46 0C38 -16 16 -24 -6 -22C-24 -20 -34 -9 -38 0C-34 9 -24 20 -6 22C16 24 38 16 46 0Z"/>
+ <path d="M-14 -12L-14 12M2 -14L2 14M18 -10L18 10" stroke="#11131A" stroke-width="4" stroke-linecap="round"/>
+</g>
+<!-- kerucut pandang, ujung di 0,0, panjang 300 -->
+<polygon id="kr" points="0,0 300,-112 300,112" fill="url(#cg)"/>
+<!-- bidik direktur -->
+<g id="bd" fill="none" stroke="#FFC93C" stroke-width="6"><circle r="40"/><path d="M-58 0H-26M26 0H58M0 -58V-26M0 26V58"/></g>
+<!-- tanda tanya, pusat 0,0 -->
+<g id="tt"><path d="M-14 -10A15 15 0 1 1 3 6Q0 11 0 16" fill="none" stroke="#F5F2EA" stroke-width="8" stroke-linecap="round"/><circle cx="0" cy="31" r="5" fill="#F5F2EA"/></g>
+</defs></svg>
+
+<!-- ============ SLIDE 1: COVER ============ -->
+<section class="slide" id="s1">
+ <div class="dots"></div>
+ <p class="wm"><i></i>late30_studio</p>
+ <h1 class="j abs" style="left:72px;top:140px;width:936px">Alien di Alien: Isolation <span class="y">gak tahu</span> posisi pastimu</h1>
+ <p class="sub abs" style="left:72px;top:520px;width:900px">Geser: siapa yang tahu posisimu, dan apa yang bisa kamu lakuin.</p>
+ <div class="node" data-ilustrasi="denah" style="left:72px;top:660px;width:936px;height:618px">
+  <svg viewBox="0 0 930 612" width="930" height="612" style="display:block" aria-hidden="true">
+   <rect width="930" height="612" fill="url(#kisiP)"/>
+   <g fill="none" stroke="#B9B6AD" stroke-width="8" stroke-linejoin="miter"><rect x="34" y="34" width="862" height="544"/><path d="M570 34V290M570 386V578"/></g>
+   <use href="#kr" transform="translate(236 332) scale(1.1)"/>
+   <use href="#al" transform="translate(190 332) scale(1.3)"/>
+   <g transform="translate(150 190)"><use href="#tt" transform="scale(1.2)"/></g>
+   <path d="M730 440L640 410" stroke="#FFC93C" stroke-width="6" stroke-dasharray="4 14" stroke-linecap="round"/>
+   <circle cx="760" cy="450" r="18" fill="#F5F2EA"/>
+   <use href="#bd" transform="translate(760 450)"/>
+   <rect x="606" y="50" width="282" height="82" rx="14" fill="#1A1D27" stroke="#3A4054" stroke-width="3"/>
+   <svg x="622" y="57" width="250" height="67" viewBox="0 0 560 150" role="img" aria-label="late30 studio"><use href="#lockup"/></svg>
+  </svg></div>
+ <p class="no" data-kecil>1/6</p>
+</section>
+
+<!-- ============ SLIDE 2: POIN (dua sistem, node + kabel) ============ -->
+<section class="slide" id="s2">
+ <div class="dots"></div>
+ <p class="wm"><i></i>late30_studio</p>
+ <h1 class="j abs" style="left:72px;top:140px;width:936px">Alien dikendalikan <span class="y">dua</span> sistem</h1>
+ <p class="ib abs" style="left:72px;top:380px;width:900px">Satu sistem mengatur perilaku alien. Satu lagi sistem terpisah bernama direktur, yang tahu posisi alien dan posisimu.</p>
+ <div class="node" style="left:72px;top:520px;width:430px;height:670px"><div class="kop"><svg class="pn"><use href="#pin"/></svg></div>
+  <svg viewBox="0 0 424 618" width="424" height="618" style="display:block" aria-hidden="true">
+   <rect width="424" height="618" fill="url(#kisiP)"/>
+   <use href="#kr" transform="translate(232 309) scale(.7)"/>
+   <use href="#al" transform="translate(130 309) scale(1.7)"/>
+  </svg></div>
+ <div class="node" style="left:578px;top:520px;width:430px;height:670px"><div class="kop y"><svg class="pn"><use href="#pin"/></svg></div>
+  <svg viewBox="0 0 424 618" width="424" height="618" style="display:block" aria-hidden="true">
+   <rect width="424" height="618" fill="url(#kisiP)"/>
+   <rect x="40" y="50" width="344" height="518" fill="none" stroke="#B9B6AD" stroke-width="8"/>
+   <path d="M112 190L310 470" stroke="#FFC93C" stroke-width="6"/>
+   <use href="#al" transform="translate(112 190) scale(.8)"/>
+   <circle cx="310" cy="470" r="18" fill="#F5F2EA"/>
+   <use href="#bd" transform="translate(112 190) scale(.8)"/>
+   <use href="#bd" transform="translate(310 470) scale(.8)"/>
+  </svg></div>
+ <svg class="wire" viewBox="0 0 1080 1350" aria-hidden="true">
+  <path d="M502 543L578 543" stroke="#FFC93C" stroke-width="6" fill="none"/>
+  <circle cx="502" cy="543" r="9" fill="#FFC93C" stroke="#11131A" stroke-width="4"/><circle cx="578" cy="543" r="9" fill="#FFC93C" stroke="#11131A" stroke-width="4"/>
+ </svg>
+ <p class="src" data-sumber data-kecil>Game Developer, 20 Mei 2020</p>
+ <p class="no" data-kecil>2/6</p>
+</section>
+
+<!-- ============ SLIDE 3: FAKTA (kuning, dua denah) ============ -->
+<section class="slide" id="s3" style="background-color:#FFC93C;color:#11131A">
+ <p class="wm" style="color:#11131A"><i style="background:#11131A"></i>late30_studio</p>
+ <h1 class="j abs" style="left:72px;top:140px;width:936px">Direktur tahu posisimu, alien <span style="text-decoration:underline;text-decoration-thickness:12px;text-underline-offset:10px">gak tahu</span> titik pastinya</h1>
+ <p class="ib abs" style="left:72px;top:520px;width:900px;color:#11131A">Direktur selalu tahu posisi alien dan posisimu. Tapi dia gak memberi tahu alien titik pastinya.</p>
+ <div class="abs" data-ilustrasi="denah-kiri" style="left:72px;top:680px;width:450px;height:510px;background:#11131A;border-radius:22px;overflow:hidden">
+  <svg viewBox="0 0 450 510" width="450" height="510" style="display:block" aria-hidden="true">
+   <rect width="450" height="510" fill="url(#kisiP)"/>
+   <rect x="30" y="30" width="390" height="450" fill="none" stroke="#B9B6AD" stroke-width="8"/>
+   <path d="M130 180L320 366" stroke="#FFC93C" stroke-width="6"/>
+   <use href="#al" transform="translate(130 180) scale(.9)"/>
+   <circle cx="320" cy="366" r="18" fill="#F5F2EA"/>
+   <use href="#bd" transform="translate(130 180) scale(.8)"/>
+   <use href="#bd" transform="translate(320 366) scale(.8)"/>
+  </svg></div>
+ <div class="abs" data-ilustrasi="denah-kanan" style="left:558px;top:680px;width:450px;height:510px;background:#11131A;border-radius:22px;overflow:hidden">
+  <svg viewBox="0 0 450 510" width="450" height="510" style="display:block" aria-hidden="true">
+   <rect width="450" height="510" fill="url(#kisiP)"/>
+   <rect x="30" y="30" width="390" height="450" fill="none" stroke="#B9B6AD" stroke-width="8"/>
+   <use href="#kr" transform="translate(176 180) scale(.8)"/>
+   <use href="#al" transform="translate(130 180) scale(.9)"/>
+   <circle cx="320" cy="366" r="52" fill="none" stroke="#F5F2EA" stroke-width="6" stroke-dasharray="4 14" stroke-linecap="round"/>
+   <use href="#tt" transform="translate(320 366)"/>
+  </svg></div>
+ <p class="src" data-sumber data-kecil style="color:#11131A">Game Developer, 20 Mei 2020</p>
+ <p class="no" data-kecil style="color:#11131A">3/6</p>
+</section>
+
+<!-- ============ SLIDE 4: POIN DENGAN VISUAL (kerucut makin terang) ============ -->
+<section class="slide" id="s4">
+ <div class="dots"></div>
+ <p class="wm"><i></i>late30_studio</p>
+ <h1 class="j abs" style="left:72px;top:760px;width:936px">Alien harus <span class="y">mencari</span> sendiri</h1>
+ <p class="ib abs" style="left:72px;top:996px;width:900px">Alien memakai inderanya sendiri. Makin lama kamu kelihatan di area pandangnya, makin kuat tanda keberadaanmu buat dia. Suara keras juga jadi musuhmu.</p>
+ <div class="node" data-ilustrasi="kerucut" style="left:72px;top:140px;width:936px;height:580px">
+  <svg viewBox="0 0 930 574" width="930" height="574" style="display:block" aria-hidden="true">
+   <rect width="930" height="574" fill="url(#kisiP)"/>
+   <path d="M0 191H930M0 382H930" stroke="#3A4054" stroke-width="4"/>
+   <g opacity=".3"><use href="#kr" transform="translate(150 95) scale(1.9,.62)"/></g>
+   <use href="#al" transform="translate(96 95)"/>
+   <circle cx="540" cy="95" r="17" fill="#F5F2EA"/>
+   <g opacity=".62"><use href="#kr" transform="translate(150 286) scale(1.9,.62)"/></g>
+   <use href="#al" transform="translate(96 286)"/>
+   <circle cx="540" cy="286" r="17" fill="#F5F2EA"/>
+   <use href="#kr" transform="translate(150 477) scale(1.9,.62)"/>
+   <use href="#al" transform="translate(96 477)"/>
+   <g fill="none" stroke="#FF3B5C" stroke-width="7"><circle cx="540" cy="477" r="42"/><circle cx="540" cy="477" r="80" stroke-opacity=".5"/></g>
+   <circle cx="540" cy="477" r="17" fill="#F5F2EA"/>
+   <polygon points="860,160 890,160 875,190" fill="#FFC93C" stroke="#11131A" stroke-width="3"/>
+   <polygon points="860,351 890,351 875,381" fill="#FFC93C" stroke="#11131A" stroke-width="3"/>
+  </svg></div>
+ <p class="src" data-sumber data-kecil>Game Developer, 20 Mei 2020</p>
+ <p class="no" data-kecil>4/6</p>
+</section>
+
+<!-- ============ SLIDE 5: POIN (jejak memudar) ============ -->
+<section class="slide" id="s5">
+ <div class="dots"></div>
+ <p class="wm"><i></i>late30_studio</p>
+ <h1 class="j abs" style="left:72px;top:150px;width:936px">Alien juga bisa <span class="y">lupa</span></h1>
+ <p class="ib abs" style="left:72px;top:300px;width:900px">Apa yang alien tangkap dari inderanya makin lama makin memudar. Akhirnya dia bisa lupa apa yang tadi dia rasakan.</p>
+ <div class="node" data-ilustrasi="jejak" style="left:72px;top:480px;width:936px;height:710px">
+  <svg viewBox="0 0 930 704" width="930" height="704" style="display:block" aria-hidden="true">
+   <rect width="930" height="704" fill="url(#kisiP)"/>
+   <g transform="translate(-55 -33) scale(1.1)">
+   <path d="M90 360C200 120 300 520 420 330S620 120 780 330" fill="none" stroke="#B9B6AD" stroke-opacity=".3" stroke-width="5"/>
+   <g fill="#1A1D27" stroke="none"><circle cx="240" cy="300" r="22"/><circle cx="320" cy="400" r="22"/><circle cx="410" cy="335" r="22"/><circle cx="500" cy="235" r="22"/><circle cx="590" cy="215" r="22"/></g>
+   <g stroke="#FFC93C" stroke-width="7">
+    <circle cx="90" cy="360" r="22" fill="none" stroke-dasharray="3 9" stroke-opacity=".45"/>
+    <circle cx="160" cy="235" r="22" fill="none" stroke-dasharray="3 7" stroke-opacity=".6"/>
+    <circle cx="240" cy="300" r="22" fill="#FFC93C" fill-opacity=".18" stroke-opacity=".7"/>
+    <circle cx="320" cy="400" r="22" fill="#FFC93C" fill-opacity=".34"/>
+    <circle cx="410" cy="335" r="22" fill="#FFC93C" fill-opacity=".52"/>
+    <circle cx="500" cy="235" r="22" fill="#FFC93C" fill-opacity=".7"/>
+    <circle cx="590" cy="215" r="22" fill="#FFC93C" fill-opacity=".85"/>
+    <circle cx="680" cy="270" r="22" fill="#FFC93C"/>
+   </g>
+   <circle cx="790" cy="335" r="26" fill="#F5F2EA"/>
+   <use href="#al" transform="translate(780 450) scale(-1.1,1.1)"/>
+   </g>
+  </svg></div>
+ <p class="src" data-sumber data-kecil>Game Developer, 20 Mei 2020</p>
+ <p class="no" data-kecil>5/6</p>
+</section>
+
+<!-- ============ SLIDE 6: PENUTUP ============ -->
+<section class="slide" id="s6">
+ <div class="dots"></div>
+ <p class="wm"><i></i>late30_studio</p>
+ <h1 class="j abs" style="left:72px;top:140px;width:936px">Yang bisa kamu <span class="y">lakuin</span></h1>
+ <p class="ib abs" style="left:72px;top:380px;width:900px">Jadi kamu bisa coba: gak lama kelihatan, gak berisik, dan ingat alien bisa lupa.</p>
+ <div class="node" data-ilustrasi="aksi-1" style="left:72px;top:530px;width:296px;height:220px">
+  <svg viewBox="0 0 290 214" width="290" height="214" style="display:block" aria-hidden="true">
+   <rect width="290" height="214" fill="url(#kisiP)"/>
+   <use href="#kr" transform="translate(106 107) scale(.5)"/>
+   <use href="#al" transform="translate(70 107) scale(.6)"/>
+   <circle cx="198" cy="170" r="14" fill="#F5F2EA"/>
+   <path d="M168 170H130" stroke="#FFC93C" stroke-width="6" stroke-linecap="round" stroke-dasharray="3 12"/>
+  </svg></div>
+ <div class="node" data-ilustrasi="aksi-2" style="left:392px;top:530px;width:296px;height:220px">
+  <svg viewBox="0 0 290 214" width="290" height="214" style="display:block" aria-hidden="true">
+   <rect width="290" height="214" fill="url(#kisiP)"/>
+   <circle cx="145" cy="107" r="78" fill="none" stroke="#FF3B5C" stroke-width="5" stroke-dasharray="3 12" stroke-linecap="round" stroke-opacity=".6"/>
+   <circle cx="145" cy="107" r="30" fill="none" stroke="#FF3B5C" stroke-width="7"/>
+   <circle cx="145" cy="107" r="14" fill="#F5F2EA"/>
+  </svg></div>
+ <div class="node" data-ilustrasi="aksi-3" style="left:712px;top:530px;width:296px;height:220px">
+  <svg viewBox="0 0 290 214" width="290" height="214" style="display:block" aria-hidden="true">
+   <rect width="290" height="214" fill="url(#kisiP)"/>
+   <g stroke="#FFC93C" stroke-width="6">
+    <circle cx="44" cy="107" r="16" fill="none" stroke-dasharray="3 7" stroke-opacity=".6"/>
+    <circle cx="100" cy="107" r="16" fill="#FFC93C" fill-opacity=".25"/>
+    <circle cx="156" cy="107" r="16" fill="#FFC93C" fill-opacity=".55"/>
+    <circle cx="212" cy="107" r="16" fill="#FFC93C"/>
+   </g>
+  </svg></div>
+ <div class="abs" style="left:0;top:780px;width:1080px;height:570px;background:var(--k);color:var(--g)">
+  <p class="sub abs" style="left:72px;top:44px;width:900px;color:#C41835;font-weight:700;text-wrap:balance">Kalau alien tahu posisi pastimu, menurutmu game ini masih seram? Kenapa?</p>
+  <svg class="abs" style="left:72px;top:260px" width="800" height="214" viewBox="0 0 560 150" role="img" aria-label="late30 studio"><use href="#lockupT"/></svg>
+ </div>
+ <p class="no" data-kecil>6/6</p>
+</section>
+</html>

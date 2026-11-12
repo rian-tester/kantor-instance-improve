@@ -80,6 +80,8 @@ Tiap pagi (detak 03.00–09.00 WIB) Sari menyiapkan 1 carousel untuk tayang mala
 - 10/11: late30 (Mark of the Ninja, cincin suara), tayang usulan 11/11 19.00, rencana sosmed/terbit/20261111-late30-mark-of-the-ninja.json. Sudah tayang 11/11 19.06.
 - 11/11: autoaja (satu pertanyaan pembeli jadi tiga postingan), tayang usulan 12/11 19.00, rencana sosmed/terbit/20261112-autoaja-satu-pertanyaan-tiga-postingan.json. Berikutnya: late30 untuk tayang 13/11 (K3 Alien: Isolation atau ide lain di BANK-IDE.md).
 
+- 12/11: late30 (Alien: Isolation), tayang usulan 13/11 19.00, dikerjakan di T-12 (rencana sosmed/terbit/20261113-late30-alien-isolation.json). Berikutnya: autoaja untuk tayang 14/11 (riset cadangan: hasil/2026-11-12-riset-autoaja-konten-20261113.md, topik SAPA UMKM).
+
 ## Hasil
 hasil/carousel-T-08-20261112-v2/ (autoaja satu pertanyaan jadi tiga postingan, usulan tayang 12/11, Kritikus 2 skor 4 semua)
 hasil/carousel-T-08-20261112/ (versi lama v1, Kritikus putaran 1 belum lolos)

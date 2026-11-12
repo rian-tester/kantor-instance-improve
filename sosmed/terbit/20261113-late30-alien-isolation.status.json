@@ -1,0 +1,56 @@
+{
+ "status": "terjadwal",
+ "sidik": "535a17493944dc36cd4f3a7efa1e0eb3d2eaa7be28cc02ed4fc600f4b946cfed",
+ "disetujui": "2026-11-12T06:45:34.404Z",
+ "waktuTayang": "2026-11-13T12:00:00.000Z",
+ "dimajuin": false,
+ "token": "addb24988431565bcc812c0734e68107369c",
+ "media": [
+  {
+   "file": "hasil/carousel-T-12-20261113-v3/slide-01.png",
+   "sha": "a05d82d9acafa370f0ec2c190cb16865851f1c2b372ff71d6e73704f44ef29d8",
+   "mime": "image/png",
+   "url": "https://fitra-office.timku.ai.id/publik/sosmed/addb24988431565bcc812c0734e68107369c/1.png"
+  },
+  {
+   "file": "hasil/carousel-T-12-20261113-v3/slide-02.png",
+   "sha": "fb7e2a3e088632aedc6b310ee8262282d1750e82d23349ab5541b0de60273311",
+   "mime": "image/png",
+   "url": "https://fitra-office.timku.ai.id/publik/sosmed/addb24988431565bcc812c0734e68107369c/2.png"
+  },
+  {
+   "file": "hasil/carousel-T-12-20261113-v3/slide-03.png",
+   "sha": "9b2d209c40f2eda992f44c6fddda7e32ac31a2a1a6f35564b83ff2c760097bfa",
+   "mime": "image/png",
+   "url": "https://fitra-office.timku.ai.id/publik/sosmed/addb24988431565bcc812c0734e68107369c/3.png"
+  },
+  {
+   "file": "hasil/carousel-T-12-20261113-v3/slide-04.png",
+   "sha": "6e5f4b2382ec7b717b8abd515f0b44902ff14fde9e74bc73c7d485d24f380133",
+   "mime": "image/png",
+   "url": "https://fitra-office.timku.ai.id/publik/sosmed/addb24988431565bcc812c0734e68107369c/4.png"
+  },
+  {
+   "file": "hasil/carousel-T-12-20261113-v3/slide-05.png",
+   "sha": "7964030f353600b93c606b38f60ddbd110964e05f984d15f7e692246c53a063c",
+   "mime": "image/png",
+   "url": "https://fitra-office.timku.ai.id/publik/sosmed/addb24988431565bcc812c0734e68107369c/5.png"
+  },
+  {
+   "file": "hasil/carousel-T-12-20261113-v3/slide-06.png",
+   "sha": "4071eb1226cf126c71b3a4c7effd20878c9051ee09948bd4f6387311e0593932",
+   "mime": "image/png",
+   "url": "https://fitra-office.timku.ai.id/publik/sosmed/addb24988431565bcc812c0734e68107369c/6.png"
+  }
+ ],
+ "jadwal": [
+  {
+   "akunId": "6af0288bfc43f81b786740b4",
+   "platform": "instagram",
+   "username": "late30_studio",
+   "scheduleId": "6af5608e11ea116b2df86a86",
+   "status": "terjadwal"
+  }
+ ],
+ "diperbarui": "2026-11-12T06:45:34.861Z"
+}
