@@ -3,11 +3,12 @@ kode: T-08
 judul: Produksi harian sosmed (autoaja & late30 selang-seling)
 divisi: sosmed
 pegang: sari
-status: parkir
+status: jalan
 update: 2026-11-11
 ---
+
 ## Tujuan
-Tiap pagi (detak 03.00–09.00 WIB) Sari menyiapkan 1 carousel untuk tayang malam hari berikutnya, bergantian akun, supaya jam 07.00 owner tinggal menyetujui di halaman Konten. Task tetap, tidak ditutup.
+Tiap pagi (detak 03.00–09.00 WIB) Sari menyiapkan 1 carousel untuk tayang malam hari berikutnya, bergantian akun, supaya jam 07.00 owner tinggal menyetujui di halaman Konten. T-08 = standing order permanen (tidak pernah `beres`): tiap eksekusi melahirkan task baru `T-XX-produksi-sosmed-YYYYMMDD`, lihat Aturan.
 
 ## Aturan
 - **Selang-seling berdasarkan akun produksi terakhir**, bukan tanggal. Lihat baris "Produksi terakhir" di bawah. Akun yang diproduksi hari ini = akun yang BEDA dari produksi terakhir.
@@ -18,10 +19,15 @@ Tiap pagi (detak 03.00–09.00 WIB) Sari menyiapkan 1 carousel untuk tayang mala
   - late30: game dan 3D (hook gaya kejutan, bukan proses teknis kering). Cadangan ide: BANK-IDE.md (K3 Alien: Isolation, K4 suara Mark of the Ninja).
 - Alur tiap konten: ikut skill carousel (Penulis, cek bahasa, Satpam, Desainer, Kritikus). Pakai sistem desain yang sudah disetujui tiap akun.
 - **Batas Kritikus: maks 3 putaran.** Belum lolos setelah itu: tetap serahkan versi terbaik beserta catatan Kritikus di bagian Keputusan kamu (jangan berputar terus).
-- Rencana posting ditulis lewat skill posting-repliz dan `task: "T-08"`, usulan jam 19.00–21.45 WIB hari tayang. Owner setujui di Konten.
+- Rencana posting ditulis lewat skill posting-repliz dan `task: "<kode task baru hari itu>"`, usulan jam 19.00–21.45 WIB hari tayang. Owner setujui di Konten.
 - Jam kerja detak: 03.00–09.00. JANGAN lewat jam 09.00.
-- **Selesai hari ini = set task INI jadi `parkir`** (bukan beres, bukan nunggu-kamu). Alasannya: task `jalan` membangunkan Sari tiap 20 menit dan bikin jatah kebuang. Cron `55 2 * * *` mengembalikan `parkir` jadi `jalan` otomatis tiap 02.55. Selesai = konten hari itu sudah masuk Konten (rencana posting ditulis), baris "Produksi terakhir" sudah diisi, dan catatan ditulis. Pertanyaan persetujuan konten ada di task konten/Konten, bukan di T-08.
-- Belum selesai pas jam 08.40: tulis di "Berikutnya" sampai mana, biarkan `jalan`; besok lanjut.
+- **T-08 = standing order permanen, bukan wadah kerja. Satu eksekusi = satu task baru** (sesuai CLAUDE.md "kerjaan berulang/terjadwal = 1 task baru per eksekusi"). Tiap pagi pas cron `55 2 * * *` membangunkan T-08 (`parkir` jadi `jalan`):
+  1. Sari LANGSUNG bikin task baru dulu, sebelum kerja apa pun: `task/T-XX-produksi-sosmed-YYYYMMDD.md` (XX = nomor urut berikutnya di `task/`, termasuk `task/nonaktif/`; YYYYMMDD = tanggal hari itu). Divisi sosmed, pegang sari, status `jalan`, tujuan: produksi 1 carousel akun hari itu (sesuai "Produksi terakhir") untuk tayang malam berikutnya, selesai = rencana posting masuk Konten.
+  2. Semua kerjaan produksi hari itu dikerjakan & dicatat di task baru itu (bagian "Udah", "Hasil", "Keputusan kamu"). Rencana posting ditulis dengan `"task": "<kode task baru>"`, bukan T-08, supaya jawaban persetujuan di Konten masuk ke task hari itu.
+  3. Begitu task baru berhasil dibuat, T-08 langsung di-`parkir` (bukan beres, bukan nunggu-kamu). Alasannya: task `jalan` membangunkan Sari tiap 20 menit dan bikin jatah kebuang. Di T-08 cukup tambah 1 baris di "Udah" (tanggal + kode task baru) dan isi "Produksi terakhir" kalau akun hari itu sudah ditentukan.
+  4. Task baru bisa `beres` di hari yang sama: konten masuk Konten (rencana posting ditulis), baris "Produksi terakhir" di T-08 diisi, catatan ditulis. Pertanyaan persetujuan konten ada di task baru/Konten.
+  5. T-08 sendiri TIDAK PERNAH `beres` atau ditutup. Statusnya cuma `parkir` (nunggu cron) atau `jalan` (sebentar, sampai task baru dibuat).
+- Belum selesai pas jam 08.40: task baru hari itu tetap `jalan` dan tulis di "Berikutnya"-nya sampai mana; besok pagi Sari lanjut di task itu dulu (jangan bikin task baru kalau task hari sebelumnya belum selesai), baru buat task hari itu. T-08 tetap `parkir`.
 - Tanpa data performa per jam: pakai usulan jam di atas, jangan mengarang alasan dari angka.
 - Fakta wajib bersumber (kecuali saran praktis tanpa klaim data, sudah disetujui owner). Tanpa harga/promo di luar `brand/fakta.md`.
 - **Jangan berhenti nunggu owner di tengah produksi** (aturan Builder 09/11, atas permintaan owner). Ketemu pilihan atau keraguan: pilih rekomendasimu, lanjut, catat pilihannya di "Udah", dan tanyakan di akhir lewat Konten atau "Keputusan kamu". Pertanyaan yang nyangkut di T-08 gak boleh menghentikan produksi besok: cron 02.55 membalik `parkir` DAN `nunggu-kamu` jadi `jalan`.
@@ -67,6 +73,7 @@ Tiap pagi (detak 03.00–09.00 WIB) Sari menyiapkan 1 carousel untuk tayang mala
 - 11/11 autoaja untuk tayang 12/11 (sesi biasa): Penulis draf (hasil/naskah-T-08-20261112-draf.*), cek-bahasa 1 temuan (judul slide 3–5 telegram) dibenerin, nol temuan. Satpam 1 BELUM LOLOS (caption kalimat 1 klaim tanpa sumber; hasil/satpam-T-08-20261112.md). Penulis revisi (hasil/naskah-T-08-20261112-final.*), cek-bahasa nol, Satpam 2 LOLOS (hasil/satpam-T-08-20261112-ulang.md). SHA256 final.json: 46981aa35638b98adfd63e836f9156a6dde1b6e68b029b7eca3fe47d07a06623 (sudah kucek sendiri).
 - 11/11 Desainer v1 (hasil/carousel-T-08-20261112/, QC nol) → Kritikus 1 BELUM LOLOS (ritme 3, orisinal 3, brand 3, craft 3; slide 2–5 kembar, cover tanpa logo asli). Desainer v2 (hasil/carousel-T-08-20261112-v2/, QC nol, teks sama dengan naskah beku) → Kritikus 2 skor 4 semua, tanpa masalah berat (hasil/kritik-T-08-20261112-putaran-2.md/.json). Alat cek-kritik.mjs tetap "Belum lolos" cuma karena `fakta_bersumber` tidak (batas craft 3); itu diizinkan di T-08 (saran praktis tanpa data), jadi json kritik gak kuubah.
 - 11/11 rencana posting ditulis: sosmed/terbit/20261112-autoaja-satu-pertanyaan-tiga-postingan.json (usulan Kam 12/11 19.00 @autoaja.agency), repliz.mjs rencana: "Nunggu kamu setujuin", tanpa ✗. Catatan Desainer: maskot dicabut dari cover (aturan motif maks 2 slide), navy/emas masih perkiraan, gerak CSS saja.
+- 11/11 Builder (permintaan owner): aturan "Selesai hari ini" diganti. T-08 sekarang standing order permanen yang melahirkan task baru `T-XX-produksi-sosmed-YYYYMMDD` tiap pagi (T-12 untuk 12/11, dst.), lalu langsung `parkir`. Berlaku mulai produksi late30 untuk tayang 13/11 (pagi 12/11). Produksi autoaja 12/11 yang sudah jalan di T-08 (rencana `task: "T-08"`) tetap di sini sampai disetujui.
 
 ## Produksi terakhir
 - 09/11: autoaja (tips catat 3 angka), tayang usulan 10/11 19.00, rencana sosmed/terbit/20261110-autoaja-catat-3-angka.json.
